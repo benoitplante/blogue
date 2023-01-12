@@ -1,0 +1,18 @@
+---
+title: "À propos"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/benplante/
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/benoit-plante-ph-d-c-42753353/
+    - icon: github
+      text: Github
+      href: https://github.com/benoitplante
+---
+
+About this blog
