@@ -5,26 +5,6 @@ page-navigation: false
 toc: false
 page-layout: full
 
-about:
-  id: hero-heading
-  template: trestles
-  image-width: 70%
-  links:
-    - icon: envelope
-      text: Courriel
-      href: mailto:benoit.plante@uqtr.ca    
-    - icon: github
-      text: GitHub
-      href: https://github.com/benplante
-      target: _blank
-    - icon: linkedin
-      text: LinkedIn
-      href: https://linkedin.com/in/benplante
-      target: _blank
-    - text: "{{< ai orcid >}} ORCID"
-      href: https://orcid.org/0009-0003-5449-427X
-      target: _blank
-
 listing:
   - id: recent-posts
     contents: 
@@ -42,11 +22,18 @@ listing:
       - "title asc"
 ---
 
-::: {.hero-heading}
+::: {.hero-heading style="text-align: center; margin-bottom: 2em;"}
 
-![Photo de Benoit Plante](files/profiles/photo-benoit.png){width="250px" style="border-radius: 50%; margin-bottom: 1em;"}
 
-Je m’appelle **Benoit Plante**, coordonnateur scientifique du [GRIN](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864), tuteur en psychologie à la [TELUQ](https://www.teluq.ca/) , doctorant à l’UQTR et passionné par les liens entre la psychologie et l’intelligence artificielle.
+![Photo généré par l'IA](files/profiles/photo-benoit.png){width="250px" style="border-radius: 50%; margin-bottom: 1em;"}
+
+[Courriel](mailto:benoit.plante@uqtr.ca) • [GitHub](https://github.com/benplante) • [LinkedIn](https://linkedin.com/in/benplante) • $1
+
+---
+
+::: {.hero-description style="text-align: left; max-width: 700px; margin: 2em auto; border-top: 1px solid #ccc; padding-top: 2em;"}
+
+Je m’appelle **Benoit Plante**, coordonnateur scientifique du [GRIN](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864), tuteur en psychologie à la [TELUQ](https://www.teluq.ca/), doctorant à l’UQTR et passionné par les liens entre la psychologie et l’intelligence artificielle.
 
 Ce blogue est mon espace personnel pour explorer, réfléchir et documenter mes découvertes à l’interface entre IA, science des données et sciences humaines. J’y aborde des thématiques variées :
 
@@ -55,7 +42,9 @@ Ce blogue est mon espace personnel pour explorer, réfléchir et documenter mes 
 - Les **enjeux éthiques, critiques et méthodologiques** liés à la reproductibilité
 - Des réflexions sur la **formation**, la pratique et les transformations du travail scientifique
 
-Ce carnet est aussi une invitation au dialogue : je souhaite y partager ce que j’apprends tout en entrant en conversation avec d'autres personnes qui s'interrogent, expérimentent et créent autour de ces intersections entre psychologie et technologies.
+Ce carnet est aussi une invitation au dialogue : je souhaite y partager ce que j’apprends tout en entrant en conversation avec d’autres personnes qui s’interrogent, expérimentent et créent autour de ces intersections entre psychologie et technologies.
+
+:::
 
 :::
 
