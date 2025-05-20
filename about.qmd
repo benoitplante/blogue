@@ -1,7 +1,28 @@
 ---
 title: "À propos"
+description-meta: "Parcours, intentions et collaboration derrière le blogue Psychologie & IA"
+page-navigation: false
+toc: false
 page-layout: full
 ---
 
-Page à venir.
----
+## Qui suis-je ?
+
+Je m’appelle **Benoit Plante**. Je suis coordonnateur scientifique du [GRIN – Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864), tuteur en psychologie à la [TELUQ](https://www.teluq.ca/) et doctorant à l’Université du Québec à Trois-Rivières.
+
+Je m’intéresse aux usages de l’intelligence artificielle en psychologie : recherche, formation, pratique clinique, communication scientifique. J’explore comment ces technologies peuvent soutenir nos méthodes, enrichir nos réflexions ou transformer notre rapport à la connaissance.
+
+
+## Pourquoi ce blogue ?
+
+Ce blogue est un **carnet de bord personnel et professionnel**, pensé comme un espace de documentation, d’expérimentation et de partage. J’y consigne ce que j’apprends et teste dans le cadre de mes projets :
+
+- des outils (Quarto, R, ChatGPT, Zotero, Make.com...)
+- des cas d’usage (reproductibilité, rédaction assistée, automatisation)
+- des réflexions critiques (transparence, biais, limites de l’IA)
+- des ressources (tutoriels, scripts, références, exemples)
+
+L’ensemble du contenu est réalisé **en collaboration avec l’intelligence artificielle**, principalement via mes échanges avec ChatGPT. J’utilise ce partenariat pour réfléchir, structurer et produire les billets, dans une logique de co-écriture consciente et critique.
+
+Ce blogue est volontairement exploratoire. J’y publie à mon rythme, sans prétention à l’exhaustivité, mais avec l’envie de contribuer à une culture de partage, de dialogue et d’expérimentation.
+

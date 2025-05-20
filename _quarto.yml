@@ -7,7 +7,7 @@ description-meta: "Blogue sur les liens entre psychologie et intelligence artifi
 author-meta: "Ben Plante"
 
 website:
-  title: "Psychologie & Intelligence artificielle"
+  title: "Benoit Plante"
   description: "Réflexions, cas d’usage et outils à l’interface entre IA et psychologie"
   site-url: "https://benoitplante.github.io/blogue"
 
@@ -17,10 +17,10 @@ website:
     left:
       - text: Accueil
         href: index.qmd
-      - text: Blogue
-        href: posts.qmd
       - text: À propos
         href: about.qmd
+      - text: Blogue
+        href: posts.qmd
       - text: Thématiques
         menu:
           - text: Méthodologie augmentée
@@ -33,16 +33,6 @@ website:
             href: posts.qmd#category=ethique
       - text: Outils
         href: outils.qmd
-
-    right:
-      - text: CV
-        href: files/cv.pdf
-      - icon: github
-        href: https://github.com/benplante
-        target: _blank
-      - icon: rss
-        href: posts.xml
-        target: _blank
 
   page-navigation: true
 
