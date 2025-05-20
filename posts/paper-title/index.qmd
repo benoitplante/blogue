@@ -8,7 +8,7 @@ author:
   - name: Nathan Rosen
 date: "1935-05-15"
 categories: [paper]
-image: "featured.jpg"
+# image: "featured.jpg"
 citation:
   type: article-journal
   container-title: "Physical Review"
