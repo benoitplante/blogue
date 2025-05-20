@@ -3,5 +3,4 @@ title: "Outils"
 page-layout: full
 ---
 
-Section en construction. Vous y trouverez bientôt des ressources utiles.
----
+## Section en construction. Vous y trouverez bientôt des ressources utiles.

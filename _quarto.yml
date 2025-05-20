@@ -38,7 +38,7 @@ website:
 
   page-footer:
     left: "[Ben Plante](https://github.com/benplante) &copy; <script>document.write(new Date().getFullYear())</script>"
-    center: "Blogue propulsé par [Quarto](https://quarto.org) – Vulgarisation et réflexion sur l’IA en psychologie"
+    center: "Blogue propulsé par [Quarto](https://quarto.org)"
     right:
       - icon: github
         href: https://github.com/benplante
