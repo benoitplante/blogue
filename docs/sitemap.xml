@@ -1,43 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/teaching.html</loc>
+    <loc>https://benoitplante.github.io/blogue/teaching.html</loc>
     <lastmod>2025-05-20T14:13:30.052Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/projects.html</loc>
+    <loc>https://benoitplante.github.io/blogue/projects.html</loc>
     <lastmod>2025-05-20T14:13:30.050Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/posts/paper-title/index.html</loc>
+    <loc>https://benoitplante.github.io/blogue/posts/paper-title/index.html</loc>
     <lastmod>2025-05-20T14:34:10.926Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/posts/event-title/index.html</loc>
+    <loc>https://benoitplante.github.io/blogue/posts/event-title/index.html</loc>
     <lastmod>2025-05-20T14:34:23.960Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/index.html</loc>
-    <lastmod>2025-05-20T14:31:39.295Z</lastmod>
+    <loc>https://benoitplante.github.io/blogue/outils.html</loc>
+    <lastmod>2025-05-20T16:48:49.982Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/contact.html</loc>
-    <lastmod>2025-05-20T14:13:29.922Z</lastmod>
+    <loc>https://benoitplante.github.io/blogue/contact.html</loc>
+    <lastmod>2025-05-20T15:54:35.906Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/people.html</loc>
+    <loc>https://benoitplante.github.io/blogue/about.html</loc>
+    <lastmod>2025-05-20T16:48:15.843Z</lastmod>
+  </url>
+  <url>
+    <loc>https://benoitplante.github.io/blogue/index.html</loc>
+    <lastmod>2025-05-20T16:03:58.978Z</lastmod>
+  </url>
+  <url>
+    <loc>https://benoitplante.github.io/blogue/people.html</loc>
     <lastmod>2025-05-20T14:34:38.411Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/posts/news-title/index.html</loc>
+    <loc>https://benoitplante.github.io/blogue/posts/news-title/index.html</loc>
     <lastmod>2025-05-20T14:34:43.054Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/posts.html</loc>
-    <lastmod>2025-05-20T14:13:30.038Z</lastmod>
+    <loc>https://benoitplante.github.io/blogue/posts.html</loc>
+    <lastmod>2025-05-20T16:05:31.526Z</lastmod>
   </url>
   <url>
-    <loc>https://drganghe.github.io/quarto-academic-website-template/publications.html</loc>
+    <loc>https://benoitplante.github.io/blogue/publications.html</loc>
     <lastmod>2025-05-20T14:13:30.051Z</lastmod>
   </url>
 </urlset>

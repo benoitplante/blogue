@@ -49,39 +49,32 @@
     "text": "Links\nPublished paper"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quarto Academic, PhD",
-    "section": "",
-    "text": "Lab\n  \n  \n    \n     Uprofile\n  \n  \n    \n     E-mail\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     YouTube\n  \n  \n      ORCID\n  \n  \n      Web of Science\n  \n  \n      Scopus\n  \n  \n      Google Scholar\n  \n\n  \n  \nI’m a Quarto Academeic Website Template adapted by Dr. Gang He.\nI’m a template that you can fork to build your own website with easy adaptation and deployment.\n\nStar this repository so you can easily come back to the template\n\nFolk this tempate and rename it to yourgithubusername.github.io\n\nUpdate and edit _quarto.yml file for website setup\n\nUpdate and add contents to /posts, teaching.qmd, projects.yml, and people.qmd and /people as needed.\nRender and preview your website and publish it to your GitHub.\nPolish and fix any issues\n\nEnjoy your website!\n\n\n\n\nResearcher, Univerisity\n\n\n\n\n\nPhD, Univerisity"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Quarto Academic, PhD",
-    "section": "",
-    "text": "Researcher, Univerisity"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Quarto Academic, PhD",
-    "section": "",
-    "text": "PhD, Univerisity"
-  },
-  {
-    "objectID": "index.html#recent-posts",
-    "href": "index.html#recent-posts",
-    "title": "Quarto Academic, PhD",
-    "section": "Recent Posts",
-    "text": "Recent Posts\nCheck out the latest  Papers ,  News ,  Events , and  More »\n\n\n\n\n\n\n\n\n\n\nQuarto Academic Website Examples and Tips\n\n\n\nOct 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvent item\n\n\n\nSep 3, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nNews item\n\n\n\nJun 24, 2024\n\n\n\n\n\n\nNo matching items\n\n\nAll Posts »"
-  },
-  {
     "objectID": "contact.html",
     "href": "contact.html",
     "title": "Contact",
     "section": "",
-    "text": "Quarto Academic\nSchool\nCollege\nUniversity\nAddress:\nPhone:\nE-mail:"
+    "text": "Blogue – Psychologie & Intelligence artificielle\nBenoit Plante\nCoordonnateur scientifique | Ph.D(c) en psychologie\nCourriel : benoit.plante@uqtr.ca"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Psychologie & Intelligence artificielle",
+    "section": "",
+    "text": "Courriel\n  \n  \n    \n     GitHub\n  \n  \n    \n     LinkedIn\n  \n  \n      ORCID\n  \n\n  \n  \nBienvenue sur Psychologie & Intelligence artificielle, un espace de réflexion, de vulgarisation et d’expérimentation où se rencontrent la psychologie et l’intelligence artificielle (générative, statistique, interactive).\nCe blogue documente mes explorations autour des usages concrets de l’IA dans la recherche et la pratique en psychologie : analyses reproductibles, outils IA, réflexions critiques. Il vise également à partager les nouveautés, ressources et avancées à l’intersection entre la psychologie et l’intelligence artificielle.\n\n\n\n\nCoordonnateur scientifique, GRIN – CEIDEF (UQTR)\n\nTuteur en psychologie, Université TÉLUQ\n\nDoctorant en psychologie – intérêt pour la psychométrie, l’auto-quantification et les méthodes ouvertes"
+  },
+  {
+    "objectID": "index.html#parcours",
+    "href": "index.html#parcours",
+    "title": "Psychologie & Intelligence artificielle",
+    "section": "",
+    "text": "Coordonnateur scientifique, GRIN – CEIDEF (UQTR)\n\nTuteur en psychologie, Université TÉLUQ\n\nDoctorant en psychologie – intérêt pour la psychométrie, l’auto-quantification et les méthodes ouvertes"
+  },
+  {
+    "objectID": "index.html#derniers-billets",
+    "href": "index.html#derniers-billets",
+    "title": "Psychologie & Intelligence artificielle",
+    "section": "Derniers billets",
+    "text": "Derniers billets\nDécouvrez les derniers articles publiés sur le blogue, ou explorez les billets par thématique.\n\n\n\n\n\n\n\n\n\n\nQuarto Academic Website Examples and Tips\n\n\n\nOct 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvent item\n\n\n\nSep 3, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nNews item\n\n\n\nJun 24, 2024\n\n\n\n\n\n\nNo matching items\n\n\n👉 Tous les billets »"
   },
   {
     "objectID": "people.html",
@@ -121,7 +114,7 @@
   {
     "objectID": "posts.html",
     "href": "posts.html",
-    "title": "What’s New & Updated",
+    "title": "Nouveautés et publications",
     "section": "",
     "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nQuarto Academic Website Examples and Tips\n\n\n\n\n\n\nnews\n\n\n\nExamples and tips for Quarto Academic Website\n\n\n\n\n\nOct 15, 2024\n\n\nDr. Gang He\n\n\n\n\n\n\n\n\n\n\n\n\nEvent item\n\n\n\n\n\n\nevent\n\npresentation\n\n\n\nAbout Event item.\n\n\n\n\n\nSep 3, 2024\n\n\nEvent\n\n\n\n\n\n\n\n\n\n\n\n\nNews item\n\n\n\n\n\n\nnews\n\n\n\nAbout new item\n\n\n\n\n\nJun 24, 2024\n\n\nNews\n\n\n\n\n\n\n\n\n\n\n\n\nCan quantum-mechanical description of physical reality be considered complete?\n\n\nPhysical Review\n\n\n\npaper\n\n\n\nOne is thus led to conclude that the description of reality as given by a wave function is not complete.\n\n\n\n\n\nMay 15, 1935\n\n\nAlbert Einstein, Boris Podolsky, Nathan Rosen\n\n\n\n\n\nNo matching items"
   },

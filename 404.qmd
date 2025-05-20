@@ -1,7 +1,7 @@
 ---
-title: Page Unplugged
+title: Page introuvable
 ---
 
-The page you requested cannot be found (perhaps it was unplugged).
+La page que vous recherchez est introuvable. Elle a peut-être été déplacée, renommée ou supprimée.
 
-You may want to try searching to find the page's new plug.
+Nous vous invitons à utiliser la barre de recherche pour localiser le contenu désiré, ou à revenir à la page d’accueil.
