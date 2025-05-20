@@ -1,5 +1,5 @@
 ---
-title: "Psychologie & Intelligence artificielle"
+title: "Benoit Plante"
 description-meta: "Réflexions, outils et science à l’interface entre la psychologie et l’IA"
 page-navigation: false
 toc: false
@@ -42,19 +42,20 @@ listing:
       - "title asc"
 ---
 
-:::{#hero-heading}
+::: {.hero-heading}
 
-Bienvenue sur **Psychologie & Intelligence artificielle**, un espace de réflexion, de vulgarisation et d’expérimentation où se rencontrent la psychologie et l’intelligence artificielle (générative, statistique, interactive).
+![Photo de Benoit Plante](files/profiles/photo-benoit.png){width="250px" style="border-radius: 50%; margin-bottom: 1em;"}
 
-Ce blogue documente mes explorations autour des usages concrets de l’IA dans la recherche et la pratique en psychologie : analyses reproductibles, outils IA, réflexions critiques. Il vise également à partager les nouveautés, ressources et avancées à l’intersection entre la psychologie et l’intelligence artificielle.
+Je m’appelle **Benoit Plante**, coordonnateur scientifique du [GRIN](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864), tuteur en psychologie à la [TELUQ](https://www.teluq.ca/) , doctorant à l’UQTR et passionné par les liens entre la psychologie et l’intelligence artificielle.
 
----
+Ce blogue est mon espace personnel pour explorer, réfléchir et documenter mes découvertes à l’interface entre IA, science des données et sciences humaines. J’y aborde des thématiques variées :
 
-## Parcours
+- La **vulgarisation** de travaux scientifiques sur l’IA en psychologie
+- L’usage d’**outils d’IA appliqués aux méthodes de recherche** (analyse, rédaction, automatisation)
+- Les **enjeux éthiques, critiques et méthodologiques** liés à la reproductibilité
+- Des réflexions sur la **formation**, la pratique et les transformations du travail scientifique
 
-- Coordonnateur scientifique, GRIN – CEIDEF (UQTR)  
-- Tuteur en psychologie, Université TÉLUQ  
-- Doctorant en psychologie – intérêt pour la psychométrie, l'auto-quantification et les méthodes ouvertes
+Ce carnet est aussi une invitation au dialogue : je souhaite y partager ce que j’apprends tout en entrant en conversation avec d'autres personnes qui s'interrogent, expérimentent et créent autour de ces intersections entre psychologie et technologies.
 
 :::
 
@@ -65,4 +66,4 @@ Découvrez les derniers articles publiés sur le blogue, ou explorez les [billet
 :::{#recent-posts}
 :::
 
-<p align="right">👉 [Tous les billets »](/posts.qmd)</p>
+<p align="right"> [Tous les billets »](/posts.qmd)</p>
