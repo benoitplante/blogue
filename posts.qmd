@@ -12,7 +12,6 @@ listing:
   feed: true
   contents: 
     - posts
-    - posts/post-links.yml
 
 draft-mode: unlinked
 page-navigation: false

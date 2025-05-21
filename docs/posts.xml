@@ -10,15 +10,44 @@
 <atom:link href="https://benoitplante.github.io/blogue/posts.xml" rel="self" type="application/rss+xml"/>
 <description>Réflexions, cas d’usage et outils à l’interface entre IA et psychologie</description>
 <generator>quarto-1.7.31</generator>
-<lastBuildDate>Tue, 15 Oct 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 21 May 2025 04:00:00 GMT</lastBuildDate>
 <item>
-  <title>Quarto Academic Website Examples and Tips</title>
-  <link>https://benoitplante.github.io/blogue/</link>
-  <description>Examples and tips for Quarto Academic Website</description>
-  <category>news</category>
-  <guid>https://benoitplante.github.io/blogue/</guid>
-  <pubDate>Tue, 15 Oct 2024 04:00:00 GMT</pubDate>
-  <media:content url="https://benoitplante.github.io/blogue/files/images/placeholder4.JPG" medium="image"/>
+  <title>Quand une IA devient co-chercheuse : réflexions autour de Robin</title>
+  <dc:creator>Benoit Plante</dc:creator>
+  <link>https://benoitplante.github.io/blogue/posts/2025-05-21-premier-article/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="une-découverte-marquante" class="level2">
+<h2 class="anchored" data-anchor-id="une-découverte-marquante">Une découverte marquante</h2>
+<p>Je suis tombé récemment sur une annonce qui m’a à la fois fasciné et interpellé : le laboratoire <a href="https://www.futurehouse.org">Future House</a>, un groupe de recherche basé à San Francisco qui explore les frontières de la découverte scientifique automatisée, a présenté <em>Robin</em>, une plateforme d’IA capable de réaliser plusieurs étapes clés du travail scientifique. Elle peut lire des articles, formuler des hypothèses, proposer des expériences, analyser les résultats et même suggérer des pistes de recherche à explorer ensuite. Et tout cela se fait à l’aide d’un système dit « multi-agent », avec l’intervention de chercheuses et chercheurs seulement pour les étapes en laboratoire.</p>
+<p>Un système multi-agent, c’est un ensemble de petits programmes spécialisés, appelés agents, qui collaborent pour accomplir des tâches complexes. Chacun a un rôle bien précis : certains cherchent dans la littérature scientifique, d’autres analysent les données d’expériences, d’autres encore comparent différentes pistes pour sélectionner les plus prometteuses. Dans le cas de Robin, ces agents s’appellent Crow, Falcon et Finch, et ils sont conçus pour se compléter comme une équipe de recherche virtuelle.</p>
+<p>Le preprint associé au projet, intitulé <em>Robin: A Multi-Agent System for Automating Scientific Discovery</em> (Ghareeb et al., 2025), présente une démonstration concrète dans le domaine biomédical : Robin a permis d’identifier un nouveau candidat thérapeutique pour traiter la dégénérescence maculaire liée à l’âge (forme sèche), en proposant une piste qui n’avait jamais été explorée auparavant — le ripasudil, un médicament déjà utilisé pour d’autres troubles oculaires. Tout le raisonnement scientifique, les figures et les analyses présentés dans l’article ont été générés par Robin.</p>
+</section>
+<section id="quelles-implications-pour-la-psychologie" class="level2">
+<h2 class="anchored" data-anchor-id="quelles-implications-pour-la-psychologie">Quelles implications pour la psychologie?</h2>
+<p>Cette avancée m’amène à me poser des questions sur ce que cela signifie pour des disciplines comme la psychologie, où les données sont souvent plus complexes, nuancées, et ancrées dans des contextes humains.</p>
+<p>Aujourd’hui déjà, je considère que certains outils d’IA agissent comme de véritables partenaires dans nos démarches scientifiques. Je les utilise pour synthétiser de la littérature, organiser des corpus de données, ou encore proposer des structures d’analyse. Nous sommes donc déjà entrés dans une ère de recherche assistée. La nouveauté avec Robin, c’est que l’on entrevoit maintenant la possibilité d’un cycle de recherche entièrement automatisé — du moins dans certains contextes bien circonscrits.</p>
+<p>Par exemple, on peut imaginer des systèmes capables d’explorer des bases de données ouvertes, de formuler des hypothèses à partir de connaissances publiées, puis d’analyser des données accessibles publiquement pour confirmer ou rejeter ces hypothèses. Dans le domaine de la psychologie, cela pourrait se faire avec des jeux de données longitudinaux disponibles en libre accès, en lien avec le développement de l’enfant, la santé mentale ou les déterminants sociaux.</p>
+<p>Un système comme Robin pourrait théoriquement formuler des hypothèses à partir de ces corpus, effectuer des analyses exploratoires, et suggérer de nouvelles directions de recherche, le tout sans intervention humaine directe — tout en permettant une validation et une interprétation ensuite par des équipes humaines. Cela ne remplacerait pas la recherche participative ou contextuelle, mais cela permettrait de générer de nouvelles connaissances en parallèle, de façon continue.</p>
+</section>
+<section id="une-transformation-à-suivre-de-près" class="level2">
+<h2 class="anchored" data-anchor-id="une-transformation-à-suivre-de-près">Une transformation à suivre de près</h2>
+<p>Je vais suivre de près les développements autour de Robin et des autres projets similaires. Ils ouvrent une réflexion profonde sur notre manière de faire de la recherche, sur notre rapport à la connaissance, et sur la façon dont l’IA pourrait enrichir, sans remplacer, notre compréhension du monde. Ces technologies ne nous invitent pas seulement à revoir nos outils, mais à repenser nos méthodologies, nos collaborations et nos modèles de diffusion du savoir. Il se pourrait qu’une partie de la science de demain ne soit pas écrite par des humains, mais validée, partagée et enrichie par eux. C’est une perspective à la fois stimulante et exigeante, qui demande une vigilance éthique et une ouverture intellectuelle constante.</p>
+<p><strong>Référence :</strong><br>
+Ghareeb, A. E., Chang, B., Mitchener, L., Yiu, A., Szostkiewicz, C. J., Laurent, J. M., … &amp; Rodriques, S. G. (2025). <em>Robin: A multi-agent system for automating scientific discovery</em>. arXiv preprint arXiv:2505.13400. <a href="https://arxiv.org/abs/2505.13400">https://arxiv.org/abs/2505.13400</a></p>
+<hr>
+
+
+</section>
+
+ ]]></description>
+  <category>Méthodologie augmentée par l’IA</category>
+  <guid>https://benoitplante.github.io/blogue/posts/2025-05-21-premier-article/</guid>
+  <pubDate>Wed, 21 May 2025 04:00:00 GMT</pubDate>
+  <media:content url="https://benoitplante.github.io/blogue/posts/2025-05-21-premier-article/banner.png" medium="image" type="image/png" height="96" width="144"/>
 </item>
 <item>
   <title>Event item</title>
@@ -49,99 +78,6 @@ https://quarto.org/docs/authoring/includes.html
   <guid>https://benoitplante.github.io/blogue/posts/event-title/</guid>
   <pubDate>Tue, 03 Sep 2024 04:00:00 GMT</pubDate>
   <media:content url="https://benoitplante.github.io/blogue/files/images/placeholder2.JPG" medium="image"/>
-</item>
-<item>
-  <title>News item</title>
-  <dc:creator>News </dc:creator>
-  <link>https://benoitplante.github.io/blogue/posts/news-title/</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>About the news</p>
-<!--Include social share buttons-->
-<!-- 
-AddToAny check more: https://www.addtoany.com/buttons/for/website 
-Using includes will make edits easier, will only need to add or remove button here if needed.
-https://quarto.org/docs/authoring/includes.html
--->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-<p><a class="a2a_dd" href="https://www.addtoany.com/share"></a> <a class="a2a_button_linkedin"></a> <a class="a2a_button_bluesky"></a> <a class="a2a_button_facebook"></a> <a class="a2a_button_copy_link"></a> <a class="a2a_button_email"></a></p>
-</div>
-<script async="" src="https://static.addtoany.com/menu/page.js"></script>
-
-
-</section>
-
- ]]></description>
-  <category>news</category>
-  <guid>https://benoitplante.github.io/blogue/posts/news-title/</guid>
-  <pubDate>Mon, 24 Jun 2024 04:00:00 GMT</pubDate>
-  <media:content url="https://benoitplante.github.io/blogue/files/images/placeholder1.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Can quantum-mechanical description of physical reality be considered complete?</title>
-  <dc:creator>Albert Einstein</dc:creator>
-  <dc:creator>Boris Podolsky</dc:creator>
-  <dc:creator>Nathan Rosen</dc:creator>
-  <link>https://benoitplante.github.io/blogue/posts/paper-title/</link>
-  <description><![CDATA[ 
-
-
-
-
-<!--Include academic icons or bottons-->
-<!-- 
-Load Academicons v1: https://jpswalsh.github.io/academicons/
--->
-<p><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"></p>
-<p><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"></p>
-<!---
-The following code are needed to show dimension citation and altmetrics.
-https://api.altmetric.com/embeds.html
-https://badge.dimensions.ai/
---->
-<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
-<script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
-<script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.</p>
-</section>
-<section id="links" class="level2">
-<h2 class="anchored" data-anchor-id="links">Links</h2>
-<p>Published <a href="https://journals.aps.org/pr/pdf/10.1103/PhysRev.47.777">paper</a></p>
-<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div class="altmetric-embed" data-badge-popover="right" data-badge-type="donut" data-doi="10.1103/PhysRev.47.777"></div>
-
-<span class="__dimensions_badge_embed__" data-doi="10.1103/PhysRev.47.777" data-hide-zero-citations="true" data-style="small_circle"></span><script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{einstein1935,
-  author = {Einstein, Albert and Podolsky, Boris and Rosen, Nathan},
-  title = {Can Quantum-Mechanical Description of Physical Reality Be
-    Considered Complete?},
-  journal = {Physical Review},
-  volume = {47},
-  number = {7938},
-  pages = {777-80},
-  date = {1935-05-15},
-  url = {https://journals.aps.org/pr/pdf/10.1103/PhysRev.47.777},
-  doi = {10.1103/PhysRev.47.777},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-einstein1935" class="csl-entry quarto-appendix-citeas">
-Einstein, Albert, Boris Podolsky, and Nathan Rosen. 1935. <span>“Can
-Quantum-Mechanical Description of Physical Reality Be Considered
-Complete?”</span> <em>Physical Review</em> 47 (7938): 777–80. <a href="https://doi.org/10.1103/PhysRev.47.777">https://doi.org/10.1103/PhysRev.47.777</a>.
-</div></div></section></div> ]]></description>
-  <category>paper</category>
-  <guid>https://benoitplante.github.io/blogue/posts/paper-title/</guid>
-  <pubDate>Wed, 15 May 1935 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
