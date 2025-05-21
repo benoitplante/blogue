@@ -8,7 +8,7 @@ format: html
 image: banner.png
 ---
 
-![Bannière IA](banner.png)
+![Générée par ChatGPT](banner.png)
 
 
 ## Une découverte marquante
