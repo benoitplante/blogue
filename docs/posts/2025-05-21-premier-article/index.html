@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ben Plante">
-<meta name="description" content="Réflexions, outils et science à l’interface entre la psychologie et l’IA">
+<meta name="dcterms.date" content="2025-05-21">
+<meta name="description" content="Réflexion sur la plateforme Robin développée par Future House et ses implications pour la recherche en psychologie.">
 
-<title>Benoit Plante</title>
+<title>Quand une IA devient co-chercheuse : réflexions autour de Robin – Benoit Plante</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,25 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6957ec2732917c3acd9217c3064faa9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6957ec2732917c3acd9217c3064faa9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-recent-posts .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-recent-posts'] = new List('listing-recent-posts', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id="></script>
 
 <script type="text/javascript">
@@ -148,48 +118,19 @@ https://badge.dimensions.ai/
 
 <script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="– Benoit Plante">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Quand une IA devient co-chercheuse : réflexions autour de Robin – Benoit Plante">
 <meta property="og:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
-<meta property="og:image" content="https://benoitplante.github.io/blogue/files/profiles/photo-benoit.png">
+<meta property="og:image" content="https://benoitplante.github.io/blogue/posts/2025-05-21-premier-article/banner.png">
 <meta property="og:site_name" content="Benoit Plante">
 <meta property="og:image:height" content="1024">
-<meta property="og:image:width" content="1024">
-<meta name="twitter:title" content="– Benoit Plante">
+<meta property="og:image:width" content="1536">
+<meta name="twitter:title" content="Quand une IA devient co-chercheuse : réflexions autour de Robin – Benoit Plante">
 <meta name="twitter:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
-<meta name="twitter:image" content="https://benoitplante.github.io/blogue/files/profiles/photo-benoit.png">
+<meta name="twitter:image" content="https://benoitplante.github.io/blogue/posts/2025-05-21-premier-article/banner.png">
 <meta name="twitter:image-height" content="1024">
-<meta name="twitter:image-width" content="1024">
+<meta name="twitter:image-width" content="1536">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -200,7 +141,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Benoit Plante</span>
     </a>
   </div>
@@ -211,15 +152,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">À propos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts.html"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Blogue</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -228,25 +169,25 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-thématiques">    
         <li>
-    <a class="dropdown-item" href="./posts.html#category=metho">
+    <a class="dropdown-item" href="../../posts.html#category=metho">
  <span class="dropdown-text">Méthodologie augmentée</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./posts.html#category=clinique">
+    <a class="dropdown-item" href="../../posts.html#category=clinique">
  <span class="dropdown-text">Psychologie clinique &amp; IA</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./posts.html#category=enseignement">
+    <a class="dropdown-item" href="../../posts.html#category=enseignement">
  <span class="dropdown-text">Enseignement &amp; formation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./posts.html#category=ethique">
+    <a class="dropdown-item" href="../../posts.html#category=ethique">
  <span class="dropdown-text">Éthique, biais et transparence</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./outils.html"> 
+    <a class="nav-link" href="../../outils.html"> 
 <span class="menu-text">Outils</span></a>
   </li>  
 </ul>
@@ -262,105 +203,76 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#une-découverte-marquante" id="toc-une-découverte-marquante" class="nav-link active" data-scroll-target="#une-découverte-marquante">Une découverte marquante</a></li>
+  <li><a href="#quelles-implications-pour-la-psychologie" id="toc-quelles-implications-pour-la-psychologie" class="nav-link" data-scroll-target="#quelles-implications-pour-la-psychologie">Quelles implications pour la psychologie?</a></li>
+  <li><a href="#une-transformation-à-suivre-de-près" id="toc-une-transformation-à-suivre-de-près" class="nav-link" data-scroll-target="#une-transformation-à-suivre-de-près">Une transformation à suivre de près</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Quand une IA devient co-chercheuse : réflexions autour de Robin</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Méthodologie augmentée par l’IA</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta">
 
-<div class="hero-heading" style="text-align: center; margin-bottom: 2em;">
-<div class="quarto-figure quarto-figure-center" style="border-radius: 50%; margin-bottom: 1em;">
-<figure class="figure">
-<p><img src="files/profiles/photo-benoit.png" class="img-fluid figure-img" width="250"></p>
-<figcaption>Photo générée par l’IA</figcaption>
-</figure>
-</div>
-<p><span style="display: inline-flex; gap: 1em; justify-content: center;"> <a href="https://github.com/benplante" target="_blank"><i class="fa fa-github"></i></a> <a href="https://linkedin.com/in/benplante" target="_blank"><i class="fa fa-linkedin"></i></a> <a href="https://orcid.org/0009-0003-5449-427X" target="_blank"><i class="ai ai-orcid"></i></a> </span></p>
-<hr>
-<div class="hero-description" style="text-align: left;">
-<p>Je m’appelle <strong>Benoit Plante</strong>, coordonnateur scientifique du <a href="https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864">GRIN</a>, tuteur en psychologie à la <a href="https://www.teluq.ca/">TELUQ</a>, doctorant à l’UQTR et passionné par les liens entre la psychologie et l’intelligence artificielle.</p>
-<p>Ce blogue est mon espace personnel pour explorer, réfléchir et documenter mes découvertes à l’interface entre IA, science des données et la psychologie. J’y partage principalement les éléments suivants :</p>
-<ul>
-<li>La <strong>vulgarisation</strong> de travaux scientifiques sur l’IA en psychologie</li>
-<li>L’usage d’<strong>outils d’IA appliqués aux méthodes de recherche</strong> (analyse, rédaction, automatisation)</li>
-<li>Les <strong>enjeux éthiques, critiques et méthodologiques</strong> liés à l’a reproductibilité’utilisation de l’IA</li>
-<li>Des réflexions sur la <strong>formation</strong>, la pratique et les transformations du travail scientifique</li>
-</ul>
-<p>Ce blogue est aussi une invitation au dialogue : je souhaite y partager ce que j’apprends tout en entrant en conversation avec d’autres personnes qui s’interrogent, expérimentent et créent autour de ces intersections entre psychologie et technologies.</p>
-</div>
-</div>
-<section id="structure-du-site" class="level2">
-<h2 class="anchored" data-anchor-id="structure-du-site">Structure du site</h2>
-<p>Ce blogue est organisé pour vous permettre de naviguer facilement entre mes les différentes thématiques que je couvre ainsi que les outils que j’utilise et que je développe :</p>
-<ul>
-<li><strong>Blogue</strong> : l’ensemble des publications, publiés au fil de mes découvertes et expérimentations.</li>
-<li><strong>Thématiques</strong> — Pour explorer selon vos intérêts :
-<ul>
-<li><strong>Méthodologie augmentée</strong><br>
-<em>Comment l’IA peut-elle soutenir ou transformer nos façons de faire de la recherche ?</em></li>
-<li><strong>Psychologie clinique &amp; IA</strong><br>
-<em>Comment l’IA est-elle utilisée concrètement dans la pratique psychologique ? Quels en sont les apports et les limites ?</em></li>
-<li><strong>Enseignement &amp; formation</strong><br>
-<em>Comment l’IA change-t-elle nos façons d’apprendre, d’enseigner et de soutenir les étudiant·es ?</em></li>
-<li><strong>Éthique, biais et transparence</strong><br>
-<em>Quels risques, tensions et responsabilités accompagnent l’intégration de l’IA en psychologie ?</em></li>
-</ul></li>
-<li><strong>Outils</strong> : tutoriels et ressources que j’utilise dans la recherche en psychologie.</li>
-</ul>
-<p>Ce blogue est en constante évolution, et j’accueille volontiers les suggestions, commentaires ou idées de collaboration.</p>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Benoit Plante </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 21, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="une-découverte-marquante" class="level2">
+<h2 class="anchored" data-anchor-id="une-découverte-marquante">Une découverte marquante</h2>
+<p>Je suis tombé récemment sur une annonce qui m’a à la fois fasciné et interpellé : le laboratoire <a href="https://www.futurehouse.org">Future House</a>, un groupe de recherche basé à San Francisco qui explore les frontières de la découverte scientifique automatisée, a présenté <em>Robin</em>, une plateforme d’IA capable de réaliser plusieurs étapes clés du travail scientifique. Elle peut lire des articles, formuler des hypothèses, proposer des expériences, analyser les résultats et même suggérer des pistes de recherche à explorer ensuite. Et tout cela se fait à l’aide d’un système dit « multi-agent », avec l’intervention de chercheuses et chercheurs seulement pour les étapes en laboratoire.</p>
+<p>Un système multi-agent, c’est un ensemble de petits programmes spécialisés, appelés agents, qui collaborent pour accomplir des tâches complexes. Chacun a un rôle bien précis : certains cherchent dans la littérature scientifique, d’autres analysent les données d’expériences, d’autres encore comparent différentes pistes pour sélectionner les plus prometteuses. Dans le cas de Robin, ces agents s’appellent Crow, Falcon et Finch, et ils sont conçus pour se compléter comme une équipe de recherche virtuelle.</p>
+<p>Le preprint associé au projet, intitulé <em>Robin: A Multi-Agent System for Automating Scientific Discovery</em> (Ghareeb et al., 2025), présente une démonstration concrète dans le domaine biomédical : Robin a permis d’identifier un nouveau candidat thérapeutique pour traiter la dégénérescence maculaire liée à l’âge (forme sèche), en proposant une piste qui n’avait jamais été explorée auparavant — le ripasudil, un médicament déjà utilisé pour d’autres troubles oculaires. Tout le raisonnement scientifique, les figures et les analyses présentés dans l’article ont été générés par Robin.</p>
 </section>
-<section id="derniers-billets" class="level2">
-<h2 class="anchored" data-anchor-id="derniers-billets">Derniers billets</h2>
-<p>Découvrez les derniers articles publiés sur le blogue, ou explorez les <a href="./posts.html">billets par thématique</a>.</p>
-<div id="listing-recent-posts" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ==" data-listing-date-sort="1747800000000" data-listing-file-modified-sort="1747830357391" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="652">
-<a href="./posts/2025-05-21-premier-article/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2025-05-21-premier-article/banner.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Quand une IA devient co-chercheuse : réflexions autour de Robin
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-May 21, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="ZXZlbnQlMkNwcmVzZW50YXRpb24=" data-listing-date-sort="1725336000000" data-listing-file-modified-sort="1747751663960" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7">
-<a href="./posts/event-title/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./files/images/placeholder2.JPG" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Event item
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Sep 3, 2024
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-<p align="right">
-<a href="./posts.html">Tous les billets »</a>
-</p>
-
+<section id="quelles-implications-pour-la-psychologie" class="level2">
+<h2 class="anchored" data-anchor-id="quelles-implications-pour-la-psychologie">Quelles implications pour la psychologie?</h2>
+<p>Cette avancée m’amène à me poser des questions sur ce que cela signifie pour des disciplines comme la psychologie, où les données sont souvent plus complexes, nuancées, et ancrées dans des contextes humains.</p>
+<p>Aujourd’hui déjà, je considère que certains outils d’IA agissent comme de véritables partenaires dans nos démarches scientifiques. Je les utilise pour synthétiser de la littérature, organiser des corpus de données, ou encore proposer des structures d’analyse. Nous sommes donc déjà entrés dans une ère de recherche assistée. La nouveauté avec Robin, c’est que l’on entrevoit maintenant la possibilité d’un cycle de recherche entièrement automatisé — du moins dans certains contextes bien circonscrits.</p>
+<p>Par exemple, on peut imaginer des systèmes capables d’explorer des bases de données ouvertes, de formuler des hypothèses à partir de connaissances publiées, puis d’analyser des données accessibles publiquement pour confirmer ou rejeter ces hypothèses. Dans le domaine de la psychologie, cela pourrait se faire avec des jeux de données longitudinaux disponibles en libre accès, en lien avec le développement de l’enfant, la santé mentale ou les déterminants sociaux.</p>
+<p>Un système comme Robin pourrait théoriquement formuler des hypothèses à partir de ces corpus, effectuer des analyses exploratoires, et suggérer de nouvelles directions de recherche, le tout sans intervention humaine directe — tout en permettant une validation et une interprétation ensuite par des équipes humaines. Cela ne remplacerait pas la recherche participative ou contextuelle, mais cela permettrait de générer de nouvelles connaissances en parallèle, de façon continue.</p>
+</section>
+<section id="une-transformation-à-suivre-de-près" class="level2">
+<h2 class="anchored" data-anchor-id="une-transformation-à-suivre-de-près">Une transformation à suivre de près</h2>
+<p>Je vais suivre de près les développements autour de Robin et des autres projets similaires. Ils ouvrent une réflexion profonde sur notre manière de faire de la recherche, sur notre rapport à la connaissance, et sur la façon dont l’IA pourrait enrichir, sans remplacer, notre compréhension du monde. Ces technologies ne nous invitent pas seulement à revoir nos outils, mais à repenser nos méthodologies, nos collaborations et nos modèles de diffusion du savoir. Il se pourrait qu’une partie de la science de demain ne soit pas écrite par des humains, mais validée, partagée et enrichie par eux. C’est une perspective à la fois stimulante et exigeante, qui demande une vigilance éthique et une ouverture intellectuelle constante.</p>
+<p><strong>Référence :</strong><br>
+Ghareeb, A. E., Chang, B., Mitchener, L., Yiu, A., Szostkiewicz, C. J., Laurent, J. M., … &amp; Rodriques, S. G. (2025). <em>Robin: A multi-agent system for automating scientific discovery</em>. arXiv preprint arXiv:2505.13400. <a href="https://arxiv.org/abs/2505.13400">https://arxiv.org/abs/2505.13400</a></p>
+<hr>
 
 
 </section>
@@ -789,7 +701,7 @@ Sep 3, 2024
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="./posts.xml" target="_blank">
+    <a class="nav-link" href="../../posts.xml" target="_blank">
       <i class="bi bi-rss" role="img">
 </i> 
     </a>
