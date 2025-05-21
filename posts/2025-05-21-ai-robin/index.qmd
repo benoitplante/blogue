@@ -8,6 +8,9 @@ format: html
 image: banner.png
 ---
 
+![Bannière IA](banner.png)
+
+
 ## Une découverte marquante
 
 Je suis tombé récemment sur une annonce qui m’a à la fois fasciné et interpellé : le laboratoire [Future House](https://www.futurehouse.org), un groupe de recherche basé à San Francisco qui explore les frontières de la découverte scientifique automatisée, a présenté *Robin*, une plateforme d’IA capable de réaliser plusieurs étapes clés du travail scientifique. Elle peut lire des articles, formuler des hypothèses, proposer des expériences, analyser les résultats et même suggérer des pistes de recherche à explorer ensuite. Et tout cela se fait à l’aide d’un système dit « multi-agent », avec l’intervention de chercheuses et chercheurs seulement pour les étapes en laboratoire.
@@ -36,3 +39,6 @@ Je vais suivre de près les développements autour de Robin et des autres projet
 Ghareeb, A. E., Chang, B., Mitchener, L., Yiu, A., Szostkiewicz, C. J., Laurent, J. M., ... & Rodriques, S. G. (2025). *Robin: A multi-agent system for automating scientific discovery*. arXiv preprint arXiv:2505.13400. [https://arxiv.org/abs/2505.13400](https://arxiv.org/abs/2505.13400)
 
 ---
+<!--Include social share buttons-->
+
+{{< include /files/includes/_socialshare.qmd >}}
