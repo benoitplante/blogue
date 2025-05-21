@@ -1,0 +1,38 @@
+---
+title: "Quand une IA devient co-chercheuse : réflexions autour de Robin"
+description-meta: "Réflexion sur la plateforme Robin développée par Future House et ses implications pour la recherche en psychologie."
+author: "Benoit Plante"
+date: 2025-05-21
+categories: ["Méthodologie augmentée par l’IA"]
+format: html
+image: banner.png
+---
+
+## Une découverte marquante
+
+Je suis tombé récemment sur une annonce qui m’a à la fois fasciné et interpellé : le laboratoire [Future House](https://www.futurehouse.org), un groupe de recherche basé à San Francisco qui explore les frontières de la découverte scientifique automatisée, a présenté *Robin*, une plateforme d’IA capable de réaliser plusieurs étapes clés du travail scientifique. Elle peut lire des articles, formuler des hypothèses, proposer des expériences, analyser les résultats et même suggérer des pistes de recherche à explorer ensuite. Et tout cela se fait à l’aide d’un système dit « multi-agent », avec l’intervention de chercheuses et chercheurs seulement pour les étapes en laboratoire.
+
+Un système multi-agent, c’est un ensemble de petits programmes spécialisés, appelés agents, qui collaborent pour accomplir des tâches complexes. Chacun a un rôle bien précis : certains cherchent dans la littérature scientifique, d’autres analysent les données d’expériences, d’autres encore comparent différentes pistes pour sélectionner les plus prometteuses. Dans le cas de Robin, ces agents s’appellent Crow, Falcon et Finch, et ils sont conçus pour se compléter comme une équipe de recherche virtuelle.
+
+Le preprint associé au projet, intitulé *Robin: A Multi-Agent System for Automating Scientific Discovery* (Ghareeb et al., 2025), présente une démonstration concrète dans le domaine biomédical : Robin a permis d’identifier un nouveau candidat thérapeutique pour traiter la dégénérescence maculaire liée à l’âge (forme sèche), en proposant une piste qui n’avait jamais été explorée auparavant — le ripasudil, un médicament déjà utilisé pour d'autres troubles oculaires. Tout le raisonnement scientifique, les figures et les analyses présentés dans l’article ont été générés par Robin.
+
+## Quelles implications pour la psychologie?
+
+Cette avancée m’amène à me poser des questions sur ce que cela signifie pour des disciplines comme la psychologie, où les données sont souvent plus complexes, nuancées, et ancrées dans des contextes humains.
+
+Aujourd’hui déjà, je considère que certains outils d’IA agissent comme de véritables partenaires dans nos démarches scientifiques. Je les utilise pour synthétiser de la littérature, organiser des corpus de données, ou encore proposer des structures d’analyse. Nous sommes donc déjà entrés dans une ère de recherche assistée. La nouveauté avec Robin, c’est que l’on entrevoit maintenant la possibilité d’un cycle de recherche entièrement automatisé — du moins dans certains contextes bien circonscrits.
+
+Par exemple, on peut imaginer des systèmes capables d’explorer des bases de données ouvertes, de formuler des hypothèses à partir de connaissances publiées, puis d’analyser des données accessibles publiquement pour confirmer ou rejeter ces hypothèses. Dans le domaine de la psychologie, cela pourrait se faire avec des jeux de données longitudinaux disponibles en libre accès, en lien avec le développement de l’enfant, la santé mentale ou les déterminants sociaux.
+
+Un système comme Robin pourrait théoriquement formuler des hypothèses à partir de ces corpus, effectuer des analyses exploratoires, et suggérer de nouvelles directions de recherche, le tout sans intervention humaine directe — tout en permettant une validation et une interprétation ensuite par des équipes humaines. Cela ne remplacerait pas la recherche participative ou contextuelle, mais cela permettrait de générer de nouvelles connaissances en parallèle, de façon continue.
+
+
+## Une transformation à suivre de près
+
+Je vais suivre de près les développements autour de Robin et des autres projets similaires. Ils ouvrent une réflexion profonde sur notre manière de faire de la recherche, sur notre rapport à la connaissance, et sur la façon dont l’IA pourrait enrichir, sans remplacer, notre compréhension du monde. Ces technologies ne nous invitent pas seulement à revoir nos outils, mais à repenser nos méthodologies, nos collaborations et nos modèles de diffusion du savoir. Il se pourrait qu’une partie de la science de demain ne soit pas écrite par des humains, mais validée, partagée et enrichie par eux. C’est une perspective à la fois stimulante et exigeante, qui demande une vigilance éthique et une ouverture intellectuelle constante.
+
+
+**Référence :**  
+Ghareeb, A. E., Chang, B., Mitchener, L., Yiu, A., Szostkiewicz, C. J., Laurent, J. M., ... & Rodriques, S. G. (2025). *Robin: A multi-agent system for automating scientific discovery*. arXiv preprint arXiv:2505.13400. [https://arxiv.org/abs/2505.13400](https://arxiv.org/abs/2505.13400)
+
+---
