@@ -43,9 +43,6 @@ Ce blogue est mon espace personnel pour explorer, réfléchir et documenter mes 
 - La **vulgarisation** de travaux scientifiques sur l’IA en psychologie
 - L’usage d’**outils d’IA appliqués aux méthodes de recherche** (analyse, rédaction, automatisation)
 - Les **enjeux éthiques, critiques et méthodologiques** liés à l'a reproductibilité'utilisation de l'IA
-- Des réflexions sur la **formation**, la pratique et les transformations du travail scientifique
-
-Ce blogue est aussi une invitation au dialogue : je souhaite y partager ce que j’apprends tout en entrant en conversation avec d’autres personnes qui s’interrogent, expérimentent et créent autour de ces intersections entre psychologie et technologies.
 
 :::
 
@@ -59,13 +56,13 @@ Ce blogue est organisé pour vous permettre de naviguer facilement entre mes les
 - **Blogue** : l’ensemble des publications, publiés au fil de mes découvertes et expérimentations.
 - **Thématiques** — Pour explorer selon vos intérêts :
   - **Méthodologie augmentée**  
-    *Comment l’IA peut-elle soutenir ou transformer nos façons de faire de la recherche ?*
-  - **Psychologie clinique & IA**  
-    *Comment l’IA est-elle utilisée concrètement dans la pratique psychologique ? Quels en sont les apports et les limites ?*
+    *Publications d'articles sur l'IA et les méthodes de recherches*
+  - **Utilisation appliquée de l'IA**  
+    *Publication de projets appliqués de l'utilisation de l'IA*
   - **Enseignement & formation**  
-    *Comment l’IA change-t-elle nos façons d’apprendre, d’enseigner et de soutenir les étudiant·es ?*
+    *Publications sur l'IA et l'enseignement/formation*
   - **Éthique, biais et transparence**  
-    *Quels risques, tensions et responsabilités accompagnent l’intégration de l’IA en psychologie ?*
+    *Publications sur l'IA et l'éthique*
 - **Outils** : tutoriels et ressources que j’utilise dans la recherche en psychologie.
 
 Ce blogue est en constante évolution, et j’accueille volontiers les suggestions, commentaires ou idées de collaboration.
