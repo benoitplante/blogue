@@ -1,7 +1,7 @@
 ---
 title: "Nouveautés et publications"
-subtitle: "Publications sur les projets, articles, événements, outils et réflexions"
-description-meta: "Publications sur les projets, articles, événements, outils et réflexions en lien avec la psychologie et l’intelligence artificielle"
+subtitle: "Publications sur les projets, articles, outils et réflexions"
+description-meta: "Publications sur les projets, articles, outils et réflexions en lien avec la psychologie et l’intelligence artificielle"
 listing: 
   sort: "date desc"
   type: default
