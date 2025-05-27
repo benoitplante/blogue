@@ -25,8 +25,8 @@ website:
         menu:
           - text: Méthodologie augmentée
             href: posts.qmd#category=metho
-          - text: Psychologie clinique & IA
-            href: posts.qmd#category=clinique
+          - text: Utilisation appliquée de l'IA
+            href: posts.qmd#category=utilisation
           - text: Enseignement & formation
             href: posts.qmd#category=enseignement
           - text: Éthique, biais et transparence
