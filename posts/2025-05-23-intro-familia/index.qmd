@@ -1,10 +1,10 @@
-
 ---
 title: "Plonger dans la mémoire scientifique de la famille : l’IA à la rescousse"
 description-meta: "Exploration d’un projet de recherche basé sur la base Famili@, combinant données secondaires, méta-science et intelligence artificielle générative."
 date: 2025-05-23
-categories: ["IA générative & cognition", "Méthodologie augmentée par l’IA", "Méta-science"]
+categories: ["Méthodologie augmentée par l’IA", "Utilisation appliquée de l'IA"]
 format: html
+image: banner.png
 ---
 
 ## Plonger dans la mémoire scientifique de la famille : l’IA à la rescousse
