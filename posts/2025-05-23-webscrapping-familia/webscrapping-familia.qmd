@@ -4,6 +4,8 @@ description-meta: "Exploration d’un projet de recherche basé sur la base Fami
 date: 2025-05-23
 categories: ["Méthodologie augmentée par l’IA", "Utilisation appliquée de l'IA"]
 format: html
+execute:
+  eval: false
 ---
 
 Dans ce billet, je documente avec transparence le cheminement technique que j'ai suivi pour extraire les données du site [familia.ucs.inrs.ca](https://familia.ucs.inrs.ca/) et créer une base de données exploitable sur la recherche en psychologie portant sur la famille au Québec.
