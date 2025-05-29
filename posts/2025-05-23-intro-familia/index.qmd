@@ -1,5 +1,5 @@
 ---
-title: "Plonger dans la mémoire scientifique de la famille : l’IA à la rescousse"
+title: "Analyser les données de Famili@ en collaboration avec l'IA"
 description-meta: "Exploration d’un projet de recherche basé sur la base Famili@, combinant données secondaires, méta-science et intelligence artificielle générative."
 date: 2025-05-23
 categories: ["Méthodologie augmentée par l’IA", "Utilisation appliquée de l'IA"]
@@ -7,7 +7,7 @@ format: html
 image: banner.png
 ---
 
-## Plonger dans la mémoire scientifique de la famille : l’IA à la rescousse
+## Analyser les données de Famili@ en collaboration avec l'IA
 
 Depuis quelque temps, je m'intéresse aux possibilités de recherche offertes par les **données secondaires**. Internet regorge de trésors inexploités qui n'attendent qu'un regard curieux et un peu de code pour révéler leur potentiel. J'avais envie de m'y faire la main, de développer mes compétences en webscraping et en analyse de données, dans un domaine à la fois pertinent pour mon travail et riche intellectuellement.
 
@@ -25,37 +25,13 @@ Ce projet est aussi un terrain d’expérimentation pour l’utilisation de l’
 
 Mon objectif est double : mieux comprendre comment ces outils peuvent enrichir et accélérer certaines étapes du travail scientifique, mais aussi identifier leurs limites, leurs biais et leurs angles morts. Bref, c’est un projet d’**intégration critique de l’IA** dans un processus de recherche appliquée en sciences humaines.
 
-### La série de publications
-
-Voici le plan de match :
-
-1. **Webscraping et création de la base de données « psychologie »**  
-   Comment j’ai extrait les données pertinentes du site Famili@ pour construire un sous-ensemble dédié à la psychologie. Une opération de chirurgie informatique fine (avec quelques points de suture).
-
-2. **Discussion avec ChatGPT : que peut-on tirer de ces données ?**  
-   Dialogue itératif avec l’IA pour imaginer des analyses possibles, tester des hypothèses, et surtout, ne pas passer à côté de ce que je ne cherche pas encore.
-
-3. **Analyses quantitatives : que racontent les chiffres ?**  
-   Évolution des disciplines, types de documents, genre des auteur·rices… Un petit tour du côté de la bibliométrie maison, avec un soupçon de code R.
-
-4. **Analyses qualitatives : explorer les contenus**  
-   Mots-clés, résumés, thématiques... Quelles préoccupations traversent les écrits psychologiques recensés ? Ici, le traitement automatique du langage prend le relais.
-
-5. **Rédiger un article avec une IA : possible ou pas ?**  
-   Dernière étape : écrire un article scientifique, à quatre mains (humain + IA), sur l’évolution de la recherche en psychologie dans Famili@.
-
 ### Pourquoi partager ça ?
 
-Parce que l’IA bouleverse nos façons de faire — et qu’on gagne à rendre ces transformations visibles, discutables, perfectibles. Et parce que Famili@ est une richesse collective : **la revisiter avec des outils d’aujourd’hui, c’est aussi lui redonner vie**.
+Parce que l’IA bouleverse nos façons de faire — et qu’on gagne à rendre ces transformations visibles, discutables, perfectibles. Et parce que la base documentaire Famili@ me semble vraiment intéressante pour mieux comprendre comment les chercheurs et chercheuses en psychologie s'intéresse à la famille au Québec.
 
-Je vous donne donc rendez-vous très bientôt pour le premier billet de cette série, où je vous montrerai comment j’ai construit ma propre base de données à partir du site Famili@. Ce sera l’occasion de plonger ensemble dans les défis (et les petits plaisirs) du webscraping, étape fondatrice de cette aventure scientifique augmentée.
+Je vous donne donc rendez-vous très bientôt pour le premier billet de cette série, où je vous montrerai comment j’ai construit ma propre base de données à partir du site Famili@. Ce sera l’occasion de plonger ensemble dans les défis du webscraping, étape fondatrice de ce projet.
 
 ---
+<!--Include social share buttons-->
 
-### Pour résumer
-
-Ce projet est né d’un double désir : exploiter intelligemment des données secondaires accessibles en ligne, et explorer jusqu’où l’intelligence artificielle générative peut nous accompagner dans les différentes étapes d’un processus de recherche en sciences humaines.
-
-En mettant en lumière l’histoire de la recherche en psychologie familiale au Québec, tout en testant des méthodes d’analyse assistée par l’IA, j’espère ouvrir un espace de réflexion utile et stimulant, à la croisée de la méthodologie, de la science ouverte, et de la pratique professionnelle.
-
-Merci de me lire. Et si vous avez des idées, des suggestions ou des critiques (constructives de préférence!), je serai ravi d’en discuter avec vous au fil des billets.
+{{< include /files/includes/_socialshare.qmd >}}
