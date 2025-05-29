@@ -1,0 +1,226 @@
+[
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "Fall 2024,   Fall 2023\nClass 1 introduction."
+  },
+  {
+    "objectID": "teaching.html#class-1",
+    "href": "teaching.html#class-1",
+    "title": "Teaching",
+    "section": "",
+    "text": "Fall 2024,   Fall 2023\nClass 1 introduction."
+  },
+  {
+    "objectID": "teaching.html#class-2",
+    "href": "teaching.html#class-2",
+    "title": "Teaching",
+    "section": "Class 2",
+    "text": "Class 2\n\n\n\n\n\nSpring 2025,   Fall 2023\nClass 2 introduction."
+  },
+  {
+    "objectID": "teaching.html#class-3",
+    "href": "teaching.html#class-3",
+    "title": "Teaching",
+    "section": "Class 3",
+    "text": "Class 3\n\n\n\n\n\nSpring 2025,   Spring 2024\nClass 3 introduction."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Order By\n      Default\n      \n      \n      \n        Title\n      \n      \n        Team\n      \n      \n        Funder\n      \n      \n        Description\n      \n      \n        Start\n      \n      \n        End\n      \n      \n        Funding\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nTitle\n\n\n\nTeam\n\n\n\nFunder\n\n\n\nDescription\n\n\n\nFunding\n\n\n\nStart\n\n\n\nEnd\n\n\n\n\n\n\n\n\n\n\n\nExploring \n\n\nAcademic Website\n\n\nFunder\n\n\nThe goal of this project is to investigate .\n\n\n$0\n\n\n2024\n\n\n2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html",
+    "href": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html",
+    "title": "Extraire les données de Famili@ en collaboration avec l’IA",
+    "section": "",
+    "text": "Dans ce billet, je documente avec transparence le cheminement technique que j’ai suivi pour extraire les données du site familia.ucs.inrs.ca et créer une base de données exploitable sur la recherche en psychologie portant sur la famille au Québec.\nCe travail s’inscrit dans une démarche plus large de co-analyse assistée par intelligence artificielle, qui vise à produire un portrait actualisé de la recherche en psychologie sur la famille à partir des données disponibles dans la plateforme Famili@. L’objectif à terme est de décrire et quantifier l’évolution des thématiques, des approches théoriques et méthologiques dans la recherche familiale au Québec, dans les 40 dernières années, en collaboration avec une IA générative.\nMais avant d’analyser quoi que ce soit, il faut d’abord extraire les données. Et ce n’était pas chose simple. J’imagine que j’aurais possiblement pu demandé accès à la base documentaire directement, mais je voulais apprendre à faire du webscrapping pour d’autres projets futurs!"
+  },
+  {
+    "objectID": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#premiers-tests-et-limites-des-approches-classiques",
+    "href": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#premiers-tests-et-limites-des-approches-classiques",
+    "title": "Extraire les données de Famili@ en collaboration avec l’IA",
+    "section": "1. Premiers tests et limites des approches classiques",
+    "text": "1. Premiers tests et limites des approches classiques\nJ’ai d’abord exploré le site manuellement. Chaque fiche de projet apparaît dans une boîte visuelle, avec des champs visibles comme le titre, les auteurs, l’année et les mots-clés. Mon premier réflexe a été de tester le package rvest, qui permet d’extraire des données à partir d’une page HTML. Il s’agit d’un outil très efficace lorsqu’on travaille avec des sites web statiques : on peut identifier des balises HTML précises (comme &lt;h3&gt; pour les titres ou des classes CSS comme .auteursNotice) et extraire leur contenu directement dans un tableau.\nMais rapidement, j’ai compris que les données ne se trouvaient pas directement dans le HTML statique récupéré par rvest. En fait, le contenu est chargé dynamiquement via JavaScript, c’est-à-dire que le HTML initial ne contient pas encore les résultats — ceux-ci apparaissent seulement une fois que le navigateur a exécuté le JavaScript. Et comme rvest n’exécute pas de JavaScript, il est aveugle à ces contenus. Résultat : les sélecteurs CSS que je testais ne renvoyaient rien ou des blocs incomplets. Il fallait donc une approche capable de simuler le comportement d’un navigateur moderne."
+  },
+  {
+    "objectID": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#passage-à-chromote-avec-chatgpt",
+    "href": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#passage-à-chromote-avec-chatgpt",
+    "title": "Extraire les données de Famili@ en collaboration avec l’IA",
+    "section": "2. Passage à Chromote avec ChatGPT",
+    "text": "2. Passage à Chromote avec ChatGPT\nC’est ici que ChatGPT entre en jeu pour la première fois. L’approche classique ne fonctionnant pas, j’ai posé le problème à l’IA : comment extraire des données qui ne sont pas directement visibles dans le code de la page web, mais qui s’affichent seulement une fois que la page est complètement chargée dans le navigateur ?\nChatGPT m’a suggéré une alternative : utiliser le package chromote. Ce dernier permet de piloter un navigateur Chrome en arrière-plan, un peu comme si on simulait un utilisateur réel qui charge la page, attend que tout s’affiche, puis regarde le contenu une fois complet. On appelle cela un navigateur “sans tête” (headless).\nGrâce à chromote, on peut donc accéder à des pages web après que le JavaScript a fini de s’exécuter — ce qui est essentiel ici, puisque le site familia.ucs.inrs.ca n’affiche pas directement les données dans le code source, mais les ajoute ensuite dynamiquement à la page.\nAvec l’aide de ChatGPT, nous avons mis en place une boucle automatique : elle charge chaque page, attend l’affichage complet des données, extrait le contenu HTML généré dynamiquement, puis le transmet à rvest pour l’analyse. C’était déjà une belle avancée.\nMais très vite, je me suis rendu compte que les éléments visibles dans la page (comme les titres, les auteurs ou les mots-clés) étaient difficilement récupérables via leurs balises HTML. Les classes CSS n’étaient pas fiables, certaines fiches ne suivaient pas la même structure, et il devenait difficile de tout extraire proprement. Il fallait donc une autre solution."
+  },
+  {
+    "objectID": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#découverte-de-la-structure-json-cachée",
+    "href": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#découverte-de-la-structure-json-cachée",
+    "title": "Extraire les données de Famili@ en collaboration avec l’IA",
+    "section": "3. Découverte de la structure JSON cachée",
+    "text": "3. Découverte de la structure JSON cachée\nEn continuant à inspecter le site plus attentivement, j’ai découvert un détail qui allait tout changer : chaque fiche de projet comprenait un champ de formulaire invisible à l’écran, un peu comme une petite boîte cachée dans le code. Cette boîte, identifiée par &lt;input name=\"numeroNotice\"&gt;, contenait une information appelée value. Et cette valeur n’était pas une simple phrase, mais une chaîne de caractères au format JSON — une façon très courante de structurer des données dans le monde informatique.\nPour vulgariser : le JSON (JavaScript Object Notation) est une sorte de tableau ou fiche d’information organisée en paires “nom : valeur”. Par exemple, on peut y trouver : \"Titre\" : \"Mon projet de recherche\", \"date\" : \"2024\", \"MotsCles\" : \"parentalité / attachement / adolescence\", etc. Cela signifie que chaque fiche de projet était déjà pré-structurée, et prête à être exploitée… pourvu qu’on sache comment la lire.\nAvec l’aide de ChatGPT, nous avons ajusté notre fonction d’extraction pour cibler ces balises &lt;input&gt;, extraire le champ value, et le convertir en données structurées grâce à la fonction fromJSON() du package jsonlite. On a ensuite transformé tout cela en tableau (tibble) utilisable dans R.\nC’était exactement ce qu’il nous fallait : une façon fiable, standardisée, et complète d’accéder à l’information — sans avoir à deviner la position du titre ou des auteurs dans la page. Une belle découverte rendue possible grâce à un peu de curiosité… et beaucoup d’essais-erreurs."
+  },
+  {
+    "objectID": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#gestion-des-erreurs-champs-manquants-et-pages-vides",
+    "href": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#gestion-des-erreurs-champs-manquants-et-pages-vides",
+    "title": "Extraire les données de Famili@ en collaboration avec l’IA",
+    "section": "4. Gestion des erreurs : champs manquants et pages vides",
+    "text": "4. Gestion des erreurs : champs manquants et pages vides\nÀ partir de ce moment, nous avons rencontré d’autres types de défis. Certaines fiches n’ont pas tous les champs (ex. : URL ou Sommaire absents). L’appel à transmute() échouait dès qu’un champ manquait. Avec l’aide de ChatGPT, nous avons ajouté une vérification : si une colonne est absente, on la crée vide (NA). Cette validation permet de fusionner toutes les pages sans erreur."
+  },
+  {
+    "objectID": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#pagination-dynamique-et-boucle-automatique",
+    "href": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#pagination-dynamique-et-boucle-automatique",
+    "title": "Extraire les données de Famili@ en collaboration avec l’IA",
+    "section": "5. Pagination dynamique et boucle automatique",
+    "text": "5. Pagination dynamique et boucle automatique\nUne fois qu’on savait comment extraire les données d’une page, il restait un défi important : le site ne présente pas tous les projets en une seule fois. Il les répartit sur plusieurs pages, qu’il faut faire défiler en cliquant sur « page suivante ».\nDans un site classique, on pourrait cliquer manuellement ou simuler un clic avec du code. Mais ici, chaque page suivante a une adresse différente dans l’URL, et ces liens sont insérés dans la page au moment de son chargement. Il fallait donc trouver une façon automatique de naviguer de page en page.\nChatGPT m’a proposé une stratégie élégante : plutôt que de simuler un clic, on peut lire directement dans le code de la page s’il existe un lien « suivant », grâce à un attribut appelé rel=\"next\". Si ce lien est présent, on le suit. Si ce n’est plus le cas, c’est que nous avons atteint la dernière page.\nCette méthode a permis de parcourir l’intégralité du site de manière fluide, sans jamais devoir prédire combien de pages il y avait. Un bon exemple de la manière dont une IA peut suggérer des solutions simples à des problèmes complexes — surtout quand on ne connaît pas toutes les subtilités du fonctionnement d’un site web dynamique."
+  },
+  {
+    "objectID": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#code-final-commenté",
+    "href": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#code-final-commenté",
+    "title": "Extraire les données de Famili@ en collaboration avec l’IA",
+    "section": "6. Code final commenté",
+    "text": "6. Code final commenté\nVoici le code final complet, que j’ai co-construit avec ChatGPT. Il comprend à la fois la fonction d’extraction à partir du HTML dynamique et celle qui parcourt toutes les pages automatiquement. Je l’ai commenté brièvement pour en faciliter la compréhension.\n\nlibrary(chromote)\nlibrary(rvest)\nlibrary(dplyr)\nlibrary(stringr)\nlibrary(tibble)\nlibrary(jsonlite)\n\n# Fonction qui extrait les données d'une page HTML\nextract_projects &lt;- function(page_html) {\n  page &lt;- read_html(page_html)\n  inputs &lt;- page %&gt;% html_elements(\"input[name='numeroNotice']\")\n\n  json_list &lt;- inputs %&gt;%\n    html_attr(\"value\") %&gt;%\n    lapply(fromJSON)\n\n  df &lt;- bind_rows(json_list)\n\n  expected_cols &lt;- c(\"Titre\", \"Auteurs\", \"date\", \"TypeDocument\", \"MotsCles\",\n                     \"Thematiques\", \"Disciplines\", \"TypesDocs\", \"Sommaire\",\n                     \"Notice\", \"T2\", \"VL\", \"IS\", \"SP\", \"URL\")\n  for (col in expected_cols) {\n    if (!col %in% names(df)) df[[col]] &lt;- NA\n  }\n\n  df %&gt;% transmute(\n    titre = Titre,\n    auteurs = Auteurs,\n    annee = date,\n    type_doc = TypeDocument,\n    mots_cles = MotsCles,\n    thematiques = Thematiques,\n    disciplines = Disciplines,\n    types_document = TypesDocs,\n    sommaire = Sommaire,\n    reference = Notice,\n    revue = T2,\n    volume = VL,\n    numero = IS,\n    pages = SP,\n    url = URL\n  )\n}\n\n# Fonction principale de scraping multi-pages\nscrape_all_pages &lt;- function(base_url) {\n  b &lt;- ChromoteSession$new()\n  b$Page$navigate(base_url)\n  b$Page$loadEventFired()\n  Sys.sleep(4)\n\n  all_data &lt;- list()\n  page_num &lt;- 1\n\n  repeat {\n    message(\"Chargement de la page \", page_num, \"...\")\n\n    tryCatch({\n      b$Runtime$evaluate(\n        expression = \"\n        new Promise(resolve =&gt; {\n          const waitForResults = () =&gt; {\n            const items = document.querySelectorAll('input[name=\\\\'numeroNotice\\\\']');\n            if (items.length &gt; 0) {\n              resolve('ok');\n            } else {\n              setTimeout(waitForResults, 500);\n            }\n          };\n          waitForResults();\n        });\"\n      )\n    }, error = function(e) {\n      message(\"Erreur de chargement.\")\n    })\n\n    Sys.sleep(1)\n\n    html &lt;- b$DOM$getDocument()\n    node_id &lt;- html$root$nodeId\n    html_content &lt;- b$DOM$getOuterHTML(nodeId = node_id)$outerHTML\n\n    projects &lt;- extract_projects(html_content)\n    all_data[[page_num]] &lt;- projects\n    message(\"Page \", page_num, \" récupérée.\")\n\n    next_url &lt;- tryCatch({\n      b$Runtime$evaluate(\n        expression = \"(function() {\n          const nextBtn = document.querySelector('a[data-ci-pagination-page][rel=\\\\\\\"next\\\\\\\"]');\n          return nextBtn ? nextBtn.href : null;\n        })();\"\n      )$result$value\n    }, error = function(e) NULL)\n\n    if (is.null(next_url)) {\n      message(\"Fin du parcours : plus de page suivante.\")\n      break\n    }\n\n    b$Page$navigate(next_url)\n    b$Page$loadEventFired()\n    Sys.sleep(5)\n\n    page_num &lt;- page_num + 1\n  }\n\n  b$close()\n  bind_rows(all_data)\n}\n\n# Appel final\nbase_url &lt;- \"https://familia.ucs.inrs.ca/resultat-de-recherche/?discipline[]=438\"\ndata_familia &lt;- scrape_all_pages(base_url)\nwrite.csv(data_familia, \"projets_familia_complet.csv\", row.names = FALSE)"
+  },
+  {
+    "objectID": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#ce-que-jai-appris-et-ce-que-je-retiens",
+    "href": "posts/2025-05-23-webscrapping-familia/webscrapping-familia.html#ce-que-jai-appris-et-ce-que-je-retiens",
+    "title": "Extraire les données de Famili@ en collaboration avec l’IA",
+    "section": "7. Ce que j’ai appris (et ce que je retiens)",
+    "text": "7. Ce que j’ai appris (et ce que je retiens)\nCe projet m’a permis de vivre une expérience d’apprentissage à la fois technique, méthodologique et réflexive. Voici les principales leçons que j’en tire :\nComprendre la logique d’un site web est un prérequis fondamental. Avant même de coder, j’ai dû prendre le temps d’inspecter manuellement la structure du site. Ce travail exploratoire m’a permis de réaliser que le HTML visible au départ ne contenait pas les données… ce qui est loin d’être intuitif pour un œil non averti.\nTravailler avec une IA a facilité les essais-erreurs. À chaque difficulté rencontrée, je pouvais reformuler mon problème à ChatGPT. L’IA me proposait alors des pistes de solution, que je testais immédiatement dans R. Cette boucle itérative — formuler, tester, ajuster — a non seulement accéléré mon travail, mais m’a aussi permis de mieux comprendre les logiques sous-jacentes.\nLa collaboration humain-IA ne remplace pas l’analyse humaine, elle la renforce. Je suis resté en contrôle tout au long du processus. C’est moi qui inspectais les structures du site, qui interprétais les erreurs, qui décidais quoi extraire. Mais ChatGPT m’a permis d’élargir rapidement mon répertoire technique et de débloquer des obstacles qui, seul, m’auraient sans doute pris beaucoup plus de temps à surmonter.\nL’articulation entre outils est essentielle. chromote m’a permis d’accéder à du contenu dynamique, jsonlite de lire des structures JSON, rvest de lire le HTML, et dplyr de structurer les tableaux. Ces outils, utilisés ensemble, ont rendu possible ce qui me semblait complexe au départ.\nFinalement, documenter le processus est aussi une forme d’apprentissage. Prendre le temps d’écrire ce billet m’a permis de prendre du recul sur le chemin parcouru, les décisions prises, et les zones d’incertitude restantes. C’est une bonne pratique que je veux conserver pour mes prochains projets.\nLe prochain billet portera sur le nettoyage des champs extraits et la structuration d’une base de données propre et interrogeable. J’y traiterai, entre autres, de l’éclatement des mots-clés, de la normalisation des auteurs et de la préparation d’un corpus pour analyse thématique."
+  },
+  {
+    "objectID": "posts/2025-05-21-ai-robin/index.html",
+    "href": "posts/2025-05-21-ai-robin/index.html",
+    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
+    "section": "",
+    "text": "Générée par ChatGPT"
+  },
+  {
+    "objectID": "posts/2025-05-21-ai-robin/index.html#une-découverte-marquante",
+    "href": "posts/2025-05-21-ai-robin/index.html#une-découverte-marquante",
+    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
+    "section": "Une découverte marquante",
+    "text": "Une découverte marquante\nJe suis tombé récemment sur une annonce qui m’a à la fois fasciné et interpellé : le laboratoire Future House, un groupe de recherche basé à San Francisco qui explore les frontières de la découverte scientifique automatisée, a présenté Robin, une plateforme d’IA capable de réaliser plusieurs étapes clés du travail scientifique. Elle peut lire des articles, formuler des hypothèses, proposer des expériences, analyser les résultats et même suggérer des pistes de recherche à explorer ensuite. Et tout cela se fait à l’aide d’un système dit « multi-agent », avec l’intervention de chercheuses et chercheurs seulement pour les étapes en laboratoire.\nUn système multi-agent, c’est un ensemble de petits programmes spécialisés, appelés agents, qui collaborent pour accomplir des tâches complexes. Chacun a un rôle bien précis : certains cherchent dans la littérature scientifique, d’autres analysent les données d’expériences, d’autres encore comparent différentes pistes pour sélectionner les plus prometteuses. Dans le cas de Robin, ces agents s’appellent Crow, Falcon et Finch, et ils sont conçus pour se compléter comme une équipe de recherche virtuelle.\nLe preprint associé au projet, intitulé Robin: A Multi-Agent System for Automating Scientific Discovery (Ghareeb et al., 2025), présente une démonstration concrète dans le domaine biomédical : Robin a permis d’identifier un nouveau candidat thérapeutique pour traiter la dégénérescence maculaire liée à l’âge (forme sèche), en proposant une piste qui n’avait jamais été explorée auparavant — le ripasudil, un médicament déjà utilisé pour d’autres troubles oculaires. Tout le raisonnement scientifique, les figures et les analyses présentés dans l’article ont été générés par Robin."
+  },
+  {
+    "objectID": "posts/2025-05-21-ai-robin/index.html#quelles-implications-pour-la-psychologie",
+    "href": "posts/2025-05-21-ai-robin/index.html#quelles-implications-pour-la-psychologie",
+    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
+    "section": "Quelles implications pour la psychologie?",
+    "text": "Quelles implications pour la psychologie?\nCette avancée m’amène à me poser des questions sur ce que cela signifie pour des disciplines comme la psychologie, où les données sont souvent plus complexes, nuancées, et ancrées dans des contextes humains.\nAujourd’hui déjà, je considère que certains outils d’IA agissent comme de véritables partenaires dans nos démarches scientifiques. Je les utilise pour synthétiser de la littérature, organiser des corpus de données, ou encore proposer des structures d’analyse. Nous sommes donc déjà entrés dans une ère de recherche assistée. La nouveauté avec Robin, c’est que l’on entrevoit maintenant la possibilité d’un cycle de recherche entièrement automatisé — du moins dans certains contextes bien circonscrits.\nPar exemple, on peut imaginer des systèmes capables d’explorer des bases de données ouvertes, de formuler des hypothèses à partir de connaissances publiées, puis d’analyser des données accessibles publiquement pour confirmer ou rejeter ces hypothèses. Dans le domaine de la psychologie, cela pourrait se faire avec des jeux de données longitudinaux disponibles en libre accès, en lien avec le développement de l’enfant, la santé mentale ou les déterminants sociaux.\nUn système comme Robin pourrait théoriquement formuler des hypothèses à partir de ces corpus, effectuer des analyses exploratoires, et suggérer de nouvelles directions de recherche, le tout sans intervention humaine directe — tout en permettant une validation et une interprétation ensuite par des équipes humaines. Cela ne remplacerait pas la recherche participative ou contextuelle, mais cela permettrait de générer de nouvelles connaissances en parallèle, de façon continue."
+  },
+  {
+    "objectID": "posts/2025-05-21-ai-robin/index.html#une-transformation-à-suivre-de-près",
+    "href": "posts/2025-05-21-ai-robin/index.html#une-transformation-à-suivre-de-près",
+    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
+    "section": "Une transformation à suivre de près",
+    "text": "Une transformation à suivre de près\nJe vais suivre de près les développements autour de Robin et des autres projets similaires. Ils ouvrent une réflexion profonde sur notre manière de faire de la recherche, sur notre rapport à la connaissance, et sur la façon dont l’IA pourrait enrichir, sans remplacer, notre compréhension du monde. Ces technologies ne nous invitent pas seulement à revoir nos outils, mais à repenser nos méthodologies, nos collaborations et nos modèles de diffusion du savoir. Il se pourrait qu’une partie de la science de demain ne soit pas écrite par des humains, mais validée, partagée et enrichie par eux. C’est une perspective à la fois stimulante et exigeante, qui demande une vigilance éthique et une ouverture intellectuelle constante.\nRéférence :\nGhareeb, A. E., Chang, B., Mitchener, L., Yiu, A., Szostkiewicz, C. J., Laurent, J. M., … & Rodriques, S. G. (2025). Robin: A multi-agent system for automating scientific discovery. arXiv preprint arXiv:2505.13400. https://arxiv.org/abs/2505.13400"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Blogue – Psychologie & Intelligence artificielle\nBenoit Plante\nCoordonnateur scientifique | Ph.D(c) en psychologie\nCourriel : benoit.plante@uqtr.ca"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "À propos",
+    "section": "",
+    "text": "Je m’appelle Benoit Plante. Je suis coordonnateur scientifique du GRIN – Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés, tuteur en psychologie à la TELUQ et doctorant à l’Université du Québec à Trois-Rivières.\nJe m’intéresse aux usages de l’intelligence artificielle dans la recherche en psychologie. J’explore comment ces technologies peuvent soutenir les projets de recherche et les méthodes en psychologie. En parallèle, je m’intéresse à la science ouverte, l’utilisation des données secondaires et l’utilisation de R comme outil d’analyse en psychologie."
+  },
+  {
+    "objectID": "about.html#qui-suis-je",
+    "href": "about.html#qui-suis-je",
+    "title": "À propos",
+    "section": "",
+    "text": "Je m’appelle Benoit Plante. Je suis coordonnateur scientifique du GRIN – Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés, tuteur en psychologie à la TELUQ et doctorant à l’Université du Québec à Trois-Rivières.\nJe m’intéresse aux usages de l’intelligence artificielle dans la recherche en psychologie. J’explore comment ces technologies peuvent soutenir les projets de recherche et les méthodes en psychologie. En parallèle, je m’intéresse à la science ouverte, l’utilisation des données secondaires et l’utilisation de R comme outil d’analyse en psychologie."
+  },
+  {
+    "objectID": "about.html#pourquoi-ce-blogue",
+    "href": "about.html#pourquoi-ce-blogue",
+    "title": "À propos",
+    "section": "Pourquoi ce blogue ?",
+    "text": "Pourquoi ce blogue ?\nCe blogue est un carnet de bord personnel et professionnel, que j’utilise pour partager les articles scientifiques les plus récents sur l’IA et la recherche en psychologue, pour documentater mes expérimentations dans l’utilisation d’outils d’IA et partager mes réflexions et apprentissages. J’y consigne ce que j’apprends et teste dans le cadre de mes projets :\nComme le blogue s’intéresse à l’IA, je produis l’ensemble du contenu en collaboration avec l’intelligence artificielle, principalement via mes échanges avec ChatGPT. J’utilise ce partenariat pour réfléchir, structurer et produire les publications et le code qui est utilisées, dans une logique de co-écriture consciente et critique. Je cherche à être le plus transparent possible dans l’utilisation de l’IA dans les publications.\nCe blogue est volontairement exploratoire. J’y publie à mon rythme, sans prétention à l’exhaustivité, mais avec l’envie de contribuer à une culture de partage, de dialogue et d’expérimentation."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Benoit Plante",
+    "section": "",
+    "text": "Photo générée par l’IA\n\n\n    \n\n\nJe m’appelle Benoit Plante, coordonnateur scientifique du GRIN, tuteur en psychologie à la TELUQ, doctorant à l’UQTR et passionné par les liens entre la psychologie et l’intelligence artificielle.\nCe blogue est mon espace personnel pour explorer, réfléchir et documenter mes découvertes à l’interface entre IA, science des données et la psychologie. J’y partage principalement les éléments suivants :\n\nLa vulgarisation de travaux scientifiques sur l’IA en psychologie\nL’usage d’outils d’IA appliqués aux méthodes de recherche (analyse, rédaction, automatisation)\nLes enjeux éthiques, critiques et méthodologiques liés à l’a reproductibilité’utilisation de l’IA"
+  },
+  {
+    "objectID": "index.html#structure-du-site",
+    "href": "index.html#structure-du-site",
+    "title": "Benoit Plante",
+    "section": "Structure du site",
+    "text": "Structure du site\nCe blogue est organisé pour vous permettre de naviguer facilement entre mes les différentes thématiques que je couvre ainsi que les outils que j’utilise et que je développe :\n\nBlogue : l’ensemble des publications, publiés au fil de mes découvertes et expérimentations.\nThématiques — Pour explorer selon vos intérêts :\n\nMéthodologie augmentée\nPublications d’articles sur l’IA et les méthodes de recherches\nUtilisation appliquée de l’IA\nPublication de projets appliqués de l’utilisation de l’IA\nEnseignement & formation\nPublications sur l’IA et l’enseignement/formation\nÉthique, biais et transparence\nPublications sur l’IA et l’éthique\n\nOutils : tutoriels et ressources que j’utilise dans la recherche en psychologie.\n\nCe blogue est en constante évolution, et j’accueille volontiers les suggestions, commentaires ou idées de collaboration."
+  },
+  {
+    "objectID": "index.html#derniers-billets",
+    "href": "index.html#derniers-billets",
+    "title": "Benoit Plante",
+    "section": "Derniers billets",
+    "text": "Derniers billets\nDécouvrez les derniers articles publiés sur le blogue, ou explorez les billets par thématique.\n\n\n\n\n\n\n\n\n\n\nAnalyser les données de Famili@ en collaboration avec l’IA\n\n\n\nMay 23, 2025\n\n\n\n\n\n\n\n\n\n\n\nExtraire les données de Famili@ en collaboration avec l’IA\n\n\n\nMay 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuand une IA devient co-chercheuse : réflexions autour de Robin\n\n\n\nMay 21, 2025\n\n\n\n\n\n\nNo matching items\n\n\nTous les billets »"
+  },
+  {
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "People",
+    "section": "",
+    "text": "PI\n\n\n\n\n\n\n\n\n\n\n\n\n\nPhD Student\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people.html#team",
+    "href": "people.html#team",
+    "title": "People",
+    "section": "",
+    "text": "PI\n\n\n\n\n\n\n\n\n\n\n\n\n\nPhD Student\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people.html#alumni",
+    "href": "people.html#alumni",
+    "title": "People",
+    "section": "Alumni",
+    "text": "Alumni\n\n\n   \n    \n    \n      Order By\n      Default\n      \n      \n      \n        Name\n      \n      \n        Role\n      \n      \n        Started\n      \n      \n        Ended\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nName\n\n\n\nRole\n\n\n\nStarted\n\n\n\nEnded\n\n\n\n\n\n\n\n\n\n\n\nStudent Name\n\n\nPhD Student\n\n\n2024\n\n\n2025\n\n\n\n\n\n\n\n\n\nPI Name\n\n\nPI\n\n\n \n\n\n \n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2025-05-23-intro-familia/intro-familia.html",
+    "href": "posts/2025-05-23-intro-familia/intro-familia.html",
+    "title": "Analyser les données de Famili@ en collaboration avec l’IA",
+    "section": "",
+    "text": "Depuis quelque temps, je m’intéresse aux possibilités de recherche offertes par les données secondaires. Internet regorge de trésors inexploités qui n’attendent qu’un regard curieux et un peu de code pour révéler leur potentiel. J’avais envie de m’y faire la main, de développer mes compétences en webscraping et en analyse de données, dans un domaine à la fois pertinent pour mon travail et riche intellectuellement.\nC’est ainsi que je me suis tourné vers Famili@, la base documentaire des recherches sur la famille. J’ai découvert l’existence de cette base documentaire dans le cadre d’un projet de recherche mené en collaboration avec le Partenariat Familles en mouvance de l’INRS, organisme responsable de sa mise à jour. Créée en 1998, Famili@ est la première base documentaire francophone en sciences humaines consacrée exclusivement à la famille. Elle regroupe aujourd’hui plus de 18 000 fiches, couvrant thèses, articles et rapports souvent absents des grandes bases internationales.\nMais mon intérêt dépasse l’aspect documentaire : ce projet est aussi une porte d’entrée vers un champ que je souhaite explorer davantage, la méta-science, c’est-à-dire l’étude de la science elle-même. Avec Famili@, j’ai entre les mains un ensemble de données qui me permet d’observer l’évolution de la production scientifique en psychologie familiale au Québec.\n\n\nJe veux documenter, de façon transparente et critique, l’ensemble du processus de recherche que j’entreprends à partir de la base Famili@. De l’extraction automatisée des données à l’écriture d’un article scientifique, chaque étape sera partagée ici, avec ses réussites, ses ratés, et surtout, ce que j’apprends en cours de route.\n\n\n\nCe projet est aussi un terrain d’expérimentation pour l’utilisation de l’intelligence artificielle générative dans un processus de recherche complet. De l’extraction des données avec du code R généré ou optimisé par l’IA, aux séances de remue-méninges pour faire émerger des idées d’analyses, en passant par la rédaction de billets comme celui-ci et, ultimement, d’un article scientifique, l’IA m’accompagne à chaque étape.\nMon objectif est double : mieux comprendre comment ces outils peuvent enrichir et accélérer certaines étapes du travail scientifique, mais aussi identifier leurs limites, leurs biais et leurs angles morts. Bref, c’est un projet d’intégration critique de l’IA dans un processus de recherche appliquée en sciences humaines.\n\n\n\nParce que l’IA bouleverse nos façons de faire — et qu’on gagne à rendre ces transformations visibles, discutables, perfectibles. Et parce que la base documentaire Famili@ me semble vraiment intéressante pour mieux comprendre comment les chercheurs et chercheuses en psychologie s’intéresse à la famille au Québec.\nJe vous donne donc rendez-vous très bientôt pour le premier billet de cette série, où je vous montrerai comment j’ai construit ma propre base de données à partir du site Famili@. Ce sera l’occasion de plonger ensemble dans les défis du webscraping, étape fondatrice de ce projet."
+  },
+  {
+    "objectID": "posts/2025-05-23-intro-familia/intro-familia.html#analyser-les-données-de-famili-en-collaboration-avec-lia",
+    "href": "posts/2025-05-23-intro-familia/intro-familia.html#analyser-les-données-de-famili-en-collaboration-avec-lia",
+    "title": "Analyser les données de Famili@ en collaboration avec l’IA",
+    "section": "",
+    "text": "Depuis quelque temps, je m’intéresse aux possibilités de recherche offertes par les données secondaires. Internet regorge de trésors inexploités qui n’attendent qu’un regard curieux et un peu de code pour révéler leur potentiel. J’avais envie de m’y faire la main, de développer mes compétences en webscraping et en analyse de données, dans un domaine à la fois pertinent pour mon travail et riche intellectuellement.\nC’est ainsi que je me suis tourné vers Famili@, la base documentaire des recherches sur la famille. J’ai découvert l’existence de cette base documentaire dans le cadre d’un projet de recherche mené en collaboration avec le Partenariat Familles en mouvance de l’INRS, organisme responsable de sa mise à jour. Créée en 1998, Famili@ est la première base documentaire francophone en sciences humaines consacrée exclusivement à la famille. Elle regroupe aujourd’hui plus de 18 000 fiches, couvrant thèses, articles et rapports souvent absents des grandes bases internationales.\nMais mon intérêt dépasse l’aspect documentaire : ce projet est aussi une porte d’entrée vers un champ que je souhaite explorer davantage, la méta-science, c’est-à-dire l’étude de la science elle-même. Avec Famili@, j’ai entre les mains un ensemble de données qui me permet d’observer l’évolution de la production scientifique en psychologie familiale au Québec.\n\n\nJe veux documenter, de façon transparente et critique, l’ensemble du processus de recherche que j’entreprends à partir de la base Famili@. De l’extraction automatisée des données à l’écriture d’un article scientifique, chaque étape sera partagée ici, avec ses réussites, ses ratés, et surtout, ce que j’apprends en cours de route.\n\n\n\nCe projet est aussi un terrain d’expérimentation pour l’utilisation de l’intelligence artificielle générative dans un processus de recherche complet. De l’extraction des données avec du code R généré ou optimisé par l’IA, aux séances de remue-méninges pour faire émerger des idées d’analyses, en passant par la rédaction de billets comme celui-ci et, ultimement, d’un article scientifique, l’IA m’accompagne à chaque étape.\nMon objectif est double : mieux comprendre comment ces outils peuvent enrichir et accélérer certaines étapes du travail scientifique, mais aussi identifier leurs limites, leurs biais et leurs angles morts. Bref, c’est un projet d’intégration critique de l’IA dans un processus de recherche appliquée en sciences humaines.\n\n\n\nParce que l’IA bouleverse nos façons de faire — et qu’on gagne à rendre ces transformations visibles, discutables, perfectibles. Et parce que la base documentaire Famili@ me semble vraiment intéressante pour mieux comprendre comment les chercheurs et chercheuses en psychologie s’intéresse à la famille au Québec.\nJe vous donne donc rendez-vous très bientôt pour le premier billet de cette série, où je vous montrerai comment j’ai construit ma propre base de données à partir du site Famili@. Ce sera l’occasion de plonger ensemble dans les défis du webscraping, étape fondatrice de ce projet."
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Nouveautés et publications",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nAnalyser les données de Famili@ en collaboration avec l’IA\n\n\n\nMéthodologie augmentée par l’IA\n\nUtilisation appliquée de l'IA\n\n\n\n\n\n\n\n\n\nMay 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nExtraire les données de Famili@ en collaboration avec l’IA\n\n\n\nMéthodologie augmentée par l’IA\n\nUtilisation appliquée de l'IA\n\n\n\n\n\n\n\n\n\nMay 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuand une IA devient co-chercheuse : réflexions autour de Robin\n\n\n\nMéthodologie augmentée par l’IA\n\n\n\n\n\n\n\n\n\nMay 21, 2025\n\n\nBenoit Plante\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Notes: * corresponding author; GS graduate student advisee; VS visiting scholar;  ESI Highly Cited Paper (top 1%);  ESI Hot Paper (top 0.1%)\nTotal citations as of January 2025:"
+  },
+  {
+    "objectID": "publications.html#selected-work",
+    "href": "publications.html#selected-work",
+    "title": "Publications",
+    "section": "Selected Work",
+    "text": "Selected Work\nEinstein, A., Podolsky, B., & Rosen, N. (1935). Can quantum-mechanical description of physical reality be considered complete?. Physical review, 47(10), 777. [pdf] [code and data]   \n\n\n\n\n\n\nEinstein, A. (1965). Concerning an heuristic point of view toward the emission and transformation of light. American Journal of Physics, 33(5), 367. [pdf]"
+  }
+]

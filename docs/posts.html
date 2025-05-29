@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ben Plante">
-<meta name="description" content="Réflexions, outils et science à l’interface entre la psychologie et l’IA">
+<meta name="description" content="Publications sur les projets, articles, outils et réflexions en lien avec la psychologie et l’intelligence artificielle">
 
-<title>Benoit Plante</title>
+<title>Nouveautés et publications – Benoit Plante</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,21 +73,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-recent-posts .list');
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 3,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-recent-posts'] = new List('listing-recent-posts', options);
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -180,17 +179,13 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="– Benoit Plante">
-<meta property="og:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
-<meta property="og:image" content="https://benoitplante.github.io/blogue/files/profiles/photo-benoit.png">
+<link rel="alternate" type="application/rss+xml" title="Benoit Plante" href="posts.xml" data-external="1"><meta property="og:title" content="Nouveautés et publications – Benoit Plante">
+<meta property="og:description" content="Publications sur les projets, articles, outils et réflexions">
+<meta property="og:image" content="https://benoitplante.github.io/blogue/posts/2025-05-23-intro-familia/banner.png">
 <meta property="og:site_name" content="Benoit Plante">
-<meta property="og:image:height" content="1024">
-<meta property="og:image:width" content="1024">
-<meta name="twitter:title" content="– Benoit Plante">
-<meta name="twitter:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
-<meta name="twitter:image" content="https://benoitplante.github.io/blogue/files/profiles/photo-benoit.png">
-<meta name="twitter:image-height" content="1024">
-<meta name="twitter:image-width" content="1024">
+<meta name="twitter:title" content="Nouveautés et publications – Benoit Plante">
+<meta name="twitter:description" content="Publications sur les projets, articles, outils et réflexions">
+<meta name="twitter:image" content="https://benoitplante.github.io/blogue/posts/2025-05-23-intro-familia/banner.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -212,7 +207,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
@@ -220,7 +215,7 @@ window.Quarto = {
 <span class="menu-text">À propos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts.html"> 
+    <a class="nav-link active" href="./posts.html" aria-current="page"> 
 <span class="menu-text">Blogue</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -263,122 +258,157 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ==">Méthodologie augmentée par l’IA <span class="quarto-category-count">(3)</span></div><div class="category" data-category="VXRpbGlzYXRpb24lMjBhcHBsaXF1JUMzJUE5ZSUyMGRlJTIwbCdJQQ==">Utilisation appliquée de l'IA <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
-
-
-
-<div class="hero-heading" style="text-align: center; margin-bottom: 2em;">
-<div class="quarto-figure quarto-figure-center" style="border-radius: 50%; margin-bottom: 1em;">
-<figure class="figure">
-<p><img src="files/profiles/photo-benoit.png" class="img-fluid figure-img" width="250"></p>
-<figcaption>Photo générée par l’IA</figcaption>
-</figure>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Nouveautés et publications</h1>
+<p class="subtitle lead">Publications sur les projets, articles, outils et réflexions</p>
 </div>
-<p><span style="display: inline-flex; gap: 1em; justify-content: center;"> <a href="https://github.com/benplante" target="_blank"><i class="fa fa-github"></i></a> <a href="https://linkedin.com/in/benplante" target="_blank"><i class="fa fa-linkedin"></i></a> <a href="https://orcid.org/0009-0003-5449-427X" target="_blank"><i class="ai ai-orcid"></i></a> </span></p>
-<hr>
-<div class="hero-description" style="text-align: left;">
-<p>Je m’appelle <strong>Benoit Plante</strong>, coordonnateur scientifique du <a href="https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864">GRIN</a>, tuteur en psychologie à la <a href="https://www.teluq.ca/">TELUQ</a>, doctorant à l’UQTR et passionné par les liens entre la psychologie et l’intelligence artificielle.</p>
-<p>Ce blogue est mon espace personnel pour explorer, réfléchir et documenter mes découvertes à l’interface entre IA, science des données et la psychologie. J’y partage principalement les éléments suivants :</p>
-<ul>
-<li>La <strong>vulgarisation</strong> de travaux scientifiques sur l’IA en psychologie</li>
-<li>L’usage d’<strong>outils d’IA appliqués aux méthodes de recherche</strong> (analyse, rédaction, automatisation)</li>
-<li>Les <strong>enjeux éthiques, critiques et méthodologiques</strong> liés à l’a reproductibilité’utilisation de l’IA</li>
-</ul>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Order By</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option value="listing-title" data-direction="asc">
+        Title
+      </option>
+      <option value="listing-date-sort" data-direction="asc">
+        Date - Oldest
+      </option>
+      <option value="listing-date-sort" data-direction="desc">
+        Date - Newest
+      </option>
+      <option value="listing-author" data-direction="asc">
+        Author
+      </option>
+    </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
 </div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQSUyQ1V0aWxpc2F0aW9uJTIwYXBwbGlxdSVDMyVBOWUlMjBkZSUyMGwnSUE=" data-listing-date-sort="1747972800000" data-listing-file-modified-sort="1748511248386" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="468">
+<div class="thumbnail"><a href="./posts/2025-05-23-intro-familia/intro-familia.html" class="no-external">
+
+<img loading="lazy" src="./posts/2025-05-23-intro-familia/banner.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-05-23-intro-familia/intro-familia.html" class="no-external">Analyser les données de Famili@ en collaboration avec l’IA</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ=='); return false;">Méthodologie augmentée par l’IA</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VXRpbGlzYXRpb24lMjBhcHBsaXF1JUMzJUE5ZSUyMGRlJTIwbCdJQQ=='); return false;">Utilisation appliquée de l'IA</div>
+
 </div>
-<section id="structure-du-site" class="level2">
-<h2 class="anchored" data-anchor-id="structure-du-site">Structure du site</h2>
-<p>Ce blogue est organisé pour vous permettre de naviguer facilement entre mes les différentes thématiques que je couvre ainsi que les outils que j’utilise et que je développe :</p>
-<ul>
-<li><strong>Blogue</strong> : l’ensemble des publications, publiés au fil de mes découvertes et expérimentations.</li>
-<li><strong>Thématiques</strong> — Pour explorer selon vos intérêts :
-<ul>
-<li><strong>Méthodologie augmentée</strong><br>
-<em>Publications d’articles sur l’IA et les méthodes de recherches</em></li>
-<li><strong>Utilisation appliquée de l’IA</strong><br>
-<em>Publication de projets appliqués de l’utilisation de l’IA</em></li>
-<li><strong>Enseignement &amp; formation</strong><br>
-<em>Publications sur l’IA et l’enseignement/formation</em></li>
-<li><strong>Éthique, biais et transparence</strong><br>
-<em>Publications sur l’IA et l’éthique</em></li>
-</ul></li>
-<li><strong>Outils</strong> : tutoriels et ressources que j’utilise dans la recherche en psychologie.</li>
-</ul>
-<p>Ce blogue est en constante évolution, et j’accueille volontiers les suggestions, commentaires ou idées de collaboration.</p>
-</section>
-<section id="derniers-billets" class="level2">
-<h2 class="anchored" data-anchor-id="derniers-billets">Derniers billets</h2>
-<p>Découvrez les derniers articles publiés sur le blogue, ou explorez les <a href="./posts.html">billets par thématique</a>.</p>
-<div id="listing-recent-posts" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQSUyQ1V0aWxpc2F0aW9uJTIwYXBwbGlxdSVDMyVBOWUlMjBkZSUyMGwnSUE=" data-listing-date-sort="1747972800000" data-listing-file-modified-sort="1748511248386" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="468">
-<a href="./posts/2025-05-23-intro-familia/intro-familia.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2025-05-23-intro-familia/banner.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Analyser les données de Famili@ en collaboration avec l’IA
-</h5>
-<div class="card-attribution card-text-small end">
+<div class="delink listing-description"><a href="./posts/2025-05-23-intro-familia/intro-familia.html" class="no-external">
+Depuis quelque temps, je m’intéresse aux possibilités de recherche offertes par les <strong>données secondaires</strong>. Internet regorge de trésors inexploités qui n’attendent qu’un regard…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-05-23-intro-familia/intro-familia.html" class="no-external">
 <div class="listing-date">
 May 23, 2025
 </div>
+</a>
 </div>
 </div>
-</div></a>
+<div class="quarto-post image-right" data-index="1" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQSUyQ1V0aWxpc2F0aW9uJTIwYXBwbGlxdSVDMyVBOWUlMjBkZSUyMGwnSUE=" data-listing-date-sort="1747972800000" data-listing-file-modified-sort="1748513734458" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2096">
+<div class="thumbnail"><a href="./posts/2025-05-23-webscrapping-familia/webscrapping-familia.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-05-23-webscrapping-familia/webscrapping-familia.html" class="no-external">Extraire les données de Famili@ en collaboration avec l’IA</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ=='); return false;">Méthodologie augmentée par l’IA</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VXRpbGlzYXRpb24lMjBhcHBsaXF1JUMzJUE5ZSUyMGRlJTIwbCdJQQ=='); return false;">Utilisation appliquée de l'IA</div>
+
 </div>
-<div class="g-col-1" data-index="1" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQSUyQ1V0aWxpc2F0aW9uJTIwYXBwbGlxdSVDMyVBOWUlMjBkZSUyMGwnSUE=" data-listing-date-sort="1747972800000" data-listing-file-modified-sort="1748513413457" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2096">
-<a href="./posts/2025-05-23-webscrapping-familia/webscrapping-familia.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<!-- img(9CEB782EFEE6)[progressive=false, height=150px]:recent-posts:posts/2025-05-23-webscrapping-familia/webscrapping-familia.html -->
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Extraire les données de Famili@ en collaboration avec l’IA
-</h5>
-<div class="card-attribution card-text-small end">
+<div class="delink listing-description"><a href="./posts/2025-05-23-webscrapping-familia/webscrapping-familia.html" class="no-external">
+Dans ce billet, je documente avec transparence le cheminement technique que j’ai suivi pour extraire les données du site familia.ucs.inrs.ca et créer une base de données…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-05-23-webscrapping-familia/webscrapping-familia.html" class="no-external">
 <div class="listing-date">
 May 23, 2025
 </div>
+</a>
 </div>
 </div>
-</div></a>
+<div class="quarto-post image-right" data-index="2" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ==" data-listing-date-sort="1747800000000" data-listing-file-modified-sort="1747832477489" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="660">
+<div class="thumbnail"><a href="./posts/2025-05-21-ai-robin/index.html" class="no-external">
+
+<img loading="lazy" src="./posts/2025-05-21-ai-robin/banner.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-05-21-ai-robin/index.html" class="no-external">Quand une IA devient co-chercheuse : réflexions autour de Robin</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ=='); return false;">Méthodologie augmentée par l’IA</div>
+
 </div>
-<div class="g-col-1" data-index="2" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQSUyQ1V0aWxpc2F0aW9uJTIwYXBwbGlxdSVDMyVBOWUlMjBkZSUyMGwnSUE=" data-listing-date-sort="1747972800000" data-listing-file-modified-sort="1748513579914" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2096">
-<a href="./posts/2025-05-23-webscrapping-familia/webscrapping-familia.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<!-- img(9CEB782EFEE6)[progressive=false, height=150px]:recent-posts:posts/2025-05-23-webscrapping-familia/webscrapping-familia.html -->
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Extraire les données de Famili@ en collaboration avec l’IA
-</h5>
-<div class="card-attribution card-text-small end">
+<div class="delink listing-description"><a href="./posts/2025-05-21-ai-robin/index.html" class="no-external">
+Je suis tombé récemment sur une annonce qui m’a à la fois fasciné et interpellé : le laboratoire Future House, un groupe de recherche basé à San Francisco qui explore les…<em></em>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-05-21-ai-robin/index.html" class="no-external">
 <div class="listing-date">
-May 23, 2025
+May 21, 2025
 </div>
+<div class="listing-author">
+Benoit Plante
 </div>
+</a>
 </div>
-</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div>
-<p align="right">
-<a href="./posts.html">Tous les billets »</a>
-</p>
-
-
-
-</section>
-
-</main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

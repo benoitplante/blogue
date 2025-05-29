@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Ben Plante">
+<meta name="dcterms.date" content="2025-05-23">
+<meta name="description" content="Exploration d’un projet de recherche basé sur la base Famili@, combinant données secondaires, méta-science et intelligence artificielle générative.">
+<title>Extraire les données de Famili@ en collaboration avec l’IA – Benoit Plante</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6957ec2732917c3acd9217c3064faa9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id="></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '', { 'anonymize_ip': true});
+</script><!-- 
+Load Academicons v1: https://jpswalsh.github.io/academicons/
+--><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<!---
+The following code are needed to show dimension citation and altmetrics.
+https://api.altmetric.com/embeds.html
+https://badge.dimensions.ai/
+---><script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script><script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script><link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Extraire les données de Famili@ en collaboration avec l’IA – Benoit Plante">
+<meta property="og:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
+<meta property="og:site_name" content="Benoit Plante">
+<meta name="twitter:title" content="Extraire les données de Famili@ en collaboration avec l’IA – Benoit Plante">
+<meta name="twitter:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
+<meta name="twitter:card" content="summary">
+</head>
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Benoit Plante</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">À propos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Blogue</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-thématiques" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Thématiques</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-thématiques">
+<li>
+    <a class="dropdown-item" href="../../posts.html#category=metho">
+ <span class="dropdown-text">Méthodologie augmentée</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../posts.html#category=utilisation">
+ <span class="dropdown-text">Utilisation appliquée de l’IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../posts.html#category=enseignement">
+ <span class="dropdown-text">Enseignement &amp; formation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../posts.html#category=ethique">
+ <span class="dropdown-text">Éthique, biais et transparence</span></a>
+  </li>  
+    </ul>
+</li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../outils.html"> 
+<span class="menu-text">Outils</span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#premiers-tests-et-limites-des-approches-classiques" id="toc-premiers-tests-et-limites-des-approches-classiques" class="nav-link active" data-scroll-target="#premiers-tests-et-limites-des-approches-classiques">1. Premiers tests et limites des approches classiques</a></li>
+  <li><a href="#passage-%C3%A0-chromote-avec-chatgpt" id="toc-passage-à-chromote-avec-chatgpt" class="nav-link" data-scroll-target="#passage-%C3%A0-chromote-avec-chatgpt">2. Passage à Chromote avec ChatGPT</a></li>
+  <li><a href="#d%C3%A9couverte-de-la-structure-json-cach%C3%A9e" id="toc-découverte-de-la-structure-json-cachée" class="nav-link" data-scroll-target="#d%C3%A9couverte-de-la-structure-json-cach%C3%A9e">3. Découverte de la structure JSON cachée</a></li>
+  <li><a href="#gestion-des-erreurs-champs-manquants-et-pages-vides" id="toc-gestion-des-erreurs-champs-manquants-et-pages-vides" class="nav-link" data-scroll-target="#gestion-des-erreurs-champs-manquants-et-pages-vides">4. Gestion des erreurs : champs manquants et pages vides</a></li>
+  <li><a href="#pagination-dynamique-et-boucle-automatique" id="toc-pagination-dynamique-et-boucle-automatique" class="nav-link" data-scroll-target="#pagination-dynamique-et-boucle-automatique">5. Pagination dynamique et boucle automatique</a></li>
+  <li><a href="#code-final-comment%C3%A9" id="toc-code-final-commenté" class="nav-link" data-scroll-target="#code-final-comment%C3%A9">6. Code final commenté</a></li>
+  <li><a href="#ce-que-jai-appris-et-ce-que-je-retiens" id="toc-ce-que-jai-appris-et-ce-que-je-retiens" class="nav-link" data-scroll-target="#ce-que-jai-appris-et-ce-que-je-retiens">7. Ce que j’ai appris (et ce que je retiens)</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Extraire les données de Famili@ en collaboration avec l’IA</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Méthodologie augmentée par l’IA</div>
+    <div class="quarto-category">Utilisation appliquée de l'IA</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 23, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header><p>Dans ce billet, je documente avec transparence le cheminement technique que j’ai suivi pour extraire les données du site <a href="https://familia.ucs.inrs.ca/">familia.ucs.inrs.ca</a> et créer une base de données exploitable sur la recherche en psychologie portant sur la famille au Québec.</p>
+<p>Ce travail s’inscrit dans une démarche plus large de co-analyse assistée par intelligence artificielle, qui vise à produire un portrait actualisé de la recherche en psychologie sur la famille à partir des données disponibles dans la plateforme Famili@. L’objectif à terme est de décrire et quantifier l’évolution des thématiques, des approches théoriques et méthologiques dans la recherche familiale au Québec, dans les 40 dernières années, en collaboration avec une IA générative.</p>
+<p>Mais avant d’analyser quoi que ce soit, il faut d’abord extraire les données. Et ce n’était pas chose simple. J’imagine que j’aurais possiblement pu demandé accès à la base documentaire directement, mais je voulais apprendre à faire du webscrapping pour d’autres projets futurs!</p>
+<section id="premiers-tests-et-limites-des-approches-classiques" class="level2"><h2 class="anchored" data-anchor-id="premiers-tests-et-limites-des-approches-classiques">1. Premiers tests et limites des approches classiques</h2>
+<p>J’ai d’abord exploré le site manuellement. Chaque fiche de projet apparaît dans une boîte visuelle, avec des champs visibles comme le titre, les auteurs, l’année et les mots-clés. Mon premier réflexe a été de tester le package <a href="https://rvest.tidyverse.org/">rvest</a>, qui permet d’extraire des données à partir d’une page HTML. Il s’agit d’un outil très efficace lorsqu’on travaille avec des sites web statiques : on peut identifier des balises HTML précises (comme <code>&lt;h3&gt;</code> pour les titres ou des classes CSS comme <code>.auteursNotice</code>) et extraire leur contenu directement dans un tableau.</p>
+<p>Mais rapidement, j’ai compris que les données ne se trouvaient pas directement dans le HTML statique récupéré par <a href="https://rvest.tidyverse.org/">rvest</a>. En fait, le contenu est <strong>chargé dynamiquement</strong> via JavaScript, c’est-à-dire que le HTML initial ne contient pas encore les résultats — ceux-ci apparaissent seulement une fois que le navigateur a exécuté le JavaScript. Et comme <a href="https://rvest.tidyverse.org/">rvest</a> n’exécute pas de JavaScript, il est aveugle à ces contenus. Résultat : les sélecteurs CSS que je testais ne renvoyaient rien ou des blocs incomplets. Il fallait donc une approche capable de simuler le comportement d’un navigateur moderne.</p>
+</section><section id="passage-à-chromote-avec-chatgpt" class="level2"><h2 class="anchored" data-anchor-id="passage-à-chromote-avec-chatgpt">2. Passage à Chromote avec ChatGPT</h2>
+<p>C’est ici que ChatGPT entre en jeu pour la première fois. L’approche classique ne fonctionnant pas, j’ai posé le problème à l’IA : comment extraire des données qui ne sont pas directement visibles dans le code de la page web, mais qui s’affichent seulement une fois que la page est complètement chargée dans le navigateur&nbsp;?</p>
+<p>ChatGPT m’a suggéré une alternative : utiliser le package <a href="https://rstudio.github.io/chromote/">chromote</a>. Ce dernier permet de piloter un navigateur Chrome en arrière-plan, un peu comme si on simulait un utilisateur réel qui charge la page, attend que tout s’affiche, puis regarde le contenu une fois complet. On appelle cela un navigateur “sans tête” (headless).</p>
+<p>Grâce à <a href="https://rstudio.github.io/chromote/">chromote</a>, on peut donc accéder à des pages web <strong>après</strong> que le JavaScript a fini de s’exécuter — ce qui est essentiel ici, puisque le site familia.ucs.inrs.ca n’affiche pas directement les données dans le code source, mais les ajoute ensuite dynamiquement à la page.</p>
+<p>Avec l’aide de ChatGPT, nous avons mis en place une boucle automatique&nbsp;: elle charge chaque page, attend l’affichage complet des données, extrait le contenu HTML généré dynamiquement, puis le transmet à <a href="https://rvest.tidyverse.org/">rvest</a> pour l’analyse. C’était déjà une belle avancée.</p>
+<p>Mais très vite, je me suis rendu compte que les éléments visibles dans la page (comme les titres, les auteurs ou les mots-clés) étaient difficilement récupérables via leurs balises HTML. Les classes CSS n’étaient pas fiables, certaines fiches ne suivaient pas la même structure, et il devenait difficile de tout extraire proprement. Il fallait donc une autre solution.</p>
+</section><section id="découverte-de-la-structure-json-cachée" class="level2"><h2 class="anchored" data-anchor-id="découverte-de-la-structure-json-cachée">3. Découverte de la structure JSON cachée</h2>
+<p>En continuant à inspecter le site plus attentivement, j’ai découvert un détail qui allait tout changer : chaque fiche de projet comprenait un champ de formulaire invisible à l’écran, un peu comme une petite boîte cachée dans le code. Cette boîte, identifiée par <code>&lt;input name="numeroNotice"&gt;</code>, contenait une information appelée <code>value</code>. Et cette valeur n’était pas une simple phrase, mais une <strong>chaîne de caractères au format JSON</strong> — une façon très courante de structurer des données dans le monde informatique.</p>
+<p>Pour vulgariser : le JSON (JavaScript Object Notation) est une sorte de tableau ou fiche d’information organisée en paires “nom : valeur”. Par exemple, on peut y trouver : <code>"Titre" : "Mon projet de recherche"</code>, <code>"date" : "2024"</code>, <code>"MotsCles" : "parentalité / attachement / adolescence"</code>, etc. Cela signifie que <strong>chaque fiche de projet était déjà pré-structurée</strong>, et prête à être exploitée… pourvu qu’on sache comment la lire.</p>
+<p>Avec l’aide de ChatGPT, nous avons ajusté notre fonction d’extraction pour cibler ces balises <code>&lt;input&gt;</code>, extraire le champ <code>value</code>, et le convertir en données structurées grâce à la fonction <code><a href="https://jeroen.r-universe.dev/jsonlite/reference/fromJSON.html">fromJSON()</a></code> du package <a href="https://jeroen.r-universe.dev/jsonlite">jsonlite</a>. On a ensuite transformé tout cela en tableau (<code>tibble</code>) utilisable dans R.</p>
+<p>C’était exactement ce qu’il nous fallait : une façon fiable, standardisée, et complète d’accéder à l’information — sans avoir à deviner la position du titre ou des auteurs dans la page. Une belle découverte rendue possible grâce à un peu de curiosité… et beaucoup d’essais-erreurs.</p>
+</section><section id="gestion-des-erreurs-champs-manquants-et-pages-vides" class="level2"><h2 class="anchored" data-anchor-id="gestion-des-erreurs-champs-manquants-et-pages-vides">4. Gestion des erreurs : champs manquants et pages vides</h2>
+<p>À partir de ce moment, nous avons rencontré d’autres types de défis. Certaines fiches n’ont pas tous les champs (ex. : <code>URL</code> ou <code>Sommaire</code> absents). L’appel à <code><a href="https://dplyr.tidyverse.org/reference/transmute.html">transmute()</a></code> échouait dès qu’un champ manquait. Avec l’aide de ChatGPT, nous avons ajouté une vérification : si une colonne est absente, on la crée vide (<code>NA</code>). Cette validation permet de fusionner toutes les pages sans erreur.</p>
+</section><section id="pagination-dynamique-et-boucle-automatique" class="level2"><h2 class="anchored" data-anchor-id="pagination-dynamique-et-boucle-automatique">5. Pagination dynamique et boucle automatique</h2>
+<p>Une fois qu’on savait comment extraire les données d’une page, il restait un défi important : le site ne présente pas tous les projets en une seule fois. Il les répartit sur plusieurs pages, qu’il faut faire défiler en cliquant sur « page suivante ».</p>
+<p>Dans un site classique, on pourrait cliquer manuellement ou simuler un clic avec du code. Mais ici, chaque page suivante a une adresse différente dans l’URL, et ces liens sont insérés dans la page au moment de son chargement. Il fallait donc trouver une façon <strong>automatique</strong> de naviguer de page en page.</p>
+<p>ChatGPT m’a proposé une stratégie élégante : plutôt que de simuler un clic, on peut lire directement dans le code de la page s’il existe un lien « suivant », grâce à un attribut appelé <code>rel="next"</code>. Si ce lien est présent, on le suit. Si ce n’est plus le cas, c’est que nous avons atteint la dernière page.</p>
+<p>Cette méthode a permis de parcourir l’intégralité du site de manière fluide, sans jamais devoir prédire combien de pages il y avait. Un bon exemple de la manière dont une IA peut suggérer des solutions simples à des problèmes complexes — surtout quand on ne connaît pas toutes les subtilités du fonctionnement d’un site web dynamique.</p>
+</section><section id="code-final-commenté" class="level2"><h2 class="anchored" data-anchor-id="code-final-commenté">6. Code final commenté</h2>
+<p>Voici le code final complet, que j’ai co-construit avec ChatGPT. Il comprend à la fois la fonction d’extraction à partir du HTML dynamique et celle qui parcourt toutes les pages automatiquement. Je l’ai commenté brièvement pour en faciliter la compréhension.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/chromote/">chromote</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://stringr.tidyverse.org">stringr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jeroen.r-universe.dev/jsonlite">jsonlite</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Fonction qui extrait les données d'une page HTML</span></span>
+<span><span class="va">extract_projects</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">page_html</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">page</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="va">page_html</span><span class="op">)</span></span>
+<span>  <span class="va">inputs</span> <span class="op">&lt;-</span> <span class="va">page</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">"input[name='numeroNotice']"</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="va">json_list</span> <span class="op">&lt;-</span> <span class="va">inputs</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_attr.html">html_attr</a></span><span class="op">(</span><span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">fromJSON</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="va">json_list</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="va">expected_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Titre"</span>, <span class="st">"Auteurs"</span>, <span class="st">"date"</span>, <span class="st">"TypeDocument"</span>, <span class="st">"MotsCles"</span>,</span>
+<span>                     <span class="st">"Thematiques"</span>, <span class="st">"Disciplines"</span>, <span class="st">"TypesDocs"</span>, <span class="st">"Sommaire"</span>,</span>
+<span>                     <span class="st">"Notice"</span>, <span class="st">"T2"</span>, <span class="st">"VL"</span>, <span class="st">"IS"</span>, <span class="st">"SP"</span>, <span class="st">"URL"</span><span class="op">)</span></span>
+<span>  <span class="kw">for</span> <span class="op">(</span><span class="va">col</span> <span class="kw">in</span> <span class="va">expected_cols</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="va">col</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">)</span> <span class="va">df</span><span class="op">[[</span><span class="va">col</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="cn">NA</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
+<span>  <span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/transmute.html">transmute</a></span><span class="op">(</span></span>
+<span>    titre <span class="op">=</span> <span class="va">Titre</span>,</span>
+<span>    auteurs <span class="op">=</span> <span class="va">Auteurs</span>,</span>
+<span>    annee <span class="op">=</span> <span class="va">date</span>,</span>
+<span>    type_doc <span class="op">=</span> <span class="va">TypeDocument</span>,</span>
+<span>    mots_cles <span class="op">=</span> <span class="va">MotsCles</span>,</span>
+<span>    thematiques <span class="op">=</span> <span class="va">Thematiques</span>,</span>
+<span>    disciplines <span class="op">=</span> <span class="va">Disciplines</span>,</span>
+<span>    types_document <span class="op">=</span> <span class="va">TypesDocs</span>,</span>
+<span>    sommaire <span class="op">=</span> <span class="va">Sommaire</span>,</span>
+<span>    reference <span class="op">=</span> <span class="va">Notice</span>,</span>
+<span>    revue <span class="op">=</span> <span class="va">T2</span>,</span>
+<span>    volume <span class="op">=</span> <span class="va">VL</span>,</span>
+<span>    numero <span class="op">=</span> <span class="va">IS</span>,</span>
+<span>    pages <span class="op">=</span> <span class="va">SP</span>,</span>
+<span>    url <span class="op">=</span> <span class="va">URL</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># Fonction principale de scraping multi-pages</span></span>
+<span><span class="va">scrape_all_pages</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">base_url</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">b</span> <span class="op">&lt;-</span> <span class="va"><a href="https://rstudio.github.io/chromote/reference/ChromoteSession.html">ChromoteSession</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="va">b</span><span class="op">$</span><span class="va">Page</span><span class="op">$</span><span class="fu">navigate</span><span class="op">(</span><span class="va">base_url</span><span class="op">)</span></span>
+<span>  <span class="va">b</span><span class="op">$</span><span class="va">Page</span><span class="op">$</span><span class="fu">loadEventFired</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="va">all_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="va">page_num</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span></span>
+<span>  <span class="kw">repeat</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Chargement de la page "</span>, <span class="va">page_num</span>, <span class="st">"..."</span><span class="op">)</span></span>
+<span></span>
+<span>    <span class="kw"><a href="https://rdrr.io/r/base/conditions.html">tryCatch</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>      <span class="va">b</span><span class="op">$</span><span class="va">Runtime</span><span class="op">$</span><span class="fu">evaluate</span><span class="op">(</span></span>
+<span>        expression <span class="op">=</span> <span class="st">"</span></span>
+<span><span class="st">        new Promise(resolve =&gt; {</span></span>
+<span><span class="st">          const waitForResults = () =&gt; {</span></span>
+<span><span class="st">            const items = document.querySelectorAll('input[name=\\'numeroNotice\\']');</span></span>
+<span><span class="st">            if (items.length &gt; 0) {</span></span>
+<span><span class="st">              resolve('ok');</span></span>
+<span><span class="st">            } else {</span></span>
+<span><span class="st">              setTimeout(waitForResults, 500);</span></span>
+<span><span class="st">            }</span></span>
+<span><span class="st">          };</span></span>
+<span><span class="st">          waitForResults();</span></span>
+<span><span class="st">        });"</span></span>
+<span>      <span class="op">)</span></span>
+<span>    <span class="op">}</span>, error <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">e</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Erreur de chargement."</span><span class="op">)</span></span>
+<span>    <span class="op">}</span><span class="op">)</span></span>
+<span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
+<span></span>
+<span>    <span class="va">html</span> <span class="op">&lt;-</span> <span class="va">b</span><span class="op">$</span><span class="va">DOM</span><span class="op">$</span><span class="fu">getDocument</span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="va">node_id</span> <span class="op">&lt;-</span> <span class="va">html</span><span class="op">$</span><span class="va">root</span><span class="op">$</span><span class="va">nodeId</span></span>
+<span>    <span class="va">html_content</span> <span class="op">&lt;-</span> <span class="va">b</span><span class="op">$</span><span class="va">DOM</span><span class="op">$</span><span class="fu">getOuterHTML</span><span class="op">(</span>nodeId <span class="op">=</span> <span class="va">node_id</span><span class="op">)</span><span class="op">$</span><span class="va">outerHTML</span></span>
+<span></span>
+<span>    <span class="va">projects</span> <span class="op">&lt;-</span> <span class="fu">extract_projects</span><span class="op">(</span><span class="va">html_content</span><span class="op">)</span></span>
+<span>    <span class="va">all_data</span><span class="op">[[</span><span class="va">page_num</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">projects</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Page "</span>, <span class="va">page_num</span>, <span class="st">" récupérée."</span><span class="op">)</span></span>
+<span></span>
+<span>    <span class="va">next_url</span> <span class="op">&lt;-</span> <span class="kw"><a href="https://rdrr.io/r/base/conditions.html">tryCatch</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>      <span class="va">b</span><span class="op">$</span><span class="va">Runtime</span><span class="op">$</span><span class="fu">evaluate</span><span class="op">(</span></span>
+<span>        expression <span class="op">=</span> <span class="st">"(function() {</span></span>
+<span><span class="st">          const nextBtn = document.querySelector('a[data-ci-pagination-page][rel=\\\"next\\\"]');</span></span>
+<span><span class="st">          return nextBtn ? nextBtn.href : null;</span></span>
+<span><span class="st">        })();"</span></span>
+<span>      <span class="op">)</span><span class="op">$</span><span class="va">result</span><span class="op">$</span><span class="va">value</span></span>
+<span>    <span class="op">}</span>, error <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">e</span><span class="op">)</span> <span class="cn">NULL</span><span class="op">)</span></span>
+<span></span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">next_url</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Fin du parcours : plus de page suivante."</span><span class="op">)</span></span>
+<span>      <span class="kw">break</span></span>
+<span>    <span class="op">}</span></span>
+<span></span>
+<span>    <span class="va">b</span><span class="op">$</span><span class="va">Page</span><span class="op">$</span><span class="fu">navigate</span><span class="op">(</span><span class="va">next_url</span><span class="op">)</span></span>
+<span>    <span class="va">b</span><span class="op">$</span><span class="va">Page</span><span class="op">$</span><span class="fu">loadEventFired</span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span>
+<span></span>
+<span>    <span class="va">page_num</span> <span class="op">&lt;-</span> <span class="va">page_num</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
+<span>  <span class="va">b</span><span class="op">$</span><span class="fu">close</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="va">all_data</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># Appel final</span></span>
+<span><span class="va">base_url</span> <span class="op">&lt;-</span> <span class="st">"https://familia.ucs.inrs.ca/resultat-de-recherche/?discipline[]=438"</span></span>
+<span><span class="va">data_familia</span> <span class="op">&lt;-</span> <span class="fu">scrape_all_pages</span><span class="op">(</span><span class="va">base_url</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">data_familia</span>, <span class="st">"projets_familia_complet.csv"</span>, row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="ce-que-jai-appris-et-ce-que-je-retiens" class="level2"><h2 class="anchored" data-anchor-id="ce-que-jai-appris-et-ce-que-je-retiens">7. Ce que j’ai appris (et ce que je retiens)</h2>
+<p>Ce projet m’a permis de vivre une expérience d’apprentissage à la fois technique, méthodologique et réflexive. Voici les principales leçons que j’en tire&nbsp;:</p>
+<p><strong>Comprendre la logique d’un site web est un prérequis fondamental.</strong> Avant même de coder, j’ai dû prendre le temps d’inspecter manuellement la structure du site. Ce travail exploratoire m’a permis de réaliser que le HTML visible au départ ne contenait pas les données… ce qui est loin d’être intuitif pour un œil non averti.</p>
+<p><strong>Travailler avec une IA a facilité les essais-erreurs.</strong> À chaque difficulté rencontrée, je pouvais reformuler mon problème à ChatGPT. L’IA me proposait alors des pistes de solution, que je testais immédiatement dans R. Cette boucle itérative — formuler, tester, ajuster — a non seulement accéléré mon travail, mais m’a aussi permis de mieux comprendre les logiques sous-jacentes.</p>
+<p><strong>La collaboration humain-IA ne remplace pas l’analyse humaine, elle la renforce.</strong> Je suis resté en contrôle tout au long du processus. C’est moi qui inspectais les structures du site, qui interprétais les erreurs, qui décidais quoi extraire. Mais ChatGPT m’a permis d’élargir rapidement mon répertoire technique et de débloquer des obstacles qui, seul, m’auraient sans doute pris beaucoup plus de temps à surmonter.</p>
+<p><strong>L’articulation entre outils est essentielle.</strong> <a href="https://rstudio.github.io/chromote/">chromote</a> m’a permis d’accéder à du contenu dynamique, <a href="https://jeroen.r-universe.dev/jsonlite">jsonlite</a> de lire des structures JSON, <a href="https://rvest.tidyverse.org/">rvest</a> de lire le HTML, et <a href="https://dplyr.tidyverse.org">dplyr</a> de structurer les tableaux. Ces outils, utilisés ensemble, ont rendu possible ce qui me semblait complexe au départ.</p>
+<p><strong>Finalement, documenter le processus est aussi une forme d’apprentissage.</strong> Prendre le temps d’écrire ce billet m’a permis de prendre du recul sur le chemin parcouru, les décisions prises, et les zones d’incertitude restantes. C’est une bonne pratique que je veux conserver pour mes prochains projets.</p>
+<p>Le prochain billet portera sur le nettoyage des champs extraits et la structuration d’une base de données propre et interrogeable. J’y traiterai, entre autres, de l’éclatement des mots-clés, de la normalisation des auteurs et de la préparation d’un corpus pour analyse thématique.</p>
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/benoitplante\.github\.io\/blogue");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<a href="https://github.com/benplante">Ben Plante</a> ©
+<script>document.write(new Date().getFullYear())</script>
+</div>   
+    <div class="nav-footer-center">
+<p>Blogue propulsé par <a href="https://quarto.org">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+<li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/benplante" target="_blank">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="../../posts.xml" target="_blank">
+      <i class="bi bi-rss" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+</div>
+  </div>
+</footer>
+
+
+</body></html>

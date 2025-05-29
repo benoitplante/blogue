@@ -1,0 +1,26 @@
+[
+  {
+    "listing": "/projects.html",
+    "items": []
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/2025-05-23-intro-familia/intro-familia.html",
+      "/posts/2025-05-23-webscrapping-familia/webscrapping-familia.html",
+      "/posts/2025-05-21-ai-robin/index.html"
+    ]
+  },
+  {
+    "listing": "/people.html",
+    "items": []
+  },
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/2025-05-23-intro-familia/intro-familia.html",
+      "/posts/2025-05-23-webscrapping-familia/webscrapping-familia.html",
+      "/posts/2025-05-21-ai-robin/index.html"
+    ]
+  }
+]
