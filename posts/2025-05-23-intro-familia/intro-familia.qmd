@@ -5,6 +5,7 @@ date: 2025-05-23
 categories: ["Méthodologie augmentée par l’IA", "Utilisation appliquée de l'IA"]
 format: html
 image: banner.png
+draft: true
 ---
 
 ## Analyser les données de Famili@ en collaboration avec l'IA
