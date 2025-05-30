@@ -120,24 +120,25 @@ https://badge.dimensions.ai/
 
 
 <link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers – Benoit Plante">
-<meta property="og:description" content="Que peut révéler un court texte sur la personnalité de son auteur? Grâce aux modèles transformers, l’intelligence artificielle commence à répondre à cette question avec une précision surprenante.">
+<meta property="og:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
 <meta property="og:image" content="https://benoitplante.github.io/blogue/posts/2025-05-29-personnalite-transformer/banner_article_electra.png">
 <meta property="og:site_name" content="Benoit Plante">
-<meta property="og:image:height" content="3300">
-<meta property="og:image:width" content="2550">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1536">
 <meta name="twitter:title" content="Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers – Benoit Plante">
-<meta name="twitter:description" content="Que peut révéler un court texte sur la personnalité de son auteur? Grâce aux modèles transformers, l’intelligence artificielle commence à répondre à cette question avec une précision surprenante.">
+<meta name="twitter:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
 <meta name="twitter:image" content="https://benoitplante.github.io/blogue/posts/2025-05-29-personnalite-transformer/banner_article_electra.png">
-<meta name="twitter:image-height" content="3300">
-<meta name="twitter:image-width" content="2550">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="1536">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -203,7 +204,32 @@ https://badge.dimensions.ai/
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Méthodologie augmentée par l’IA</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 26, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -219,52 +245,33 @@ https://badge.dimensions.ai/
   <li><a href="#des-modèles-statistiques-plus-flexibles" id="toc-des-modèles-statistiques-plus-flexibles" class="nav-link" data-scroll-target="#des-modèles-statistiques-plus-flexibles">Des modèles statistiques plus flexibles</a></li>
   <li><a href="#les-limites-de-ces-approches" id="toc-les-limites-de-ces-approches" class="nav-link" data-scroll-target="#les-limites-de-ces-approches">Les limites de ces approches</a></li>
   </ul></li>
-  <li><a href="#comprendre-les-transformers-sans-équation" id="toc-comprendre-les-transformers-sans-équation" class="nav-link" data-scroll-target="#comprendre-les-transformers-sans-équation">Comprendre les transformers (sans équation!)</a></li>
+  <li><a href="#comprendre-les-transformers" id="toc-comprendre-les-transformers" class="nav-link" data-scroll-target="#comprendre-les-transformers">Comprendre les transformers</a></li>
   <li><a href="#comment-létude-a-été-réalisée" id="toc-comment-létude-a-été-réalisée" class="nav-link" data-scroll-target="#comment-létude-a-été-réalisée">Comment l’étude a été réalisée</a></li>
   <li><a href="#les-résultats-en-langage-simple" id="toc-les-résultats-en-langage-simple" class="nav-link" data-scroll-target="#les-résultats-en-langage-simple">Les résultats en langage simple</a></li>
-  <li><a href="#pourquoi-cest-prometteur-pour-la-psychologie" id="toc-pourquoi-cest-prometteur-pour-la-psychologie" class="nav-link" data-scroll-target="#pourquoi-cest-prometteur-pour-la-psychologie">Pourquoi c’est prometteur pour la psychologie</a></li>
+  <li><a href="#pourquoi-cest-prometteur-pour-la-psychologie" id="toc-pourquoi-cest-prometteur-pour-la-psychologie" class="nav-link" data-scroll-target="#pourquoi-cest-prometteur-pour-la-psychologie">Pourquoi c’est prometteur pour la psychologie</a>
+  <ul class="collapse">
+  <li><a href="#un-outil-précieux-pour-la-recherche" id="toc-un-outil-précieux-pour-la-recherche" class="nav-link" data-scroll-target="#un-outil-précieux-pour-la-recherche">1. Un outil précieux pour la recherche</a></li>
+  <li><a href="#un-soutien-pour-les-pratiques-cliniques-et-communautaires" id="toc-un-soutien-pour-les-pratiques-cliniques-et-communautaires" class="nav-link" data-scroll-target="#un-soutien-pour-les-pratiques-cliniques-et-communautaires">2. Un soutien pour les pratiques cliniques et communautaires</a></li>
+  <li><a href="#vers-des-technologies-plus-sensibles-aux-personnes" id="toc-vers-des-technologies-plus-sensibles-aux-personnes" class="nav-link" data-scroll-target="#vers-des-technologies-plus-sensibles-aux-personnes">3. Vers des technologies plus sensibles aux personnes</a></li>
+  </ul></li>
   <li><a href="#et-les-limites" id="toc-et-les-limites" class="nav-link" data-scroll-target="#et-les-limites">Et les limites?</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Science des données &amp; psychologie</div>
-    <div class="quarto-category">IA générative &amp; cognition</div>
-  </div>
-  </div>
 
-<div>
-  <div class="description">
-    Que peut révéler un court texte sur la personnalité de son auteur? Grâce aux modèles transformers, l’intelligence artificielle commence à répondre à cette question avec une précision surprenante.
-  </div>
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="banner_article_electra.png" class="img-fluid figure-img"></p>
+<figcaption>Générée par ChatGPT</figcaption>
+</figure>
 </div>
-
-
-<div class="quarto-title-meta">
-
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 26, 2025</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Peut-on prédire les traits de personnalité d’une personne simplement à partir d’un texte qu’elle a écrit? Cette question, qui pourrait sembler tirée d’un film de science-fiction, est aujourd’hui au cœur de recherches sérieuses en psychologie computationnelle. J’ai récemment lu une étude fascinante présentée à la conférence <em>IEEE ICWR 2025</em>, qui explore cette idée à l’aide d’un modèle d’intelligence artificielle appelé <strong>ELECTRA</strong>, une version moderne des modèles transformers.</p>
@@ -298,21 +305,48 @@ https://badge.dimensions.ai/
 <p>Cependant, ces premières méthodes présentaient plusieurs limites importantes. D’abord, elles s’appuyaient sur de nombreuses hypothèses implicites : il fallait deviner à l’avance quels éléments du langage pourraient être liés à la personnalité. Ensuite, elles étaient peu sensibles au contexte. Un mot comme « froid », par exemple, n’aura pas le même sens selon qu’il décrit la météo ou une relation humaine. Ces modèles peinaient donc à saisir les subtilités du langage naturel. Enfin, leurs performances plafonnaient souvent autour de 65 à 70 % de précision, ce qui limitait leur utilité dans des contextes plus complexes ou variés. C’est précisément pour dépasser ces limites que les chercheurs se sont tournés vers des approches plus flexibles et puissantes, comme celles fondées sur le deep learning. Parmi elles, les modèles transformers marquent une avancée majeure.</p>
 </section>
 </section>
-<section id="comprendre-les-transformers-sans-équation" class="level2">
-<h2 class="anchored" data-anchor-id="comprendre-les-transformers-sans-équation">Comprendre les transformers (sans équation!)</h2>
-<p>[contenu déjà inclus]</p>
+<section id="comprendre-les-transformers" class="level2">
+<h2 class="anchored" data-anchor-id="comprendre-les-transformers">Comprendre les transformers</h2>
+<p>Avec l’émergence du deep learning, un nouveau type de modèle s’est imposé dans le domaine de la compréhension du langage naturel : le transformer. Introduit en 2017, ce type de modèle a profondément modifié la manière dont les machines analysent les textes, en offrant une capacité inédite à capturer les relations entre les mots, quelle que soit leur position dans la phrase. Contrairement aux anciens modèles qui lisaient les phrases de façon linéaire (mot après mot), les transformers analysent <strong>l’ensemble des mots simultanément</strong>.</p>
+<p>Pour comprendre cela de façon simple, imaginez que vous lisiez une lettre. Le mot « chaud » n’aura pas le même sens dans « une boisson chaude » ou dans « une ambiance chaude ». Le sens dépend des mots qui l’entourent. Les transformers fonctionnent justement sur ce principe : ils accordent à chaque mot une importance différente selon le contexte. Ce mécanisme s’appelle <strong>l’attention</strong>, et c’est ce qui permet au modèle de repérer quelles parties du texte sont les plus pertinentes pour comprendre un mot donné.</p>
+<p>Dans l’étude que je présente ici, les chercheur·es ont utilisé un modèle transformer appelé <strong>ELECTRA</strong>. Ce modèle est un peu particulier : pour s’entraîner, il joue à un jeu où certains mots du texte sont remplacés par d’autres, et le modèle doit deviner quels mots sont “faux”. Cela l’oblige à comprendre finement la structure et le sens des phrases. Une fois ce modèle pré-entraîné, il peut être spécialisé pour des tâches précises, comme ici, prédire les traits de personnalité à partir de courts textes.</p>
+<p>Ce qui rend ELECTRA particulièrement intéressant, c’est qu’il est plus rapide et plus léger que ses prédécesseurs, tout en maintenant une très bonne précision. De plus, il s’agit d’un modèle <strong>open-source</strong>, ce qui signifie que toute personne intéressée – chercheur·e, praticien·ne ou étudiant·e – peut librement le consulter, l’utiliser ou l’adapter. Il est accessible sur des plateformes comme Hugging Face, favorisant ainsi la démocratisation de l’intelligence artificielle en recherche psychologique. Il est donc adapté à des tâches comme l’analyse psychologique automatisée, où l’on dispose souvent de quantités modérées de données et où l’interprétabilité est essentielle.</p>
 </section>
 <section id="comment-létude-a-été-réalisée" class="level2">
 <h2 class="anchored" data-anchor-id="comment-létude-a-été-réalisée">Comment l’étude a été réalisée</h2>
-<p>[contenu déjà inclus]</p>
+<p>Les chercheur·es ont utilisé une base de données appelée <em>Pennebaker and King Essays</em>. On y trouve 2 467 petits textes écrits librement par des adultes, souvent sous forme de récits introspectifs ou de réflexions personnelles. Chacun de ces textes est accompagné d’un profil de personnalité établi par questionnaire, basé sur le modèle des Big Five.</p>
+<p>Voici comment ils ont procédé :</p>
+<ol type="1">
+<li><p><strong>Prétraitement</strong> : Les textes bruts ont d’abord été nettoyés pour les rendre exploitables par le modèle. Cela inclut la suppression de caractères non alphabétiques, la normalisation des espaces et ponctuations, et la mise en forme uniforme des textes. Un seuil de longueur a également été fixé pour limiter la variabilité et standardiser l’entrée dans le modèle.</p></li>
+<li><p><strong>Augmentation</strong> : Pour compenser la taille relativement modeste du corpus, les chercheur·es ont eu recours à une technique d’augmentation de données. Celle-ci consiste à remplacer certains mots par des synonymes pertinents, extraits de WordNet, de manière aléatoire mais contrôlée (jusqu’à deux remplacements par phrase). Cela permet d’augmenter la diversité lexicale tout en conservant le sens général du texte, ce qui améliore la robustesse du modèle lors de la généralisation à de nouveaux échantillons.</p></li>
+<li><p><strong>Entraînement</strong> : Cinq modèles ELECTRA distincts ont été entraînés, chacun dédié à la prédiction d’un des cinq traits de personnalité. En procédant ainsi, les auteur·es ont évité les interférences possibles entre traits (par exemple entre agréabilité et consciencieux) et ont permis au modèle d’apprendre des représentations linguistiques spécifiques à chaque dimension. L’entraînement a été réalisé en utilisant un algorithme d’optimisation de type AdamW, avec une stratégie de régularisation pour éviter le surapprentissage.</p></li>
+<li><p><strong>Évaluation</strong> : Les performances des modèles ont été mesurées à l’aide d’un découpage standard des données en ensembles d’entraînement, de validation et de test. Plusieurs métriques ont été utilisées : précision, rappel, score F1 et AUC (aire sous la courbe ROC). Ces indicateurs ont permis de s’assurer que les modèles ne se contentaient pas de bien performer sur les données apprises, mais étaient capables de généraliser sur de nouveaux textes.</p></li>
+</ol>
 </section>
 <section id="les-résultats-en-langage-simple" class="level2">
 <h2 class="anchored" data-anchor-id="les-résultats-en-langage-simple">Les résultats en langage simple</h2>
-<p>[contenu déjà inclus]</p>
+<p>Les modèles ont obtenu de <strong>très bons résultats</strong>, surpassant les performances d’anciennes approches comme l’analyse lexicale manuelle. Chaque dimension de la personnalité a été considérée indépendamment comme une tâche de classification binaire (par exemple, distinguer un haut d’un bas niveau d’extraversion), avec une évaluation basée sur plusieurs métriques : précision, rappel, score F1 et AUC (aire sous la courbe ROC).</p>
+<p>Pour <strong>l’extraversion</strong>, le modèle a obtenu une précision de 78 %, avec une AUC remarquable de 0.84. Cela indique qu’il distingue bien les personnes extraverties des introverties, en captant des indices comme l’usage fréquent de la première personne, l’expressivité et les émotions positives.</p>
+<p>Pour <strong>l’ouverture à l’expérience</strong>, la performance atteint 75 %. Le modèle semble particulièrement sensible à la richesse lexicale, à la présence de mots abstraits ou à l’usage de tournures stylistiques variées, souvent associées à ce trait.</p>
+<p>Concernant <strong>l’agréabilité</strong>, le modèle atteint également 74 % de précision, avec une AUC solide. Il semble repérer des expressions de politesse, des tournures conciliantes et un ton globalement prosocial.</p>
+<p>Pour <strong>le névrosisme</strong>, le score de 74 % reflète une bonne capacité à détecter les marqueurs de tension émotionnelle, comme les mots associés à l’inquiétude, au doute ou à la frustration.</p>
+<p>Enfin, <strong>la conscienciosité</strong> est le trait où le modèle obtient la précision la plus faible (72 %), mais tout de même supérieure aux standards classiques. Ce trait semble plus difficile à inférer à partir de textes courts, car il repose sur des indices moins saillants, comme la structure syntaxique, la régularité ou l’organisation du discours.</p>
+<p>Ces résultats sont d’autant plus notables que les textes analysés sont brefs, spontanés, et écrits dans un cadre non contraint. La capacité du modèle à extraire de tels signaux à partir d’un matériau aussi variable illustre la puissance de cette approche.</p>
 </section>
 <section id="pourquoi-cest-prometteur-pour-la-psychologie" class="level2">
 <h2 class="anchored" data-anchor-id="pourquoi-cest-prometteur-pour-la-psychologie">Pourquoi c’est prometteur pour la psychologie</h2>
-<p>[contenu déjà inclus]</p>
+<section id="un-outil-précieux-pour-la-recherche" class="level3">
+<h3 class="anchored" data-anchor-id="un-outil-précieux-pour-la-recherche">1. Un outil précieux pour la recherche</h3>
+<p>Les chercheur·es en psychologie manipulent souvent de grandes quantités de textes — que ce soit des réponses ouvertes à des questionnaires, des journaux personnels, ou des messages sur des forums en ligne. Analyser tout cela manuellement peut prendre des semaines. Grâce à des modèles comme ELECTRA, on peut <strong>obtenir une première lecture automatisée</strong> de ces textes : le modèle identifie les tournures, les mots ou les styles d’écriture qui pourraient être liés à certains traits de personnalité. Cela permet de <strong>gagner du temps</strong>, d’élargir le champ des études, et de formuler de nouvelles hypothèses à partir de données linguistiques qu’on aurait autrement négligées.</p>
+</section>
+<section id="un-soutien-pour-les-pratiques-cliniques-et-communautaires" class="level3">
+<h3 class="anchored" data-anchor-id="un-soutien-pour-les-pratiques-cliniques-et-communautaires">2. Un soutien pour les pratiques cliniques et communautaires</h3>
+<p>Dans des contextes comme la clinique, l’intervention communautaire ou même l’éducation, il est souvent utile de <strong>comprendre rapidement le vécu ou le profil d’une personne</strong>, surtout quand le contact est bref ou se fait en ligne. Un outil comme ELECTRA pourrait, par exemple, analyser de manière discrète les premières réponses écrites d’une personne sur une plateforme de soutien ou dans un formulaire d’accueil. Il pourrait ainsi <strong>suggérer certains indicateurs linguistiques</strong> liés à l’anxiété, à l’agréabilité ou à l’ouverture d’esprit, ce qui permettrait aux intervenant·es d’adapter leur approche. Cela ne remplace pas le jugement professionnel, mais cela peut <strong>offrir un regard complémentaire</strong>, plus subtil, pour guider la relation d’aide.</p>
+</section>
+<section id="vers-des-technologies-plus-sensibles-aux-personnes" class="level3">
+<h3 class="anchored" data-anchor-id="vers-des-technologies-plus-sensibles-aux-personnes">3. Vers des technologies plus sensibles aux personnes</h3>
+<p>Cette technologie pourrait aussi transformer <strong>les interfaces numériques elles-mêmes</strong>. Imaginez un agent conversationnel (chatbot) qui <strong>ajuste son style de réponse</strong> selon la personnalité perçue de la personne avec qui il échange : plus chaleureux, plus structuré, plus créatif… Un tel ajustement pourrait rendre les interactions plus naturelles et plus humaines. C’est une façon de concevoir l’IA non pas comme un outil froid et distant, mais comme un <strong>allié dans la création de liens</strong>, capable de mieux comprendre et de mieux s’adapter aux personnes.</p>
+</section>
 </section>
 <section id="et-les-limites" class="level2">
 <h2 class="anchored" data-anchor-id="et-les-limites">Et les limites?</h2>

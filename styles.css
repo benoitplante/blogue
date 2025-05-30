@@ -1,1 +1,5 @@
 /* css styles */
+
+.quarto-title-block .title-block-banner {
+  background-position: top center !important;
+}
