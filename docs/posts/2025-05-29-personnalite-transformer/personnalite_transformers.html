@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Plante">
+<meta name="dcterms.date" content="2025-05-26">
+<meta name="description" content="Blogue sur les liens entre psychologie et intelligence artificielle">
+
+<title>Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers – Benoit Plante</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6957ec2732917c3acd9217c3064faa9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id="></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '', { 'anonymize_ip': true});
+</script>
+
+
+<!-- 
+
+Load Academicons v1: https://jpswalsh.github.io/academicons/
+
+-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+
+
+
+<!---
+
+The following code are needed to show dimension citation and altmetrics.
+
+https://api.altmetric.com/embeds.html
+
+https://badge.dimensions.ai/
+
+--->
+
+
+
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+
+<script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+
+
+<script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers – Benoit Plante">
+<meta property="og:description" content="Que peut révéler un court texte sur la personnalité de son auteur? Grâce aux modèles transformers, l’intelligence artificielle commence à répondre à cette question avec une précision surprenante.">
+<meta property="og:image" content="https://benoitplante.github.io/blogue/posts/2025-05-29-personnalite-transformer/banner_article_electra.png">
+<meta property="og:site_name" content="Benoit Plante">
+<meta property="og:image:height" content="3300">
+<meta property="og:image:width" content="2550">
+<meta name="twitter:title" content="Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers – Benoit Plante">
+<meta name="twitter:description" content="Que peut révéler un court texte sur la personnalité de son auteur? Grâce aux modèles transformers, l’intelligence artificielle commence à répondre à cette question avec une précision surprenante.">
+<meta name="twitter:image" content="https://benoitplante.github.io/blogue/posts/2025-05-29-personnalite-transformer/banner_article_electra.png">
+<meta name="twitter:image-height" content="3300">
+<meta name="twitter:image-width" content="2550">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Benoit Plante</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">À propos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Blogue</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-thématiques" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Thématiques</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-thématiques">    
+        <li>
+    <a class="dropdown-item" href="../../posts.html#category=metho">
+ <span class="dropdown-text">Méthodologie augmentée</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../posts.html#category=utilisation">
+ <span class="dropdown-text">Utilisation appliquée de l’IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../posts.html#category=enseignement">
+ <span class="dropdown-text">Enseignement &amp; formation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../posts.html#category=ethique">
+ <span class="dropdown-text">Éthique, biais et transparence</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../outils.html"> 
+<span class="menu-text">Outils</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#un-peu-de-contexte-les-traits-de-personnalité" id="toc-un-peu-de-contexte-les-traits-de-personnalité" class="nav-link" data-scroll-target="#un-peu-de-contexte-les-traits-de-personnalité">Un peu de contexte : les traits de personnalité</a></li>
+  <li><a href="#avant-les-transformers-premières-tentatives-danalyse-de-la-personnalité-à-partir-du-texte" id="toc-avant-les-transformers-premières-tentatives-danalyse-de-la-personnalité-à-partir-du-texte" class="nav-link" data-scroll-target="#avant-les-transformers-premières-tentatives-danalyse-de-la-personnalité-à-partir-du-texte">Avant les transformers : premières tentatives d’analyse de la personnalité à partir du texte</a>
+  <ul class="collapse">
+  <li><a href="#des-approches-symboliques-fondées-sur-les-mots" id="toc-des-approches-symboliques-fondées-sur-les-mots" class="nav-link" data-scroll-target="#des-approches-symboliques-fondées-sur-les-mots">Des approches symboliques fondées sur les mots</a></li>
+  <li><a href="#des-modèles-statistiques-plus-flexibles" id="toc-des-modèles-statistiques-plus-flexibles" class="nav-link" data-scroll-target="#des-modèles-statistiques-plus-flexibles">Des modèles statistiques plus flexibles</a></li>
+  <li><a href="#les-limites-de-ces-approches" id="toc-les-limites-de-ces-approches" class="nav-link" data-scroll-target="#les-limites-de-ces-approches">Les limites de ces approches</a></li>
+  </ul></li>
+  <li><a href="#comprendre-les-transformers-sans-équation" id="toc-comprendre-les-transformers-sans-équation" class="nav-link" data-scroll-target="#comprendre-les-transformers-sans-équation">Comprendre les transformers (sans équation!)</a></li>
+  <li><a href="#comment-létude-a-été-réalisée" id="toc-comment-létude-a-été-réalisée" class="nav-link" data-scroll-target="#comment-létude-a-été-réalisée">Comment l’étude a été réalisée</a></li>
+  <li><a href="#les-résultats-en-langage-simple" id="toc-les-résultats-en-langage-simple" class="nav-link" data-scroll-target="#les-résultats-en-langage-simple">Les résultats en langage simple</a></li>
+  <li><a href="#pourquoi-cest-prometteur-pour-la-psychologie" id="toc-pourquoi-cest-prometteur-pour-la-psychologie" class="nav-link" data-scroll-target="#pourquoi-cest-prometteur-pour-la-psychologie">Pourquoi c’est prometteur pour la psychologie</a></li>
+  <li><a href="#et-les-limites" id="toc-et-les-limites" class="nav-link" data-scroll-target="#et-les-limites">Et les limites?</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Science des données &amp; psychologie</div>
+    <div class="quarto-category">IA générative &amp; cognition</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Que peut révéler un court texte sur la personnalité de son auteur? Grâce aux modèles transformers, l’intelligence artificielle commence à répondre à cette question avec une précision surprenante.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 26, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Peut-on prédire les traits de personnalité d’une personne simplement à partir d’un texte qu’elle a écrit? Cette question, qui pourrait sembler tirée d’un film de science-fiction, est aujourd’hui au cœur de recherches sérieuses en psychologie computationnelle. J’ai récemment lu une étude fascinante présentée à la conférence <em>IEEE ICWR 2025</em>, qui explore cette idée à l’aide d’un modèle d’intelligence artificielle appelé <strong>ELECTRA</strong>, une version moderne des modèles transformers.</p>
+<p>Dans ce billet, je présente l’article en question ainsi que la technologie d’intelligence artificielle qui permet d’analyser les textes pour en extraire des indices de personnalité.</p>
+</section>
+<section id="un-peu-de-contexte-les-traits-de-personnalité" class="level2">
+<h2 class="anchored" data-anchor-id="un-peu-de-contexte-les-traits-de-personnalité">Un peu de contexte : les traits de personnalité</h2>
+<p>Dans cet article, les auteurs cherchent à prédire les traits de personnalité en fonction du modèle des <strong>Big Five</strong> ou « cinq grands facteurs » de la personnalité. Ce modèle propose cinq traits fondamentaux :</p>
+<ul>
+<li><strong>Ouverture à l’expérience</strong> : imagination, curiosité, créativité</li>
+<li><strong>Consciencieux</strong> : organisation, rigueur, discipline</li>
+<li><strong>Extraversion</strong> : sociabilité, expressivité, dynamisme</li>
+<li><strong>Agréabilité</strong> : bienveillance, coopération, empathie</li>
+<li><strong>Névrosisme</strong> : tendance à l’anxiété, la colère ou la tristesse</li>
+</ul>
+<p>Dans la recherche, on tente souvent de relier ces traits à la manière dont une personne parle ou écrit. Par exemple, quelqu’un de très extraverti pourrait utiliser plus de mots liés à l’émotion ou à la première personne (« je », « moi »), tandis qu’une personne très névrosée pourrait employer davantage de mots à connotation négative.</p>
+</section>
+<section id="avant-les-transformers-premières-tentatives-danalyse-de-la-personnalité-à-partir-du-texte" class="level2">
+<h2 class="anchored" data-anchor-id="avant-les-transformers-premières-tentatives-danalyse-de-la-personnalité-à-partir-du-texte">Avant les transformers : premières tentatives d’analyse de la personnalité à partir du texte</h2>
+<section id="des-approches-symboliques-fondées-sur-les-mots" class="level3">
+<h3 class="anchored" data-anchor-id="des-approches-symboliques-fondées-sur-les-mots">Des approches symboliques fondées sur les mots</h3>
+<p>Avant l’essor de l’apprentissage profond, les chercheur·es ont tenté d’utiliser des approches plus classiques de l’intelligence artificielle pour analyser le lien entre langage et personnalité. Ces méthodes — souvent fondées sur des règles simples ou des statistiques — représentent les <strong>premiers pas de l’IA appliquée à la psychologie du langage</strong>. Même si elles étaient moins performantes que les approches modernes, elles ont posé les bases de ce champ en plein essor : faire parler les textes pour mieux comprendre qui les écrit.</p>
+<p>Les premières tentatives pour relier le langage écrit aux traits de personnalité ont reposé sur des approches dites symboliques ou statistiques. L’une des plus connues est l’utilisation de <strong>LIWC</strong> (<em>Linguistic Inquiry and Word Count</em>), un outil qui scanne un texte et compte la fréquence de certains types de mots, comme ceux associés à la colère, à la famille, aux émotions positives ou négatives. En analysant ces fréquences, les chercheur·es pouvaient établir des liens avec des traits de personnalité. Par exemple, une personne utilisant souvent des mots chargés d’émotion positive pouvait être perçue comme plus extravertie, alors qu’un vocabulaire plus anxiogène était fréquemment associé au névrosisme.</p>
+</section>
+<section id="des-modèles-statistiques-plus-flexibles" class="level3">
+<h3 class="anchored" data-anchor-id="des-modèles-statistiques-plus-flexibles">Des modèles statistiques plus flexibles</h3>
+<p>En parallèle, des méthodes plus statistiques se sont développées. Des modèles comme les <strong>forêts aléatoires</strong>, les <strong>réseaux de neurones artificiels simples</strong> ou les <strong>SVM (support vector machines)</strong> ont été utilisés pour prédire les traits de personnalité à partir de caractéristiques linguistiques extraites manuellement. Ces caractéristiques incluaient, par exemple, le nombre de phrases, la longueur moyenne des mots, la fréquence d’utilisation de certains temps verbaux, ou encore la proportion de pronoms personnels. Ces approches, bien que plus souples que les analyses par mots-clés, restaient fortement dépendantes des choix faits par les chercheurs en amont : il fallait définir quoi mesurer, et comment.</p>
+</section>
+<section id="les-limites-de-ces-approches" class="level3">
+<h3 class="anchored" data-anchor-id="les-limites-de-ces-approches">Les limites de ces approches</h3>
+<p>Cependant, ces premières méthodes présentaient plusieurs limites importantes. D’abord, elles s’appuyaient sur de nombreuses hypothèses implicites : il fallait deviner à l’avance quels éléments du langage pourraient être liés à la personnalité. Ensuite, elles étaient peu sensibles au contexte. Un mot comme « froid », par exemple, n’aura pas le même sens selon qu’il décrit la météo ou une relation humaine. Ces modèles peinaient donc à saisir les subtilités du langage naturel. Enfin, leurs performances plafonnaient souvent autour de 65 à 70 % de précision, ce qui limitait leur utilité dans des contextes plus complexes ou variés. C’est précisément pour dépasser ces limites que les chercheurs se sont tournés vers des approches plus flexibles et puissantes, comme celles fondées sur le deep learning. Parmi elles, les modèles transformers marquent une avancée majeure.</p>
+</section>
+</section>
+<section id="comprendre-les-transformers-sans-équation" class="level2">
+<h2 class="anchored" data-anchor-id="comprendre-les-transformers-sans-équation">Comprendre les transformers (sans équation!)</h2>
+<p>[contenu déjà inclus]</p>
+</section>
+<section id="comment-létude-a-été-réalisée" class="level2">
+<h2 class="anchored" data-anchor-id="comment-létude-a-été-réalisée">Comment l’étude a été réalisée</h2>
+<p>[contenu déjà inclus]</p>
+</section>
+<section id="les-résultats-en-langage-simple" class="level2">
+<h2 class="anchored" data-anchor-id="les-résultats-en-langage-simple">Les résultats en langage simple</h2>
+<p>[contenu déjà inclus]</p>
+</section>
+<section id="pourquoi-cest-prometteur-pour-la-psychologie" class="level2">
+<h2 class="anchored" data-anchor-id="pourquoi-cest-prometteur-pour-la-psychologie">Pourquoi c’est prometteur pour la psychologie</h2>
+<p>[contenu déjà inclus]</p>
+</section>
+<section id="et-les-limites" class="level2">
+<h2 class="anchored" data-anchor-id="et-les-limites">Et les limites?</h2>
+<p>Évidemment, tout n’est pas parfait :</p>
+<ul>
+<li>L’algorithme fonctionne surtout sur <strong>des textes en anglais</strong>, écrits par une population assez homogène.</li>
+<li>Il ne prend en compte <strong>que le texte</strong>, pas le ton de la voix, le contexte, ni les émotions ressenties.</li>
+<li>Le modèle peut <strong>surapprendre</strong> à ses exemples, ce qui limite parfois sa généralisation.</li>
+</ul>
+<p>Mais ces défis sont connus, et les auteur·es proposent plusieurs pistes pour y remédier (données plus variées, données multimodales, etc.).</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Cette étude nous montre que des modèles comme ELECTRA peuvent <strong>apprendre à “read between the lines”</strong>, et identifier des <strong>indices subtils de la personnalité</strong> dans les textes. Cela ne remplace pas une évaluation clinique, bien sûr, mais cela ouvre la voie à des outils hybrides, où <strong>l’IA soutient l’humain</strong>.</p>
+<p>Je continuerai d’explorer ces liens entre langage, psychologie et IA dans ce blogue. N’hésitez pas à m’écrire si vous souhaitez que j’aborde un sujet en particulier!</p>
+<p>L’article complet est disponible ici : <strong>Saberi, H., Ghofrani, S., &amp; Ravanmehr, R. (2025)</strong>. <em>Personality Recognition Using Transformer Model: A Study on the Big Five Traits</em>. IEEE ICWR. 🔗 <a href="https://ieeexplore.ieee.org/document/11006181">Accès via IEEE Xplore</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/benoitplante\.github\.io\/blogue");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<a href="https://github.com/benplante">Ben Plante</a> ©
+<script>document.write(new Date().getFullYear())</script>
+</div>   
+    <div class="nav-footer-center">
+<p>Blogue propulsé par <a href="https://quarto.org">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/benplante" target="_blank">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="../../posts.xml" target="_blank">
+      <i class="bi bi-rss" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
