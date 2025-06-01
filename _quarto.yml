@@ -2,6 +2,8 @@ project:
   type: website
   output-dir: docs
 
+draft-mode: unlinked
+
 # Métadonnées
 description-meta: "Blogue sur les liens entre psychologie et intelligence artificielle"
 author-meta: "Ben Plante"
@@ -10,7 +12,7 @@ website:
   title: "Benoit Plante"
   description: "Réflexions, cas d’usage et outils à l’interface entre IA et psychologie"
   site-url: "https://benoitplante.github.io/blogue"
-  draft-mode: unlinked
+
 
   navbar:
     background: light
@@ -53,7 +55,6 @@ website:
     type: textbox
 
   reader-mode: true
-  draft-mode: unlinked
 
   repo-url: https://github.com/benplante/blogue
 

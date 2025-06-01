@@ -21,37 +21,35 @@ listing:
       - "title asc"
 ---
 
-::: {.hero-heading style="text-align: center; margin-bottom: 2em;"}
+::: {.hero-heading style="display: flex; align-items: center; gap: 2em; flex-wrap: wrap; justify-content: center; margin-bottom: 2em;"}
 
+<div style="flex: 0 0 auto; text-align: center;">
+  ![Photo générée par l'IA](files/profiles/photo-benoit.png){width="200px" style="border-radius: 50%; margin-bottom: 0.5em;"}
 
-![Photo générée par l'IA](files/profiles/photo-benoit.png){width="250px" style="border-radius: 50%; margin-bottom: 1em;"}
+  <span style="display: inline-flex; gap: 1em; justify-content: center;">
+    <a href="https://github.com/benplante" target="_blank"><i class="fa fa-github"></i></a>
+    <a href="https://linkedin.com/in/benplante" target="_blank"><i class="fa fa-linkedin"></i></a>
+    <a href="https://orcid.org/0009-0003-5449-427X" target="_blank"><i class="ai ai-orcid"></i></a>
+  </span>
+</div>
 
-<span style="display: inline-flex; gap: 1em; justify-content: center;">
-  <a href="https://github.com/benplante" target="_blank"><i class="fa fa-github"></i></a>
-  <a href="https://linkedin.com/in/benplante" target="_blank"><i class="fa fa-linkedin"></i></a>
-  <a href="https://orcid.org/0009-0003-5449-427X" target="_blank"><i class="ai ai-orcid"></i></a>
-</span>
+<div style="flex: 1 1 300px; min-width: 280px;">
+  ::: {.hero-description style="text-align: left;"}
+  Je m’appelle **Benoit Plante**, coordonnateur scientifique du [GRIN](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864), tuteur en psychologie à la [TELUQ](https://www.teluq.ca/), doctorant à l’UQTR et passionné par les liens entre la psychologie et l’intelligence artificielle.
 
----
+  Ce blogue est mon espace personnel pour explorer, réfléchir et documenter mes découvertes à l’interface entre IA, science des données et la psychologie. J’y partage principalement les éléments suivants  :
 
-::: {.hero-description style="text-align: left;"}
-
-Je m’appelle **Benoit Plante**, coordonnateur scientifique du [GRIN](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864), tuteur en psychologie à la [TELUQ](https://www.teluq.ca/), doctorant à l’UQTR et passionné par les liens entre la psychologie et l’intelligence artificielle.
-
-Ce blogue est mon espace personnel pour explorer, réfléchir et documenter mes découvertes à l’interface entre IA, science des données et la psychologie. J’y partage principalement les éléments suivants  :
-
-- La **vulgarisation** de travaux scientifiques sur l’IA en psychologie
-- L’usage d’**outils d’IA appliqués aux méthodes de recherche** (analyse, rédaction, automatisation)
-- Les **enjeux éthiques, critiques et méthodologiques** liés à l'a reproductibilité'utilisation de l'IA
-
-:::
+  - La **vulgarisation** de travaux scientifiques sur l’IA en psychologie  
+  - L’usage d’**outils d’IA appliqués aux méthodes de recherche** (analyse, rédaction, automatisation)  
+  - Les **enjeux éthiques, critiques et méthodologiques** liés à l’utilisation de l’IA
+  :::
+</div>
 
 :::
 
 ## Structure du site
 
 Ce blogue est organisé pour vous permettre de naviguer facilement entre mes les différentes thématiques que je couvre ainsi que les outils que j'utilise et que je développe :
-
 
 - **Blogue** : l’ensemble des publications, publiés au fil de mes découvertes et expérimentations.
 - **Thématiques** — Pour explorer selon vos intérêts :
@@ -66,7 +64,6 @@ Ce blogue est organisé pour vous permettre de naviguer facilement entre mes les
 - **Outils** : tutoriels et ressources que j’utilise dans la recherche en psychologie.
 
 Ce blogue est en constante évolution, et j’accueille volontiers les suggestions, commentaires ou idées de collaboration.
-
 
 ## Derniers billets
 
