@@ -35,22 +35,11 @@ listing:
 
 <div style="flex: 1 1 300px; min-width: 280px;">
 ::: {.hero-description style="text-align: left;"}
-Je suis actuellement coordonnateur scientifique du GRIN et doctorant en psychologie à l’UQTR. Mon travail gravite autour du développement de l’enfant et de la famille, avec un quotidien partagé entre l’analyse de données, la coordination de projets de recherche et la mobilisation des connaissances. J’enseigne aussi la psychologie à la TÉLUQ.
+Je suis actuellement coordonnateur scientifique du [GRIN](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864) et doctorant en psychologie à l’UQTR. Mon travail gravite autour du développement de l’enfant et de la famille, avec un quotidien partagé entre l’analyse de données, la coordination de projets de recherche et la mobilisation des connaissances. J’enseigne aussi la psychologie à la [TÉLUQ](https://www.teluq.ca/)
 
 Je m’intéresse particulièrement aux méthodes de recherche en psychologie, à l’analyse de données avec R, ainsi qu’à l’utilisation de Quarto pour produire des rapports reproductibles et dynamiques. L’intelligence artificielle appliquée à la recherche en psychologie fait également partie de mes thématiques d’intérêt qu’il s’agisse d’automatiser la revue de littérature, d’améliorer nos outils de mesure ou de documenter des trajectoires complexes.
 
 Sur ce site, je documente mes projets de recherche, mes expérimentations méthodologiques et mes réflexions à l’interface entre psychologie, IA et science des données. J’y partage aussi des billets de blogue, des ressources ouvertes, ainsi que des exemples concrets d’utilisation d’outils comme R et Quarto dans un cadre scientifique.
-:::
 
-</div>
 
 :::
-
-## Dernières publications
-
-Découvrez les derniers articles publiés sur le blogue, ou explorez les [billets par thématique](posts.qmd).
-
-:::{#recent-posts}
-:::
-
-<p align="right"> [Tous les billets »](/posts.qmd)</p>
