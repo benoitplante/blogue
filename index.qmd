@@ -34,38 +34,19 @@ listing:
 </div>
 
 <div style="flex: 1 1 300px; min-width: 280px;">
-  ::: {.hero-description style="text-align: left;"}
-  Je m’appelle **Benoit Plante**, coordonnateur scientifique du [GRIN](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864), tuteur en psychologie à la [TELUQ](https://www.teluq.ca/), doctorant à l’UQTR et passionné par les liens entre la psychologie et l’intelligence artificielle.
+::: {.hero-description style="text-align: left;"}
+Je suis actuellement coordonnateur scientifique du GRIN et doctorant en psychologie à l’UQTR. Mon travail gravite autour du développement de l’enfant et de la famille, avec un quotidien partagé entre l’analyse de données, la coordination de projets de recherche et la mobilisation des connaissances. J’enseigne aussi la psychologie à la TÉLUQ.
 
-  Ce blogue est mon espace personnel pour explorer, réfléchir et documenter mes découvertes à l’interface entre IA, science des données et la psychologie. J’y partage principalement les éléments suivants  :
+Je m’intéresse particulièrement aux méthodes de recherche en psychologie, à l’analyse de données avec R, ainsi qu’à l’utilisation de Quarto pour produire des rapports reproductibles et dynamiques. L’intelligence artificielle appliquée à la recherche en psychologie fait également partie de mes thématiques d’intérêt qu’il s’agisse d’automatiser la revue de littérature, d’améliorer nos outils de mesure ou de documenter des trajectoires complexes.
 
-  - La **vulgarisation** de travaux scientifiques sur l’IA en psychologie  
-  - L’usage d’**outils d’IA appliqués aux méthodes de recherche** (analyse, rédaction, automatisation)  
-  - Les **enjeux éthiques, critiques et méthodologiques** liés à l’utilisation de l’IA
-  :::
+Sur ce site, je documente mes projets de recherche, mes expérimentations méthodologiques et mes réflexions à l’interface entre psychologie, IA et science des données. J’y partage aussi des billets de blogue, des ressources ouvertes, ainsi que des exemples concrets d’utilisation d’outils comme R et Quarto dans un cadre scientifique.
+:::
+
 </div>
 
 :::
 
-## Structure du site
-
-Ce blogue est organisé pour vous permettre de naviguer facilement entre mes les différentes thématiques que je couvre ainsi que les outils que j'utilise et que je développe :
-
-- **Blogue** : l’ensemble des publications, publiés au fil de mes découvertes et expérimentations.
-- **Thématiques** — Pour explorer selon vos intérêts :
-  - **Méthodologie augmentée**  
-    *Publications d'articles sur l'IA et les méthodes de recherches*
-  - **Utilisation appliquée de l'IA**  
-    *Publication de projets appliqués de l'utilisation de l'IA*
-  - **Enseignement & formation**  
-    *Publications sur l'IA et l'enseignement/formation*
-  - **Éthique, biais et transparence**  
-    *Publications sur l'IA et l'éthique*
-- **Outils** : tutoriels et ressources que j’utilise dans la recherche en psychologie.
-
-Ce blogue est en constante évolution, et j’accueille volontiers les suggestions, commentaires ou idées de collaboration.
-
-## Derniers billets
+## Dernières publications
 
 Découvrez les derniers articles publiés sur le blogue, ou explorez les [billets par thématique](posts.qmd).
 

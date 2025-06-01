@@ -24,18 +24,10 @@ website:
         href: about.qmd
       - text: Blogue
         href: posts.qmd
-      - text: Thématiques
-        menu:
-          - text: Méthodologie augmentée
-            href: posts.qmd#category=metho
-          - text: Utilisation appliquée de l'IA
-            href: posts.qmd#category=utilisation
-          - text: Enseignement & formation
-            href: posts.qmd#category=enseignement
-          - text: Éthique, biais et transparence
-            href: posts.qmd#category=ethique
-      - text: Outils
-        href: outils.qmd
+      - text: Projets
+        href: projects.qmd
+      - text: Enseignement
+        href: teaching.qmd
 
   page-navigation: true
 
