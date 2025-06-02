@@ -28,11 +28,74 @@
     "text": "Class 3\n\n\n\n\n\nSpring 2025,   Spring 2024\nClass 3 introduction."
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Méthodes IA",
     "section": "",
-    "text": "Order By\n      Default\n      \n      \n      \n        Title\n      \n      \n        Team\n      \n      \n        Funder\n      \n      \n        Description\n      \n      \n        Start\n      \n      \n        End\n      \n      \n        Funding\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nTitle\n\n\n\nTeam\n\n\n\nFunder\n\n\n\nDescription\n\n\n\nFunding\n\n\n\nStart\n\n\n\nEnd\n\n\n\n\n\n\n\n\n\n\n\nExploring \n\n\nAcademic Website\n\n\nFunder\n\n\nThe goal of this project is to investigate .\n\n\n$0\n\n\n2024\n\n\n2025\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nReconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers\n\n\n\nMéthodologie augmentée par l’IA\n\n\n\n\n\n\n\n\n\nMay 26, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nAnalyser les données de Famili@ en collaboration avec l’IA\n\n\n\nMéthodologie augmentée par l’IA\n\nUtilisation appliquée de l'IA\n\n\n\n\n\n\n\n\n\nMay 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nExtraire les données de Famili@ en collaboration avec l’IA\n\n\n\nMéthodologie augmentée par l’IA\n\nUtilisation appliquée de l'IA\n\n\n\n\n\n\n\n\n\nMay 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuand une IA devient co-chercheuse : réflexions autour de Robin\n\n\n\nMéthodologie augmentée par l’IA\n\n\n\n\n\n\n\n\n\nMay 21, 2025\n\n\nBenoit Plante\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2025-05-21-ai-robin/index.html",
+    "href": "posts/2025-05-21-ai-robin/index.html",
+    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
+    "section": "",
+    "text": "Générée par ChatGPT"
+  },
+  {
+    "objectID": "posts/2025-05-21-ai-robin/index.html#une-découverte-marquante",
+    "href": "posts/2025-05-21-ai-robin/index.html#une-découverte-marquante",
+    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
+    "section": "Une découverte marquante",
+    "text": "Une découverte marquante\nJe suis tombé récemment sur une annonce qui m’a à la fois fasciné et interpellé : le laboratoire Future House, un groupe de recherche basé à San Francisco qui explore les frontières de la découverte scientifique automatisée, a présenté Robin, une plateforme d’IA capable de réaliser plusieurs étapes clés du travail scientifique. Elle peut lire des articles, formuler des hypothèses, proposer des expériences, analyser les résultats et même suggérer des pistes de recherche à explorer ensuite. Et tout cela se fait à l’aide d’un système dit « multi-agent », avec l’intervention de chercheuses et chercheurs seulement pour les étapes en laboratoire.\nUn système multi-agent, c’est un ensemble de petits programmes spécialisés, appelés agents, qui collaborent pour accomplir des tâches complexes. Chacun a un rôle bien précis : certains cherchent dans la littérature scientifique, d’autres analysent les données d’expériences, d’autres encore comparent différentes pistes pour sélectionner les plus prometteuses. Dans le cas de Robin, ces agents s’appellent Crow, Falcon et Finch, et ils sont conçus pour se compléter comme une équipe de recherche virtuelle.\nLe preprint associé au projet, intitulé Robin: A Multi-Agent System for Automating Scientific Discovery (Ghareeb et al., 2025), présente une démonstration concrète dans le domaine biomédical : Robin a permis d’identifier un nouveau candidat thérapeutique pour traiter la dégénérescence maculaire liée à l’âge (forme sèche), en proposant une piste qui n’avait jamais été explorée auparavant — le ripasudil, un médicament déjà utilisé pour d’autres troubles oculaires. Tout le raisonnement scientifique, les figures et les analyses présentés dans l’article ont été générés par Robin."
+  },
+  {
+    "objectID": "posts/2025-05-21-ai-robin/index.html#quelles-implications-pour-la-psychologie",
+    "href": "posts/2025-05-21-ai-robin/index.html#quelles-implications-pour-la-psychologie",
+    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
+    "section": "Quelles implications pour la psychologie?",
+    "text": "Quelles implications pour la psychologie?\nCette avancée m’amène à me poser des questions sur ce que cela signifie pour des disciplines comme la psychologie, où les données sont souvent plus complexes, nuancées, et ancrées dans des contextes humains.\nAujourd’hui déjà, je considère que certains outils d’IA agissent comme de véritables partenaires dans nos démarches scientifiques. Je les utilise pour synthétiser de la littérature, organiser des corpus de données, ou encore proposer des structures d’analyse. Nous sommes donc déjà entrés dans une ère de recherche assistée. La nouveauté avec Robin, c’est que l’on entrevoit maintenant la possibilité d’un cycle de recherche entièrement automatisé — du moins dans certains contextes bien circonscrits.\nPar exemple, on peut imaginer des systèmes capables d’explorer des bases de données ouvertes, de formuler des hypothèses à partir de connaissances publiées, puis d’analyser des données accessibles publiquement pour confirmer ou rejeter ces hypothèses. Dans le domaine de la psychologie, cela pourrait se faire avec des jeux de données longitudinaux disponibles en libre accès, en lien avec le développement de l’enfant, la santé mentale ou les déterminants sociaux.\nUn système comme Robin pourrait théoriquement formuler des hypothèses à partir de ces corpus, effectuer des analyses exploratoires, et suggérer de nouvelles directions de recherche, le tout sans intervention humaine directe — tout en permettant une validation et une interprétation ensuite par des équipes humaines. Cela ne remplacerait pas la recherche participative ou contextuelle, mais cela permettrait de générer de nouvelles connaissances en parallèle, de façon continue."
+  },
+  {
+    "objectID": "posts/2025-05-21-ai-robin/index.html#une-transformation-à-suivre-de-près",
+    "href": "posts/2025-05-21-ai-robin/index.html#une-transformation-à-suivre-de-près",
+    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
+    "section": "Une transformation à suivre de près",
+    "text": "Une transformation à suivre de près\nJe vais suivre de près les développements autour de Robin et des autres projets similaires. Ils ouvrent une réflexion profonde sur notre manière de faire de la recherche, sur notre rapport à la connaissance, et sur la façon dont l’IA pourrait enrichir, sans remplacer, notre compréhension du monde. Ces technologies ne nous invitent pas seulement à revoir nos outils, mais à repenser nos méthodologies, nos collaborations et nos modèles de diffusion du savoir. Il se pourrait qu’une partie de la science de demain ne soit pas écrite par des humains, mais validée, partagée et enrichie par eux. C’est une perspective à la fois stimulante et exigeante, qui demande une vigilance éthique et une ouverture intellectuelle constante.\nRéférence :\nGhareeb, A. E., Chang, B., Mitchener, L., Yiu, A., Szostkiewicz, C. J., Laurent, J. M., … & Rodriques, S. G. (2025). Robin: A multi-agent system for automating scientific discovery. arXiv preprint arXiv:2505.13400. https://arxiv.org/abs/2505.13400"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Benoit Plante\nCourriel : benoit.plante@uqtr.ca"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "À propos",
+    "section": "",
+    "text": "Je m’appelle Benoit Plante. Je suis coordonnateur scientifique du GRIN – Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés, tuteur en psychologie à la TELUQ et doctorant à l’Université du Québec à Trois-Rivières.\nJe m’intéresse aux usages de l’intelligence artificielle dans la recherche en psychologie. J’explore comment ces technologies peuvent soutenir les projets de recherche et les méthodes en psychologie. En parallèle, je m’intéresse à la science ouverte, l’utilisation des données secondaires et l’utilisation de R comme outil d’analyse en psychologie."
+  },
+  {
+    "objectID": "about.html#qui-suis-je",
+    "href": "about.html#qui-suis-je",
+    "title": "À propos",
+    "section": "",
+    "text": "Je m’appelle Benoit Plante. Je suis coordonnateur scientifique du GRIN – Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés, tuteur en psychologie à la TELUQ et doctorant à l’Université du Québec à Trois-Rivières.\nJe m’intéresse aux usages de l’intelligence artificielle dans la recherche en psychologie. J’explore comment ces technologies peuvent soutenir les projets de recherche et les méthodes en psychologie. En parallèle, je m’intéresse à la science ouverte, l’utilisation des données secondaires et l’utilisation de R comme outil d’analyse en psychologie."
+  },
+  {
+    "objectID": "about.html#pourquoi-ce-blogue",
+    "href": "about.html#pourquoi-ce-blogue",
+    "title": "À propos",
+    "section": "Pourquoi ce blogue ?",
+    "text": "Pourquoi ce blogue ?\nCe blogue est un carnet de bord personnel et professionnel, que j’utilise pour partager les articles scientifiques les plus récents sur l’IA et la recherche en psychologue, pour documentater mes expérimentations dans l’utilisation d’outils d’IA et partager mes réflexions et apprentissages. J’y consigne ce que j’apprends et teste dans le cadre de mes projets :\nComme le blogue s’intéresse à l’IA, je produis l’ensemble du contenu en collaboration avec l’intelligence artificielle, principalement via mes échanges avec ChatGPT. J’utilise ce partenariat pour réfléchir, structurer et produire les publications et le code qui est utilisées, dans une logique de co-écriture consciente et critique. Je cherche à être le plus transparent possible dans l’utilisation de l’IA dans les publications.\nCe blogue est volontairement exploratoire. J’y publie à mon rythme, sans prétention à l’exhaustivité, mais avec l’envie de contribuer à une culture de partage, de dialogue et d’expérimentation."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Benoit Plante",
+    "section": "",
+    "text": "Photo générée par l’IA\n\n\n    \n\n\n\nJe suis actuellement coordonnateur scientifique du GRIN et doctorant en psychologie à l’UQTR. Mon travail gravite autour du développement de l’enfant et de la famille, avec un quotidien partagé entre l’analyse de données, la coordination de projets de recherche et la mobilisation des connaissances. J’enseigne aussi la psychologie à la TÉLUQ\nJe m’intéresse particulièrement aux méthodes de recherche en psychologie, à l’analyse de données avec R, ainsi qu’à l’utilisation de Quarto pour produire des rapports reproductibles et dynamiques. L’intelligence artificielle appliquée à la recherche en psychologie fait également partie de mes thématiques d’intérêt qu’il s’agisse d’automatiser la revue de littérature, d’améliorer nos outils de mesure ou de documenter des trajectoires complexes.\nSur ce site, je documente mes projets de recherche personnels intégrant l’intelligence artificielle dans le domaine de la psychologie, ainsi que mes expérimentations méthodologiques à l’intersection de la science des données, de l’IA et des méthodes en sciences psychologiques.\nJ’y partage également des résumés d’articles et de nouveautés sur les outils IA en recherche, des billets de blogue, des ressources ouvertes, ainsi que des exemples concrets d’utilisation de R, Quarto et autres outils numériques en contexte scientifique.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers\n\n\n\nMay 26, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuand une IA devient co-chercheuse : réflexions autour de Robin\n\n\n\nMay 21, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2025-05-29-personnalite-transformer/personnalite_transformers.html",
@@ -105,108 +168,10 @@
     "text": "Conclusion\nCette étude nous montre que des modèles comme ELECTRA peuvent apprendre à “read between the lines”, et identifier des indices subtils de la personnalité dans les textes. Cela ne remplace pas une évaluation clinique, bien sûr, mais cela ouvre la voie à des outils hybrides, où l’IA soutient l’humain.\nJe continuerai d’explorer ces liens entre langage, psychologie et IA dans ce blogue. N’hésitez pas à m’écrire si vous souhaitez que j’aborde un sujet en particulier!\nL’article complet est disponible ici : Saberi, H., Ghofrani, S., & Ravanmehr, R. (2025). Personality Recognition Using Transformer Model: A Study on the Big Five Traits. IEEE ICWR. 🔗 Accès via IEEE Xplore"
   },
   {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "People",
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projets",
     "section": "",
-    "text": "PI\n\n\n\n\n\n\n\n\n\n\n\n\n\nPhD Student\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "people.html#team",
-    "href": "people.html#team",
-    "title": "People",
-    "section": "",
-    "text": "PI\n\n\n\n\n\n\n\n\n\n\n\n\n\nPhD Student\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "people.html#alumni",
-    "href": "people.html#alumni",
-    "title": "People",
-    "section": "Alumni",
-    "text": "Alumni\n\n\n   \n    \n    \n      Order By\n      Default\n      \n      \n      \n        Name\n      \n      \n        Role\n      \n      \n        Started\n      \n      \n        Ended\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nName\n\n\n\nRole\n\n\n\nStarted\n\n\n\nEnded\n\n\n\n\n\n\n\n\n\n\n\nStudent Name\n\n\nPhD Student\n\n\n2024\n\n\n2025\n\n\n\n\n\n\n\n\n\nPI Name\n\n\nPI\n\n\n \n\n\n \n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Benoit Plante",
-    "section": "",
-    "text": "Photo générée par l’IA\n\n\n    \n\n\n\nJe suis actuellement coordonnateur scientifique du GRIN et doctorant en psychologie à l’UQTR. Mon travail gravite autour du développement de l’enfant et de la famille, avec un quotidien partagé entre l’analyse de données, la coordination de projets de recherche et la mobilisation des connaissances. J’enseigne aussi la psychologie à la TÉLUQ\nJe m’intéresse particulièrement aux méthodes de recherche en psychologie, à l’analyse de données avec R, ainsi qu’à l’utilisation de Quarto pour produire des rapports reproductibles et dynamiques. L’intelligence artificielle appliquée à la recherche en psychologie fait également partie de mes thématiques d’intérêt qu’il s’agisse d’automatiser la revue de littérature, d’améliorer nos outils de mesure ou de documenter des trajectoires complexes.\nSur ce site, je documente mes projets de recherche, mes expérimentations méthodologiques et mes réflexions à l’interface entre psychologie, IA et science des données. J’y partage aussi des billets de blogue, des ressources ouvertes, ainsi que des exemples concrets d’utilisation d’outils comme R et Quarto dans un cadre scientifique.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers\n\n\n\nMay 26, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuand une IA devient co-chercheuse : réflexions autour de Robin\n\n\n\nMay 21, 2025\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "À propos",
-    "section": "",
-    "text": "Je m’appelle Benoit Plante. Je suis coordonnateur scientifique du GRIN – Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés, tuteur en psychologie à la TELUQ et doctorant à l’Université du Québec à Trois-Rivières.\nJe m’intéresse aux usages de l’intelligence artificielle dans la recherche en psychologie. J’explore comment ces technologies peuvent soutenir les projets de recherche et les méthodes en psychologie. En parallèle, je m’intéresse à la science ouverte, l’utilisation des données secondaires et l’utilisation de R comme outil d’analyse en psychologie."
-  },
-  {
-    "objectID": "about.html#qui-suis-je",
-    "href": "about.html#qui-suis-je",
-    "title": "À propos",
-    "section": "",
-    "text": "Je m’appelle Benoit Plante. Je suis coordonnateur scientifique du GRIN – Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés, tuteur en psychologie à la TELUQ et doctorant à l’Université du Québec à Trois-Rivières.\nJe m’intéresse aux usages de l’intelligence artificielle dans la recherche en psychologie. J’explore comment ces technologies peuvent soutenir les projets de recherche et les méthodes en psychologie. En parallèle, je m’intéresse à la science ouverte, l’utilisation des données secondaires et l’utilisation de R comme outil d’analyse en psychologie."
-  },
-  {
-    "objectID": "about.html#pourquoi-ce-blogue",
-    "href": "about.html#pourquoi-ce-blogue",
-    "title": "À propos",
-    "section": "Pourquoi ce blogue ?",
-    "text": "Pourquoi ce blogue ?\nCe blogue est un carnet de bord personnel et professionnel, que j’utilise pour partager les articles scientifiques les plus récents sur l’IA et la recherche en psychologue, pour documentater mes expérimentations dans l’utilisation d’outils d’IA et partager mes réflexions et apprentissages. J’y consigne ce que j’apprends et teste dans le cadre de mes projets :\nComme le blogue s’intéresse à l’IA, je produis l’ensemble du contenu en collaboration avec l’intelligence artificielle, principalement via mes échanges avec ChatGPT. J’utilise ce partenariat pour réfléchir, structurer et produire les publications et le code qui est utilisées, dans une logique de co-écriture consciente et critique. Je cherche à être le plus transparent possible dans l’utilisation de l’IA dans les publications.\nCe blogue est volontairement exploratoire. J’y publie à mon rythme, sans prétention à l’exhaustivité, mais avec l’envie de contribuer à une culture de partage, de dialogue et d’expérimentation."
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "Blogue – Psychologie & Intelligence artificielle\nBenoit Plante\nCoordonnateur scientifique | Ph.D(c) en psychologie\nCourriel : benoit.plante@uqtr.ca"
-  },
-  {
-    "objectID": "posts/2025-05-21-ai-robin/index.html",
-    "href": "posts/2025-05-21-ai-robin/index.html",
-    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
-    "section": "",
-    "text": "Générée par ChatGPT"
-  },
-  {
-    "objectID": "posts/2025-05-21-ai-robin/index.html#une-découverte-marquante",
-    "href": "posts/2025-05-21-ai-robin/index.html#une-découverte-marquante",
-    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
-    "section": "Une découverte marquante",
-    "text": "Une découverte marquante\nJe suis tombé récemment sur une annonce qui m’a à la fois fasciné et interpellé : le laboratoire Future House, un groupe de recherche basé à San Francisco qui explore les frontières de la découverte scientifique automatisée, a présenté Robin, une plateforme d’IA capable de réaliser plusieurs étapes clés du travail scientifique. Elle peut lire des articles, formuler des hypothèses, proposer des expériences, analyser les résultats et même suggérer des pistes de recherche à explorer ensuite. Et tout cela se fait à l’aide d’un système dit « multi-agent », avec l’intervention de chercheuses et chercheurs seulement pour les étapes en laboratoire.\nUn système multi-agent, c’est un ensemble de petits programmes spécialisés, appelés agents, qui collaborent pour accomplir des tâches complexes. Chacun a un rôle bien précis : certains cherchent dans la littérature scientifique, d’autres analysent les données d’expériences, d’autres encore comparent différentes pistes pour sélectionner les plus prometteuses. Dans le cas de Robin, ces agents s’appellent Crow, Falcon et Finch, et ils sont conçus pour se compléter comme une équipe de recherche virtuelle.\nLe preprint associé au projet, intitulé Robin: A Multi-Agent System for Automating Scientific Discovery (Ghareeb et al., 2025), présente une démonstration concrète dans le domaine biomédical : Robin a permis d’identifier un nouveau candidat thérapeutique pour traiter la dégénérescence maculaire liée à l’âge (forme sèche), en proposant une piste qui n’avait jamais été explorée auparavant — le ripasudil, un médicament déjà utilisé pour d’autres troubles oculaires. Tout le raisonnement scientifique, les figures et les analyses présentés dans l’article ont été générés par Robin."
-  },
-  {
-    "objectID": "posts/2025-05-21-ai-robin/index.html#quelles-implications-pour-la-psychologie",
-    "href": "posts/2025-05-21-ai-robin/index.html#quelles-implications-pour-la-psychologie",
-    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
-    "section": "Quelles implications pour la psychologie?",
-    "text": "Quelles implications pour la psychologie?\nCette avancée m’amène à me poser des questions sur ce que cela signifie pour des disciplines comme la psychologie, où les données sont souvent plus complexes, nuancées, et ancrées dans des contextes humains.\nAujourd’hui déjà, je considère que certains outils d’IA agissent comme de véritables partenaires dans nos démarches scientifiques. Je les utilise pour synthétiser de la littérature, organiser des corpus de données, ou encore proposer des structures d’analyse. Nous sommes donc déjà entrés dans une ère de recherche assistée. La nouveauté avec Robin, c’est que l’on entrevoit maintenant la possibilité d’un cycle de recherche entièrement automatisé — du moins dans certains contextes bien circonscrits.\nPar exemple, on peut imaginer des systèmes capables d’explorer des bases de données ouvertes, de formuler des hypothèses à partir de connaissances publiées, puis d’analyser des données accessibles publiquement pour confirmer ou rejeter ces hypothèses. Dans le domaine de la psychologie, cela pourrait se faire avec des jeux de données longitudinaux disponibles en libre accès, en lien avec le développement de l’enfant, la santé mentale ou les déterminants sociaux.\nUn système comme Robin pourrait théoriquement formuler des hypothèses à partir de ces corpus, effectuer des analyses exploratoires, et suggérer de nouvelles directions de recherche, le tout sans intervention humaine directe — tout en permettant une validation et une interprétation ensuite par des équipes humaines. Cela ne remplacerait pas la recherche participative ou contextuelle, mais cela permettrait de générer de nouvelles connaissances en parallèle, de façon continue."
-  },
-  {
-    "objectID": "posts/2025-05-21-ai-robin/index.html#une-transformation-à-suivre-de-près",
-    "href": "posts/2025-05-21-ai-robin/index.html#une-transformation-à-suivre-de-près",
-    "title": "Quand une IA devient co-chercheuse : réflexions autour de Robin",
-    "section": "Une transformation à suivre de près",
-    "text": "Une transformation à suivre de près\nJe vais suivre de près les développements autour de Robin et des autres projets similaires. Ils ouvrent une réflexion profonde sur notre manière de faire de la recherche, sur notre rapport à la connaissance, et sur la façon dont l’IA pourrait enrichir, sans remplacer, notre compréhension du monde. Ces technologies ne nous invitent pas seulement à revoir nos outils, mais à repenser nos méthodologies, nos collaborations et nos modèles de diffusion du savoir. Il se pourrait qu’une partie de la science de demain ne soit pas écrite par des humains, mais validée, partagée et enrichie par eux. C’est une perspective à la fois stimulante et exigeante, qui demande une vigilance éthique et une ouverture intellectuelle constante.\nRéférence :\nGhareeb, A. E., Chang, B., Mitchener, L., Yiu, A., Szostkiewicz, C. J., Laurent, J. M., … & Rodriques, S. G. (2025). Robin: A multi-agent system for automating scientific discovery. arXiv preprint arXiv:2505.13400. https://arxiv.org/abs/2505.13400"
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Nouveautés et publications",
-    "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nReconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers\n\n\n\nMéthodologie augmentée par l’IA\n\n\n\n\n\n\n\n\n\nMay 26, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuand une IA devient co-chercheuse : réflexions autour de Robin\n\n\n\nMéthodologie augmentée par l’IA\n\n\n\n\n\n\n\n\n\nMay 21, 2025\n\n\nBenoit Plante\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Notes: * corresponding author; GS graduate student advisee; VS visiting scholar;  ESI Highly Cited Paper (top 1%);  ESI Hot Paper (top 0.1%)\nTotal citations as of January 2025:"
-  },
-  {
-    "objectID": "publications.html#selected-work",
-    "href": "publications.html#selected-work",
-    "title": "Publications",
-    "section": "Selected Work",
-    "text": "Selected Work\nEinstein, A., Podolsky, B., & Rosen, N. (1935). Can quantum-mechanical description of physical reality be considered complete?. Physical review, 47(10), 777. [pdf] [code and data]   \n\n\n\n\n\n\nEinstein, A. (1965). Concerning an heuristic point of view toward the emission and transformation of light. American Journal of Physics, 33(5), 367. [pdf]"
+    "text": "No matching items"
   }
 ]

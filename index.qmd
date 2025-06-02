@@ -35,13 +35,10 @@ listing:
 
 <div style="flex: 1 1 300px; min-width: 280px;">
 ::: {.hero-description style="text-align: left;"}
-Je suis actuellement coordonnateur scientifique du [GRIN](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864) et doctorant en psychologie à l’UQTR. Mon travail gravite autour du développement de l’enfant et de la famille, avec un quotidien partagé entre l’analyse de données, la coordination de projets de recherche et la mobilisation des connaissances. J’enseigne aussi la psychologie à la [TÉLUQ](https://www.teluq.ca/)
+Je suis coordonnateur scientifique du GRIN, doctorant en psychologie à l’UQTR, et chargé de cours à la TÉLUQ. Mon travail porte sur le développement de l’enfant et de la famille, l’analyse de données en R, et les méthodes de recherche en psychologie.
 
-Je m’intéresse particulièrement aux méthodes de recherche en psychologie, à l’analyse de données avec R, ainsi qu’à l’utilisation de Quarto pour produire des rapports reproductibles et dynamiques. L’intelligence artificielle appliquée à la recherche en psychologie fait également partie de mes thématiques d’intérêt qu’il s’agisse d’automatiser la revue de littérature, d’améliorer nos outils de mesure ou de documenter des trajectoires complexes.
+Je m’intéresse à l’usage de l’intelligence artificielle pour automatiser, documenter et enrichir la recherche psychologique.
 
-Sur ce site, je documente mes projets de recherche personnels intégrant l’intelligence artificielle dans le domaine de la psychologie, ainsi que mes expérimentations méthodologiques à l’intersection de la science des données, de l’IA et des méthodes en sciences psychologiques.
-
-J’y partage également des résumés d’articles et de nouveautés sur les outils IA en recherche, des billets de blogue, des ressources ouvertes, ainsi que des exemples concrets d’utilisation de R, Quarto et autres outils numériques en contexte scientifique.
-
+Sur ce site, je partage mes projets personnels, des expérimentations méthodologiques, des résumés d’articles, ainsi que des ressources et exemples concrets d’outils comme R et Quarto.
 
 :::

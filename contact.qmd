@@ -6,10 +6,7 @@ title-block-banner: false
 
 <center>
 
-**Blogue – Psychologie & Intelligence artificielle**
-
-Benoit Plante  
-Coordonnateur scientifique | Ph.D(c) en psychologie
+Benoit Plante 
 
 Courriel : *benoit.plante@uqtr.ca*  
 
