@@ -1,0 +1,196 @@
+---
+title: "Extraire les données de Famili@ en collaboration avec l'IA"
+description-meta: "Exploration d’un projet de recherche basé sur la base Famili@, combinant données secondaires, méta-science et intelligence artificielle générative."
+date: 2025-05-23
+categories: ["Méthodologie augmentée par l’IA", "Utilisation appliquée de l'IA"]
+format: html
+execute:
+  eval: false
+draft: true
+---
+
+Dans ce billet, je documente avec transparence le cheminement technique que j'ai suivi pour extraire les données du site [familia.ucs.inrs.ca](https://familia.ucs.inrs.ca/) et créer une base de données exploitable sur la recherche en psychologie portant sur la famille au Québec.
+
+Ce travail s'inscrit dans une démarche plus large de co-analyse assistée par intelligence artificielle, qui vise à produire un portrait actualisé de la recherche en psychologie sur la famille à partir des données disponibles dans la plateforme Famili\@. L'objectif à terme est de décrire et quantifier l'évolution des thématiques, des approches théoriques et méthologiques dans la recherche familiale au Québec, dans les 40 dernières années, en collaboration avec une IA générative.
+
+Mais avant d'analyser quoi que ce soit, il faut d'abord extraire les données. Et ce n'était pas chose simple. J'imagine que j'aurais possiblement pu demandé accès à la base documentaire directement, mais je voulais apprendre à faire du webscrapping pour d'autres projets futurs!
+
+## 1. Premiers tests et limites des approches classiques
+
+J'ai d'abord exploré le site manuellement. Chaque fiche de projet apparaît dans une boîte visuelle, avec des champs visibles comme le titre, les auteurs, l'année et les mots-clés. Mon premier réflexe a été de tester le package `{rvest}`, qui permet d'extraire des données à partir d'une page HTML. Il s'agit d'un outil très efficace lorsqu'on travaille avec des sites web statiques : on peut identifier des balises HTML précises (comme `<h3>` pour les titres ou des classes CSS comme `.auteursNotice`) et extraire leur contenu directement dans un tableau.
+
+Mais rapidement, j'ai compris que les données ne se trouvaient pas directement dans le HTML statique récupéré par `{rvest}`. En fait, le contenu est **chargé dynamiquement** via JavaScript, c'est-à-dire que le HTML initial ne contient pas encore les résultats — ceux-ci apparaissent seulement une fois que le navigateur a exécuté le JavaScript. Et comme `{rvest}` n'exécute pas de JavaScript, il est aveugle à ces contenus. Résultat : les sélecteurs CSS que je testais ne renvoyaient rien ou des blocs incomplets. Il fallait donc une approche capable de simuler le comportement d’un navigateur moderne.
+
+## 2. Passage à Chromote avec ChatGPT
+
+C'est ici que ChatGPT entre en jeu pour la première fois. L'approche classique ne fonctionnant pas, j'ai posé le problème à l'IA : comment extraire des données qui ne sont pas directement visibles dans le code de la page web, mais qui s'affichent seulement une fois que la page est complètement chargée dans le navigateur ?
+
+ChatGPT m’a suggéré une alternative : utiliser le package `{chromote}`. Ce dernier permet de piloter un navigateur Chrome en arrière-plan, un peu comme si on simulait un utilisateur réel qui charge la page, attend que tout s'affiche, puis regarde le contenu une fois complet. On appelle cela un navigateur "sans tête" (headless).
+
+Grâce à `{chromote}`, on peut donc accéder à des pages web **après** que le JavaScript a fini de s'exécuter — ce qui est essentiel ici, puisque le site familia.ucs.inrs.ca n'affiche pas directement les données dans le code source, mais les ajoute ensuite dynamiquement à la page.
+
+Avec l'aide de ChatGPT, nous avons mis en place une boucle automatique : elle charge chaque page, attend l'affichage complet des données, extrait le contenu HTML généré dynamiquement, puis le transmet à `{rvest}` pour l’analyse. C'était déjà une belle avancée.
+
+Mais très vite, je me suis rendu compte que les éléments visibles dans la page (comme les titres, les auteurs ou les mots-clés) étaient difficilement récupérables via leurs balises HTML. Les classes CSS n'étaient pas fiables, certaines fiches ne suivaient pas la même structure, et il devenait difficile de tout extraire proprement. Il fallait donc une autre solution.
+
+## 3. Découverte de la structure JSON cachée
+
+En continuant à inspecter le site plus attentivement, j’ai découvert un détail qui allait tout changer : chaque fiche de projet comprenait un champ de formulaire invisible à l’écran, un peu comme une petite boîte cachée dans le code. Cette boîte, identifiée par `<input name="numeroNotice">`, contenait une information appelée `value`. Et cette valeur n’était pas une simple phrase, mais une **chaîne de caractères au format JSON** — une façon très courante de structurer des données dans le monde informatique.
+
+Pour vulgariser : le JSON (JavaScript Object Notation) est une sorte de tableau ou fiche d’information organisée en paires "nom : valeur". Par exemple, on peut y trouver : `"Titre" : "Mon projet de recherche"`, `"date" : "2024"`, `"MotsCles" : "parentalité / attachement / adolescence"`, etc. Cela signifie que **chaque fiche de projet était déjà pré-structurée**, et prête à être exploitée… pourvu qu’on sache comment la lire.
+
+Avec l’aide de ChatGPT, nous avons ajusté notre fonction d’extraction pour cibler ces balises `<input>`, extraire le champ `value`, et le convertir en données structurées grâce à la fonction `fromJSON()` du package `{jsonlite}`. On a ensuite transformé tout cela en tableau (`tibble`) utilisable dans R.
+
+C’était exactement ce qu’il nous fallait : une façon fiable, standardisée, et complète d’accéder à l’information — sans avoir à deviner la position du titre ou des auteurs dans la page. Une belle découverte rendue possible grâce à un peu de curiosité… et beaucoup d’essais-erreurs.
+
+## 4. Gestion des erreurs : champs manquants et pages vides
+
+À partir de ce moment, nous avons rencontré d'autres types de défis. Certaines fiches n'ont pas tous les champs (ex. : `URL` ou `Sommaire` absents). L'appel à `transmute()` échouait dès qu'un champ manquait. Avec l'aide de ChatGPT, nous avons ajouté une vérification : si une colonne est absente, on la crée vide (`NA`). Cette validation permet de fusionner toutes les pages sans erreur.
+
+## 5. Pagination dynamique et boucle automatique
+
+Une fois qu’on savait comment extraire les données d’une page, il restait un défi important : le site ne présente pas tous les projets en une seule fois. Il les répartit sur plusieurs pages, qu’il faut faire défiler en cliquant sur « page suivante ».
+
+Dans un site classique, on pourrait cliquer manuellement ou simuler un clic avec du code. Mais ici, chaque page suivante a une adresse différente dans l’URL, et ces liens sont insérés dans la page au moment de son chargement. Il fallait donc trouver une façon **automatique** de naviguer de page en page.
+
+ChatGPT m’a proposé une stratégie élégante : plutôt que de simuler un clic, on peut lire directement dans le code de la page s’il existe un lien « suivant », grâce à un attribut appelé `rel="next"`. Si ce lien est présent, on le suit. Si ce n’est plus le cas, c’est que nous avons atteint la dernière page.
+
+Cette méthode a permis de parcourir l’intégralité du site de manière fluide, sans jamais devoir prédire combien de pages il y avait. Un bon exemple de la manière dont une IA peut suggérer des solutions simples à des problèmes complexes — surtout quand on ne connaît pas toutes les subtilités du fonctionnement d’un site web dynamique.
+
+## 6. Code final commenté
+
+Voici le code final complet, que j’ai co-construit avec ChatGPT. Il comprend à la fois la fonction d’extraction à partir du HTML dynamique et celle qui parcourt toutes les pages automatiquement. Je l’ai commenté brièvement pour en faciliter la compréhension.
+
+```{r}
+library(chromote)
+library(rvest)
+library(dplyr)
+library(stringr)
+library(tibble)
+library(jsonlite)
+
+# Fonction qui extrait les données d'une page HTML
+extract_projects <- function(page_html) {
+  page <- read_html(page_html)
+  inputs <- page %>% html_elements("input[name='numeroNotice']")
+
+  json_list <- inputs %>%
+    html_attr("value") %>%
+    lapply(fromJSON)
+
+  df <- bind_rows(json_list)
+
+  expected_cols <- c("Titre", "Auteurs", "date", "TypeDocument", "MotsCles",
+                     "Thematiques", "Disciplines", "TypesDocs", "Sommaire",
+                     "Notice", "T2", "VL", "IS", "SP", "URL")
+  for (col in expected_cols) {
+    if (!col %in% names(df)) df[[col]] <- NA
+  }
+
+  df %>% transmute(
+    titre = Titre,
+    auteurs = Auteurs,
+    annee = date,
+    type_doc = TypeDocument,
+    mots_cles = MotsCles,
+    thematiques = Thematiques,
+    disciplines = Disciplines,
+    types_document = TypesDocs,
+    sommaire = Sommaire,
+    reference = Notice,
+    revue = T2,
+    volume = VL,
+    numero = IS,
+    pages = SP,
+    url = URL
+  )
+}
+
+# Fonction principale de scraping multi-pages
+scrape_all_pages <- function(base_url) {
+  b <- ChromoteSession$new()
+  b$Page$navigate(base_url)
+  b$Page$loadEventFired()
+  Sys.sleep(4)
+
+  all_data <- list()
+  page_num <- 1
+
+  repeat {
+    message("Chargement de la page ", page_num, "...")
+
+    tryCatch({
+      b$Runtime$evaluate(
+        expression = "
+        new Promise(resolve => {
+          const waitForResults = () => {
+            const items = document.querySelectorAll('input[name=\\'numeroNotice\\']');
+            if (items.length > 0) {
+              resolve('ok');
+            } else {
+              setTimeout(waitForResults, 500);
+            }
+          };
+          waitForResults();
+        });"
+      )
+    }, error = function(e) {
+      message("Erreur de chargement.")
+    })
+
+    Sys.sleep(1)
+
+    html <- b$DOM$getDocument()
+    node_id <- html$root$nodeId
+    html_content <- b$DOM$getOuterHTML(nodeId = node_id)$outerHTML
+
+    projects <- extract_projects(html_content)
+    all_data[[page_num]] <- projects
+    message("Page ", page_num, " récupérée.")
+
+    next_url <- tryCatch({
+      b$Runtime$evaluate(
+        expression = "(function() {
+          const nextBtn = document.querySelector('a[data-ci-pagination-page][rel=\\\"next\\\"]');
+          return nextBtn ? nextBtn.href : null;
+        })();"
+      )$result$value
+    }, error = function(e) NULL)
+
+    if (is.null(next_url)) {
+      message("Fin du parcours : plus de page suivante.")
+      break
+    }
+
+    b$Page$navigate(next_url)
+    b$Page$loadEventFired()
+    Sys.sleep(5)
+
+    page_num <- page_num + 1
+  }
+
+  b$close()
+  bind_rows(all_data)
+}
+
+# Appel final
+base_url <- "https://familia.ucs.inrs.ca/resultat-de-recherche/?discipline[]=438"
+data_familia <- scrape_all_pages(base_url)
+write.csv(data_familia, "projets_familia_complet.csv", row.names = FALSE)
+```
+
+## 7. Ce que j’ai appris (et ce que je retiens)
+
+Ce projet m’a permis de vivre une expérience d’apprentissage à la fois technique, méthodologique et réflexive. Voici les principales leçons que j’en tire :
+
+**Comprendre la logique d’un site web est un prérequis fondamental.** Avant même de coder, j’ai dû prendre le temps d’inspecter manuellement la structure du site. Ce travail exploratoire m’a permis de réaliser que le HTML visible au départ ne contenait pas les données… ce qui est loin d’être intuitif pour un œil non averti.
+
+**Travailler avec une IA a facilité les essais-erreurs.** À chaque difficulté rencontrée, je pouvais reformuler mon problème à ChatGPT. L’IA me proposait alors des pistes de solution, que je testais immédiatement dans R. Cette boucle itérative — formuler, tester, ajuster — a non seulement accéléré mon travail, mais m’a aussi permis de mieux comprendre les logiques sous-jacentes.
+
+**La collaboration humain-IA ne remplace pas l’analyse humaine, elle la renforce.** Je suis resté en contrôle tout au long du processus. C’est moi qui inspectais les structures du site, qui interprétais les erreurs, qui décidais quoi extraire. Mais ChatGPT m’a permis d’élargir rapidement mon répertoire technique et de débloquer des obstacles qui, seul, m’auraient sans doute pris beaucoup plus de temps à surmonter.
+
+**L’articulation entre outils est essentielle.** `{chromote}` m’a permis d’accéder à du contenu dynamique, `{jsonlite}` de lire des structures JSON, `{rvest}` de lire le HTML, et `{dplyr}` de structurer les tableaux. Ces outils, utilisés ensemble, ont rendu possible ce qui me semblait complexe au départ.
+
+**Finalement, documenter le processus est aussi une forme d’apprentissage.** Prendre le temps d’écrire ce billet m’a permis de prendre du recul sur le chemin parcouru, les décisions prises, et les zones d’incertitude restantes. C’est une bonne pratique que je veux conserver pour mes prochains projets.
+
+Le prochain billet portera sur le nettoyage des champs extraits et la structuration d'une base de données propre et interrogeable. J'y traiterai, entre autres, de l'éclatement des mots-clés, de la normalisation des auteurs et de la préparation d'un corpus pour analyse thématique.

@@ -1,35 +1,20 @@
 ---
-title: "Projects"
-subtitle: "Funded projects"
-page-layout: full
+title: "Projets"
+subtitle: "Expérimentations et projets personnels autour de l’IA appliquée à la psychologie"
+description-meta: "Présentation de projets personnels explorant l’utilisation de l’intelligence artificielle dans la recherche en psychologie : expérimentation d’outils, automatisation, analyse et visualisation de données"
 listing: 
-- id: projects
-  sort: "started desc"
-  type: table
-  fields: [image, title, author, subtitle, description, funding, started, ended]
-  grid-item-align: left
-  grid-columns: 3
-  image-height: 30px
-  field-display-names: 
-      title: "Title"
-      author: "Team"
-      subtitle: "Funder"
-      started: "Start"
-      ended: "End"
-      funding: "Funding"
-#  categories: true
-#  sort-ui: true
-#  filter-ui: true
+  sort: "date desc"
+  type: default
+  page-size: 100
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  feed: true
   contents: 
-#    - projects/ 
-    - projects.yml 
+    - projets
+
+draft-mode: unlinked
+page-navigation: false
+title-block-banner: false
 ---
 
-
-:::{#projects}
-:::
-
-
-<!--Include social share buttons-->
-
-{{< include /files/includes/_socialshare.qmd >}}

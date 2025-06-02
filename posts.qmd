@@ -1,7 +1,7 @@
 ---
-title: "Nouveautés et publications"
-subtitle: "Publications sur les projets, articles, outils et réflexions"
-description-meta: "Publications sur les projets, articles, outils et réflexions en lien avec la psychologie et l’intelligence artificielle"
+title: "Méthodes IA"
+subtitle: "Veille sur les innovations méthodologiques en psychologie assistée par IA"
+description-meta: ""Veille sur les méthodes et outils utilisant l’intelligence artificielle dans la recherche en psychologie. Résumés d’articles, innovations et applications concrètes.""
 listing: 
   sort: "date desc"
   type: default
