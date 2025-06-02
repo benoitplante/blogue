@@ -22,12 +22,10 @@ website:
         href: index.qmd
       - text: À propos
         href: about.qmd
-      - text: Blogue
+      - text: Veille IA
         href: posts.qmd
       - text: Projets
         href: projects.qmd
-      - text: Enseignement
-        href: teaching.qmd
 
   page-navigation: true
 
