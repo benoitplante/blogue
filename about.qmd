@@ -1,6 +1,6 @@
 ---
 title: "À propos"
-description-meta: "Parcours, intentions et collaboration derrière le blogue Psychologie & IA"
+description-meta: ""
 page-navigation: false
 toc: false
 page-layout: full
@@ -8,16 +8,19 @@ page-layout: full
 
 ## Qui suis-je ?
 
-Je m’appelle **Benoit Plante**. Je suis coordonnateur scientifique du [GRIN – Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864), tuteur en psychologie à la [TELUQ](https://www.teluq.ca/) et doctorant à l’Université du Québec à Trois-Rivières.
+Je m’appelle **Benoit Plante**. Je suis coordonnateur scientifique du [GRIN – Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864), tuteur en psychologie à la [TÉLUQ](https://www.teluq.ca/) et doctorant en psychologie à l’Université du Québec à Trois-Rivières.
 
-Je m’intéresse aux usages de l’intelligence artificielle dans la recherche en psychologie. J’explore comment ces technologies peuvent soutenir les projets de recherche et les méthodes en psychologie. En parallèle, je m'intéresse à la science ouverte, l'utilisation des données secondaires et l'utilisation de R comme outil d'analyse en psychologie. 
+Je m’intéresse aux méthodes de recherche en psychologie, à l’analyse de données avec **R**, à la production de rapports reproductibles avec **Quarto**, et à l’intégration de l’intelligence artificielle dans les processus de recherche scientifique. .
 
+---
 
 ## Pourquoi ce blogue ?
 
-Ce blogue est un **carnet de bord personnel et professionnel**, que j'utilise pour partager les articles scientifiques les plus récents sur l'IA et la recherche en psychologue, pour documentater mes expérimentations dans l'utilisation d'outils d'IA et partager mes réflexions et apprentissages. J’y consigne ce que j’apprends et teste dans le cadre de mes projets :
+Ce blogue est un **carnet de veille et d’exploration personnelle**.  
+J’y partage :
+- des **résumés d’articles** et des **actualités scientifiques** sur l’usage de l’IA en recherche en psychologie (*Méthodes IA*) ;
+- des **projets personnels** dans lesquels j’expérimente l’IA pour enrichir la pratique de recherche (*Projets*).
 
-Comme le blogue s'intéresse à l'IA, je produis l'ensemble du contenu  **en collaboration avec l’intelligence artificielle**, principalement via mes échanges avec ChatGPT. J’utilise ce partenariat pour réfléchir, structurer et produire les publications et le code qui est utilisées, dans une logique de co-écriture consciente et critique. Je cherche à être le plus transparent possible dans l'utilisation de l'IA dans les publications.
+Tous les contenus sont créés **en collaboration avec des outils d’IA**, principalement via ChatGPT. Cette co-écriture me permet de structurer mes réflexions, d’automatiser certaines tâches, et de tester concrètement l’usage de l’IA en contexte scientifique. J’indique clairement les apports de l’IA dans chaque publication, dans une optique de transparence.
 
-Ce blogue est volontairement exploratoire. J’y publie à mon rythme, sans prétention à l’exhaustivité, mais avec l’envie de contribuer à une culture de partage, de dialogue et d’expérimentation.
-
+Ce site est un espace d’expérimentation. Je publie à mon rythme, sans prétention à l’exhaustivité, avec l’objectif de nourrir une culture de **partage**, de **réflexion critique** et de **dialogue** autour des liens entre psychologie, IA et science ouverte.
