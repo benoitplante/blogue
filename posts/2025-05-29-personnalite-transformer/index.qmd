@@ -110,3 +110,6 @@ Cette technologie pourrait aussi transformer les interfaces numériques elles-m�
 Mais ces défis sont connus, et les auteur·es proposent plusieurs pistes pour y remédier (données plus variées, données multimodales, etc.).
 
 L’article complet est disponible ici : **Saberi, H., Ghofrani, S., & Ravanmehr, R. (2025)**. *Personality Recognition Using Transformer Model: A Study on the Big Five Traits*. IEEE ICWR. 🔗 [Accès via IEEE Xplore](https://ieeexplore.ieee.org/document/11006181)
+
+<!-- Formulaire d’abonnement Brevo -->
+<iframe width="540" height="305" src="https://sibforms.com/serve/MUIFAAjdS7efBoq47TBnj6pX7qL7kBl2ObFQJZ2R0LPLGQ0CL4PpwvU4fRz2Vyd5P4O8YXEGsbQ9w-TqnVy5c-_-8tWoOwp7GuUFTPEmYudoZ3jTXbwupnGF_AH7IQRNR0Ysiow-sTvBA47HANmLAp5uQ6CLaDNrJzHybr8_r6CBVmNeTCT8eeOL1qK0PdNJMcXxAj1x2ZIPj7CU" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;"></iframe>

@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>Benoit Plante</title>
-<link>https://benoitplante.github.io/blogue/projects.html</link>
-<atom:link href="https://benoitplante.github.io/blogue/projects.xml" rel="self" type="application/rss+xml"/>
+<link>https://benoitplante.github.io/projects.html</link>
+<atom:link href="https://benoitplante.github.io/projects.xml" rel="self" type="application/rss+xml"/>
 <description>Réflexions, cas d’usage et outils à l’interface entre IA et psychologie</description>
 <generator>quarto-1.7.31</generator>
 <lastBuildDate>Fri, 23 May 2025 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Analyser les données de Famili@ en collaboration avec l’IA</title>
-  <link>https://benoitplante.github.io/blogue/projets/2025-05-23-intro-familia/</link>
+  <link>https://benoitplante.github.io/projets/2025-05-23-intro-familia/</link>
   <description><![CDATA[ 
 
 
@@ -56,9 +56,9 @@ https://quarto.org/docs/authoring/includes.html
  ]]></description>
   <category>Méthodologie augmentée par l’IA</category>
   <category>Utilisation appliquée de l&#39;IA</category>
-  <guid>https://benoitplante.github.io/blogue/projets/2025-05-23-intro-familia/</guid>
+  <guid>https://benoitplante.github.io/projets/2025-05-23-intro-familia/</guid>
   <pubDate>Fri, 23 May 2025 04:00:00 GMT</pubDate>
-  <media:content url="https://benoitplante.github.io/blogue/projets/2025-05-23-intro-familia/banner.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://benoitplante.github.io/projets/2025-05-23-intro-familia/banner.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>Benoit Plante</title>
-<link>https://benoitplante.github.io/blogue/posts.html</link>
-<atom:link href="https://benoitplante.github.io/blogue/posts.xml" rel="self" type="application/rss+xml"/>
+<link>https://benoitplante.github.io/posts.html</link>
+<atom:link href="https://benoitplante.github.io/posts.xml" rel="self" type="application/rss+xml"/>
 <description>Réflexions, cas d’usage et outils à l’interface entre IA et psychologie</description>
 <generator>quarto-1.7.31</generator>
 <lastBuildDate>Tue, 03 Jun 2025 04:00:00 GMT</lastBuildDate>
 <item>
   <title>L’intelligence émotionnelle des intelligences artificielles : ChatGPT et cie surpassent les humains</title>
-  <link>https://benoitplante.github.io/blogue/posts/2025-06-03-llm-emotional-test/</link>
+  <link>https://benoitplante.github.io/posts/2025-06-03-llm-emotional-test/</link>
   <description><![CDATA[ 
 
 
@@ -22,7 +22,7 @@
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://benoitplante.github.io/blogue/posts/2025-06-03-llm-emotional-test/banner.png" class="img-fluid figure-img"></p>
+<p><img src="https://benoitplante.github.io/posts/2025-06-03-llm-emotional-test/banner.png" class="img-fluid figure-img"></p>
 <figcaption>Générée par ChatGPT</figcaption>
 </figure>
 </div>
@@ -90,13 +90,13 @@
 
  ]]></description>
   <category>Méthodologie augmentée par l’IA</category>
-  <guid>https://benoitplante.github.io/blogue/posts/2025-06-03-llm-emotional-test/</guid>
+  <guid>https://benoitplante.github.io/posts/2025-06-03-llm-emotional-test/</guid>
   <pubDate>Tue, 03 Jun 2025 04:00:00 GMT</pubDate>
-  <media:content url="https://benoitplante.github.io/blogue/posts/2025-06-03-llm-emotional-test/banner.png" medium="image" type="image/png" height="96" width="144"/>
+  <media:content url="https://benoitplante.github.io/posts/2025-06-03-llm-emotional-test/banner.png" medium="image" type="image/png" height="96" width="144"/>
 </item>
 <item>
   <title>Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers</title>
-  <link>https://benoitplante.github.io/blogue/posts/2025-05-29-personnalite-transformer/</link>
+  <link>https://benoitplante.github.io/posts/2025-05-29-personnalite-transformer/</link>
   <description><![CDATA[ 
 
 
@@ -105,7 +105,7 @@
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://benoitplante.github.io/blogue/posts/2025-05-29-personnalite-transformer/banner_article_electra.png" class="img-fluid figure-img"></p>
+<p><img src="https://benoitplante.github.io/posts/2025-05-29-personnalite-transformer/banner_article_electra.png" class="img-fluid figure-img"></p>
 <figcaption>Générée par ChatGPT</figcaption>
 </figure>
 </div>
@@ -201,14 +201,14 @@
 
  ]]></description>
   <category>Méthodologie augmentée par l’IA</category>
-  <guid>https://benoitplante.github.io/blogue/posts/2025-05-29-personnalite-transformer/</guid>
+  <guid>https://benoitplante.github.io/posts/2025-05-29-personnalite-transformer/</guid>
   <pubDate>Mon, 26 May 2025 04:00:00 GMT</pubDate>
-  <media:content url="https://benoitplante.github.io/blogue/posts/2025-05-29-personnalite-transformer/banner_article_electra.png" medium="image" type="image/png" height="96" width="144"/>
+  <media:content url="https://benoitplante.github.io/posts/2025-05-29-personnalite-transformer/banner_article_electra.png" medium="image" type="image/png" height="96" width="144"/>
 </item>
 <item>
   <title>Quand une IA devient co-chercheuse : réflexions autour de Robin</title>
   <dc:creator>Benoit Plante</dc:creator>
-  <link>https://benoitplante.github.io/blogue/posts/2025-05-21-ai-robin/</link>
+  <link>https://benoitplante.github.io/posts/2025-05-21-ai-robin/</link>
   <description><![CDATA[ 
 
 
@@ -216,7 +216,7 @@
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://benoitplante.github.io/blogue/posts/2025-05-21-ai-robin/banner.png" class="img-fluid figure-img"></p>
+<p><img src="https://benoitplante.github.io/posts/2025-05-21-ai-robin/banner.png" class="img-fluid figure-img"></p>
 <figcaption>Générée par ChatGPT</figcaption>
 </figure>
 </div>
@@ -255,9 +255,9 @@ https://quarto.org/docs/authoring/includes.html
 
  ]]></description>
   <category>Méthodologie augmentée par l’IA</category>
-  <guid>https://benoitplante.github.io/blogue/posts/2025-05-21-ai-robin/</guid>
+  <guid>https://benoitplante.github.io/posts/2025-05-21-ai-robin/</guid>
   <pubDate>Wed, 21 May 2025 04:00:00 GMT</pubDate>
-  <media:content url="https://benoitplante.github.io/blogue/posts/2025-05-21-ai-robin/banner.png" medium="image" type="image/png" height="96" width="144"/>
+  <media:content url="https://benoitplante.github.io/posts/2025-05-21-ai-robin/banner.png" medium="image" type="image/png" height="96" width="144"/>
 </item>
 </channel>
 </rss>

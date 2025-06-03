@@ -48,3 +48,6 @@ Je suis également tuteur en psychologie à la [TÉLUQ](https://www.teluq.ca), o
 
 ::: {#recent-posts}
 :::
+
+<!-- Formulaire d’abonnement Brevo -->
+<iframe width="540" height="305" src="https://sibforms.com/serve/MUIFAAjdS7efBoq47TBnj6pX7qL7kBl2ObFQJZ2R0LPLGQ0CL4PpwvU4fRz2Vyd5P4O8YXEGsbQ9w-TqnVy5c-_-8tWoOwp7GuUFTPEmYudoZ3jTXbwupnGF_AH7IQRNR0Ysiow-sTvBA47HANmLAp5uQ6CLaDNrJzHybr8_r6CBVmNeTCT8eeOL1qK0PdNJMcXxAj1x2ZIPj7CU" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;"></iframe>

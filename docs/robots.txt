@@ -1,1 +1,1 @@
-Sitemap: https://benoitplante.github.io/blogue/sitemap.xml
+Sitemap: https://benoitplante.github.io/sitemap.xml
