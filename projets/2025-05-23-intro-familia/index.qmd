@@ -1,0 +1,37 @@
+---
+title: "Analyser les données de Famili@ en collaboration avec l'IA"
+description-meta: "Exploration d’un projet de recherche basé sur la base Famili@, combinant données secondaires, méta-science et intelligence artificielle générative."
+date: 2025-05-23
+categories: ["Méthodologie augmentée par l’IA", "Utilisation appliquée de l'IA"]
+format: html
+image: banner.jpg
+---
+
+## Analyser les données de Famili@ en collaboration avec l'IA
+
+Depuis quelque temps, je m'intéresse aux possibilités de recherche offertes par les **données secondaires**. Internet regorge de trésors inexploités qui n'attendent qu'un regard curieux et un peu de code pour révéler leur potentiel. J'avais envie de m'y faire la main, de développer mes compétences en webscraping et en analyse de données, dans un domaine à la fois pertinent pour mon travail et riche intellectuellement.
+
+C’est ainsi que je me suis tourné vers **Famili@**, la base documentaire des recherches sur la famille. J'ai découvert l'existence de cette base documentaire dans le cadre d’un projet de recherche mené en collaboration avec le **Partenariat Familles en mouvance** de l’INRS, organisme responsable de sa mise à jour. Créée en 1998, Famili@ est la première base documentaire francophone en sciences humaines consacrée exclusivement à la famille. Elle regroupe aujourd’hui plus de **18 000 fiches**, couvrant thèses, articles et rapports souvent absents des grandes bases internationales.
+
+Mais mon intérêt dépasse l’aspect documentaire : ce projet est aussi une porte d’entrée vers un champ que je souhaite explorer davantage, **la méta-science**, c’est-à-dire l’étude de la science elle-même. Avec Famili@, j’ai entre les mains un ensemble de données qui me permet d’observer l’évolution de la production scientifique en psychologie familiale au Québec.
+
+### Ce que je veux faire
+
+Je veux documenter, de façon transparente et critique, **l’ensemble du processus de recherche** que j’entreprends à partir de la base Famili@. De l’extraction automatisée des données à l’écriture d’un article scientifique, **chaque étape sera partagée ici, avec ses réussites, ses ratés, et surtout, ce que j’apprends en cours de route**.
+
+### L'IA comme coéquipière de recherche
+
+Ce projet est aussi un terrain d’expérimentation pour l’utilisation de l’**intelligence artificielle générative** dans un processus de recherche complet. De l’extraction des données avec du code R généré ou optimisé par l’IA, aux séances de remue-méninges pour faire émerger des idées d’analyses, en passant par la rédaction de billets comme celui-ci et, ultimement, d’un article scientifique, l’IA m’accompagne à chaque étape.
+
+Mon objectif est double : mieux comprendre comment ces outils peuvent enrichir et accélérer certaines étapes du travail scientifique, mais aussi identifier leurs limites, leurs biais et leurs angles morts. Bref, c’est un projet d’**intégration critique de l’IA** dans un processus de recherche appliquée en sciences humaines.
+
+### Pourquoi partager ça ?
+
+Parce que l’IA bouleverse nos façons de faire — et qu’on gagne à rendre ces transformations visibles, discutables, perfectibles. Et parce que la base documentaire Famili@ me semble vraiment intéressante pour mieux comprendre comment les chercheurs et chercheuses en psychologie s'intéresse à la famille au Québec.
+
+Je vous donne donc rendez-vous très bientôt pour le premier billet de cette série, où je vous montrerai comment j’ai construit ma propre base de données à partir du site Famili@. Ce sera l’occasion de plonger ensemble dans les défis du webscraping, étape fondatrice de ce projet.
+
+---
+<!--Include social share buttons-->
+
+{{< include /files/includes/_socialshare.qmd >}}
