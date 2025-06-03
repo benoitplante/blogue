@@ -13,7 +13,8 @@ listing:
       title: ""
     type: grid
     max-items: 3
-    page-size: 3
+    image-height: 150px
+    page-size: 3 #set same as max-times to remove the page number setting
     fields: [image, date, title, subtitle]
     max-description-length: 75
     sort: 
@@ -40,5 +41,13 @@ Je suis coordonnateur scientifique du GRIN, doctorant en psychologie à l’UQTR
 Je m’intéresse à l’usage de l’intelligence artificielle pour automatiser, documenter et enrichir la recherche psychologique.
 
 Sur ce site, je partage mes projets personnels, des expérimentations méthodologiques, des résumés d’articles, ainsi que des ressources et exemples concrets d’outils comme R et Quarto.
-
 :::
+
+
+## Publications récentes
+
+:::{#recent-posts}
+:::
+
+
+

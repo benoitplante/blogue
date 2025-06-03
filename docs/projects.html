@@ -80,9 +80,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -181,10 +181,12 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <link rel="alternate" type="application/rss+xml" title="Benoit Plante" href="projects.xml" data-external="1"><meta property="og:title" content="Projets – Benoit Plante">
 <meta property="og:description" content="Expérimentations et projets personnels autour de l’IA appliquée à la psychologie">
+<meta property="og:image" content="https://benoitplante.github.io/blogue/projets/2025-05-23-intro-familia/banner.jpg">
 <meta property="og:site_name" content="Benoit Plante">
 <meta name="twitter:title" content="Projets – Benoit Plante">
 <meta name="twitter:description" content="Expérimentations et projets personnels autour de l’IA appliquée à la psychologie">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://benoitplante.github.io/blogue/projets/2025-05-23-intro-familia/banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -238,7 +240,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ==">Méthodologie augmentée par l’IA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VXRpbGlzYXRpb24lMjBhcHBsaXF1JUMzJUE5ZSUyMGRlJTIwbCdJQQ==">Utilisation appliquée de l'IA <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -268,13 +270,60 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Order By</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option value="listing-title" data-direction="asc">
+        Title
+      </option>
+      <option value="listing-date-sort" data-direction="asc">
+        Date - Oldest
+      </option>
+      <option value="listing-date-sort" data-direction="desc">
+        Date - Newest
+      </option>
+      <option value="listing-author" data-direction="asc">
+        Author
+      </option>
+    </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQSUyQ1V0aWxpc2F0aW9uJTIwYXBwbGlxdSVDMyVBOWUlMjBkZSUyMGwnSUE=" data-listing-date-sort="1747972800000" data-listing-file-modified-sort="1748867869279" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="468">
+<div class="thumbnail"><a href="./projets/2025-05-23-intro-familia/index.html" class="no-external">
 
+<img loading="lazy" src="./projets/2025-05-23-intro-familia/banner.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./projets/2025-05-23-intro-familia/index.html" class="no-external">Analyser les données de Famili@ en collaboration avec l’IA</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ=='); return false;">Méthodologie augmentée par l’IA</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VXRpbGlzYXRpb24lMjBhcHBsaXF1JUMzJUE5ZSUyMGRlJTIwbCdJQQ=='); return false;">Utilisation appliquée de l'IA</div>
+
+</div>
+<div class="delink listing-description"><a href="./projets/2025-05-23-intro-familia/index.html" class="no-external">
+Depuis quelque temps, je m’intéresse aux possibilités de recherche offertes par les <strong>données secondaires</strong>. Internet regorge de trésors inexploités qui n’attendent qu’un regard…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./projets/2025-05-23-intro-familia/index.html" class="no-external">
+<div class="listing-date">
+May 23, 2025
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
