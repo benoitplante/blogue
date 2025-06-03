@@ -1,0 +1,26 @@
+---
+title: "Publications"
+description-meta: "Publications, articles, commmunication par affiches, rapport"
+#page-layout: full
+#back-to-top-navigation: true
+title-block-banner: false
+css: custom.css
+---
+
+## Communications par affiche
+
+::: {#ref-list}
+
+D’Arcy, É., Vallée, J., **Plante, B.**, Lacharité, C., & Dubois-Comtois, K. (2025, juin). *La coparentalité, le chaos familial et les comportements extériorisés et intériorisés des enfants : Résultats préliminaires d’une étude sur les familles québécoises ayant un jeune enfant* [Communication par affiche]. Congrès annuel de la Société Québécoise pour la Recherche en Psychologie (SQRP), Saint-Sauveur, Québec, Canada.
+
+**Plante, B.**, Miquelon, P., & Caron, P.-O. (2025, mai). *Évaluation écologique momentanée de la relation entre l’activité physique et les émotions : une revue de la portée*. Affiche présentée au congrès annuel de l’AQSAP, Trois-Rivières, Canada.
+
+D’Arcy, É., Iraca, M., Lacharité, C., & Dubois-Comtois, K. (2025, avril). *Coparentalité et chaos familial : Lien exploratoire entre ces concepts chez les familles ayant un jeune enfant*. Affiche présentée au concours d’affiches de l’UQTR, Trois-Rivières, Canada.
+
+**Plante, B.**, Miquelon, P., & Caron, P.-O. (2025, avril). *Évaluation écologique momentanée de la relation entre l’activité physique et les émotions : une revue de la portée*. Affiche présentée au concours d’affiches de l’UQTR, Trois-Rivières, Canada.
+
+Iraca, M., D’Arcy, É., **Plante, B.**, Lacharité, C., & Dubois-Comtois, K. (2025, avril). *Collaboration coparentale et santé mentale : Analyse des liens dans un contexte québécois*. Affiche présentée au concours d’affiches de l’UQTR, Trois-Rivières, Canada.
+
+Côté, A., Trudel-Fitzgerald, C., Caron, P.-O., **Plante, B.**, & Miquelon, P. (2024, novembre). *Augmenter l’activité physique et réduire le temps sédentaire : Résultats d’une étude pilote*. Affiche présentée au CIFAP, Montréal, Canada.
+
+:::
