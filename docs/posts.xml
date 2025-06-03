@@ -10,7 +10,90 @@
 <atom:link href="https://benoitplante.github.io/blogue/posts.xml" rel="self" type="application/rss+xml"/>
 <description>Réflexions, cas d’usage et outils à l’interface entre IA et psychologie</description>
 <generator>quarto-1.7.31</generator>
-<lastBuildDate>Mon, 26 May 2025 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 03 Jun 2025 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>L’intelligence émotionnelle des intelligences artificielles : ChatGPT et cie surpassent les humains</title>
+  <link>https://benoitplante.github.io/blogue/posts/2025-06-03-llm-emotional-test/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://benoitplante.github.io/blogue/posts/2025-06-03-llm-emotional-test/banner.png" class="img-fluid figure-img"></p>
+<figcaption>Générée par ChatGPT</figcaption>
+</figure>
+</div>
+<section id="lintelligence-émotionnelle-des-intelligences-artificielles-chatgpt-et-cie-surpassent-les-humains" class="level1">
+<h1>L’intelligence émotionnelle des intelligences artificielles : ChatGPT et cie surpassent les humains</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Peut-on vraiment enseigner à une intelligence artificielle à raisonner sur les émotions humaines? Cette question est au cœur d’une étude récente parue dans Communications Psychology (Schlegel et al., 2025), qui explore la capacité des grands modèles de langage (LLM) à réussir et à générer des tests d’intelligence émotionnelle. Les résultats sont saisissants : plusieurs LLM surpassent les humains sur cinq tests psychométriques reconnus, et parviennent à créer des versions alternatives presque équivalentes aux tests originaux.</p>
+</section>
+<section id="comprendre-lintelligence-émotionnelle" class="level2">
+<h2 class="anchored" data-anchor-id="comprendre-lintelligence-émotionnelle">Comprendre l’intelligence émotionnelle</h2>
+<p>L’intelligence émotionnelle par habileté (“ability EI”) désigne la capacité à percevoir, comprendre, réguler et exprimer les émotions de manière adaptée dans des situations concrètes. Cette conception repose sur l’idée que l’intelligence émotionnelle est une forme d’intelligence cognitive, mobilisée pour raisonner sur les émotions (les siennes ou celles d’autrui) et pour prendre des décisions sociales appropriées.</p>
+<p>Elle inclut, par exemple, la capacité à détecter les signaux émotionnels dans un discours, à identifier la cause d’une émotion complexe, ou à choisir une stratégie de régulation adaptée dans un contexte professionnel. Elle se distingue des modèles de type traits (basés sur des auto-évaluations) par son approche fondée sur la performance et l’évaluation objective. Les personnes ayant une forte EI tendent à mieux s’adapter socialement, à coopérer plus efficacement et à résoudre les conflits de façon constructive. Cette étude s’intéresse à savoir si les LLM peuvent manifester cette forme de compétence, traditionnellement réservée aux humains.</p>
+</section>
+<section id="la-technologie-mobilisée" class="level2">
+<h2 class="anchored" data-anchor-id="la-technologie-mobilisée">La technologie mobilisée</h2>
+<p>Les chercheurs ont mis à l’épreuve six LLM : ChatGPT-4, ChatGPT-o1, Gemini 1.5 flash, Copilot 365, Claude 3.5 Haiku et DeepSeek V3. Ces modèles, entraînés sur de vastes corpus de texte, n’ont pas été explicitement programmés pour l’intelligence émotionnelle. Pourtant, ils montrent une capacité surprenante à raisonner sur les émotions, leur régulation, et leurs conséquences sociales.</p>
+</section>
+<section id="méthodologie-de-létude" class="level2">
+<h2 class="anchored" data-anchor-id="méthodologie-de-létude">Méthodologie de l’étude</h2>
+<p>L’étude comporte deux volets : (1) évaluer la performance des LLM sur cinq tests d’intelligence émotionnelle, et (2) générer de nouveaux items avec ChatGPT-4 et tester leur validité psychométrique. Les tests utilisés sont :</p>
+<ul>
+<li><strong>STEM</strong> (gestion des émotions personnelles)</li>
+<li><strong>STEU</strong> (compréhension des émotions)</li>
+<li><strong>GEMOK-Blends</strong> (reconnaissance d’émotions mixtes)</li>
+<li><strong>GECo Regulation</strong> (régulation des émotions en contexte professionnel)</li>
+<li><strong>GECo Management</strong> (gestion des émotions chez autrui)</li>
+</ul>
+<p>Dans le premier volet, chaque LLM a été invité à répondre aux tests selon les instructions originales destinées aux humains. Les chercheurs ont soumis les items dans des sessions séparées et répétées (10 fois par test et par modèle), en s’assurant que chaque modèle donne ses réponses sans biais contextuel. La proportion de bonnes réponses a ensuite été comparée à celle observée dans les échantillons de validation humaine, à l’aide de tests statistiques.</p>
+<p>Dans le second volet, ChatGPT-4 a reçu l’instruction de créer des items inédits en se basant sur la structure des tests originaux. Ces items ont été ensuite administrés, de façon aléatoire et en double aveugle, à des participants humains recrutés via la plateforme Prolific (N total = 467). Les performances aux items générés ont été comparées aux performances sur les items originaux selon plusieurs indicateurs : difficulté, clarté, réalisme, diversité du contenu, fidélité interne et validité de construit.</p>
+</section>
+<section id="résultats-principaux" class="level2">
+<h2 class="anchored" data-anchor-id="résultats-principaux">Résultats principaux</h2>
+<p>Les LLM ont atteint une précision moyenne de 81 %, contre 56 % pour les humains, soit une différence statistiquement très significative avec des tailles d’effet dépassant d = 1 pour chaque test. Cela signifie que les modèles de langage ont non seulement surpassé les performances humaines moyennes, mais l’ont fait de manière constante sur l’ensemble des dimensions mesurées. Parmi eux, ChatGPT-o1 et DeepSeek V3 se distinguent avec des performances excédant deux écarts-types par rapport aux scores humains, illustrant une maîtrise remarquable des compétences émotionnelles mesurées.</p>
+<p>Concernant la création d’items, les tests conçus par ChatGPT-4 ont présenté une difficulté comparable à celle des versions originales, confirmée par des tests d’équivalence (TOST). Ils ont été jugés légèrement plus clairs et plus réalistes par les participants, bien que l’effet soit petit (d &lt; 0,20). En revanche, la diversité du contenu des situations émotionnelles proposées a été légèrement inférieure, les participants ayant regroupé les vignettes générées par ChatGPT en moins de catégories que celles des tests originaux.</p>
+<p>La validité de construit (corrélations avec un test de vocabulaire et un autre test d’intelligence émotionnelle) et la fidélité interne (corrélations item-total moyennes) étaient globalement comparables entre les deux versions. Les différences observées restaient inférieures à un effet modéré (d &lt; 0,50), et les versions originales et générées étaient fortement corrélées entre elles (r = 0,46), suggérant qu’elles mesurent les mêmes compétences fondamentales.</p>
+</section>
+<section id="portée-et-applications-possibles" class="level2">
+<h2 class="anchored" data-anchor-id="portée-et-applications-possibles">Portée et applications possibles</h2>
+<p>Ces résultats renforcent l’idée que les LLM peuvent jouer un rôle actif dans des interactions socialement sensibles, en particulier dans des contextes où la compréhension des émotions est essentielle pour soutenir la communication, la collaboration ou le bien-être.</p>
+<ul>
+<li><strong>L’éducation</strong> : des agents pédagogiques intelligents pourraient adapter leurs rétroactions en fonction de l’état émotionnel de l’élève, identifier des signes de démotivation ou d’anxiété, et proposer un soutien à la fois cognitif et affectif.</li>
+<li><strong>La santé mentale</strong> : les chatbots empathiques, capables d’identifier les états émotionnels de leurs interlocuteurs et de réagir de manière appropriée, pourraient offrir un soutien psychologique de première ligne, complémentaire aux professionnels.</li>
+<li><strong>Le monde du travail</strong> : les LLM pourraient être intégrés à des outils RH pour la gestion des conflits, l’évaluation du climat émotionnel d’une équipe, ou encore pour offrir des conseils personnalisés sur la régulation du stress.</li>
+<li><strong>La recherche en psychologie</strong> : les modèles pourraient être utilisés comme simulateurs pour tester des hypothèses théoriques sur les émotions ou pour générer des vignettes émotionnelles variées dans des protocoles expérimentaux.</li>
+</ul>
+<p>En résumé, les LLM pourraient offrir une forme d’empathie cognitive, stable, systématique, et dénuée des fluctuations affectives qui influencent parfois les jugements humains. Leur capacité à traiter de l’information émotionnelle de manière constante pourrait représenter un atout majeur dans des contextes où la cohérence et la fiabilité sont cruciales.</p>
+</section>
+<section id="limites-et-perspectives" class="level2">
+<h2 class="anchored" data-anchor-id="limites-et-perspectives">Limites et perspectives</h2>
+<ul>
+<li><strong>Culture</strong> : les tests utilisés ainsi que les données d’entraînement des LLM sont principalement issus de contextes occidentaux, ce qui pose des questions sur la validité interculturelle des compétences mesurées ou simulées.</li>
+<li><strong>Complexité des émotions</strong> : les vignettes standardisées ne reflètent que partiellement la variabilité, la subtilité ou l’ambiguïté des situations émotionnelles du quotidien, qui reposent souvent sur des nuances contextuelles.</li>
+<li><strong>Transparence</strong> : les processus internes des LLM demeurent largement opaques. On ignore si les modèles raisonnent de manière psychologiquement plausible ou s’ils exploitent simplement des récurrences statistiques.</li>
+</ul>
+<p>Des recherches futures devront explorer la capacité des LLM à s’adapter à des interactions dynamiques, à intégrer le contexte et l’historique de la relation, et à réagir à des émotions exprimées de manière implicite. Des travaux en psychologie culturelle et en intelligence artificielle explicable seront également essentiels pour évaluer les biais et limites des modèles dans des contextes humains variés.</p>
+</section>
+<section id="référence" class="level2">
+<h2 class="anchored" data-anchor-id="référence">Référence</h2>
+<p>Schlegel, K., Sommer, N. R., &amp; Mortillaro, M. (2025). <em>Large language models are proficient in solving and creating emotional intelligence tests</em>. Communications Psychology, 3(80). <a href="https://doi.org/10.1038/s44271-025-00258-x">https://doi.org/10.1038/s44271-025-00258-x</a></p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>Méthodologie augmentée par l’IA</category>
+  <guid>https://benoitplante.github.io/blogue/posts/2025-06-03-llm-emotional-test/</guid>
+  <pubDate>Tue, 03 Jun 2025 04:00:00 GMT</pubDate>
+  <media:content url="https://benoitplante.github.io/blogue/posts/2025-06-03-llm-emotional-test/banner.png" medium="image" type="image/png" height="96" width="144"/>
+</item>
 <item>
   <title>Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers</title>
   <link>https://benoitplante.github.io/blogue/posts/2025-05-29-personnalite-transformer/</link>
@@ -28,12 +111,12 @@
 </div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Peut-on prédire les traits de personnalité d’une personne simplement à partir d’un texte qu’elle a écrit? Cette question, qui pourrait sembler tirée d’un film de science-fiction, est aujourd’hui au cœur de recherches sérieuses en psychologie computationnelle. J’ai récemment lu une étude fascinante présentée à la conférence <em>IEEE ICWR 2025</em>, qui explore cette idée à l’aide d’un modèle d’intelligence artificielle appelé <strong>ELECTRA</strong>, une version moderne des modèles transformers.</p>
+<p>Peut-on prédire les traits de personnalité d’une personne simplement à partir d’un texte qu’elle a écrit? Cette question, qui pourrait sembler tirée d’un film de science-fiction, est aujourd’hui au cœur de recherches sérieuses en psychologie computationnelle. J’ai récemment lu une étude fascinante présentée à la conférence IEEE ICWR 2025, qui explore cette idée à l’aide d’un modèle d’intelligence artificielle appelé ELECTRA, une version moderne des modèles transformers.</p>
 <p>Dans ce billet, je présente l’article en question ainsi que la technologie d’intelligence artificielle qui permet d’analyser les textes pour en extraire des indices de personnalité.</p>
 </section>
 <section id="un-peu-de-contexte-les-traits-de-personnalité" class="level2">
 <h2 class="anchored" data-anchor-id="un-peu-de-contexte-les-traits-de-personnalité">Un peu de contexte : les traits de personnalité</h2>
-<p>Dans cet article, les auteurs cherchent à prédire les traits de personnalité en fonction du modèle des <strong>Big Five</strong> ou « cinq grands facteurs » de la personnalité. Ce modèle propose cinq traits fondamentaux :</p>
+<p>Dans cet article, les auteurs cherchent à prédire les traits de personnalité en fonction du modèle des Big Five ou « cinq grands facteurs » de la personnalité. Ce modèle propose cinq traits fondamentaux :</p>
 <ul>
 <li><strong>Ouverture à l’expérience</strong> : imagination, curiosité, créativité</li>
 <li><strong>Consciencieux</strong> : organisation, rigueur, discipline</li>
@@ -47,28 +130,28 @@
 <h2 class="anchored" data-anchor-id="avant-les-transformers-premières-tentatives-danalyse-de-la-personnalité-à-partir-du-texte">Avant les transformers : premières tentatives d’analyse de la personnalité à partir du texte</h2>
 <section id="des-approches-symboliques-fondées-sur-les-mots" class="level3">
 <h3 class="anchored" data-anchor-id="des-approches-symboliques-fondées-sur-les-mots">Des approches symboliques fondées sur les mots</h3>
-<p>Avant l’essor de l’apprentissage profond, les chercheur·es ont tenté d’utiliser des approches plus classiques de l’intelligence artificielle pour analyser le lien entre langage et personnalité. Ces méthodes — souvent fondées sur des règles simples ou des statistiques — représentent les <strong>premiers pas de l’IA appliquée à la psychologie du langage</strong>. Même si elles étaient moins performantes que les approches modernes, elles ont posé les bases de ce champ en plein essor : faire parler les textes pour mieux comprendre qui les écrit.</p>
-<p>Les premières tentatives pour relier le langage écrit aux traits de personnalité ont reposé sur des approches dites symboliques ou statistiques. L’une des plus connues est l’utilisation de <strong>LIWC</strong> (<em>Linguistic Inquiry and Word Count</em>), un outil qui scanne un texte et compte la fréquence de certains types de mots, comme ceux associés à la colère, à la famille, aux émotions positives ou négatives. En analysant ces fréquences, les chercheur·es pouvaient établir des liens avec des traits de personnalité. Par exemple, une personne utilisant souvent des mots chargés d’émotion positive pouvait être perçue comme plus extravertie, alors qu’un vocabulaire plus anxiogène était fréquemment associé au névrosisme.</p>
+<p>Avant l’essor de l’apprentissage profond, les chercheur·es ont tenté d’utiliser des approches plus classiques de l’intelligence artificielle pour analyser le lien entre langage et personnalité. Ces méthodes — souvent fondées sur des règles simples ou des statistiques — représentent les premiers pas de l’IA appliquée à la psychologie du langage. Même si elles étaient moins performantes que les approches modernes, elles ont posé les bases de ce champ en plein essor : faire parler les textes pour mieux comprendre qui les écrit.</p>
+<p>Les premières tentatives pour relier le langage écrit aux traits de personnalité ont reposé sur des approches dites symboliques ou statistiques. L’une des plus connues est l’utilisation de LIWC (Linguistic Inquiry and Word Count), un outil qui scanne un texte et compte la fréquence de certains types de mots, comme ceux associés à la colère, à la famille, aux émotions positives ou négatives. En analysant ces fréquences, les chercheur·es pouvaient établir des liens avec des traits de personnalité. Par exemple, une personne utilisant souvent des mots chargés d’émotion positive pouvait être perçue comme plus extravertie, alors qu’un vocabulaire plus anxiogène était fréquemment associé au névrosisme.</p>
 </section>
 <section id="des-modèles-statistiques-plus-flexibles" class="level3">
 <h3 class="anchored" data-anchor-id="des-modèles-statistiques-plus-flexibles">Des modèles statistiques plus flexibles</h3>
-<p>En parallèle, des méthodes plus statistiques se sont développées. Des modèles comme les <strong>forêts aléatoires</strong>, les <strong>réseaux de neurones artificiels simples</strong> ou les <strong>SVM (support vector machines)</strong> ont été utilisés pour prédire les traits de personnalité à partir de caractéristiques linguistiques extraites manuellement. Ces caractéristiques incluaient, par exemple, le nombre de phrases, la longueur moyenne des mots, la fréquence d’utilisation de certains temps verbaux, ou encore la proportion de pronoms personnels. Ces approches, bien que plus souples que les analyses par mots-clés, restaient fortement dépendantes des choix faits par les chercheurs en amont : il fallait définir quoi mesurer, et comment.</p>
+<p>En parallèle, des méthodes plus statistiques se sont développées. Des modèles comme les forêts aléatoires, les réseaux de neurones artificiels simples ou les SVM (support vector machines) ont été utilisés pour prédire les traits de personnalité à partir de caractéristiques linguistiques extraites manuellement. Ces caractéristiques incluaient, par exemple, le nombre de phrases, la longueur moyenne des mots, la fréquence d’utilisation de certains temps verbaux, ou encore la proportion de pronoms personnels. Ces approches, bien que plus souples que les analyses par mots-clés, restaient fortement dépendantes des choix faits par les chercheurs en amont : il fallait définir quoi mesurer, et comment.</p>
 </section>
 <section id="les-limites-de-ces-approches" class="level3">
 <h3 class="anchored" data-anchor-id="les-limites-de-ces-approches">Les limites de ces approches</h3>
 <p>Cependant, ces premières méthodes présentaient plusieurs limites importantes. D’abord, elles s’appuyaient sur de nombreuses hypothèses implicites : il fallait deviner à l’avance quels éléments du langage pourraient être liés à la personnalité. Ensuite, elles étaient peu sensibles au contexte. Un mot comme « froid », par exemple, n’aura pas le même sens selon qu’il décrit la météo ou une relation humaine. Ces modèles peinaient donc à saisir les subtilités du langage naturel. Enfin, leurs performances plafonnaient souvent autour de 65 à 70 % de précision, ce qui limitait leur utilité dans des contextes plus complexes ou variés. C’est précisément pour dépasser ces limites que les chercheurs se sont tournés vers des approches plus flexibles et puissantes, comme celles fondées sur le deep learning. Parmi elles, les modèles transformers marquent une avancée majeure.</p>
 </section>
 </section>
-<section id="comprendre-les-transformers" class="level2">
-<h2 class="anchored" data-anchor-id="comprendre-les-transformers">Comprendre les transformers</h2>
-<p>Avec l’émergence du deep learning, un nouveau type de modèle s’est imposé dans le domaine de la compréhension du langage naturel : le transformer. Introduit en 2017, ce type de modèle a profondément modifié la manière dont les machines analysent les textes, en offrant une capacité inédite à capturer les relations entre les mots, quelle que soit leur position dans la phrase. Contrairement aux anciens modèles qui lisaient les phrases de façon linéaire (mot après mot), les transformers analysent <strong>l’ensemble des mots simultanément</strong>.</p>
-<p>Pour comprendre cela de façon simple, imaginez que vous lisiez une lettre. Le mot « chaud » n’aura pas le même sens dans « une boisson chaude » ou dans « une ambiance chaude ». Le sens dépend des mots qui l’entourent. Les transformers fonctionnent justement sur ce principe : ils accordent à chaque mot une importance différente selon le contexte. Ce mécanisme s’appelle <strong>l’attention</strong>, et c’est ce qui permet au modèle de repérer quelles parties du texte sont les plus pertinentes pour comprendre un mot donné.</p>
-<p>Dans l’étude que je présente ici, les chercheur·es ont utilisé un modèle transformer appelé <strong>ELECTRA</strong>. Ce modèle est un peu particulier : pour s’entraîner, il joue à un jeu où certains mots du texte sont remplacés par d’autres, et le modèle doit deviner quels mots sont “faux”. Cela l’oblige à comprendre finement la structure et le sens des phrases. Une fois ce modèle pré-entraîné, il peut être spécialisé pour des tâches précises, comme ici, prédire les traits de personnalité à partir de courts textes.</p>
-<p>Ce qui rend ELECTRA particulièrement intéressant, c’est qu’il est plus rapide et plus léger que ses prédécesseurs, tout en maintenant une très bonne précision. De plus, il s’agit d’un modèle <strong>open-source</strong>, ce qui signifie que toute personne intéressée – chercheur·e, praticien·ne ou étudiant·e – peut librement le consulter, l’utiliser ou l’adapter. Il est accessible sur des plateformes comme Hugging Face, favorisant ainsi la démocratisation de l’intelligence artificielle en recherche psychologique. Il est donc adapté à des tâches comme l’analyse psychologique automatisée, où l’on dispose souvent de quantités modérées de données et où l’interprétabilité est essentielle.</p>
+<section id="comprendre-les-modèles-transformers" class="level2">
+<h2 class="anchored" data-anchor-id="comprendre-les-modèles-transformers">Comprendre les modèles transformers</h2>
+<p>Avec l’émergence du deep learning, un nouveau type de modèle s’est imposé dans le domaine de la compréhension du langage naturel : le transformer. Introduit en 2017, ce type de modèle a profondément modifié la manière dont les machines analysent les textes, en offrant une capacité inédite à capturer les relations entre les mots, quelle que soit leur position dans la phrase. Contrairement aux anciens modèles qui lisaient les phrases de façon linéaire (mot après mot), les transformers analysent l’ensemble des mots simultanément.</p>
+<p>Pour comprendre cela de façon simple, imaginez que vous lisiez une lettre. Le mot « chaud » n’aura pas le même sens dans « une boisson chaude » ou dans « une ambiance chaude ». Le sens dépend des mots qui l’entourent. Les transformers fonctionnent justement sur ce principe : ils accordent à chaque mot une importance différente selon le contexte. Ce mécanisme s’appelle ’attention, et c’est ce qui permet au modèle de repérer quelles parties du texte sont les plus pertinentes pour comprendre un mot donné.</p>
+<p>Dans l’étude que je présente ici, les chercheur·es ont utilisé un modèle transformer appelé ELECTRA. Ce modèle est un peu particulier : pour s’entraîner, il joue à un jeu où certains mots du texte sont remplacés par d’autres, et le modèle doit deviner quels mots sont “faux”. Cela l’oblige à comprendre finement la structure et le sens des phrases. Une fois ce modèle pré-entraîné, il peut être spécialisé pour des tâches précises, comme ici, prédire les traits de personnalité à partir de courts textes.</p>
+<p>Ce qui rend ELECTRA particulièrement intéressant, c’est qu’il est plus rapide et plus léger que ses prédécesseurs, tout en maintenant une très bonne précision. De plus, il s’agit d’un modèle open-source, ce qui signifie que toute personne intéressée – chercheur·e, praticien·ne ou étudiant·e – peut librement le consulter, l’utiliser ou l’adapter. Il est accessible sur des plateformes comme Hugging Face, favorisant ainsi la démocratisation de l’intelligence artificielle en recherche psychologique. Il est donc adapté à des tâches comme l’analyse psychologique automatisée, où l’on dispose souvent de quantités modérées de données et où l’interprétabilité est essentielle.</p>
 </section>
 <section id="comment-létude-a-été-réalisée" class="level2">
 <h2 class="anchored" data-anchor-id="comment-létude-a-été-réalisée">Comment l’étude a été réalisée</h2>
-<p>Les chercheur·es ont utilisé une base de données appelée <em>Pennebaker and King Essays</em>. On y trouve 2 467 petits textes écrits librement par des adultes, souvent sous forme de récits introspectifs ou de réflexions personnelles. Chacun de ces textes est accompagné d’un profil de personnalité établi par questionnaire, basé sur le modèle des Big Five.</p>
+<p>Les chercheur·es ont utilisé une base de données appelée Pennebaker and King Essays. On y trouve 2 467 petits textes écrits librement par des adultes, souvent sous forme de récits introspectifs ou de réflexions personnelles. Chacun de ces textes est accompagné d’un profil de personnalité établi par questionnaire, basé sur le modèle des Big Five.</p>
 <p>Voici comment ils ont procédé :</p>
 <ol type="1">
 <li><p><strong>Prétraitement</strong> : Les textes bruts ont d’abord été nettoyés pour les rendre exploitables par le modèle. Cela inclut la suppression de caractères non alphabétiques, la normalisation des espaces et ponctuations, et la mise en forme uniforme des textes. Un seuil de longueur a également été fixé pour limiter la variabilité et standardiser l’entrée dans le modèle.</p></li>
@@ -77,9 +160,9 @@
 <li><p><strong>Évaluation</strong> : Les performances des modèles ont été mesurées à l’aide d’un découpage standard des données en ensembles d’entraînement, de validation et de test. Plusieurs métriques ont été utilisées : précision, rappel, score F1 et AUC (aire sous la courbe ROC). Ces indicateurs ont permis de s’assurer que les modèles ne se contentaient pas de bien performer sur les données apprises, mais étaient capables de généraliser sur de nouveaux textes.</p></li>
 </ol>
 </section>
-<section id="les-résultats-en-langage-simple" class="level2">
-<h2 class="anchored" data-anchor-id="les-résultats-en-langage-simple">Les résultats en langage simple</h2>
-<p>Les modèles ont obtenu de <strong>très bons résultats</strong>, surpassant les performances d’anciennes approches comme l’analyse lexicale manuelle. Chaque dimension de la personnalité a été considérée indépendamment comme une tâche de classification binaire (par exemple, distinguer un haut d’un bas niveau d’extraversion), avec une évaluation basée sur plusieurs métriques : précision, rappel, score F1 et AUC (aire sous la courbe ROC).</p>
+<section id="les-résultats" class="level2">
+<h2 class="anchored" data-anchor-id="les-résultats">Les résultats</h2>
+<p>Les modèles ont obtenu de très bons résultats, surpassant les performances d’anciennes approches comme l’analyse lexicale manuelle. Chaque dimension de la personnalité a été considérée indépendamment comme une tâche de classification binaire (par exemple, distinguer un haut d’un bas niveau d’extraversion), avec une évaluation basée sur plusieurs métriques : précision, rappel, score F1 et AUC (aire sous la courbe ROC).</p>
 <p>Pour <strong>l’extraversion</strong>, le modèle a obtenu une précision de 78 %, avec une AUC remarquable de 0.84. Cela indique qu’il distingue bien les personnes extraverties des introverties, en captant des indices comme l’usage fréquent de la première personne, l’expressivité et les émotions positives.</p>
 <p>Pour <strong>l’ouverture à l’expérience</strong>, la performance atteint 75 %. Le modèle semble particulièrement sensible à la richesse lexicale, à la présence de mots abstraits ou à l’usage de tournures stylistiques variées, souvent associées à ce trait.</p>
 <p>Concernant <strong>l’agréabilité</strong>, le modèle atteint également 74 % de précision, avec une AUC solide. Il semble repérer des expressions de politesse, des tournures conciliantes et un ton globalement prosocial.</p>
@@ -91,31 +174,26 @@
 <h2 class="anchored" data-anchor-id="pourquoi-cest-prometteur-pour-la-psychologie">Pourquoi c’est prometteur pour la psychologie</h2>
 <section id="un-outil-précieux-pour-la-recherche" class="level3">
 <h3 class="anchored" data-anchor-id="un-outil-précieux-pour-la-recherche">1. Un outil précieux pour la recherche</h3>
-<p>Les chercheur·es en psychologie manipulent souvent de grandes quantités de textes — que ce soit des réponses ouvertes à des questionnaires, des journaux personnels, ou des messages sur des forums en ligne. Analyser tout cela manuellement peut prendre des semaines. Grâce à des modèles comme ELECTRA, on peut <strong>obtenir une première lecture automatisée</strong> de ces textes : le modèle identifie les tournures, les mots ou les styles d’écriture qui pourraient être liés à certains traits de personnalité. Cela permet de <strong>gagner du temps</strong>, d’élargir le champ des études, et de formuler de nouvelles hypothèses à partir de données linguistiques qu’on aurait autrement négligées.</p>
+<p>Les chercheur·es en psychologie manipulent souvent de grandes quantités de textes — que ce soit des réponses ouvertes à des questionnaires, des journaux personnels, ou des messages sur des forums en ligne. Analyser tout cela manuellement peut prendre des semaines. Grâce à des modèles comme ELECTRA, on peut obtenir une première lecture automatisée de ces textes : le modèle identifie les tournures, les mots ou les styles d’écriture qui pourraient être liés à certains traits de personnalité. Cela permet de gagner du temps, d’élargir le champ des études, et de formuler de nouvelles hypothèses à partir de données linguistiques qu’on aurait autrement négligées.</p>
 </section>
 <section id="un-soutien-pour-les-pratiques-cliniques-et-communautaires" class="level3">
 <h3 class="anchored" data-anchor-id="un-soutien-pour-les-pratiques-cliniques-et-communautaires">2. Un soutien pour les pratiques cliniques et communautaires</h3>
-<p>Dans des contextes comme la clinique, l’intervention communautaire ou même l’éducation, il est souvent utile de <strong>comprendre rapidement le vécu ou le profil d’une personne</strong>, surtout quand le contact est bref ou se fait en ligne. Un outil comme ELECTRA pourrait, par exemple, analyser de manière discrète les premières réponses écrites d’une personne sur une plateforme de soutien ou dans un formulaire d’accueil. Il pourrait ainsi <strong>suggérer certains indicateurs linguistiques</strong> liés à l’anxiété, à l’agréabilité ou à l’ouverture d’esprit, ce qui permettrait aux intervenant·es d’adapter leur approche. Cela ne remplace pas le jugement professionnel, mais cela peut <strong>offrir un regard complémentaire</strong>, plus subtil, pour guider la relation d’aide.</p>
+<p>Dans des contextes comme la clinique, l’intervention communautaire ou même l’éducation, il est souvent utile de comprendre rapidement le vécu ou le profil d’une personne, surtout quand le contact est bref ou se fait en ligne. Un outil comme ELECTRA pourrait, par exemple, analyser de manière discrète les premières réponses écrites d’une personne sur une plateforme de soutien ou dans un formulaire d’accueil. Il pourrait ainsi suggérer certains indicateurs linguistiques liés à l’anxiété, à l’agréabilité ou à l’ouverture d’esprit, ce qui permettrait aux intervenant·es d’adapter leur approche. Cela ne remplace pas le jugement professionnel, mais cela peut offrir un regard complémentaire, plus subtil, pour guider la relation d’aide.</p>
 </section>
 <section id="vers-des-technologies-plus-sensibles-aux-personnes" class="level3">
 <h3 class="anchored" data-anchor-id="vers-des-technologies-plus-sensibles-aux-personnes">3. Vers des technologies plus sensibles aux personnes</h3>
-<p>Cette technologie pourrait aussi transformer <strong>les interfaces numériques elles-mêmes</strong>. Imaginez un agent conversationnel (chatbot) qui <strong>ajuste son style de réponse</strong> selon la personnalité perçue de la personne avec qui il échange : plus chaleureux, plus structuré, plus créatif… Un tel ajustement pourrait rendre les interactions plus naturelles et plus humaines. C’est une façon de concevoir l’IA non pas comme un outil froid et distant, mais comme un <strong>allié dans la création de liens</strong>, capable de mieux comprendre et de mieux s’adapter aux personnes.</p>
+<p>Cette technologie pourrait aussi transformer les interfaces numériques elles-mêmes. Imaginez un agent conversationnel (chatbot) qui ajuste son style de réponse selon la personnalité perçue de la personne avec qui il échange : plus chaleureux, plus structuré, plus créatif… Un tel ajustement pourrait rendre les interactions plus naturelles et plus humaines. C’est une façon de concevoir l’IA non pas comme un outil froid et distant, mais comme un allié dans la création de liens, capable de mieux comprendre et de mieux s’adapter aux personnes.</p>
 </section>
 </section>
 <section id="et-les-limites" class="level2">
 <h2 class="anchored" data-anchor-id="et-les-limites">Et les limites?</h2>
 <p>Évidemment, tout n’est pas parfait :</p>
 <ul>
-<li>L’algorithme fonctionne surtout sur <strong>des textes en anglais</strong>, écrits par une population assez homogène.</li>
-<li>Il ne prend en compte <strong>que le texte</strong>, pas le ton de la voix, le contexte, ni les émotions ressenties.</li>
-<li>Le modèle peut <strong>surapprendre</strong> à ses exemples, ce qui limite parfois sa généralisation.</li>
+<li>L’algorithme fonctionne surtout sur des textes en anglais, écrits par une population assez homogène.</li>
+<li>Il ne prend en compte que le texte, pas le ton de la voix, le contexte, ni les émotions ressenties.</li>
+<li>Le modèle peut surapprendre à ses exemples, ce qui limite parfois sa généralisation.</li>
 </ul>
 <p>Mais ces défis sont connus, et les auteur·es proposent plusieurs pistes pour y remédier (données plus variées, données multimodales, etc.).</p>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Cette étude nous montre que des modèles comme ELECTRA peuvent <strong>apprendre à “read between the lines”</strong>, et identifier des <strong>indices subtils de la personnalité</strong> dans les textes. Cela ne remplace pas une évaluation clinique, bien sûr, mais cela ouvre la voie à des outils hybrides, où <strong>l’IA soutient l’humain</strong>.</p>
-<p>Je continuerai d’explorer ces liens entre langage, psychologie et IA dans ce blogue. N’hésitez pas à m’écrire si vous souhaitez que j’aborde un sujet en particulier!</p>
 <p>L’article complet est disponible ici : <strong>Saberi, H., Ghofrani, S., &amp; Ravanmehr, R. (2025)</strong>. <em>Personality Recognition Using Transformer Model: A Study on the Big Five Traits</em>. IEEE ICWR. 🔗 <a href="https://ieeexplore.ieee.org/document/11006181">Accès via IEEE Xplore</a></p>
 
 

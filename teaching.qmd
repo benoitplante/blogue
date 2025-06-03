@@ -1,64 +1,63 @@
 ---
-title: "Teaching"
-subtitle: "I teach."
+title: "Enseignement"
 title-block-banner: false
 ---
 
 
-## Class 1
+## Introduction à l'histoire de la psychologie
 
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-2}
-![](files/images/placeholder1.jpg)
+![](files/images/intro_hist_psy.jpg)
 
 :::
 
 ::: {.g-col-12 .g-col-md-10}
 
-[Fall 2024](https://www.google.com), &nbsp; [Fall 2023](https://www.google.com)
+[PSY1110](https://www.teluq.ca/site/etudes/offre/cours/TELUQ/PSY%201110/)
 
-Class 1 introduction.
-
-:::
+L'histoire de la psychologie comme discipline et comme science. La Grèce antique et les premiers philosophes. Rome et le Moyen-Âge; les débuts de la science et de la philosophie moderne. Les grands courants de pensée comme l'empirisme, le sensualisme, le positivisme, le rationalisme, le romantisme et l'existentialisme. L'émergence de la psychologie expérimentale; la physiologie et les premières recherches sur le cerveau. Les premières écoles de psychologie en Allemagne et aux États-Unis. L'évolution et l'étude des différences individuelles.
 
 :::
 
+:::
 
-## Class 2
+
+## Motivations et émotions
 
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-2}
-![](files/images/placeholder2.JPG)
+![](files/images/psy_emotion_motivation.JPG)
 
 :::
 
 ::: {.g-col-12 .g-col-md-10}
 
-[Spring 2025](https://www.google.com), &nbsp; [Fall 2023](https://www.google.com)
+[PSY1323](https://www.teluq.ca/site/etudes/offre/cours/TELUQ/PSY%201323/)
 
-Class 2 introduction.
-
-:::
+Le cours débute par une introduction à la science de la motivation, ce qui provoque le comportement et sa cause, son objet, sa problématique, ses voies d'expression, ainsi que les principaux cadres théoriques de ce champ d'études. Suit dans un premier temps la question des besoins : physiologiques, psychologiques, les motifs implicites et la motivation extrinsèque; dans un deuxième temps sont abordées les sources cognitives de la motivation : la fixation de buts et les efforts pour les atteindre, les quatre types d'états d'esprit, la question des croyances de contrôle personnel, le soi et ses aspirations. La troisième partie porte sur les émotions comme telles : la nature des émotions, leurs aspects biologiques, cognitifs et sociaux. La quatrième et dernière partie du cours aborde les applications aux domaines de la motivation de la croissance et de la psychologie positive, ainsi que dans le cadre de différents types d'interventions.
 
 :::
 
+:::
 
-## Class 3
+
+## Introduction à la psychométrie
 
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-2}
-![](files/images/placeholder3.JPG)
+![](files/imaintro_psychometrie.jpg.JPG)
 
 :::
 
 ::: {.g-col-12 .g-col-md-10}
 
-[Spring 2025](https://www.google.com), &nbsp; [Spring 2024](https://www.google.com)
+[PSY1015](https://www.teluq.ca/site/etudes/offre/cours/TELUQ/PSY%201015/)
 
-Class 3 introduction. 
+Introduction aux concepts fondamentaux en mesures et en évaluations, histoire de la psychométrie, normes des tests, types de fidélité, types de validité, élaboration et analyses d'items, théorie et tests d'intelligence, évaluation clinique et questions éthiques et juridiques de la mesure.
 
 :::
 

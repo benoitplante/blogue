@@ -26,6 +26,11 @@ website:
         href: posts.qmd
       - text: Projets
         href: projects.qmd
+      - text: Publications
+        href: publications.qmd
+      - text: Enseignement
+        href: teaching.qmd
+
 
   page-navigation: true
 

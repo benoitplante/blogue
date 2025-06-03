@@ -22,12 +22,12 @@ listing:
       - "title asc"
 ---
 
-::: {.hero-heading style="display: flex; align-items: center; gap: 2em; flex-wrap: wrap; justify-content: center; margin-bottom: 2em;"}
+::: {.hero-heading style="display: flex; align-items: flex-start; gap: 2em; flex-wrap: wrap; justify-content: flex-start; margin-bottom: 2em;"}
 
-<div style="flex: 0 0 auto; text-align: center;">
+<div style="flex: 0 0 auto; text-align: left;">
   ![Photo générée par l'IA](files/profiles/photo-benoit.png){width="200px" style="border-radius: 50%; margin-bottom: 0.5em;"}
 
-  <span style="display: inline-flex; gap: 1em; justify-content: center;">
+  <span style="display: inline-flex; gap: 1em; margin-top: 0.5em;">
     <a href="https://github.com/benplante" target="_blank"><i class="fa fa-github"></i></a>
     <a href="https://linkedin.com/in/benplante" target="_blank"><i class="fa fa-linkedin"></i></a>
     <a href="https://orcid.org/0009-0003-5449-427X" target="_blank"><i class="ai ai-orcid"></i></a>
@@ -42,7 +42,9 @@ Je m’intéresse à l’usage de l’intelligence artificielle pour automatiser
 
 Sur ce site, je partage mes projets personnels, des expérimentations méthodologiques, des résumés d’articles, ainsi que des ressources et exemples concrets d’outils comme R et Quarto.
 :::
+</div>
 
+:::
 
 ## Publications récentes
 
