@@ -81,8 +81,9 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-image','listing-date','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+      page: 3,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -182,11 +183,11 @@ window.Quarto = {
 <meta property="og:title" content="– Benoit Plante">
 <meta property="og:image" content="https://benoitplante.github.io/blogue/files/profiles/photo-benoit.png">
 <meta property="og:site_name" content="Benoit Plante">
-<meta property="og:image:height" content="1024">
+<meta property="og:image:height" content="1536">
 <meta property="og:image:width" content="1024">
 <meta name="twitter:title" content="– Benoit Plante">
 <meta name="twitter:image" content="https://benoitplante.github.io/blogue/files/profiles/photo-benoit.png">
-<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-height" content="1536">
 <meta name="twitter:image-width" content="1024">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -218,7 +219,7 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./posts.html"> 
-<span class="menu-text">Veille IA</span></a>
+<span class="menu-text">Veille PsychIA</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./projects.html"> 
@@ -263,73 +264,89 @@ window.Quarto = {
 <figcaption>Photo générée par l’IA</figcaption>
 </figure>
 </div>
-<p><span style="display: inline-flex; gap: 1em; margin-top: 0.5em;"> <a href="https://github.com/benplante" target="_blank"><i class="fa fa-github"></i></a> <a href="https://linkedin.com/in/benplante" target="_blank"><i class="fa fa-linkedin"></i></a> <a href="https://orcid.org/0009-0003-5449-427X" target="_blank"><i class="ai ai-orcid"></i></a> </span></p>
+<p><span style="display: inline-flex; gap: 1em; margin-top: 0.5em;"><a href="https://github.com/benplante" target="_blank"><i class="fa fa-github"></i></a> <a href="https://linkedin.com/in/benplante" target="_blank"><i class="fa fa-linkedin"></i></a> <a href="https://orcid.org/0009-0003-5449-427X" target="_blank"><i class="ai ai-orcid"></i></a></span></p>
 </div>
 <div style="flex: 1 1 300px; min-width: 280px;">
 <div class="hero-description" style="text-align: left;">
-<p>Je suis coordonnateur scientifique du GRIN, doctorant en psychologie à l’UQTR, et chargé de cours à la TÉLUQ. Mon travail porte sur le développement de l’enfant et de la famille, l’analyse de données en R, et les méthodes de recherche en psychologie.</p>
-<p>Je m’intéresse à l’usage de l’intelligence artificielle pour automatiser, documenter et enrichir la recherche psychologique.</p>
-<p>Sur ce site, je partage mes projets personnels, des expérimentations méthodologiques, des résumés d’articles, ainsi que des ressources et exemples concrets d’outils comme R et Quarto.</p>
+<p>L’intelligence artificielle occupe une place de plus en plus centrale dans ma vie professionnelle. Je l’utilise autant comme outil de recherche que comme sujet d’exploration, et ce blogue en est le reflet. Pour moi, l’IA n’est pas seulement une technologie : c’est une manière de repenser nos façons de comprendre, d’analyser et d’agir — en psychologie comme ailleurs.</p>
+<p>Ce site, c’est un peu mon laboratoire ouvert. J’y partage ce que je lis, ce que je teste, ce que je construis. On y trouve une <a href=".\posts">veille PsychIA</a>, où je vulgarise des recherches récentes sur l’intelligence artificielle appliquée à la psychologie. J’y présente aussi des <a href=".\projets">projets perso</a>, où je joue avec des données, des idées ou des outils, parfois pour résoudre un vrai problème, parfois juste pour voir jusqu’où je peux aller. Si vous vous intéressez à la recherche, à la techno, à l’humain, ou à ce qui se passe quand les trois se rencontrent, vous êtes au bon endroit.</p>
+<section id="à-propos" class="level3">
+<h3 class="anchored" data-anchor-id="à-propos">À propos</h3>
+<p>Je travaille comme coordonnateur scientifique pour le <a href="https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864">Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés (GRIN)</a>, où je supervise le développement des projets, la coordination des partenariats et la mobilisation des connaissances. Je suis aussi doctorant en psychologie à l’<a href="https://www.uqtr.ca">Université du Québec à Trois-Rivières (UQTR)</a>, où mes travaux portent sur les liens entre l’activité physique et le bien-être psychologique.</p>
+<p>Je suis également tuteur en psychologie à la <a href="https://www.teluq.ca">TÉLUQ</a>, où j’accompagne des étudiant·e·s dans leurs apprentissages à distance. Enfin, j’agis aussi à titre de conseiller au <a href="https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=401">SESAME</a>, un service d’accompagnement destiné aux étudiant·e·s parents et à la réussite étudiante à l’UQTR.</p>
+</section>
 </div>
 </div>
 </div>
 <section id="publications-récentes" class="level2">
 <h2 class="anchored" data-anchor-id="publications-récentes">Publications récentes</h2>
-<div id="listing-recent-posts" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ==" data-listing-date-sort="1748923200000" data-listing-file-modified-sort="1748944501466" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1126">
-<a href="./posts/2025-06-03-llm-emotional-test/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2025-06-03-llm-emotional-test/banner.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-L’intelligence émotionnelle des intelligences artificielles : ChatGPT et cie surpassent les humains
-</h5>
-<div class="card-attribution card-text-small end">
+<div id="listing-recent-posts" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ==" data-listing-date-sort="1748923200000" data-listing-file-modified-sort="1748944501466" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1126">
+<div class="thumbnail"><a href="./posts/2025-06-03-llm-emotional-test/index.html" class="no-external">
+
+<img loading="lazy" src="./posts/2025-06-03-llm-emotional-test/banner.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-06-03-llm-emotional-test/index.html" class="no-external">L’intelligence émotionnelle des intelligences artificielles : ChatGPT et cie surpassent les humains</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2025-06-03-llm-emotional-test/index.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-06-03-llm-emotional-test/index.html" class="no-external">
 <div class="listing-date">
 Jun 3, 2025
 </div>
+</a>
 </div>
 </div>
-</div></a>
+<div class="quarto-post image-right" data-index="1" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ==" data-listing-date-sort="1748232000000" data-listing-file-modified-sort="1748944785793" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2093">
+<div class="thumbnail"><a href="./posts/2025-05-29-personnalite-transformer/index.html" class="no-external">
+
+<img loading="lazy" src="./posts/2025-05-29-personnalite-transformer/banner_article_electra.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-05-29-personnalite-transformer/index.html" class="no-external">Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2025-05-29-personnalite-transformer/index.html" class="no-external"></a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ==" data-listing-date-sort="1748232000000" data-listing-file-modified-sort="1748944785793" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2093">
-<a href="./posts/2025-05-29-personnalite-transformer/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2025-05-29-personnalite-transformer/banner_article_electra.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers
-</h5>
-<div class="card-attribution card-text-small end">
+</div>
+<div class="metadata">
+<a href="./posts/2025-05-29-personnalite-transformer/index.html" class="no-external">
 <div class="listing-date">
 May 26, 2025
 </div>
+</a>
 </div>
 </div>
-</div></a>
+<div class="quarto-post image-right" data-index="2" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQSUyQ1V0aWxpc2F0aW9uJTIwYXBwbGlxdSVDMyVBOWUlMjBkZSUyMGwnSUE=" data-listing-date-sort="1747972800000" data-listing-file-modified-sort="1748975913945" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="468">
+<div class="thumbnail"><a href="./projets/2025-05-23-intro-familia/index.html" class="no-external">
+
+<img loading="lazy" src="./projets/2025-05-23-intro-familia/banner.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./projets/2025-05-23-intro-familia/index.html" class="no-external">Analyser les données de Famili@ en collaboration avec l’IA</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./projets/2025-05-23-intro-familia/index.html" class="no-external"></a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="TSVDMyVBOXRob2RvbG9naWUlMjBhdWdtZW50JUMzJUE5ZSUyMHBhciUyMGwlRTIlODAlOTlJQQ==" data-listing-date-sort="1747800000000" data-listing-file-modified-sort="1747832477489" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="660">
-<a href="./posts/2025-05-21-ai-robin/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2025-05-21-ai-robin/banner.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Quand une IA devient co-chercheuse : réflexions autour de Robin
-</h5>
-<div class="card-attribution card-text-small end">
+</div>
+<div class="metadata">
+<a href="./projets/2025-05-23-intro-familia/index.html" class="no-external">
 <div class="listing-date">
-May 21, 2025
+May 23, 2025
 </div>
+</a>
 </div>
-</div>
-</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>

@@ -9,11 +9,11 @@ listing:
   - id: recent-posts
     contents: 
       - posts
+      - projets
     exclude:
       title: ""
-    type: grid
+    type: default
     max-items: 3
-    image-height: 150px
     page-size: 3 #set same as max-times to remove the page number setting
     fields: [image, date, title, subtitle]
     max-description-length: 75
@@ -22,34 +22,29 @@ listing:
       - "title asc"
 ---
 
-::: {.hero-heading style="display: flex; align-items: flex-start; gap: 2em; flex-wrap: wrap; justify-content: flex-start; margin-bottom: 2em;"}
+:::::: {.hero-heading style="display: flex; align-items: flex-start; gap: 2em; flex-wrap: wrap; justify-content: flex-start; margin-bottom: 2em;"}
+::: {style="flex: 0 0 auto; text-align: left;"}
+![Photo générée par l'IA](files/profiles/photo-benoit.png){width="200px" style="border-radius: 50%; margin-bottom: 0.5em;"}
 
-<div style="flex: 0 0 auto; text-align: left;">
-  ![Photo générée par l'IA](files/profiles/photo-benoit.png){width="200px" style="border-radius: 50%; margin-bottom: 0.5em;"}
+[<a href="https://github.com/benplante" target="_blank"><i class="fa fa-github"></i></a> <a href="https://linkedin.com/in/benplante" target="_blank"><i class="fa fa-linkedin"></i></a> <a href="https://orcid.org/0009-0003-5449-427X" target="_blank"><i class="ai ai-orcid"></i></a>]{style="display: inline-flex; gap: 1em; margin-top: 0.5em;"}
+:::
 
-  <span style="display: inline-flex; gap: 1em; margin-top: 0.5em;">
-    <a href="https://github.com/benplante" target="_blank"><i class="fa fa-github"></i></a>
-    <a href="https://linkedin.com/in/benplante" target="_blank"><i class="fa fa-linkedin"></i></a>
-    <a href="https://orcid.org/0009-0003-5449-427X" target="_blank"><i class="ai ai-orcid"></i></a>
-  </span>
-</div>
-
-<div style="flex: 1 1 300px; min-width: 280px;">
+:::: {style="flex: 1 1 300px; min-width: 280px;"}
 ::: {.hero-description style="text-align: left;"}
-Je suis coordonnateur scientifique du GRIN, doctorant en psychologie à l’UQTR, et chargé de cours à la TÉLUQ. Mon travail porte sur le développement de l’enfant et de la famille, l’analyse de données en R, et les méthodes de recherche en psychologie.
+L’intelligence artificielle occupe une place de plus en plus centrale dans ma vie professionnelle. Je l’utilise autant comme outil de recherche que comme sujet d’exploration, et ce blogue en est le reflet. Pour moi, l’IA n’est pas seulement une technologie : c’est une manière de repenser nos façons de comprendre, d’analyser et d’agir — en psychologie comme ailleurs.
 
-Je m’intéresse à l’usage de l’intelligence artificielle pour automatiser, documenter et enrichir la recherche psychologique.
+Ce site, c’est un peu mon laboratoire ouvert. J’y partage ce que je lis, ce que je teste, ce que je construis. On y trouve une [veille PsychIA](/posts), où je vulgarise des recherches récentes sur l’intelligence artificielle appliquée à la psychologie. J’y présente aussi des [projets perso](/projets), où je joue avec des données, des idées ou des outils, parfois pour résoudre un vrai problème, parfois juste pour voir jusqu’où je peux aller. Si vous vous intéressez à la recherche, à la techno, à l’humain, ou à ce qui se passe quand les trois se rencontrent, vous êtes au bon endroit.
 
-Sur ce site, je partage mes projets personnels, des expérimentations méthodologiques, des résumés d’articles, ainsi que des ressources et exemples concrets d’outils comme R et Quarto.
+### À propos
+
+Je travaille comme coordonnateur scientifique pour le [Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés (GRIN)](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=864), où je supervise le développement des projets, la coordination des partenariats et la mobilisation des connaissances. Je suis aussi doctorant en psychologie à l’[Université du Québec à Trois-Rivières (UQTR)](https://www.uqtr.ca), où mes travaux portent sur les liens entre l’activité physique et le bien-être psychologique.
+
+Je suis également tuteur en psychologie à la [TÉLUQ](https://www.teluq.ca), où j’accompagne des étudiant·e·s dans leurs apprentissages à distance. Enfin, j’agis aussi à titre de conseiller au [SESAME](https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=401), un service d’accompagnement destiné aux étudiant·e·s parents et à la réussite étudiante à l’UQTR.
 :::
-</div>
-
-:::
+::::
+::::::
 
 ## Publications récentes
 
-:::{#recent-posts}
+::: {#recent-posts}
 :::
-
-
-

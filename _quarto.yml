@@ -22,7 +22,7 @@ website:
         href: index.qmd
       - text: À propos
         href: about.qmd
-      - text: Veille IA
+      - text: Veille PsychIA
         href: posts.qmd
       - text: Projets
         href: projects.qmd
