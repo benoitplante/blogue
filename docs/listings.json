@@ -8,6 +8,10 @@
     ]
   },
   {
+    "listing": "/outils.html",
+    "items": []
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/posts/2025-06-03-llm-emotional-test/index.html",

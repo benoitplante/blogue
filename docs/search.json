@@ -112,18 +112,18 @@
     "text": "Et les limites?\nÉvidemment, tout n’est pas parfait :\n\nL’algorithme fonctionne surtout sur des textes en anglais, écrits par une population assez homogène.\nIl ne prend en compte que le texte, pas le ton de la voix, le contexte, ni les émotions ressenties.\nLe modèle peut surapprendre à ses exemples, ce qui limite parfois sa généralisation.\n\nMais ces défis sont connus, et les auteur·es proposent plusieurs pistes pour y remédier (données plus variées, données multimodales, etc.).\nL’article complet est disponible ici : Saberi, H., Ghofrani, S., & Ravanmehr, R. (2025). Personality Recognition Using Transformer Model: A Study on the Big Five Traits. IEEE ICWR. 🔗 Accès via IEEE Xplore"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Benoit Plante",
+    "objectID": "outils.html",
+    "href": "outils.html",
+    "title": "Outils",
     "section": "",
-    "text": "Photo générée par l’IA\n\n\n  \n\n\n\nL’intelligence artificielle occupe une place de plus en plus centrale dans ma vie professionnelle. Je l’utilise autant comme outil de recherche que comme sujet d’exploration, et ce blogue en est le reflet. Pour moi, l’IA n’est pas seulement une technologie : c’est une manière de repenser nos façons de comprendre, d’analyser et d’agir — en psychologie comme ailleurs.\nCe site, c’est un peu mon laboratoire ouvert. J’y partage ce que je lis, ce que je teste, ce que je construis. On y trouve une veille PsychIA, où je vulgarise des recherches récentes sur l’intelligence artificielle appliquée à la psychologie. J’y présente aussi des projets perso, où je joue avec des données, des idées ou des outils, parfois pour résoudre un vrai problème, parfois juste pour voir jusqu’où je peux aller. Si vous vous intéressez à la recherche, à la techno, à l’humain, ou à ce qui se passe quand les trois se rencontrent, vous êtes au bon endroit.\n\n\nJe travaille comme coordonnateur scientifique pour le Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés (GRIN), où je supervise le développement des projets, la coordination des partenariats et la mobilisation des connaissances. Je suis aussi doctorant en psychologie à l’Université du Québec à Trois-Rivières (UQTR), où mes travaux portent sur les liens entre l’activité physique et le bien-être psychologique.\nJe suis également tuteur en psychologie à la TÉLUQ, où j’accompagne des étudiant·e·s dans leurs apprentissages à distance. Enfin, j’agis aussi à titre de conseiller au SESAME, un service d’accompagnement destiné aux étudiant·e·s parents et à la réussite étudiante à l’UQTR."
+    "text": "No matching items"
   },
   {
-    "objectID": "index.html#publications-récentes",
-    "href": "index.html#publications-récentes",
-    "title": "Benoit Plante",
-    "section": "Publications récentes",
-    "text": "Publications récentes\n\n\n\n\n\n\n\n\n\n\nL’intelligence émotionnelle des intelligences artificielles : ChatGPT et cie surpassent les humains\n\n\n\n\n\n\n\n\nJun 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nReconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers\n\n\n\n\n\n\n\n\nMay 26, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nAnalyser les données de Famili@ en collaboration avec l’IA\n\n\n\n\n\n\n\n\nMay 23, 2025\n\n\n\n\n\nNo matching items"
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Benoit Plante\nCourriel : benoit.plante@uqtr.ca"
   },
   {
     "objectID": "about.html",
@@ -147,11 +147,18 @@
     "text": "Pourquoi ce blogue ?\nCe blogue est un carnet de veille et d’exploration personnelle.\nJ’y partage : - des résumés d’articles et des actualités scientifiques sur l’usage de l’IA en recherche en psychologie (Méthodes IA) ; - des projets personnels dans lesquels j’expérimente l’IA pour enrichir la pratique de recherche (Projets).\nTous les contenus sont créés en collaboration avec des outils d’IA, principalement via ChatGPT. Cette co-écriture me permet de structurer mes réflexions, d’automatiser certaines tâches, et de tester concrètement l’usage de l’IA en contexte scientifique. J’indique clairement les apports de l’IA dans chaque publication, dans une optique de transparence.\nCe site est un espace d’expérimentation. Je publie à mon rythme, sans prétention à l’exhaustivité, avec l’objectif de nourrir une culture de partage, de réflexion critique et de dialogue autour des liens entre psychologie, IA et science ouverte."
   },
   {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Benoit Plante",
     "section": "",
-    "text": "Benoit Plante\nCourriel : benoit.plante@uqtr.ca"
+    "text": "Photo générée par l’IA\n\n\n  \n\n\n\nL’intelligence artificielle occupe une place de plus en plus centrale dans ma vie professionnelle. Je l’utilise autant comme outil de recherche que comme sujet d’exploration, et ce blogue en est le reflet. Pour moi, l’IA n’est pas seulement une technologie : c’est une manière de repenser nos façons de comprendre, d’analyser et d’agir — en psychologie comme ailleurs.\nCe site, c’est un peu mon laboratoire ouvert. J’y partage ce que je lis, ce que je teste, ce que je construis. On y trouve une veille PsychIA, où je vulgarise des recherches récentes sur l’intelligence artificielle appliquée à la psychologie. J’y présente aussi des projets perso, où je joue avec des données, des idées ou des outils, parfois pour résoudre un vrai problème, parfois juste pour voir jusqu’où je peux aller. Si vous vous intéressez à la recherche, à la techno, à l’humain, ou à ce qui se passe quand les trois se rencontrent, vous êtes au bon endroit.\n\n\nJe travaille comme coordonnateur scientifique pour le Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés (GRIN), où je supervise le développement des projets, la coordination des partenariats et la mobilisation des connaissances. Je suis aussi doctorant en psychologie à l’Université du Québec à Trois-Rivières (UQTR), où mes travaux portent sur les liens entre l’activité physique et le bien-être psychologique.\nJe suis également tuteur en psychologie à la TÉLUQ, où j’accompagne des étudiant·e·s dans leurs apprentissages à distance. Enfin, j’agis aussi à titre de conseiller au SESAME, un service d’accompagnement destiné aux étudiant·e·s parents et à la réussite étudiante à l’UQTR."
+  },
+  {
+    "objectID": "index.html#publications-récentes",
+    "href": "index.html#publications-récentes",
+    "title": "Benoit Plante",
+    "section": "Publications récentes",
+    "text": "Publications récentes\n\n\n\n\n\n\n\n\n\n\nL’intelligence émotionnelle des intelligences artificielles : ChatGPT et cie surpassent les humains\n\n\n\n\n\n\n\n\nJun 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nReconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers\n\n\n\n\n\n\n\n\nMay 26, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nAnalyser les données de Famili@ en collaboration avec l’IA\n\n\n\n\n\n\n\n\nMay 23, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2025-05-21-ai-robin/index.html",
