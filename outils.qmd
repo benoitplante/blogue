@@ -1,0 +1,19 @@
+---
+title: "Outils"
+subtitle: "Outils d'IA pour supporter la recherche en psychologie"
+description-meta: "Outils d'IA pour supporter la recherche en psychologie"
+listing: 
+  sort: "date desc"
+  type: default
+  page-size: 100
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  feed: true
+  contents: 
+    - outils
+
+draft-mode: unlinked
+page-navigation: false
+title-block-banner: false
+---
