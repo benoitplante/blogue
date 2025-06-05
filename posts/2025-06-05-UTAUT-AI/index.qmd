@@ -1,0 +1,57 @@
+---
+title: "Acceptation des interventions en santé mentale utilisant l’intelligence artificielle : validation d’un outil de mesure innovant"
+categories: ["Psychométrie", "Psychologie clinique"]
+date: 2025-06-03
+image: banner.png
+format:
+  html:
+    title-block-banner: true
+    css: styles.css
+---
+
+![Générée par ChatGPT](banner.png)
+---
+
+**En bref :** Une nouvelle étude propose et valide l'UTAUT-AI-DMHI, un outil innovant mesurant l'acceptabilité des interventions numériques en santé mentale utilisant l'intelligence artificielle auprès des patients et des cliniciens. Cet outil, évalué auprès de plus de 1600 participants, identifie sept facteurs clés influençant l'adoption de ces technologies, tels que la facilité d'utilisation, les attentes de qualité thérapeutique et les préoccupations liées à la vie privée. Il pourrait guider le développement de technologies plus adaptées aux besoins et attentes des utilisateurs.
+
+La santé mentale demeure un enjeu majeur, avec une large partie de la population mondiale n’ayant pas accès aux soins nécessaires. Dans ce contexte, une étude récente menée par Vera Békés et ses collègues présente une adaptation innovante du modèle UTAUT (Théorie Unifiée de l’Acceptation et de l’Utilisation des Technologies), spécifiquement destinée à évaluer l'acceptabilité des interventions numériques en santé mentale (DMHI) utilisant l'intelligence artificielle (IA).
+
+Ces interventions, incluant les thérapies par vidéoconférence, les chatbots et les thérapeutes virtuels animés par IA, représentent une solution prometteuse pour combler les lacunes d’accès aux soins. Toutefois, l’efficacité de ces technologies dépend fortement de leur acceptabilité auprès des patients et des cliniciens. Il est ainsi crucial de développer des outils de mesure rigoureux permettant de mieux comprendre les déterminants de cette acceptabilité afin d'améliorer leur conception et de favoriser leur intégration effective dans les pratiques cliniques.
+
+## Concepts centraux : le modèle UTAUT adapté à la santé mentale numérique
+
+L’étude récente menée par Vera Békés et ses collègues s’est appuyée sur la Théorie Unifiée de l’Acceptation et de l’Utilisation des Technologies (UTAUT), développée par Venkatesh et al. (2003). Cette théorie combine plusieurs modèles préexistants pour expliquer les facteurs influençant l’intention des individus à adopter et utiliser une nouvelle technologie. Les principaux déterminants identifiés par l'UTAUT sont l'attente de performance, la facilité d’utilisation, l'influence sociale et les conditions facilitantes. L'étude de Békés propose une adaptation spécifique à la santé mentale numérique et à l’intelligence artificielle : l’UTAUT-AI-DMHI, qui intègre des dimensions additionnelles pertinentes dans ce contexte particulier.
+
+Le modèle UTAUT-AI-DMHI est constitué de sept facteurs déterminants :
+
+-   **Facilité d'utilisation** : simplicité et ergonomie.
+-   **Influence sociale** : approbation sociale et professionnelle.
+-   **Commodité** : praticité, économie de temps et d'argent.
+-   **Connexion humaine** : sentiment de lien émotionnel suffisant.
+-   **Risque perçu pour la vie privée** : préoccupations sur la confidentialité.
+-   **Motivation hédonique** : plaisir ressenti lors de l’utilisation.
+-   **Attentes de qualité thérapeutique** : perception de l’efficacité de l’intervention.
+
+## Méthodologie et validation
+
+L’étude a impliqué deux échantillons distincts totalisant plus de 1600 participants : un premier composé de 1115 individus incluant 528 patients, 155 cliniciens et 432 personnes appartenant aux deux groupes, ainsi qu’un second échantillon représentatif de 536 participants issus de la population générale américaine. La stratégie d’analyse comprenait des analyses factorielles confirmatoires (CFA) pour tester la structure factorielle hypothétique de l'outil, ainsi que des tests d'invariance de mesure pour vérifier si la mesure était équivalente à travers les différents groupes. La validité prédictive a été évaluée en examinant les corrélations entre les facteurs identifiés et l’intention comportementale d'utiliser les interventions numériques et IA. Les résultats démontrent une excellente fiabilité interne, une validité de construction robuste et une invariance de mesure confirmant que l’UTAUT-AI-DMHI mesure efficacement l’acceptation de divers formats d'interventions numériques et IA auprès de populations diversifiées.
+
+## Résultats : prédire l’intention d’adoption
+
+Les résultats indiquent clairement que chacun des sept facteurs identifiés dans le modèle UTAUT-AI-DMHI présente une association positive significative avec l’intention d’utiliser les interventions en santé mentale numériques et basées sur l'IA. En examinant ces relations de manière détaillée, l'étude révèle que les attentes en matière de qualité thérapeutique constituent le prédicteur le plus puissant de cette intention, illustrant l’importance critique que les utilisateurs accordent à la perception de l’efficacité réelle des interventions. Les facteurs comme la facilité d'utilisation, la commodité, et la connexion humaine apparaissent également fortement liés à l'intention d'utilisation, confirmant que les utilisateurs privilégient des technologies intuitives, pratiques et capables de maintenir une dimension relationnelle satisfaisante. Ces résultats soulignent l'importance d’intégrer systématiquement ces éléments lors de la conception et du déploiement des interventions numériques et IA en santé mentale.
+
+## Implications cliniques et perspectives pratiques
+
+Ces résultats ont des implications concrètes importantes pour les décideurs, les cliniciens et les concepteurs d'interventions numériques en santé mentale. Pour maximiser l’adoption de ces technologies, il est crucial de mettre en place des stratégies visant à renforcer explicitement la confiance des utilisateurs envers leur efficacité clinique, leur facilité d'utilisation, ainsi que leur robustesse en matière de confidentialité et de protection des données personnelles. Il serait également pertinent d'envisager des campagnes d’information et de sensibilisation ciblées pour clarifier les bénéfices et rassurer les utilisateurs quant à la sécurité de ces technologies. De plus, la formation continue des professionnels à travers des programmes spécifiques, ainsi que la mise à disposition de supports techniques adaptés et accessibles, pourraient faciliter leur intégration harmonieuse dans la pratique clinique quotidienne, réduisant ainsi les freins à l'adoption et favorisant une utilisation généralisée et durable.
+
+## Limites et perspectives futures
+
+L’étude présente quelques limites, notamment la nécessité d’évaluer ces outils dans des contextes culturels variés et à travers des approches mixtes qui prennent en compte les barrières systémiques et organisationnelles. De plus, bien que l’UTAUT-AI-DMHI démontre une bonne validité initiale, des recherches supplémentaires sont nécessaires pour examiner sa sensibilité aux changements dans le temps et son utilité dans des contextes cliniques réels. Il serait également pertinent d'examiner son application auprès de populations vulnérables, incluant les jeunes, les personnes âgées ou les minorités culturelles. Enfin, l’intégration de données qualitatives sur les expériences vécues des utilisateurs permettrait d’enrichir la compréhension des freins et leviers à l’adoption des interventions numériques en santé mentale.
+
+## Conclusion 
+
+Cet article ouvre des perspectives encourageantes pour l'intégration de l'IA dans la pratique clinique. Il souligne également l’importance de tenir compte des attitudes des utilisateurs dès les premières étapes de développement technologique. L’outil UTAUT-AI-DMHI pourrait devenir une référence clé pour guider l’implémentation réussie de ces interventions dans la santé mentale.
+
+## Référence complète
+
+Békés, V., Bőthe, B., & Aafjes-van Doorn, K. (2025). Acceptance of using artificial intelligence and digital technology for mental health interventions: The development and initial validation of the UTAUT‐AI‐DMHI. *Clinical Psychology & Psychotherapy*, 32, e70085. <https://doi.org/10.1002/cpp.70085>
