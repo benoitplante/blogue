@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ben Plante">
-<meta name="dcterms.date" content="2025-05-26">
+<meta name="dcterms.date" content="2025-06-05">
 <meta name="description" content="Blogue sur les liens entre psychologie et intelligence artificielle">
 
-<title>Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers – Benoit Plante</title>
+<title>Acceptation des interventions en santé mentale utilisant l’intelligence artificielle : validation d’un outil de mesure innovant – Benoit Plante</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -121,15 +121,15 @@ https://badge.dimensions.ai/
 
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers – Benoit Plante">
+<meta property="og:title" content="Acceptation des interventions en santé mentale utilisant l’intelligence artificielle : validation d’un outil de mesure innovant – Benoit Plante">
 <meta property="og:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
-<meta property="og:image" content="https://benoitplante.github.io/posts/2025-05-29-personnalite-transformer/banner_article_electra.png">
+<meta property="og:image" content="https://benoitplante.github.io/posts/2025-06-05-UTAUT-AI/banner.png">
 <meta property="og:site_name" content="Benoit Plante">
 <meta property="og:image:height" content="1024">
 <meta property="og:image:width" content="1536">
-<meta name="twitter:title" content="Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers – Benoit Plante">
+<meta name="twitter:title" content="Acceptation des interventions en santé mentale utilisant l’intelligence artificielle : validation d’un outil de mesure innovant – Benoit Plante">
 <meta name="twitter:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
-<meta name="twitter:image" content="https://benoitplante.github.io/posts/2025-05-29-personnalite-transformer/banner_article_electra.png">
+<meta name="twitter:image" content="https://benoitplante.github.io/posts/2025-06-05-UTAUT-AI/banner.png">
 <meta name="twitter:image-height" content="1024">
 <meta name="twitter:image-width" content="1536">
 <meta name="twitter:card" content="summary_large_image">
@@ -196,9 +196,10 @@ https://badge.dimensions.ai/
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Reconnaître la personnalité à partir de textes? Une étude prometteuse avec les modèles transformers</h1>
+      <h1 class="title">Acceptation des interventions en santé mentale utilisant l’intelligence artificielle : validation d’un outil de mesure innovant</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Méthodologie augmentée par l’IA</div>
+                <div class="quarto-category">Psychométrie</div>
+                <div class="quarto-category">Psychologie clinique</div>
               </div>
                   </div>
   </div>
@@ -210,7 +211,7 @@ https://badge.dimensions.ai/
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 26, 2025</p>
+        <p class="date">June 5, 2025</p>
       </div>
     </div>
     
@@ -226,24 +227,13 @@ https://badge.dimensions.ai/
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#un-peu-de-contexte-les-traits-de-personnalité" id="toc-un-peu-de-contexte-les-traits-de-personnalité" class="nav-link" data-scroll-target="#un-peu-de-contexte-les-traits-de-personnalité">Un peu de contexte : les traits de personnalité</a></li>
-  <li><a href="#avant-les-transformers-premières-tentatives-danalyse-de-la-personnalité-à-partir-du-texte" id="toc-avant-les-transformers-premières-tentatives-danalyse-de-la-personnalité-à-partir-du-texte" class="nav-link" data-scroll-target="#avant-les-transformers-premières-tentatives-danalyse-de-la-personnalité-à-partir-du-texte">Avant les transformers : premières tentatives d’analyse de la personnalité à partir du texte</a>
-  <ul class="collapse">
-  <li><a href="#des-approches-symboliques-fondées-sur-les-mots" id="toc-des-approches-symboliques-fondées-sur-les-mots" class="nav-link" data-scroll-target="#des-approches-symboliques-fondées-sur-les-mots">Des approches symboliques fondées sur les mots</a></li>
-  <li><a href="#des-modèles-statistiques-plus-flexibles" id="toc-des-modèles-statistiques-plus-flexibles" class="nav-link" data-scroll-target="#des-modèles-statistiques-plus-flexibles">Des modèles statistiques plus flexibles</a></li>
-  <li><a href="#les-limites-de-ces-approches" id="toc-les-limites-de-ces-approches" class="nav-link" data-scroll-target="#les-limites-de-ces-approches">Les limites de ces approches</a></li>
-  </ul></li>
-  <li><a href="#comprendre-les-modèles-transformers" id="toc-comprendre-les-modèles-transformers" class="nav-link" data-scroll-target="#comprendre-les-modèles-transformers">Comprendre les modèles transformers</a></li>
-  <li><a href="#comment-létude-a-été-réalisée" id="toc-comment-létude-a-été-réalisée" class="nav-link" data-scroll-target="#comment-létude-a-été-réalisée">Comment l’étude a été réalisée</a></li>
-  <li><a href="#les-résultats" id="toc-les-résultats" class="nav-link" data-scroll-target="#les-résultats">Les résultats</a></li>
-  <li><a href="#pourquoi-cest-prometteur-pour-la-psychologie" id="toc-pourquoi-cest-prometteur-pour-la-psychologie" class="nav-link" data-scroll-target="#pourquoi-cest-prometteur-pour-la-psychologie">Pourquoi c’est prometteur pour la psychologie</a>
-  <ul class="collapse">
-  <li><a href="#un-outil-précieux-pour-la-recherche" id="toc-un-outil-précieux-pour-la-recherche" class="nav-link" data-scroll-target="#un-outil-précieux-pour-la-recherche">1. Un outil précieux pour la recherche</a></li>
-  <li><a href="#un-soutien-pour-les-pratiques-cliniques-et-communautaires" id="toc-un-soutien-pour-les-pratiques-cliniques-et-communautaires" class="nav-link" data-scroll-target="#un-soutien-pour-les-pratiques-cliniques-et-communautaires">2. Un soutien pour les pratiques cliniques et communautaires</a></li>
-  <li><a href="#vers-des-technologies-plus-sensibles-aux-personnes" id="toc-vers-des-technologies-plus-sensibles-aux-personnes" class="nav-link" data-scroll-target="#vers-des-technologies-plus-sensibles-aux-personnes">3. Vers des technologies plus sensibles aux personnes</a></li>
-  </ul></li>
-  <li><a href="#et-les-limites" id="toc-et-les-limites" class="nav-link" data-scroll-target="#et-les-limites">Et les limites?</a></li>
+  <li><a href="#concepts-centraux-le-modèle-utaut-adapté-à-la-santé-mentale-numérique" id="toc-concepts-centraux-le-modèle-utaut-adapté-à-la-santé-mentale-numérique" class="nav-link active" data-scroll-target="#concepts-centraux-le-modèle-utaut-adapté-à-la-santé-mentale-numérique">Concepts centraux : le modèle UTAUT adapté à la santé mentale numérique</a></li>
+  <li><a href="#méthodologie-et-validation" id="toc-méthodologie-et-validation" class="nav-link" data-scroll-target="#méthodologie-et-validation">Méthodologie et validation</a></li>
+  <li><a href="#résultats-prédire-lintention-dadoption" id="toc-résultats-prédire-lintention-dadoption" class="nav-link" data-scroll-target="#résultats-prédire-lintention-dadoption">Résultats : prédire l’intention d’adoption</a></li>
+  <li><a href="#implications-cliniques-et-perspectives-pratiques" id="toc-implications-cliniques-et-perspectives-pratiques" class="nav-link" data-scroll-target="#implications-cliniques-et-perspectives-pratiques">Implications cliniques et perspectives pratiques</a></li>
+  <li><a href="#limites-et-perspectives-futures" id="toc-limites-et-perspectives-futures" class="nav-link" data-scroll-target="#limites-et-perspectives-futures">Limites et perspectives futures</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#référence-complète" id="toc-référence-complète" class="nav-link" data-scroll-target="#référence-complète">Référence complète</a></li>
   </ul>
 </nav>
     </div>
@@ -254,98 +244,52 @@ https://badge.dimensions.ai/
 
 
 
+<p><strong>En bref :</strong> Une nouvelle étude propose et valide l’UTAUT-AI-DMHI, un outil innovant mesurant l’acceptabilité des interventions numériques en santé mentale utilisant l’intelligence artificielle auprès des patients et des cliniciens. Cet outil, évalué auprès de plus de 1600 participants, identifie sept facteurs clés influençant l’adoption de ces technologies, tels que la facilité d’utilisation, les attentes de qualité thérapeutique et les préoccupations liées à la vie privée. Il pourrait guider le développement de technologies plus adaptées aux besoins et attentes des utilisateurs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="banner_article_electra.png" class="img-fluid figure-img"></p>
+<p><img src="banner.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Générée par ChatGPT</figcaption>
 </figure>
 </div>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Peut-on prédire les traits de personnalité d’une personne simplement à partir d’un texte qu’elle a écrit? Cette question, qui pourrait sembler tirée d’un film de science-fiction, est aujourd’hui au cœur de recherches sérieuses en psychologie computationnelle. J’ai récemment lu une étude fascinante présentée à la conférence IEEE ICWR 2025, qui explore cette idée à l’aide d’un modèle d’intelligence artificielle appelé ELECTRA, une version moderne des modèles transformers.</p>
-<p>Dans ce billet, je présente l’article en question ainsi que la technologie d’intelligence artificielle qui permet d’analyser les textes pour en extraire des indices de personnalité.</p>
-</section>
-<section id="un-peu-de-contexte-les-traits-de-personnalité" class="level2">
-<h2 class="anchored" data-anchor-id="un-peu-de-contexte-les-traits-de-personnalité">Un peu de contexte : les traits de personnalité</h2>
-<p>Dans cet article, les auteurs cherchent à prédire les traits de personnalité en fonction du modèle des Big Five ou « cinq grands facteurs » de la personnalité. Ce modèle propose cinq traits fondamentaux :</p>
+<p>La santé mentale demeure un enjeu majeur, avec une large partie de la population mondiale n’ayant pas accès aux soins nécessaires. Dans ce contexte, une étude récente menée par Vera Békés et ses collègues présente une adaptation innovante du modèle UTAUT (Théorie Unifiée de l’Acceptation et de l’Utilisation des Technologies), spécifiquement destinée à évaluer l’acceptabilité des interventions numériques en santé mentale (DMHI) utilisant l’intelligence artificielle (IA).</p>
+<p>Ces interventions, incluant les thérapies par vidéoconférence, les chatbots et les thérapeutes virtuels animés par IA, représentent une solution prometteuse pour combler les lacunes d’accès aux soins. Toutefois, l’efficacité de ces technologies dépend fortement de leur acceptabilité auprès des patients et des cliniciens. Il est ainsi crucial de développer des outils de mesure rigoureux permettant de mieux comprendre les déterminants de cette acceptabilité afin d’améliorer leur conception et de favoriser leur intégration effective dans les pratiques cliniques.</p>
+<section id="concepts-centraux-le-modèle-utaut-adapté-à-la-santé-mentale-numérique" class="level2">
+<h2 class="anchored" data-anchor-id="concepts-centraux-le-modèle-utaut-adapté-à-la-santé-mentale-numérique">Concepts centraux : le modèle UTAUT adapté à la santé mentale numérique</h2>
+<p>L’étude récente menée par Vera Békés et ses collègues s’est appuyée sur la Théorie Unifiée de l’Acceptation et de l’Utilisation des Technologies (UTAUT), développée par Venkatesh et al.&nbsp;(2003). Cette théorie combine plusieurs modèles préexistants pour expliquer les facteurs influençant l’intention des individus à adopter et utiliser une nouvelle technologie. Les principaux déterminants identifiés par l’UTAUT sont l’attente de performance, la facilité d’utilisation, l’influence sociale et les conditions facilitantes. L’étude de Békés propose une adaptation spécifique à la santé mentale numérique et à l’intelligence artificielle : l’UTAUT-AI-DMHI, qui intègre des dimensions additionnelles pertinentes dans ce contexte particulier.</p>
+<p>Le modèle UTAUT-AI-DMHI est constitué de sept facteurs déterminants :</p>
 <ul>
-<li><strong>Ouverture à l’expérience</strong> : imagination, curiosité, créativité</li>
-<li><strong>Consciencieux</strong> : organisation, rigueur, discipline</li>
-<li><strong>Extraversion</strong> : sociabilité, expressivité, dynamisme</li>
-<li><strong>Agréabilité</strong> : bienveillance, coopération, empathie</li>
-<li><strong>Névrosisme</strong> : tendance à l’anxiété, la colère ou la tristesse</li>
+<li><strong>Facilité d’utilisation</strong> : simplicité et ergonomie.</li>
+<li><strong>Influence sociale</strong> : approbation sociale et professionnelle.</li>
+<li><strong>Commodité</strong> : praticité, économie de temps et d’argent.</li>
+<li><strong>Connexion humaine</strong> : sentiment de lien émotionnel suffisant.</li>
+<li><strong>Risque perçu pour la vie privée</strong> : préoccupations sur la confidentialité.</li>
+<li><strong>Motivation hédonique</strong> : plaisir ressenti lors de l’utilisation.</li>
+<li><strong>Attentes de qualité thérapeutique</strong> : perception de l’efficacité de l’intervention.</li>
 </ul>
-<p>Dans la recherche, on tente souvent de relier ces traits à la manière dont une personne parle ou écrit. Par exemple, quelqu’un de très extraverti pourrait utiliser plus de mots liés à l’émotion ou à la première personne (« je », « moi »), tandis qu’une personne très névrosée pourrait employer davantage de mots à connotation négative.</p>
 </section>
-<section id="avant-les-transformers-premières-tentatives-danalyse-de-la-personnalité-à-partir-du-texte" class="level2">
-<h2 class="anchored" data-anchor-id="avant-les-transformers-premières-tentatives-danalyse-de-la-personnalité-à-partir-du-texte">Avant les transformers : premières tentatives d’analyse de la personnalité à partir du texte</h2>
-<section id="des-approches-symboliques-fondées-sur-les-mots" class="level3">
-<h3 class="anchored" data-anchor-id="des-approches-symboliques-fondées-sur-les-mots">Des approches symboliques fondées sur les mots</h3>
-<p>Avant l’essor de l’apprentissage profond, les chercheur·es ont tenté d’utiliser des approches plus classiques de l’intelligence artificielle pour analyser le lien entre langage et personnalité. Ces méthodes — souvent fondées sur des règles simples ou des statistiques — représentent les premiers pas de l’IA appliquée à la psychologie du langage. Même si elles étaient moins performantes que les approches modernes, elles ont posé les bases de ce champ en plein essor : faire parler les textes pour mieux comprendre qui les écrit.</p>
-<p>Les premières tentatives pour relier le langage écrit aux traits de personnalité ont reposé sur des approches dites symboliques ou statistiques. L’une des plus connues est l’utilisation de LIWC (Linguistic Inquiry and Word Count), un outil qui scanne un texte et compte la fréquence de certains types de mots, comme ceux associés à la colère, à la famille, aux émotions positives ou négatives. En analysant ces fréquences, les chercheur·es pouvaient établir des liens avec des traits de personnalité. Par exemple, une personne utilisant souvent des mots chargés d’émotion positive pouvait être perçue comme plus extravertie, alors qu’un vocabulaire plus anxiogène était fréquemment associé au névrosisme.</p>
+<section id="méthodologie-et-validation" class="level2">
+<h2 class="anchored" data-anchor-id="méthodologie-et-validation">Méthodologie et validation</h2>
+<p>L’étude a impliqué deux échantillons distincts totalisant plus de 1600 participants : un premier composé de 1115 individus incluant 528 patients, 155 cliniciens et 432 personnes appartenant aux deux groupes, ainsi qu’un second échantillon représentatif de 536 participants issus de la population générale américaine. La stratégie d’analyse comprenait des analyses factorielles confirmatoires (CFA) pour tester la structure factorielle hypothétique de l’outil, ainsi que des tests d’invariance de mesure pour vérifier si la mesure était équivalente à travers les différents groupes. La validité prédictive a été évaluée en examinant les corrélations entre les facteurs identifiés et l’intention comportementale d’utiliser les interventions numériques et IA. Les résultats démontrent une excellente fiabilité interne, une validité de construction robuste et une invariance de mesure confirmant que l’UTAUT-AI-DMHI mesure efficacement l’acceptation de divers formats d’interventions numériques et IA auprès de populations diversifiées.</p>
 </section>
-<section id="des-modèles-statistiques-plus-flexibles" class="level3">
-<h3 class="anchored" data-anchor-id="des-modèles-statistiques-plus-flexibles">Des modèles statistiques plus flexibles</h3>
-<p>En parallèle, des méthodes plus statistiques se sont développées. Des modèles comme les forêts aléatoires, les réseaux de neurones artificiels simples ou les SVM (support vector machines) ont été utilisés pour prédire les traits de personnalité à partir de caractéristiques linguistiques extraites manuellement. Ces caractéristiques incluaient, par exemple, le nombre de phrases, la longueur moyenne des mots, la fréquence d’utilisation de certains temps verbaux, ou encore la proportion de pronoms personnels. Ces approches, bien que plus souples que les analyses par mots-clés, restaient fortement dépendantes des choix faits par les chercheurs en amont : il fallait définir quoi mesurer, et comment.</p>
+<section id="résultats-prédire-lintention-dadoption" class="level2">
+<h2 class="anchored" data-anchor-id="résultats-prédire-lintention-dadoption">Résultats : prédire l’intention d’adoption</h2>
+<p>Les résultats indiquent clairement que chacun des sept facteurs identifiés dans le modèle UTAUT-AI-DMHI présente une association positive significative avec l’intention d’utiliser les interventions en santé mentale numériques et basées sur l’IA. En examinant ces relations de manière détaillée, l’étude révèle que les attentes en matière de qualité thérapeutique constituent le prédicteur le plus puissant de cette intention, illustrant l’importance critique que les utilisateurs accordent à la perception de l’efficacité réelle des interventions. Les facteurs comme la facilité d’utilisation, la commodité, et la connexion humaine apparaissent également fortement liés à l’intention d’utilisation, confirmant que les utilisateurs privilégient des technologies intuitives, pratiques et capables de maintenir une dimension relationnelle satisfaisante. Ces résultats soulignent l’importance d’intégrer systématiquement ces éléments lors de la conception et du déploiement des interventions numériques et IA en santé mentale.</p>
 </section>
-<section id="les-limites-de-ces-approches" class="level3">
-<h3 class="anchored" data-anchor-id="les-limites-de-ces-approches">Les limites de ces approches</h3>
-<p>Cependant, ces premières méthodes présentaient plusieurs limites importantes. D’abord, elles s’appuyaient sur de nombreuses hypothèses implicites : il fallait deviner à l’avance quels éléments du langage pourraient être liés à la personnalité. Ensuite, elles étaient peu sensibles au contexte. Un mot comme « froid », par exemple, n’aura pas le même sens selon qu’il décrit la météo ou une relation humaine. Ces modèles peinaient donc à saisir les subtilités du langage naturel. Enfin, leurs performances plafonnaient souvent autour de 65 à 70 % de précision, ce qui limitait leur utilité dans des contextes plus complexes ou variés. C’est précisément pour dépasser ces limites que les chercheurs se sont tournés vers des approches plus flexibles et puissantes, comme celles fondées sur le deep learning. Parmi elles, les modèles transformers marquent une avancée majeure.</p>
+<section id="implications-cliniques-et-perspectives-pratiques" class="level2">
+<h2 class="anchored" data-anchor-id="implications-cliniques-et-perspectives-pratiques">Implications cliniques et perspectives pratiques</h2>
+<p>Ces résultats ont des implications concrètes importantes pour les décideurs, les cliniciens et les concepteurs d’interventions numériques en santé mentale. Pour maximiser l’adoption de ces technologies, il est crucial de mettre en place des stratégies visant à renforcer explicitement la confiance des utilisateurs envers leur efficacité clinique, leur facilité d’utilisation, ainsi que leur robustesse en matière de confidentialité et de protection des données personnelles. Il serait également pertinent d’envisager des campagnes d’information et de sensibilisation ciblées pour clarifier les bénéfices et rassurer les utilisateurs quant à la sécurité de ces technologies. De plus, la formation continue des professionnels à travers des programmes spécifiques, ainsi que la mise à disposition de supports techniques adaptés et accessibles, pourraient faciliter leur intégration harmonieuse dans la pratique clinique quotidienne, réduisant ainsi les freins à l’adoption et favorisant une utilisation généralisée et durable.</p>
 </section>
+<section id="limites-et-perspectives-futures" class="level2">
+<h2 class="anchored" data-anchor-id="limites-et-perspectives-futures">Limites et perspectives futures</h2>
+<p>L’étude présente quelques limites, notamment la nécessité d’évaluer ces outils dans des contextes culturels variés et à travers des approches mixtes qui prennent en compte les barrières systémiques et organisationnelles. De plus, bien que l’UTAUT-AI-DMHI démontre une bonne validité initiale, des recherches supplémentaires sont nécessaires pour examiner sa sensibilité aux changements dans le temps et son utilité dans des contextes cliniques réels. Il serait également pertinent d’examiner son application auprès de populations vulnérables, incluant les jeunes, les personnes âgées ou les minorités culturelles. Enfin, l’intégration de données qualitatives sur les expériences vécues des utilisateurs permettrait d’enrichir la compréhension des freins et leviers à l’adoption des interventions numériques en santé mentale.</p>
 </section>
-<section id="comprendre-les-modèles-transformers" class="level2">
-<h2 class="anchored" data-anchor-id="comprendre-les-modèles-transformers">Comprendre les modèles transformers</h2>
-<p>Avec l’émergence du deep learning, un nouveau type de modèle s’est imposé dans le domaine de la compréhension du langage naturel : le transformer. Introduit en 2017, ce type de modèle a profondément modifié la manière dont les machines analysent les textes, en offrant une capacité inédite à capturer les relations entre les mots, quelle que soit leur position dans la phrase. Contrairement aux anciens modèles qui lisaient les phrases de façon linéaire (mot après mot), les transformers analysent l’ensemble des mots simultanément.</p>
-<p>Pour comprendre cela de façon simple, imaginez que vous lisiez une lettre. Le mot « chaud » n’aura pas le même sens dans « une boisson chaude » ou dans « une ambiance chaude ». Le sens dépend des mots qui l’entourent. Les transformers fonctionnent justement sur ce principe : ils accordent à chaque mot une importance différente selon le contexte. Ce mécanisme s’appelle ’attention, et c’est ce qui permet au modèle de repérer quelles parties du texte sont les plus pertinentes pour comprendre un mot donné.</p>
-<p>Dans l’étude que je présente ici, les chercheur·es ont utilisé un modèle transformer appelé ELECTRA. Ce modèle est un peu particulier : pour s’entraîner, il joue à un jeu où certains mots du texte sont remplacés par d’autres, et le modèle doit deviner quels mots sont “faux”. Cela l’oblige à comprendre finement la structure et le sens des phrases. Une fois ce modèle pré-entraîné, il peut être spécialisé pour des tâches précises, comme ici, prédire les traits de personnalité à partir de courts textes.</p>
-<p>Ce qui rend ELECTRA particulièrement intéressant, c’est qu’il est plus rapide et plus léger que ses prédécesseurs, tout en maintenant une très bonne précision. De plus, il s’agit d’un modèle open-source, ce qui signifie que toute personne intéressée – chercheur·e, praticien·ne ou étudiant·e – peut librement le consulter, l’utiliser ou l’adapter. Il est accessible sur des plateformes comme Hugging Face, favorisant ainsi la démocratisation de l’intelligence artificielle en recherche psychologique. Il est donc adapté à des tâches comme l’analyse psychologique automatisée, où l’on dispose souvent de quantités modérées de données et où l’interprétabilité est essentielle.</p>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Cet article ouvre des perspectives encourageantes pour l’intégration de l’IA dans la pratique clinique. Il souligne également l’importance de tenir compte des attitudes des utilisateurs dès les premières étapes de développement technologique. L’outil UTAUT-AI-DMHI pourrait devenir une référence clé pour guider l’implémentation réussie de ces interventions dans la santé mentale.</p>
 </section>
-<section id="comment-létude-a-été-réalisée" class="level2">
-<h2 class="anchored" data-anchor-id="comment-létude-a-été-réalisée">Comment l’étude a été réalisée</h2>
-<p>Les chercheur·es ont utilisé une base de données appelée Pennebaker and King Essays. On y trouve 2 467 petits textes écrits librement par des adultes, souvent sous forme de récits introspectifs ou de réflexions personnelles. Chacun de ces textes est accompagné d’un profil de personnalité établi par questionnaire, basé sur le modèle des Big Five.</p>
-<p>Voici comment ils ont procédé :</p>
-<ol type="1">
-<li><p><strong>Prétraitement</strong> : Les textes bruts ont d’abord été nettoyés pour les rendre exploitables par le modèle. Cela inclut la suppression de caractères non alphabétiques, la normalisation des espaces et ponctuations, et la mise en forme uniforme des textes. Un seuil de longueur a également été fixé pour limiter la variabilité et standardiser l’entrée dans le modèle.</p></li>
-<li><p><strong>Augmentation</strong> : Pour compenser la taille relativement modeste du corpus, les chercheur·es ont eu recours à une technique d’augmentation de données. Celle-ci consiste à remplacer certains mots par des synonymes pertinents, extraits de WordNet, de manière aléatoire mais contrôlée (jusqu’à deux remplacements par phrase). Cela permet d’augmenter la diversité lexicale tout en conservant le sens général du texte, ce qui améliore la robustesse du modèle lors de la généralisation à de nouveaux échantillons.</p></li>
-<li><p><strong>Entraînement</strong> : Cinq modèles ELECTRA distincts ont été entraînés, chacun dédié à la prédiction d’un des cinq traits de personnalité. En procédant ainsi, les auteur·es ont évité les interférences possibles entre traits (par exemple entre agréabilité et consciencieux) et ont permis au modèle d’apprendre des représentations linguistiques spécifiques à chaque dimension. L’entraînement a été réalisé en utilisant un algorithme d’optimisation de type AdamW, avec une stratégie de régularisation pour éviter le surapprentissage.</p></li>
-<li><p><strong>Évaluation</strong> : Les performances des modèles ont été mesurées à l’aide d’un découpage standard des données en ensembles d’entraînement, de validation et de test. Plusieurs métriques ont été utilisées : précision, rappel, score F1 et AUC (aire sous la courbe ROC). Ces indicateurs ont permis de s’assurer que les modèles ne se contentaient pas de bien performer sur les données apprises, mais étaient capables de généraliser sur de nouveaux textes.</p></li>
-</ol>
-</section>
-<section id="les-résultats" class="level2">
-<h2 class="anchored" data-anchor-id="les-résultats">Les résultats</h2>
-<p>Les modèles ont obtenu de très bons résultats, surpassant les performances d’anciennes approches comme l’analyse lexicale manuelle. Chaque dimension de la personnalité a été considérée indépendamment comme une tâche de classification binaire (par exemple, distinguer un haut d’un bas niveau d’extraversion), avec une évaluation basée sur plusieurs métriques : précision, rappel, score F1 et AUC (aire sous la courbe ROC).</p>
-<p>Pour <strong>l’extraversion</strong>, le modèle a obtenu une précision de 78 %, avec une AUC remarquable de 0.84. Cela indique qu’il distingue bien les personnes extraverties des introverties, en captant des indices comme l’usage fréquent de la première personne, l’expressivité et les émotions positives.</p>
-<p>Pour <strong>l’ouverture à l’expérience</strong>, la performance atteint 75 %. Le modèle semble particulièrement sensible à la richesse lexicale, à la présence de mots abstraits ou à l’usage de tournures stylistiques variées, souvent associées à ce trait.</p>
-<p>Concernant <strong>l’agréabilité</strong>, le modèle atteint également 74 % de précision, avec une AUC solide. Il semble repérer des expressions de politesse, des tournures conciliantes et un ton globalement prosocial.</p>
-<p>Pour <strong>le névrosisme</strong>, le score de 74 % reflète une bonne capacité à détecter les marqueurs de tension émotionnelle, comme les mots associés à l’inquiétude, au doute ou à la frustration.</p>
-<p>Enfin, <strong>la conscienciosité</strong> est le trait où le modèle obtient la précision la plus faible (72 %), mais tout de même supérieure aux standards classiques. Ce trait semble plus difficile à inférer à partir de textes courts, car il repose sur des indices moins saillants, comme la structure syntaxique, la régularité ou l’organisation du discours.</p>
-<p>Ces résultats sont d’autant plus notables que les textes analysés sont brefs, spontanés, et écrits dans un cadre non contraint. La capacité du modèle à extraire de tels signaux à partir d’un matériau aussi variable illustre la puissance de cette approche.</p>
-</section>
-<section id="pourquoi-cest-prometteur-pour-la-psychologie" class="level2">
-<h2 class="anchored" data-anchor-id="pourquoi-cest-prometteur-pour-la-psychologie">Pourquoi c’est prometteur pour la psychologie</h2>
-<section id="un-outil-précieux-pour-la-recherche" class="level3">
-<h3 class="anchored" data-anchor-id="un-outil-précieux-pour-la-recherche">1. Un outil précieux pour la recherche</h3>
-<p>Les chercheur·es en psychologie manipulent souvent de grandes quantités de textes — que ce soit des réponses ouvertes à des questionnaires, des journaux personnels, ou des messages sur des forums en ligne. Analyser tout cela manuellement peut prendre des semaines. Grâce à des modèles comme ELECTRA, on peut obtenir une première lecture automatisée de ces textes : le modèle identifie les tournures, les mots ou les styles d’écriture qui pourraient être liés à certains traits de personnalité. Cela permet de gagner du temps, d’élargir le champ des études, et de formuler de nouvelles hypothèses à partir de données linguistiques qu’on aurait autrement négligées.</p>
-</section>
-<section id="un-soutien-pour-les-pratiques-cliniques-et-communautaires" class="level3">
-<h3 class="anchored" data-anchor-id="un-soutien-pour-les-pratiques-cliniques-et-communautaires">2. Un soutien pour les pratiques cliniques et communautaires</h3>
-<p>Dans des contextes comme la clinique, l’intervention communautaire ou même l’éducation, il est souvent utile de comprendre rapidement le vécu ou le profil d’une personne, surtout quand le contact est bref ou se fait en ligne. Un outil comme ELECTRA pourrait, par exemple, analyser de manière discrète les premières réponses écrites d’une personne sur une plateforme de soutien ou dans un formulaire d’accueil. Il pourrait ainsi suggérer certains indicateurs linguistiques liés à l’anxiété, à l’agréabilité ou à l’ouverture d’esprit, ce qui permettrait aux intervenant·es d’adapter leur approche. Cela ne remplace pas le jugement professionnel, mais cela peut offrir un regard complémentaire, plus subtil, pour guider la relation d’aide.</p>
-</section>
-<section id="vers-des-technologies-plus-sensibles-aux-personnes" class="level3">
-<h3 class="anchored" data-anchor-id="vers-des-technologies-plus-sensibles-aux-personnes">3. Vers des technologies plus sensibles aux personnes</h3>
-<p>Cette technologie pourrait aussi transformer les interfaces numériques elles-mêmes. Imaginez un agent conversationnel (chatbot) qui ajuste son style de réponse selon la personnalité perçue de la personne avec qui il échange : plus chaleureux, plus structuré, plus créatif… Un tel ajustement pourrait rendre les interactions plus naturelles et plus humaines. C’est une façon de concevoir l’IA non pas comme un outil froid et distant, mais comme un allié dans la création de liens, capable de mieux comprendre et de mieux s’adapter aux personnes.</p>
-</section>
-</section>
-<section id="et-les-limites" class="level2">
-<h2 class="anchored" data-anchor-id="et-les-limites">Et les limites?</h2>
-<p>Évidemment, tout n’est pas parfait :</p>
-<ul>
-<li>L’algorithme fonctionne surtout sur des textes en anglais, écrits par une population assez homogène.</li>
-<li>Il ne prend en compte que le texte, pas le ton de la voix, le contexte, ni les émotions ressenties.</li>
-<li>Le modèle peut surapprendre à ses exemples, ce qui limite parfois sa généralisation.</li>
-</ul>
-<p>Mais ces défis sont connus, et les auteur·es proposent plusieurs pistes pour y remédier (données plus variées, données multimodales, etc.).</p>
-<p>L’article complet est disponible ici : <strong>Saberi, H., Ghofrani, S., &amp; Ravanmehr, R. (2025)</strong>. <em>Personality Recognition Using Transformer Model: A Study on the Big Five Traits</em>. IEEE ICWR. 🔗 <a href="https://ieeexplore.ieee.org/document/11006181">Accès via IEEE Xplore</a></p>
+<section id="référence-complète" class="level2">
+<h2 class="anchored" data-anchor-id="référence-complète">Référence complète</h2>
+<p>Békés, V., Bőthe, B., &amp; Aafjes-van Doorn, K. (2025). Acceptance of using artificial intelligence and digital technology for mental health interventions: The development and initial validation of the UTAUT‐AI‐DMHI. <em>Clinical Psychology &amp; Psychotherapy</em>, 32, e70085. <a href="https://doi.org/10.1002/cpp.70085" class="uri">https://doi.org/10.1002/cpp.70085</a></p>
 <!-- Formulaire d’abonnement Brevo -->
 <iframe width="540" height="405" scrolling="no" src="https://sibforms.com/serve/MUIFAJuXpDvH14nAsFXhXmM7v_z4nHcpDJCxRYobbS4dO7G-ovnmEkzoaPhHHEKEPAWRf3EVMvbOumRBiEsM6A50GTewyamCczEPOkwY9jSzdOIhDlnGvyrZJq7_DnhQswAXMCQ4QhEhVv0wZoQ_S-DisWk4a4YeHj6TW3XrELrEZPr4Nv-e2EJt60iSgcFerHiFJzCrIkdm7njy" frameborder="0" allowfullscreen="" style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;">
 </iframe>

@@ -1,7 +1,7 @@
 ---
 title: "Acceptation des interventions en santé mentale utilisant l’intelligence artificielle : validation d’un outil de mesure innovant"
 categories: ["Psychométrie", "Psychologie clinique"]
-date: 2025-06-03
+date: 2025-06-05
 image: banner.png
 format:
   html:
@@ -9,10 +9,9 @@ format:
     css: styles.css
 ---
 
-![Générée par ChatGPT](banner.png)
----
-
 **En bref :** Une nouvelle étude propose et valide l'UTAUT-AI-DMHI, un outil innovant mesurant l'acceptabilité des interventions numériques en santé mentale utilisant l'intelligence artificielle auprès des patients et des cliniciens. Cet outil, évalué auprès de plus de 1600 participants, identifie sept facteurs clés influençant l'adoption de ces technologies, tels que la facilité d'utilisation, les attentes de qualité thérapeutique et les préoccupations liées à la vie privée. Il pourrait guider le développement de technologies plus adaptées aux besoins et attentes des utilisateurs.
+
+![Générée par ChatGPT](banner.png){fig-align="center" width="100%"}
 
 La santé mentale demeure un enjeu majeur, avec une large partie de la population mondiale n’ayant pas accès aux soins nécessaires. Dans ce contexte, une étude récente menée par Vera Békés et ses collègues présente une adaptation innovante du modèle UTAUT (Théorie Unifiée de l’Acceptation et de l’Utilisation des Technologies), spécifiquement destinée à évaluer l'acceptabilité des interventions numériques en santé mentale (DMHI) utilisant l'intelligence artificielle (IA).
 
@@ -55,3 +54,6 @@ Cet article ouvre des perspectives encourageantes pour l'intégration de l'IA da
 ## Référence complète
 
 Békés, V., Bőthe, B., & Aafjes-van Doorn, K. (2025). Acceptance of using artificial intelligence and digital technology for mental health interventions: The development and initial validation of the UTAUT‐AI‐DMHI. *Clinical Psychology & Psychotherapy*, 32, e70085. <https://doi.org/10.1002/cpp.70085>
+
+<!-- Formulaire d’abonnement Brevo -->
+<iframe width="540" height="405" scrolling ="no" src="https://sibforms.com/serve/MUIFAJuXpDvH14nAsFXhXmM7v_z4nHcpDJCxRYobbS4dO7G-ovnmEkzoaPhHHEKEPAWRf3EVMvbOumRBiEsM6A50GTewyamCczEPOkwY9jSzdOIhDlnGvyrZJq7_DnhQswAXMCQ4QhEhVv0wZoQ_S-DisWk4a4YeHj6TW3XrELrEZPr4Nv-e2EJt60iSgcFerHiFJzCrIkdm7njy" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
