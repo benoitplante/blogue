@@ -1,0 +1,56 @@
+---
+title: "Une nouvelle revue pour penser l'IA autrement"
+description-meta: "Présentation du lancement du Journal of Psychology and AI par Taylor & Francis et ses implications pour le dialogue entre psychologie et technologies intelligentes."
+date: 2025-06-06
+categories: ["Psychologie et IA"]
+image: banner.jpg
+format:
+  html:
+    title-block-banner: true
+    css: styles.css
+---
+
+![Générée par ChatGPT](banner.jpg){fig-align="center" width="100%"}
+
+## Une nouvelle revue pour penser l'IA autrement
+
+Le lancement officiel du Journal of Psychology and AI a été annoncé par Taylor & Francis le 3 juillet 2024. Cette nouvelle revue s'inscrit dans une dynamique croissante d'intégration des sciences psychologiques et des technologies intelligentes.
+
+### Pourquoi cette revue est-elle importante ?
+
+Alors que les systèmes d'IA envahissent les sphères de la recherche, de la clinique, de l'éducation ou de la vie quotidienne, il devient essentiel de réfléchir aux transformations qu'ils introduisent dans nos façons de penser, de connaître, d'interagir et d'évaluer. Le journal souhaite répondre à une demande croissante pour une compréhension psychologique approfondie des implications de l'IA, tant pour les individus que pour les institutions. Il se positionne également comme une plateforme de réflexion critique sur les nouvelles frontières de la psychologie à l'ère algorithmique.
+
+La revue entend accueillir à la fois des travaux empiriques, théoriques et critiques, dans un esprit d'ouverture disciplinaire. Elle accepte des recherches quantitatives, qualitatives, expérimentales, et des revues systématiques.
+
+### Qui sont les chercheurs derrière cette initiative ?
+
+Le journal est dirigé par deux chercheurs basés en Nouvelle-Zélande :
+
+- **Christian U. Krägeloh, Ph. D.** (Auckland University of Technology). Professeur reconnu pour ses travaux sur le bien-être psychologique, la pleine conscience et les enjeux éthiques liés à l'IA. Il est aussi éditeur fondateur du Journal of Contemplative Studies et a publié sur les usages de la technologie dans le bien-être.
+
+- **Oleg N. Medvedev, Ph. D.** (University of Waikato). Spécialiste de méthodologie quantitative, de validation psychométrique et de cognition humaine augmentée. Il est connu pour ses contributions en psychologie de la santé et en recherche appliquée sur l'utilisation de l'IA en contexte clinique.
+
+Tous deux portent une vision de l'intelligence artificielle comme objet d'étude psychologique autant que comme outil transformateur de la discipline.
+
+### Quelques thématiques centrales
+
+- Psychologie des interactions humain-machine
+- IA générative et modélisation cognitive
+- Utilisation d'agents intelligents en contexte clinique ou éducatif
+- Biais algorithmiques, éthique de la simulation et transparence
+- Conception d'outils adaptatifs en santé mentale
+- Perception sociale et acceptabilité des technologies intelligentes
+- Impact des environnements numériques sur le comportement humain
+
+### À lire dans le premier numéro
+
+Le premier numéro comprend plusieurs contributions explorant les limites actuelles des modèles de langage et les tensions entre intelligence humaine et artificielle. Pour un résumé d'un des articles, voir le billet :👉 *[Naturelle ou artificielle ? L'intelligence à l'ère des modèles de langage](./2025-06-05-intelligence-naturelle-ia)*
+
+### Pour qui ?
+
+Cette revue s'adresse à un public interdisciplinaire :
+
+- Psychologues cognitivistes, cliniciens, développementalistes ou sociaux
+- Chercheurs en science des données, IA ou neurosciences
+- Professionnels de l'intervention utilisant des technologies intelligentes
+- Philosophe de l'esprit, éthiciennes, sociologues du numérique
