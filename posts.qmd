@@ -1,5 +1,5 @@
 ---
-title: "Méthodes IA"
+title: "Veille PsychIA"
 subtitle: "Veille sur les innovations méthodologiques en psychologie assistée par IA"
 description-meta: "Veille sur les méthodes et outils utilisant l’intelligence artificielle dans la recherche en psychologie. Résumés d’articles, innovations et applications concrètes."
 listing: 

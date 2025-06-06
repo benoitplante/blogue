@@ -67,7 +67,7 @@ Cet agenda comprend plusieurs axes concrets :
 - **Évaluer les usages socialement acceptables**, en tenant compte des contextes culturels, des risques d’automatisation injuste, de surveillance intrusive ou de manipulation des opinions. Cela nécessite des mécanismes de gouvernance et de reddition de comptes.
 - **Favoriser des conceptions incarnées et situées** de l’intelligence artificielle, c’est-à-dire des technologies qui tiennent compte du corps, de l’environnement, et des pratiques sociales dans lesquelles elles s’insèrent. Une IA utile doit être intégrée à un écosystème humain, et non abstraite de celui-ci.
 
-## Conclusion personnelle
+## Conclusion 
 
 L’article de Webster n’est pas un manifeste technophobe, mais une invitation à la lucidité. À travers un cadre théorique clair et une mise en perspective historique, il nous aide à mieux comprendre les limites actuelles des IA génératives, tout en suggérant des pistes constructives pour leur évolution. Pour les chercheuses et chercheurs en psychologie, en sciences humaines, ou en technologie, ce texte constitue une base précieuse pour penser le rôle de l’IA dans nos sociétés. Il rappelle aussi que ce qui compte n’est pas seulement ce que l’IA peut faire, mais ce que nous voulons qu’elle fasse — et pour qui.
 
