@@ -11,7 +11,7 @@ draft: true
 
 Dans ce billet, je documente avec transparence le cheminement technique que j'ai suivi pour extraire les données du site [familia.ucs.inrs.ca](https://familia.ucs.inrs.ca/) et créer une base de données exploitable sur la recherche en psychologie portant sur la famille au Québec.
 
-Ce travail s'inscrit dans une démarche plus large de co-analyse assistée par intelligence artificielle, qui vise à produire un portrait actualisé de la recherche en psychologie sur la famille à partir des données disponibles dans la plateforme Famili\@. L'objectif à terme est de décrire et quantifier l'évolution des thématiques, des approches théoriques et méthologiques dans la recherche familiale au Québec, dans les 40 dernières années, en collaboration avec une IA générative.
+Ce travail s'inscrit dans une démarche plus large de co-analyse assistée par intelligence artificielle, qui vise à produire un portrait actualisé de la recherche en psychologie sur la famille à partir des données disponibles dans la plateforme Famili@. L'objectif à terme est de décrire et quantifier l'évolution des thématiques, des approches théoriques et méthologiques dans la recherche familiale au Québec, dans les 40 dernières années, en collaboration avec une IA générative.
 
 Mais avant d'analyser quoi que ce soit, il faut d'abord extraire les données. Et ce n'était pas chose simple. J'imagine que j'aurais possiblement pu demandé accès à la base documentaire directement, mais je voulais apprendre à faire du webscrapping pour d'autres projets futurs!
 
@@ -19,7 +19,7 @@ Mais avant d'analyser quoi que ce soit, il faut d'abord extraire les données. E
 
 J'ai d'abord exploré le site manuellement. Chaque fiche de projet apparaît dans une boîte visuelle, avec des champs visibles comme le titre, les auteurs, l'année et les mots-clés. Mon premier réflexe a été de tester le package `{rvest}`, qui permet d'extraire des données à partir d'une page HTML. Il s'agit d'un outil très efficace lorsqu'on travaille avec des sites web statiques : on peut identifier des balises HTML précises (comme `<h3>` pour les titres ou des classes CSS comme `.auteursNotice`) et extraire leur contenu directement dans un tableau.
 
-Mais rapidement, j'ai compris que les données ne se trouvaient pas directement dans le HTML statique récupéré par `{rvest}`. En fait, le contenu est **chargé dynamiquement** via JavaScript, c'est-à-dire que le HTML initial ne contient pas encore les résultats — ceux-ci apparaissent seulement une fois que le navigateur a exécuté le JavaScript. Et comme `{rvest}` n'exécute pas de JavaScript, il est aveugle à ces contenus. Résultat : les sélecteurs CSS que je testais ne renvoyaient rien ou des blocs incomplets. Il fallait donc une approche capable de simuler le comportement d’un navigateur moderne.
+Mais rapidement, j'ai compris que les données ne se trouvaient pas directement dans le HTML statique récupéré par `{rvest}`. En fait, le contenu est chargé dynamiquement via JavaScript, c'est-à-dire que le HTML initial ne contient pas encore les résultats — ceux-ci apparaissent seulement une fois que le navigateur a exécuté le JavaScript. Et comme `{rvest}` n'exécute pas de JavaScript, il est aveugle à ces contenus. Résultat : les sélecteurs CSS que je testais ne renvoyaient rien ou des blocs incomplets. Il fallait donc une approche capable de simuler le comportement d’un navigateur moderne.
 
 ## 2. Passage à Chromote avec ChatGPT
 
@@ -27,7 +27,7 @@ C'est ici que ChatGPT entre en jeu pour la première fois. L'approche classique 
 
 ChatGPT m’a suggéré une alternative : utiliser le package `{chromote}`. Ce dernier permet de piloter un navigateur Chrome en arrière-plan, un peu comme si on simulait un utilisateur réel qui charge la page, attend que tout s'affiche, puis regarde le contenu une fois complet. On appelle cela un navigateur "sans tête" (headless).
 
-Grâce à `{chromote}`, on peut donc accéder à des pages web **après** que le JavaScript a fini de s'exécuter — ce qui est essentiel ici, puisque le site familia.ucs.inrs.ca n'affiche pas directement les données dans le code source, mais les ajoute ensuite dynamiquement à la page.
+Grâce à `{chromote}`, on peut donc accéder à des pages web après que le JavaScript a fini de s'exécuter — ce qui est essentiel ici, puisque le site familia.ucs.inrs.ca n'affiche pas directement les données dans le code source, mais les ajoute ensuite dynamiquement à la page.
 
 Avec l'aide de ChatGPT, nous avons mis en place une boucle automatique : elle charge chaque page, attend l'affichage complet des données, extrait le contenu HTML généré dynamiquement, puis le transmet à `{rvest}` pour l’analyse. C'était déjà une belle avancée.
 
@@ -35,9 +35,9 @@ Mais très vite, je me suis rendu compte que les éléments visibles dans la pag
 
 ## 3. Découverte de la structure JSON cachée
 
-En continuant à inspecter le site plus attentivement, j’ai découvert un détail qui allait tout changer : chaque fiche de projet comprenait un champ de formulaire invisible à l’écran, un peu comme une petite boîte cachée dans le code. Cette boîte, identifiée par `<input name="numeroNotice">`, contenait une information appelée `value`. Et cette valeur n’était pas une simple phrase, mais une **chaîne de caractères au format JSON** — une façon très courante de structurer des données dans le monde informatique.
+En continuant à inspecter le site plus attentivement, j’ai découvert un détail qui allait tout changer : chaque fiche de projet comprenait un champ de formulaire invisible à l’écran, un peu comme une petite boîte cachée dans le code. Cette boîte, identifiée par `<input name="numeroNotice">`, contenait une information appelée `value`. Et cette valeur n’était pas une simple phrase, mais une chaîne de caractères au format JSON — une façon très courante de structurer des données dans le monde informatique.
 
-Pour vulgariser : le JSON (JavaScript Object Notation) est une sorte de tableau ou fiche d’information organisée en paires "nom : valeur". Par exemple, on peut y trouver : `"Titre" : "Mon projet de recherche"`, `"date" : "2024"`, `"MotsCles" : "parentalité / attachement / adolescence"`, etc. Cela signifie que **chaque fiche de projet était déjà pré-structurée**, et prête à être exploitée… pourvu qu’on sache comment la lire.
+Pour vulgariser : le JSON (JavaScript Object Notation) est une sorte de tableau ou fiche d’information organisée en paires "nom : valeur". Par exemple, on peut y trouver : `"Titre" : "Mon projet de recherche"`, `"date" : "2024"`, `"MotsCles" : "parentalité / attachement / adolescence"`, etc. Cela signifie que chaque fiche de projet était déjà pré-structurée, et prête à être exploitée… pourvu qu’on sache comment la lire.
 
 Avec l’aide de ChatGPT, nous avons ajusté notre fonction d’extraction pour cibler ces balises `<input>`, extraire le champ `value`, et le convertir en données structurées grâce à la fonction `fromJSON()` du package `{jsonlite}`. On a ensuite transformé tout cela en tableau (`tibble`) utilisable dans R.
 
@@ -51,7 +51,7 @@ C’était exactement ce qu’il nous fallait : une façon fiable, standardisée
 
 Une fois qu’on savait comment extraire les données d’une page, il restait un défi important : le site ne présente pas tous les projets en une seule fois. Il les répartit sur plusieurs pages, qu’il faut faire défiler en cliquant sur « page suivante ».
 
-Dans un site classique, on pourrait cliquer manuellement ou simuler un clic avec du code. Mais ici, chaque page suivante a une adresse différente dans l’URL, et ces liens sont insérés dans la page au moment de son chargement. Il fallait donc trouver une façon **automatique** de naviguer de page en page.
+Dans un site classique, on pourrait cliquer manuellement ou simuler un clic avec du code. Mais ici, chaque page suivante a une adresse différente dans l’URL, et ces liens sont insérés dans la page au moment de son chargement. Il fallait donc trouver une façon automatique de naviguer de page en page.
 
 ChatGPT m’a proposé une stratégie élégante : plutôt que de simuler un clic, on peut lire directement dans le code de la page s’il existe un lien « suivant », grâce à un attribut appelé `rel="next"`. Si ce lien est présent, on le suit. Si ce n’est plus le cas, c’est que nous avons atteint la dernière page.
 
@@ -193,4 +193,6 @@ Ce projet m’a permis de vivre une expérience d’apprentissage à la fois tec
 
 **Finalement, documenter le processus est aussi une forme d’apprentissage.** Prendre le temps d’écrire ce billet m’a permis de prendre du recul sur le chemin parcouru, les décisions prises, et les zones d’incertitude restantes. C’est une bonne pratique que je veux conserver pour mes prochains projets.
 
-Le prochain billet portera sur le nettoyage des champs extraits et la structuration d'une base de données propre et interrogeable. J'y traiterai, entre autres, de l'éclatement des mots-clés, de la normalisation des auteurs et de la préparation d'un corpus pour analyse thématique.
+## 8. Prochaine étape
+
+Dans la prochaine publication, je vais faire le nettoyage de la base de données. J'ai réussi à extraire les données. Par contre, il faut maintenant visualiser les données et arriver à créer une base de données qui sera prête pour faire les analyses.
