@@ -10,7 +10,947 @@
 <atom:link href="https://benoitplante.github.io/projects.xml" rel="self" type="application/rss+xml"/>
 <description>Réflexions, cas d’usage et outils à l’interface entre IA et psychologie</description>
 <generator>quarto-1.7.31</generator>
-<lastBuildDate>Fri, 23 May 2025 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 09 Jun 2025 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Extraire les données de Famili@ en collaboration avec l’IA</title>
+  <link>https://benoitplante.github.io/projets/2025-06-09-webscrapping-familia/</link>
+  <description><![CDATA[ <p>Dans ce billet, je documente avec transparence le cheminement technique que j’ai suivi pour extraire les données du site <a href="https://familia.ucs.inrs.ca/">familia.ucs.inrs.ca</a> et créer une base de données exploitable sur la recherche en psychologie portant sur la famille au Québec.</p>
+<p>Ce travail s’inscrit dans une démarche plus large de co-analyse assistée par intelligence artificielle, qui vise à produire un portrait actualisé de la recherche en psychologie sur la famille à partir des données disponibles dans la plateforme Famili@. L’objectif à terme est de décrire et quantifier l’évolution des thématiques, des approches théoriques et méthologiques dans la recherche familiale au Québec, dans les 40 dernières années, en collaboration avec une IA générative.</p>
+<p>Mais avant d’analyser quoi que ce soit, il faut d’abord extraire les données. Et ce n’était pas chose simple. J’imagine que j’aurais possiblement pu demandé accès à la base documentaire directement, mais je voulais apprendre à faire du webscrapping pour d’autres projets futurs!</p>
+<section id="premiers-tests-et-limites-des-approches-classiques" class="level2"><h2 class="anchored" data-anchor-id="premiers-tests-et-limites-des-approches-classiques">1. Premiers tests et limites des approches classiques</h2>
+<p>J’ai d’abord exploré le site manuellement. Chaque fiche de projet apparaît dans une boîte visuelle, avec des champs visibles comme le titre, les auteurs, l’année et les mots-clés. Mon premier réflexe a été de tester le package <a href="https://rvest.tidyverse.org/">rvest</a>, qui permet d’extraire des données à partir d’une page HTML. Il s’agit d’un outil très efficace lorsqu’on travaille avec des sites web statiques : on peut identifier des balises HTML précises (comme <code>&lt;h3&gt;</code> pour les titres ou des classes CSS comme <code>.auteursNotice</code>) et extraire leur contenu directement dans un tableau.</p>
+<p>Mais rapidement, j’ai compris que les données ne se trouvaient pas directement dans le HTML statique récupéré par <a href="https://rvest.tidyverse.org/">rvest</a>. En fait, le contenu est chargé dynamiquement via JavaScript, c’est-à-dire que le HTML initial ne contient pas encore les résultats — ceux-ci apparaissent seulement une fois que le navigateur a exécuté le JavaScript. Et comme <a href="https://rvest.tidyverse.org/">rvest</a> n’exécute pas de JavaScript, il est aveugle à ces contenus. Résultat : les sélecteurs CSS que je testais ne renvoyaient rien ou des blocs incomplets. Il fallait donc une approche capable de simuler le comportement d’un navigateur moderne.</p>
+</section><section id="passage-à-chromote-avec-chatgpt" class="level2"><h2 class="anchored" data-anchor-id="passage-à-chromote-avec-chatgpt">2. Passage à Chromote avec ChatGPT</h2>
+<p>C’est ici que ChatGPT entre en jeu pour la première fois. L’approche classique ne fonctionnant pas, j’ai posé le problème à l’IA : comment extraire des données qui ne sont pas directement visibles dans le code de la page web, mais qui s’affichent seulement une fois que la page est complètement chargée dans le navigateur&nbsp;?</p>
+<p>ChatGPT m’a suggéré une alternative : utiliser le package <a href="https://rstudio.github.io/chromote/">chromote</a>. Ce dernier permet de piloter un navigateur Chrome en arrière-plan, un peu comme si on simulait un utilisateur réel qui charge la page, attend que tout s’affiche, puis regarde le contenu une fois complet. On appelle cela un navigateur “sans tête” (headless).</p>
+<p>Grâce à <a href="https://rstudio.github.io/chromote/">chromote</a>, on peut donc accéder à des pages web après que le JavaScript a fini de s’exécuter — ce qui est essentiel ici, puisque le site familia.ucs.inrs.ca n’affiche pas directement les données dans le code source, mais les ajoute ensuite dynamiquement à la page.</p>
+<p>Avec l’aide de ChatGPT, nous avons mis en place une boucle automatique&nbsp;: elle charge chaque page, attend l’affichage complet des données, extrait le contenu HTML généré dynamiquement, puis le transmet à <a href="https://rvest.tidyverse.org/">rvest</a> pour l’analyse. C’était déjà une belle avancée.</p>
+<p>Mais très vite, je me suis rendu compte que les éléments visibles dans la page (comme les titres, les auteurs ou les mots-clés) étaient difficilement récupérables via leurs balises HTML. Les classes CSS n’étaient pas fiables, certaines fiches ne suivaient pas la même structure, et il devenait difficile de tout extraire proprement. Il fallait donc une autre solution.</p>
+</section><section id="découverte-de-la-structure-json-cachée" class="level2"><h2 class="anchored" data-anchor-id="découverte-de-la-structure-json-cachée">3. Découverte de la structure JSON cachée</h2>
+<p>En continuant à inspecter le site plus attentivement, j’ai découvert un détail qui allait tout changer : chaque fiche de projet comprenait un champ de formulaire invisible à l’écran, un peu comme une petite boîte cachée dans le code. Cette boîte, identifiée par <code>&lt;input name="numeroNotice"&gt;</code>, contenait une information appelée <code>value</code>. Et cette valeur n’était pas une simple phrase, mais une chaîne de caractères au format JSON — une façon très courante de structurer des données dans le monde informatique.</p>
+<p>Pour vulgariser : le JSON (JavaScript Object Notation) est une sorte de tableau ou fiche d’information organisée en paires “nom : valeur”. Par exemple, on peut y trouver : <code>"Titre" : "Mon projet de recherche"</code>, <code>"date" : "2024"</code>, <code>"MotsCles" : "parentalité / attachement / adolescence"</code>, etc. Cela signifie que chaque fiche de projet était déjà pré-structurée, et prête à être exploitée… pourvu qu’on sache comment la lire.</p>
+<p>Avec l’aide de ChatGPT, nous avons ajusté notre fonction d’extraction pour cibler ces balises <code>&lt;input&gt;</code>, extraire le champ <code>value</code>, et le convertir en données structurées grâce à la fonction <code><a href="https://jeroen.r-universe.dev/jsonlite/reference/fromJSON.html">fromJSON()</a></code> du package <a href="https://jeroen.r-universe.dev/jsonlite">jsonlite</a>. On a ensuite transformé tout cela en tableau (<code>tibble</code>) utilisable dans R.</p>
+<p>C’était exactement ce qu’il nous fallait : une façon fiable, standardisée, et complète d’accéder à l’information — sans avoir à deviner la position du titre ou des auteurs dans la page. Une belle découverte rendue possible grâce à un peu de curiosité… et beaucoup d’essais-erreurs.</p>
+</section><section id="gestion-des-erreurs-champs-manquants-et-pages-vides" class="level2"><h2 class="anchored" data-anchor-id="gestion-des-erreurs-champs-manquants-et-pages-vides">4. Gestion des erreurs : champs manquants et pages vides</h2>
+<p>À partir de ce moment, nous avons rencontré d’autres types de défis. Certaines fiches n’ont pas tous les champs (ex. : <code>URL</code> ou <code>Sommaire</code> absents). L’appel à <code><a href="https://dplyr.tidyverse.org/reference/transmute.html">transmute()</a></code> échouait dès qu’un champ manquait. Avec l’aide de ChatGPT, nous avons ajouté une vérification : si une colonne est absente, on la crée vide (<code>NA</code>). Cette validation permet de fusionner toutes les pages sans erreur.</p>
+</section><section id="pagination-dynamique-et-boucle-automatique" class="level2"><h2 class="anchored" data-anchor-id="pagination-dynamique-et-boucle-automatique">5. Pagination dynamique et boucle automatique</h2>
+<p>Une fois qu’on savait comment extraire les données d’une page, il restait un défi important : le site ne présente pas tous les projets en une seule fois. Il les répartit sur plusieurs pages, qu’il faut faire défiler en cliquant sur « page suivante ».</p>
+<p>Dans un site classique, on pourrait cliquer manuellement ou simuler un clic avec du code. Mais ici, chaque page suivante a une adresse différente dans l’URL, et ces liens sont insérés dans la page au moment de son chargement. Il fallait donc trouver une façon automatique de naviguer de page en page.</p>
+<p>ChatGPT m’a proposé une stratégie élégante : plutôt que de simuler un clic, on peut lire directement dans le code de la page s’il existe un lien « suivant », grâce à un attribut appelé <code>rel="next"</code>. Si ce lien est présent, on le suit. Si ce n’est plus le cas, c’est que nous avons atteint la dernière page.</p>
+<p>Cette méthode a permis de parcourir l’intégralité du site de manière fluide, sans jamais devoir prédire combien de pages il y avait. Un bon exemple de la manière dont une IA peut suggérer des solutions simples à des problèmes complexes — surtout quand on ne connaît pas toutes les subtilités du fonctionnement d’un site web dynamique.</p>
+</section><section id="code-final-commenté" class="level2"><h2 class="anchored" data-anchor-id="code-final-commenté">6. Code final commenté</h2>
+<p>Voici le code final complet, que j’ai co-construit avec ChatGPT. Il comprend à la fois la fonction d’extraction à partir du HTML dynamique et celle qui parcourt toutes les pages automatiquement. Je l’ai commenté brièvement pour en faciliter la compréhension.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://rstudio.github.io/chromote/">chromote</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://stringr.tidyverse.org">stringr</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://jeroen.r-universe.dev/jsonlite">jsonlite</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Fonction qui extrait les données d'une page HTML</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">extract_projects</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">page_html</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">page</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">page_html</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">inputs</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">page</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"input[name='numeroNotice']"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">json_list</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">inputs</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rvest.tidyverse.org/reference/html_attr.html">html_attr</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"value"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">fromJSON</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">df</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">json_list</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">expected_cols</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Titre"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Auteurs"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"date"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"TypeDocument"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"MotsCles"</span>,</span>
+<span>                     <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Thematiques"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Disciplines"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"TypesDocs"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Sommaire"</span>,</span>
+<span>                     <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Notice"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"T2"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"IS"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"SP"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"URL"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">col</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">expected_cols</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">col</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">df</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">df</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[[</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">col</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span></span>
+<span>  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">df</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://dplyr.tidyverse.org/reference/transmute.html">transmute</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span></span>
+<span>    titre <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Titre</span>,</span>
+<span>    auteurs <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Auteurs</span>,</span>
+<span>    annee <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">date</span>,</span>
+<span>    type_doc <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">TypeDocument</span>,</span>
+<span>    mots_cles <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">MotsCles</span>,</span>
+<span>    thematiques <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Thematiques</span>,</span>
+<span>    disciplines <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Disciplines</span>,</span>
+<span>    types_document <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">TypesDocs</span>,</span>
+<span>    sommaire <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Sommaire</span>,</span>
+<span>    reference <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Notice</span>,</span>
+<span>    revue <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">T2</span>,</span>
+<span>    volume <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">VL</span>,</span>
+<span>    numero <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">IS</span>,</span>
+<span>    pages <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">SP</span>,</span>
+<span>    url <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">URL</span></span>
+<span>  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span></span>
+<span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Fonction principale de scraping multi-pages</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">scrape_all_pages</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">base_url</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">b</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://rstudio.github.io/chromote/reference/ChromoteSession.html">ChromoteSession</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">new</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">b</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Page</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">navigate</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">base_url</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">b</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Page</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">loadEventFired</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">all_data</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">page_num</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span></span>
+<span>  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">repeat</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Chargement de la page "</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">page_num</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"..."</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span>    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/conditions.html">tryCatch</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>      <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">b</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Runtime</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">evaluate</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span></span>
+<span>        expression <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">        new Promise(resolve =&gt; {</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">          const waitForResults = () =&gt; {</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">            const items = document.querySelectorAll('input[name=\\'numeroNotice\\']');</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">            if (items.length &gt; 0) {</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">              resolve('ok');</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">            } else {</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">              setTimeout(waitForResults, 500);</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">            }</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">          };</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">          waitForResults();</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">        });"</span></span>
+<span>      <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>, error <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">e</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>      <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Erreur de chargement."</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span>    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">html</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">b</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">DOM</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">getDocument</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">node_id</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">html</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">root</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">nodeId</span></span>
+<span>    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">html_content</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">b</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">DOM</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">getOuterHTML</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>nodeId <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">node_id</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">outerHTML</span></span>
+<span></span>
+<span>    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">projects</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">extract_projects</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">html_content</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">all_data</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[[</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">page_num</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">projects</span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Page "</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">page_num</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" récupérée."</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span>    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">next_url</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/conditions.html">tryCatch</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>      <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">b</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Runtime</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">evaluate</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span></span>
+<span>        expression <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"(function() {</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">          const nextBtn = document.querySelector('a[data-ci-pagination-page][rel=\\\"next\\\"]');</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">          return nextBtn ? nextBtn.href : null;</span></span>
+<span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">        })();"</span></span>
+<span>      <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">result</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">value</span></span>
+<span>    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>, error <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">e</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NULL</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span>    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">next_url</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>      <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Fin du parcours : plus de page suivante."</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>      <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">break</span></span>
+<span>    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span></span>
+<span>    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">b</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Page</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">navigate</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">next_url</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">b</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Page</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">loadEventFired</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span>    <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">page_num</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">page_num</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span>  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">b</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">close</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">all_data</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span></span>
+<span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Appel final</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">base_url</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://familia.ucs.inrs.ca/resultat-de-recherche/?discipline[]=438"</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">data_familia</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scrape_all_pages</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">base_url</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">data_familia</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"projets_familia_complet.csv"</span>, row.names <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span></code></pre></div>
+</div>
+</section><section id="ce-que-jai-appris-et-ce-que-je-retiens" class="level2"><h2 class="anchored" data-anchor-id="ce-que-jai-appris-et-ce-que-je-retiens">7. Ce que j’ai appris (et ce que je retiens)</h2>
+<p>Ce projet m’a permis de vivre une expérience d’apprentissage à la fois technique, méthodologique et réflexive. Voici les principales leçons que j’en tire&nbsp;:</p>
+<p><strong>Comprendre la logique d’un site web est un prérequis fondamental.</strong> Avant même de coder, j’ai dû prendre le temps d’inspecter manuellement la structure du site. Ce travail exploratoire m’a permis de réaliser que le HTML visible au départ ne contenait pas les données… ce qui est loin d’être intuitif pour un œil non averti.</p>
+<p><strong>Travailler avec une IA a facilité les essais-erreurs.</strong> À chaque difficulté rencontrée, je pouvais reformuler mon problème à ChatGPT. L’IA me proposait alors des pistes de solution, que je testais immédiatement dans R. Cette boucle itérative — formuler, tester, ajuster — a non seulement accéléré mon travail, mais m’a aussi permis de mieux comprendre les logiques sous-jacentes.</p>
+<p><strong>La collaboration humain-IA ne remplace pas l’analyse humaine, elle la renforce.</strong> Je suis resté en contrôle tout au long du processus. C’est moi qui inspectais les structures du site, qui interprétais les erreurs, qui décidais quoi extraire. Mais ChatGPT m’a permis d’élargir rapidement mon répertoire technique et de débloquer des obstacles qui, seul, m’auraient sans doute pris beaucoup plus de temps à surmonter.</p>
+<p><strong>L’articulation entre outils est essentielle.</strong> <a href="https://rstudio.github.io/chromote/">chromote</a> m’a permis d’accéder à du contenu dynamique, <a href="https://jeroen.r-universe.dev/jsonlite">jsonlite</a> de lire des structures JSON, <a href="https://rvest.tidyverse.org/">rvest</a> de lire le HTML, et <a href="https://dplyr.tidyverse.org">dplyr</a> de structurer les tableaux. Ces outils, utilisés ensemble, ont rendu possible ce qui me semblait complexe au départ.</p>
+<p><strong>Finalement, documenter le processus est aussi une forme d’apprentissage.</strong> Prendre le temps d’écrire ce billet m’a permis de prendre du recul sur le chemin parcouru, les décisions prises, et les zones d’incertitude restantes. C’est une bonne pratique que je veux conserver pour mes prochains projets.</p>
+</section><section id="prochaine-étape" class="level2"><h2 class="anchored" data-anchor-id="prochaine-étape">8. Prochaine étape</h2>
+<p>Dans la prochaine publication, je vais faire le nettoyage de la base de données. J’ai réussi à extraire les données. Par contre, il faut maintenant visualiser les données et arriver à créer une base de données qui sera prête pour faire les analyses.</p>
+
+
+</section> ]]></description>
+  <category>Méthodologie augmentée par l’IA</category>
+  <category>Utilisation appliquée de l&#39;IA</category>
+  <guid>https://benoitplante.github.io/projets/2025-06-09-webscrapping-familia/</guid>
+  <pubDate>Mon, 09 Jun 2025 04:00:00 GMT</pubDate>
+  <media:content url="https://benoitplante.github.io/projets/2025-06-09-webscrapping-familia/banner.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Analyser les données de Famili@ en collaboration avec l’IA</title>
   <link>https://benoitplante.github.io/projets/2025-05-23-intro-familia/</link>
