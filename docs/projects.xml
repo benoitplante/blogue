@@ -10,7 +10,80 @@
 <atom:link href="https://benoitplante.github.io/projects.xml" rel="self" type="application/rss+xml"/>
 <description>Réflexions, cas d’usage et outils à l’interface entre IA et psychologie</description>
 <generator>quarto-1.7.31</generator>
-<lastBuildDate>Mon, 09 Jun 2025 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 10 Jun 2025 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Nettoyage de la base Famili@ : entre patience, regex et satisfaction scientifique</title>
+  <link>https://benoitplante.github.io/projets/2025-06-10-nettoyage-familia/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Après l’extraction des données, mon objectif était simple en apparence : transformer la base de données Famili@, extraite via webscraping, en une base de donnée propre, harmonisé et interrogeable. Plus facile à dire qu’à faire. Dans cette deuxième étape du projet, j’ai pris le temps de nettoyer, restructurer et enrichir les données de manière rigoureuse. Et, disons-le franchement, j’ai aussi passé beaucoup (trop ?) de temps à apprivoiser les subtilités des expressions régulières.</p>
+<section id="le-point-de-départ-une-base-brute-mais-prometteuse" class="level2">
+<h2 class="anchored" data-anchor-id="le-point-de-départ-une-base-brute-mais-prometteuse">Le point de départ : une base brute, mais prometteuse</h2>
+<p>La base initiale comportait des champs tels que le titre, les auteurs, les mots-clés, les résumés, les dates, les types de documents, etc. Tous présentés dans une structure JSON insérée dans des balises HTML. Une fois le webscraping complété (voir la première publication pour les détails techniques), je me retrouvais avec un <a href="https://github.com/benoitplante/familia/blob/main/database/df_projets_familia.csv">CSV</a> contenant plusieurs centaines de lignes, mais aussi plusieurs défis : champs non normalisés, balises HTML, redondances et mentions floues.</p>
+</section>
+<section id="le-nettoyage-en-9-étapes-et-beaucoup-de-mutate" class="level2">
+<h2 class="anchored" data-anchor-id="le-nettoyage-en-9-étapes-et-beaucoup-de-mutate">Le nettoyage en 9 étapes (et beaucoup de <code>mutate()</code>)</h2>
+<p>Le processus de nettoyage s’est articulé autour de 9 étapes, où chaque transformation avait son rôle dans la simplification, l’harmonisation ou l’enrichissement de la base de données (le code utilisé est disponible <a href="https://github.com/benoitplante/familia/blob/main/Script%20R/nettoyage_familia.R">ici</a>). Pour les curieux de R, chaque transformation repose principalement sur le package <strong><code>dplyr</code></strong> (issu du <strong><code>tidyverse</code></strong>), et quelques ajouts stratégiques comme <strong><code>stringr</code></strong>, <strong><code>naniar</code></strong>, <strong><code>xml2</code></strong> et <strong><code>tidytext</code></strong>.</p>
+<ol type="1">
+<li><p><strong>Nettoyage des mots-clés (<code>stringr</code>)</strong><br>
+J’ai transformé tout en minuscules (<code>str_to_lower()</code>), réduit les espaces superflus (<code>str_replace_all()</code> avec l’expression <code>\s+</code>), et appliqué un petit <code>str_trim()</code> pour retirer les blancs en début/fin de chaîne. Rien de révolutionnaire, mais indispensable pour éviter d’avoir <code>parentalité</code>, <code>Parentalité</code> et <code>PARENTALITÉ</code> comme trois entrées distinctes.</p></li>
+<li><p><strong>Nettoyage des auteurs</strong><br>
+Même recette que pour les mots-clés, avec une touche de <code>str_to_title()</code> pour un affichage propre : chaque nom commence par une majuscule. Pratique pour faciliter une éventuelle agrégation par auteur par la suite.</p></li>
+<li><p><strong>Analyse des données manquantes (<code>naniar</code>)</strong><br>
+Un petit détour par <code>naniar::summarise()</code> pour identifier les champs trop souvent vides. Le numéro de publication (56 % manquant), le volume (53 %), le nom de la revue (36 %) ou les pages (35 %) étaient plus gravement touchés, mais heureusement moins essentiels pour les objectifs de ce projet. Ces constats m’ont permis de faire des choix éclairés sur ce qu’il valait la peine de conserver et ce que je pouvais laisser de côté. Un rappel que parfois, épurer, c’est aussi mieux comprendre.</p></li>
+<li><p><strong>Extraction de l’année</strong><br>
+Le champ <code>date</code> contenait toutes sortes de formats (ex. : “2001”, “vers 1998”, “2001-2003”). Avec une expression régulière <code>str_extract(., "\\d{4}")</code>, j’ai simplement récupéré la première année à 4 chiffres. Cela va introduire un peu d’imprécision dans les dates, mais va simplifier les analyses longitudinales. Puis, j’ai utilisé <code>as.integer()</code> pour que R arrête de croire que c’est une chaîne de caractères.</p></li>
+<li><p><strong>Standardisation des types de documents</strong><br>
+Grâce à <code>case_when()</code>, j’ai recodé tous les libellés de type documentaire (ex. : “Mémoire de maîtrise”, “rapport”, “article”) en quatre grandes familles : <code>"Thèse/Mémoire"</code>, <code>"Rapport"</code>, <code>"Article"</code>, et <code>"Autre"</code>. Cela rend l’analyse bien plus claire.</p></li>
+<li><p><strong>Nettoyage des titres</strong><br>
+Suppression des guillemets et des apostrophes avec <code>str_replace_all("["'’]", "")</code>, conversion en minuscules (<code>str_to_lower()</code>) et retrait des doublons d’espace (<code>str_squish()</code>).</p></li>
+<li><p><strong>Nettoyage du HTML dans les résumés (<code>xml2</code>)</strong><br>
+Les données textes provenant du site contenaient encore des balises HTML. Pour extraire uniquement le texte utile, j’ai encapsulé le contenu dans une balise <code>&lt;body&gt;</code> fictive, puis j’ai utilisé <code>xml2::read_html()</code> et <code>xml2::xml_text()</code> pour récupérer le contenu lisible.</p></li>
+<li><p><strong>Extraction des composantes méthodologiques</strong><br>
+Pour <code>methode_instruments</code>, j’ai extrait ce qui apparaissait entre <code>Instruments :</code> et <code>Type de traitement des données</code>.<br>
+Pour <code>methode_analyse</code>, j’ai capté le contenu suivant <code>Type de traitement des données :</code>.</p></li>
+<li><p><strong>Sélection des colonnes utiles (<code>select()</code>)</strong><br>
+J’ai conservé uniquement les colonnes utiles : titre, auteurs, année, type, mots-clés, instruments et analyse.</p></li>
+</ol>
+</section>
+<section id="un-avantaprès-qui-parle" class="level2">
+<h2 class="anchored" data-anchor-id="un-avantaprès-qui-parle">Un avant/après qui parle</h2>
+<p>Le fichier initial contenait toutes les données extraites du site, sans nettoyage. Le fichier final, <a href="https://github.com/benoitplante/familia/blob/main/database/df_projets_familia_finale.csv"><code>df_projets_familia_finale.csv</code></a>, contient des champs standardisés, prêts à être analysés qualitativement ou quantitativement. Voici les colonnes présentes dans cette version finale :</p>
+<ul>
+<li><p><code>titre_clean</code> : le titre du projet, nettoyé (minuscules, retrait des guillemets et espaces superflus).</p></li>
+<li><p><code>auteurs</code> : les noms des auteurs, harmonisés avec majuscules initiales.</p></li>
+<li><p><code>annee_extrait</code> : l’année extraite automatiquement à partir de la chaîne de date.</p></li>
+<li><p><code>type_doc_std</code> : le type de document recodé (ex. : Thèse/Mémoire, Article, Rapport, Autre).</p></li>
+<li><p><code>mots_cles</code> : les mots-clés nettoyés (espaces, casse).</p></li>
+<li><p><code>methode_instruments</code> : les instruments utilisés dans l’étude, extraits automatiquement (ex. : questionnaires).</p></li>
+<li><p><code>methode_analyse</code> : le type de traitement des données (ex. : analyse statistique).</p></li>
+</ul>
+</section>
+<section id="ce-que-jai-appris-ou-réappris" class="level2">
+<h2 class="anchored" data-anchor-id="ce-que-jai-appris-ou-réappris">Ce que j’ai appris (ou réappris)</h2>
+<ul>
+<li><p><strong>Les expressions régulières sont puissantes… mais sensibles</strong>. Un espace ou une majuscule mal gérée, et tout s’écroule. Et plus encore : selon que l’on utilise un point-virgule, un retour à la ligne ou trois espaces insécables, le comportement peut changer radicalement. Bref, il faut apprendre à parler regex couramment.</p></li>
+<li><p><strong>Toujours valider les extractions sur plusieurs cas</strong>. Une regex qui fonctionne sur 90 % des cas, c’est parfois insuffisant. Les 10 % restants peuvent complètement fausser une analyse — surtout s’ils contiennent des cas atypiques ou significatifs.</p></li>
+<li><p><strong>Conserver une version brute, une version nettoyée, et une trace du code</strong> est crucial pour la reproductibilité. J’ajouterais : versionner les fichiers, commenter son code et garder en tête qu’un jeu de données évolue presque toujours en cours de route.</p></li>
+</ul>
+</section>
+<section id="prochaine-étape" class="level2">
+<h2 class="anchored" data-anchor-id="prochaine-étape">Prochaine étape</h2>
+<p>Maintenant que j’ai une base de donnée prêt à être utiliser, je vais pouvoir débuter les analyses pour mieux comprendre l’évolution de la recherche en psychologie de la famille au Québec dans les denières années. À suivre…</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Méthodologie augmentée par l’IA</category>
+  <category>Utilisation appliquée de l&#39;IA</category>
+  <guid>https://benoitplante.github.io/projets/2025-06-10-nettoyage-familia/</guid>
+  <pubDate>Tue, 10 Jun 2025 04:00:00 GMT</pubDate>
+  <media:content url="https://benoitplante.github.io/projets/2025-06-10-nettoyage-familia/banner.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Extraire les données de Famili@ en collaboration avec l’IA</title>
   <link>https://benoitplante.github.io/projets/2025-06-09-webscrapping-familia/</link>
