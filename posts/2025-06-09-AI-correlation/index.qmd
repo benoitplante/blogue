@@ -1,0 +1,92 @@
+---
+title: "L’IA peut-elle mieux prédire les corrélations en personnalité que les experts ?"
+date: 2025-06-09
+categories: ["Méthodologie augmentée par l’IA"]
+format:
+  html:
+    title-block-banner: true
+    css: styles.css
+image: banner.png
+---
+
+**En bref**: Une étude récente montre que les grands modèles de langage (LLMs) et les systèmes spécialisés peuvent surpasser les humains – y compris les experts en psychologie – dans la prédiction des corrélations entre items de questionnaires de personnalité. Ces résultats soulèvent des questions importantes pour la recherche psychométrique, les pratiques d’évaluation et les usages futurs de l’IA en psychologie. Ils suggèrent également de nouvelles avenues pour l’intégration de l’IA dans le processus scientifique, notamment dans les phases exploratoires de formulation d’hypothèses.
+
+![Générée par ChatGPT](banner.png){fig-align="center" width="100%"}
+
+## 1. Introduction
+
+Dans l’évaluation psychologique, la corrélation entre les items d’un questionnaire est une information clé pour comprendre les traits de personnalité, construire des échelles valides et tester des hypothèses. C’est une pratique courante dans le développement d’instruments psychométriques, qui permet de vérifier si plusieurs énoncés mesurent bien un même construit psychologique.
+
+Mais que se passerait-il si des modèles d’intelligence artificielle, sans vécu ni subjectivité humaine, étaient capables de mieux prédire ces corrélations que nous ? Peut-on réellement remplacer, ou du moins égaler, l’intuition experte d’un chercheur en psychologie avec une machine ?
+
+C’est la question qu’ont explorée Philipp Schoenegger et ses collègues (2025) en comparant la performance de différents systèmes d’IA, d’étudiants gradués et de professeurs en psychologie, ainsi que de non-experts dans une tâche de prédiction de corrélations entre items de personnalité. Leurs résultats bousculent certaines idées reçues sur les limites actuelles de l’intelligence artificielle dans les sciences humaines.
+
+## 2. Concepts de base
+
+L’étude repose sur un concept central en psychométrie : **la corrélation entre items**, c’est-à-dire le degré de relation entre les réponses données à deux énoncés différents d’un questionnaire (par exemple : « Je suis souvent anxieux » et « Je me fais du souci pour des détails »). Plus la corrélation est forte, plus ces items ont de chances de mesurer un aspect commun de la personnalité.
+
+Ces corrélations permettent non seulement de construire des échelles cohérentes et fiables, mais aussi de détecter des regroupements de traits (comme les Big Five ou la triade sombre), d’établir des profils psychologiques et d’analyser les interrelations entre différentes dimensions de la personnalité humaine. Elles jouent un rôle essentiel dans la validation d’outils, la modélisation de concepts et la formulation d’hypothèses empiriques.
+
+## 3. Contexte technologique
+
+Deux grandes catégories de modèles d’IA ont été testées :
+
+- **Modèles généralistes** : GPT-4o et Claude 3 Opus, deux modèles de langage de pointe capables de traiter du texte, de répondre à une vaste gamme de questions et de s’adapter à des domaines variés.
+- **Modèle spécialisé** : *PersonalityMap*, un réseau de neurones profond entraîné spécifiquement sur un grand corpus de données psychométriques pour prédire les corrélations entre items de personnalité.
+
+Cette comparaison permet d’évaluer l’apport des systèmes généralistes, polyvalents mais non spécialisés, par rapport aux modèles conçus pour une tâche psychologique précise. Le défi est de déterminer si la puissance de généralisation des LLMs peut rivaliser avec l’optimisation ciblée d’un modèle comme PersonalityMap dans un domaine aussi nuancé que la psychologie des traits.
+
+## 4. Démarche de l’étude
+
+Les auteurs ont demandé à cinq groupes de produire des estimations de corrélations entre 249 paires d’items tirées de l’inventaire SAPA de personnalité :
+
+- 254 personnes non expertes (recrutées via Positly)
+- 272 experts (doctorant·es, postdoctorant·es et professeur·es en psychologie)
+- Les modèles GPT-4o et Claude 3 Opus (3 prédictions chacune, à température 0)
+- Le modèle spécialisé PersonalityMap (1 prédiction par paire, déterministe)
+
+Les réponses humaines étaient saisies sur une échelle continue de -1 à +1. Une brève formation sur les corrélations était offerte aux participants. Les performances ont ensuite été comparées selon plusieurs indicateurs : erreur absolue moyenne (précision), corrélation avec les données empiriques (finesse relative) et capacité à classer les corrélations dans les bonnes catégories directionnelles (positives, nulles ou négatives).
+
+## 5. Résultats
+
+Les résultats sont impressionnants et sans équivoque :
+
+- **PersonalityMap** obtient l’erreur moyenne la plus faible (0.07), suivie de Claude 3 Opus (0.11), GPT-4o (0.14), les experts (0.20) et les non-experts (0.29).
+- Dans 99 % des comparaisons individuelles, PersonalityMap prédit mieux que les experts humains.
+- Lorsqu’on regroupe les réponses humaines (effet de foule), les experts égalent la performance du modèle spécialisé, soulignant l’intérêt des prédictions collectives.
+- Les modèles généralistes surpassent la majorité des individus, experts inclus, dans les prédictions non agrégées.
+
+Les auteurs notent que l’avantage des IA tient notamment à leur calibration : elles prédisent des magnitudes proches des véritables corrélations observées, tandis que les humains tendent à surestimer ou sous-estimer les relations. Toutefois, les experts conservent un léger avantage pour identifier la direction (positive ou négative) des relations entre items.
+
+## 6. Portée et utilité
+
+Ces résultats sont prometteurs pour plusieurs champs :
+
+- **La recherche psychométrique** : tester des hypothèses rapidement, construire ou affiner des instruments, détecter des regroupements d’items pertinents.
+- **Les pratiques appliquées** : pré-identifier des relations utiles entre comportements ou traits, sans recourir à de vastes échantillons, en particulier dans des contextes cliniques ou organisationnels.
+- **Le développement d’outils** : concevoir des systèmes d’assistance à la modélisation de questionnaires, à la génération d’items ou à la simulation d’effets, avec des cycles d’itération rapides.
+
+L’étude suggère même que ces modèles pourraient servir de « tubes à essai numériques » pour la recherche en psychologie, permettant d’explorer des hypothèses à bas coût avant la collecte de données réelles.
+
+## 7. Limites et perspectives
+
+L’étude présente plusieurs limites importantes :
+
+- Le jeu de données repose uniquement sur l’inventaire SAPA, composé d’items auto-rapportés et d’un seul format (cross-sectionnel).
+- Les performances des LLMs pourraient être biaisées si les données utilisées pour évaluer les modèles faisaient partie de leur corpus d’entraînement.
+- Les modèles prédisent uniquement des corrélations linéaires et ne permettent pas d’inférence causale, ce qui limite leur usage dans les analyses avancées.
+
+Les auteurs recommandent aussi d’évaluer la performance sur d’autres types d’items, d’estimer l’incertitude associée aux prédictions, et d’explorer des relations non linéaires ou modérées. Enfin, la question éthique de l’usage de ces systèmes dans des contextes appliqués reste ouverte.
+
+## 8. Conclusion personnelle
+
+Cette étude marque un tournant pour la psychologie computationnelle. Elle montre que l’IA ne se contente plus de simuler la personnalité ou d’inférer des traits à partir de textes : elle peut désormais prédire finement la structure des relations entre items psychométriques. Ce résultat ouvre la porte à une nouvelle génération d’outils psychométriques assistés par IA.
+
+Mais il pose aussi une question fondamentale : voulons-nous confier à des algorithmes le pouvoir de prédire, voire de diagnostiquer, nos traits les plus intimes ? Une réflexion éthique, méthodologique et épistémologique s’impose. Il faudra aussi penser à la complémentarité entre expertise humaine et intelligence computationnelle, plutôt qu’à leur substitution pure et simple.
+
+## 9. Référence complète
+
+Schoenegger, P., Greenberg, S., Grishin, A., Lewis, J., & Caviola, L. (2025). AI can outperform humans in predicting correlations between personality items. *Communications Psychology, 3*(23). [https://doi.org/10.1038/s44271-025-00205-w](https://doi.org/10.1038/s44271-025-00205-w)
+
+<!-- Formulaire d’abonnement Brevo -->
+<iframe width="540" height="405" scrolling ="no" src="https://sibforms.com/serve/MUIFAJuXpDvH14nAsFXhXmM7v_z4nHcpDJCxRYobbS4dO7G-ovnmEkzoaPhHHEKEPAWRf3EVMvbOumRBiEsM6A50GTewyamCczEPOkwY9jSzdOIhDlnGvyrZJq7_DnhQswAXMCQ4QhEhVv0wZoQ_S-DisWk4a4YeHj6TW3XrELrEZPr4Nv-e2EJt60iSgcFerHiFJzCrIkdm7njy" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>

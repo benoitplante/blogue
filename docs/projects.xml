@@ -26,17 +26,17 @@
 <p>Mais mon intérêt dépasse l’aspect documentaire : ce projet est aussi une porte d’entrée vers un champ que je souhaite explorer davantage, la méta-science, c’est-à-dire l’étude de la science elle-même. Avec Famili@, j’ai entre les mains un ensemble de données qui me permet d’observer l’évolution de la production scientifique en psychologie familiale au Québec.</p>
 <section id="ce-que-je-veux-faire" class="level3">
 <h3 class="anchored" data-anchor-id="ce-que-je-veux-faire">Ce que je veux faire</h3>
-<p>Je veux documenter, de façon transparente et critique, l’ensemble du processus de recherche que j’entreprends à partir de la base Famili@. De l’extraction automatisée des données à l’écriture d’un article scientifique, chaque étape sera partagée ici, avec ses réussites, ses ratés, et surtout, ce que j’apprends en cours de route.</p>
+<p>Je veux documenter, de façon transparente et critique, l’ensemble du processus de recherche que j’entreprends à partir de la base Famili@. De l’extraction automatisée des données aux différentes analyses, et possible à la publication des résultats, chaque étape sera partagée ici, avec ses réussites, ses ratés, et surtout, ce que j’apprends en cours de route.</p>
 </section>
 <section id="lia-comme-coéquipière-de-recherche" class="level3">
 <h3 class="anchored" data-anchor-id="lia-comme-coéquipière-de-recherche">L’IA comme coéquipière de recherche</h3>
-<p>Ce projet est aussi un terrain d’expérimentation pour l’utilisation de l’intelligence artificielle générative dans un processus de recherche complet. De l’extraction des données avec du code R généré ou optimisé par l’IA, aux séances de remue-méninges pour faire émerger des idées d’analyses, en passant par la rédaction de billets comme celui-ci et, ultimement, d’un article scientifique, l’IA m’accompagne à chaque étape.</p>
+<p>Ce projet est aussi un terrain d’expérimentation pour l’utilisation de l’intelligence artificielle générative dans un processus de d’analyse de données. De l’extraction des données avec du code R généré ou optimisé par l’IA, aux séances de remue-méninges pour faire émerger des idées d’analyses, en passant par les anlayses, et, ultimement, d’un article scientifique, l’IA m’accompagne à chaque étape.</p>
 <p>Mon objectif est double : mieux comprendre comment ces outils peuvent enrichir et accélérer certaines étapes du travail scientifique, mais aussi identifier leurs limites, leurs biais et leurs angles morts. Bref, c’est un projet d’intégration critique de l’IA dans un processus de recherche appliquée en sciences humaines.</p>
 </section>
 <section id="pourquoi-partager-ça" class="level3">
 <h3 class="anchored" data-anchor-id="pourquoi-partager-ça">Pourquoi partager ça ?</h3>
 <p>Parce que l’IA bouleverse nos façons de faire — et qu’on gagne à rendre ces transformations visibles, discutables, perfectibles. Et parce que la base documentaire Famili@ me semble vraiment intéressante pour mieux comprendre comment les chercheurs et chercheuses en psychologie s’intéresse à la famille au Québec.</p>
-<p>Je vous donne donc rendez-vous très bientôt pour le premier billet de cette série, où je vous montrerai comment j’ai construit ma propre base de données à partir du site Famili@. Ce sera l’occasion de plonger ensemble dans les défis du webscraping, étape fondatrice de ce projet.</p>
+<p>Dans la prochaine publications, je vous expliquerai comment j’ai construit ma propre base de données à partir du site Famili@. Ce sera l’occasion de plonger ensemble dans les défis du webscraping, étape fondatrice de ce projet.</p>
 <hr>
 <!--Include social share buttons-->
 <!-- 

@@ -17,11 +17,11 @@ Mais mon intérêt dépasse l’aspect documentaire : ce projet est aussi une po
 
 ### Ce que je veux faire
 
-Je veux documenter, de façon transparente et critique, l’ensemble du processus de recherche que j’entreprends à partir de la base Famili@. De l’extraction automatisée des données à l’écriture d’un article scientifique, chaque étape sera partagée ici, avec ses réussites, ses ratés, et surtout, ce que j’apprends en cours de route.
+Je veux documenter, de façon transparente et critique, l’ensemble du processus de recherche que j’entreprends à partir de la base Famili@. De l’extraction automatisée des données aux différentes analyses, et possible à la publication des résultats, chaque étape sera partagée ici, avec ses réussites, ses ratés, et surtout, ce que j’apprends en cours de route.
 
 ### L'IA comme coéquipière de recherche
 
-Ce projet est aussi un terrain d’expérimentation pour l’utilisation de l’intelligence artificielle générative dans un processus de recherche complet. De l’extraction des données avec du code R généré ou optimisé par l’IA, aux séances de remue-méninges pour faire émerger des idées d’analyses, en passant par la rédaction de billets comme celui-ci et, ultimement, d’un article scientifique, l’IA m’accompagne à chaque étape.
+Ce projet est aussi un terrain d’expérimentation pour l’utilisation de l’intelligence artificielle générative dans un processus de d'analyse de données. De l’extraction des données avec du code R généré ou optimisé par l’IA, aux séances de remue-méninges pour faire émerger des idées d’analyses, en passant par les anlayses, et, ultimement, d’un article scientifique, l’IA m’accompagne à chaque étape.
 
 Mon objectif est double : mieux comprendre comment ces outils peuvent enrichir et accélérer certaines étapes du travail scientifique, mais aussi identifier leurs limites, leurs biais et leurs angles morts. Bref, c’est un projet d’intégration critique de l’IA dans un processus de recherche appliquée en sciences humaines.
 
@@ -29,7 +29,7 @@ Mon objectif est double : mieux comprendre comment ces outils peuvent enrichir e
 
 Parce que l’IA bouleverse nos façons de faire — et qu’on gagne à rendre ces transformations visibles, discutables, perfectibles. Et parce que la base documentaire Famili@ me semble vraiment intéressante pour mieux comprendre comment les chercheurs et chercheuses en psychologie s'intéresse à la famille au Québec.
 
-Je vous donne donc rendez-vous très bientôt pour le premier billet de cette série, où je vous montrerai comment j’ai construit ma propre base de données à partir du site Famili@. Ce sera l’occasion de plonger ensemble dans les défis du webscraping, étape fondatrice de ce projet.
+Dans la prochaine publications, je vous expliquerai comment j’ai construit ma propre base de données à partir du site Famili@. Ce sera l’occasion de plonger ensemble dans les défis du webscraping, étape fondatrice de ce projet.
 
 ---
 <!--Include social share buttons-->

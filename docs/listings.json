@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/2025-06-09-AI-correlation/index.html",
       "/posts/2025-06-06-Journal_psychology_AI/index.html",
       "/posts/2025-06-06-webster-2025/index.html",
       "/posts/2025-06-05-UTAUT-AI/index.html",
@@ -11,8 +12,13 @@
     ]
   },
   {
+    "listing": "/outils.html",
+    "items": []
+  },
+  {
     "listing": "/index.html",
     "items": [
+      "/posts/2025-06-09-AI-correlation/index.html",
       "/posts/2025-06-06-webster-2025/index.html",
       "/posts/2025-06-06-Journal_psychology_AI/index.html",
       "/posts/2025-06-05-UTAUT-AI/index.html",
@@ -21,10 +27,6 @@
       "/projets/2025-05-23-intro-familia/index.html",
       "/posts/2025-05-21-ai-robin/index.html"
     ]
-  },
-  {
-    "listing": "/outils.html",
-    "items": []
   },
   {
     "listing": "/projects.html",
