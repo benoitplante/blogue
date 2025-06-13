@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Plante">
+<meta name="dcterms.date" content="2025-06-13">
+<meta name="description" content="Blogue sur les liens entre psychologie et intelligence artificielle">
+
+<title>Utiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie – Benoit Plante</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6957ec2732917c3acd9217c3064faa9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id="></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '', { 'anonymize_ip': true});
+</script>
+
+
+<!-- 
+
+Load Academicons v1: https://jpswalsh.github.io/academicons/
+
+-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+
+
+
+<!---
+
+The following code are needed to show dimension citation and altmetrics.
+
+https://api.altmetric.com/embeds.html
+
+https://badge.dimensions.ai/
+
+--->
+
+
+
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+
+<script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+
+
+<script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Utiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie – Benoit Plante">
+<meta property="og:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
+<meta property="og:image" content="https://benoitplante.github.io/outils/2025-06-13-deep-search-chatgpt/banner.png">
+<meta property="og:site_name" content="Benoit Plante">
+<meta property="og:image:height" content="900">
+<meta property="og:image:width" content="1600">
+<meta name="twitter:title" content="Utiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie – Benoit Plante">
+<meta name="twitter:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
+<meta name="twitter:image" content="https://benoitplante.github.io/outils/2025-06-13-deep-search-chatgpt/banner.png">
+<meta name="twitter:image-height" content="900">
+<meta name="twitter:image-width" content="1600">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Benoit Plante</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">À propos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Veille PsychIA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../outils.html"> 
+<span class="menu-text">Outils IA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching.html"> 
+<span class="menu-text">Enseignement</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Utiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">ChatGPT</div>
+                <div class="quarto-category">Outils IA</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Benoit Plante + ChatGPT </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 13, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#quest-ce-que-deep-search" id="toc-quest-ce-que-deep-search" class="nav-link" data-scroll-target="#quest-ce-que-deep-search">Qu’est-ce que Deep Search ?</a>
+  <ul class="collapse">
+  <li><a href="#capacités-principales" id="toc-capacités-principales" class="nav-link" data-scroll-target="#capacités-principales">Capacités principales :</a></li>
+  </ul></li>
+  <li><a href="#tutoriel-dutilisation-pas-à-pas" id="toc-tutoriel-dutilisation-pas-à-pas" class="nav-link" data-scroll-target="#tutoriel-dutilisation-pas-à-pas">Tutoriel d’utilisation pas à pas</a>
+  <ul class="collapse">
+  <li><a href="#accéder-à-deep-search" id="toc-accéder-à-deep-search" class="nav-link" data-scroll-target="#accéder-à-deep-search">1. Accéder à Deep Search</a></li>
+  <li><a href="#formuler-une-requête-efficace" id="toc-formuler-une-requête-efficace" class="nav-link" data-scroll-target="#formuler-une-requête-efficace">2. Formuler une requête efficace</a></li>
+  <li><a href="#optionnel-ajouter-des-documents" id="toc-optionnel-ajouter-des-documents" class="nav-link" data-scroll-target="#optionnel-ajouter-des-documents">3. (Optionnel) Ajouter des documents</a></li>
+  <li><a href="#lancer-la-recherche-et-patienter" id="toc-lancer-la-recherche-et-patienter" class="nav-link" data-scroll-target="#lancer-la-recherche-et-patienter">4. Lancer la recherche et patienter</a></li>
+  <li><a href="#lire-et-exploiter-le-rapport" id="toc-lire-et-exploiter-le-rapport" class="nav-link" data-scroll-target="#lire-et-exploiter-le-rapport">5. Lire et exploiter le rapport</a></li>
+  </ul></li>
+  <li><a href="#exemples-dutilisation-en-psychologie" id="toc-exemples-dutilisation-en-psychologie" class="nav-link" data-scroll-target="#exemples-dutilisation-en-psychologie">Exemples d’utilisation en psychologie</a>
+  <ul class="collapse">
+  <li><a href="#recenser-des-méthodes-dévaluation-du-stress" id="toc-recenser-des-méthodes-dévaluation-du-stress" class="nav-link" data-scroll-target="#recenser-des-méthodes-dévaluation-du-stress">🔍 Recenser des méthodes d’évaluation du stress</a></li>
+  <li><a href="#comparer-des-protocoles-expérimentaux" id="toc-comparer-des-protocoles-expérimentaux" class="nav-link" data-scroll-target="#comparer-des-protocoles-expérimentaux">🔍 Comparer des protocoles expérimentaux</a></li>
+  <li><a href="#explorer-les-designs-qualitatifs-en-psychologie" id="toc-explorer-les-designs-qualitatifs-en-psychologie" class="nav-link" data-scroll-target="#explorer-les-designs-qualitatifs-en-psychologie">🔍 Explorer les designs qualitatifs en psychologie</a></li>
+  <li><a href="#identifier-des-questionnaires-validés-pour-une-population-spécifique" id="toc-identifier-des-questionnaires-validés-pour-une-population-spécifique" class="nav-link" data-scroll-target="#identifier-des-questionnaires-validés-pour-une-population-spécifique">🔍 Identifier des questionnaires validés pour une population spécifique</a></li>
+  </ul></li>
+  <li><a href="#bonnes-pratiques-dutilisation" id="toc-bonnes-pratiques-dutilisation" class="nav-link" data-scroll-target="#bonnes-pratiques-dutilisation">Bonnes pratiques d’utilisation</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Dans la recherche scientifique en psychologie, l’identification de méthodologies pertinentes est une étape cruciale, mais souvent chronophage. Les chercheurs, professionnels et étudiants doivent fréquemment répondre à des questions comme : Quels instruments valider pour mesurer un construit donné ?, Quelle méthode est la plus adaptée pour mon devis *, ou encore Comment d’autres chercheurs ont-ils structuré leur analyse dans un contexte similaire ?. Or, répondre à ces questions exige de fouiller de nombreuses bases de données, de lire des textes longs et parfois de suivre des pistes infructueuses.</p>
+<p>La fonction Deep Search (recherche approfondie) de ChatGPT offre une solution innovante : elle permet de déléguer une partie de ce travail à un agent conversationnel intelligent qui explore le web en temps réel pour produire une synthèse structurée et sourcée. Ce guide complet explique comment utiliser Deep Search dans un contexte de recherche psychologique, avec un accent particulier sur les méthodologies, en alliant rigueur, rapidité et flexibilité.</p>
+</section>
+<section id="quest-ce-que-deep-search" class="level2">
+<h2 class="anchored" data-anchor-id="quest-ce-que-deep-search">Qu’est-ce que Deep Search ?</h2>
+<p>Deep Search est une fonctionnalité avancée désormais accessible à tous les utilisateurs de ChatGPT, quel que soit leur abonnement. Contrairement au ChatGPT standard, qui repose uniquement sur une base de connaissances interne (limitée à sa date d’entraînement), Deep Search interroge activement le web en temps réel. Cela permet de fournir des réponses documentées, enrichies de citations précises et vérifiables.</p>
+<section id="capacités-principales" class="level3">
+<h3 class="anchored" data-anchor-id="capacités-principales">Capacités principales :</h3>
+<ul>
+<li><strong>Recherche multi-sources :</strong> exploration simultanée de dizaines de pages web, articles scientifiques, rapports professionnels, entrées d’encyclopédie spécialisée, et documents accessibles en ligne.</li>
+<li><strong>Synthèse automatique :</strong> production d’un rapport structuré et lisible : titres, sous-titres, listes, tableaux, définitions, liens vers les sources.</li>
+<li><strong>Extraction ciblée :</strong> capacité à localiser et à rapporter des informations très précises, comme la validité d’un outil, une définition méthodologique, ou une étape d’un protocole expérimental.</li>
+<li><strong>Adaptabilité dynamique :</strong> Deep Search peut reformuler ses recherches si une nouvelle notion ou un concept secondaire émerge au cours de sa recherche initiale.</li>
+</ul>
+<p>L’objectif est de fournir à l’utilisateur une base de connaissances actualisée, contextualisée et directement exploitable, qu’il s’agisse de préparer une revue de littérature, de comparer plusieurs méthodes d’analyse ou de définir une stratégie de collecte de données.</p>
+</section>
+</section>
+<section id="tutoriel-dutilisation-pas-à-pas" class="level2">
+<h2 class="anchored" data-anchor-id="tutoriel-dutilisation-pas-à-pas">Tutoriel d’utilisation pas à pas</h2>
+<section id="accéder-à-deep-search" class="level3">
+<h3 class="anchored" data-anchor-id="accéder-à-deep-search">1. Accéder à Deep Search</h3>
+<ul>
+<li>Connectez-vous à ChatGPT.</li>
+<li>Dans la barre de saisie, activez l’option <strong>Recherche approfondie</strong>. Vous pouvez aussi activer ce mode via un bouton dédié dans la partie supérieure de l’interface.</li>
+</ul>
+</section>
+<section id="formuler-une-requête-efficace" class="level3">
+<h3 class="anchored" data-anchor-id="formuler-une-requête-efficace">2. Formuler une requête efficace</h3>
+<p>Quelques principes :</p>
+<ul>
+<li>Soyez <strong>spécifique</strong> : précisez le type de méthodologie, la population, le domaine (ex. : psychologie clinique, éducation, neuropsychologie).</li>
+<li>Ajoutez du <strong>contexte</strong> : votre objectif (par ex. : construire une grille d’observation), le cadre théorique, des exemples si disponibles.</li>
+<li>Décrivez le <strong>type de réponse souhaitée</strong> : synthèse structurée, tableau comparatif, résumé avec sources, etc.</li>
+</ul>
+<p><strong>Exemples :</strong></p>
+<ul>
+<li>“Quelles méthodes qualitatives sont recommandées pour étudier les relations parent-enfant dans des familles vivant en contexte de pauvreté ?”</li>
+<li>“Compare les outils les plus utilisés pour évaluer la régulation émotionnelle chez les adolescents.”</li>
+<li>“Donne-moi les étapes typiques d’une étude de cas multiple en psychologie communautaire, avec des références.”</li>
+</ul>
+</section>
+<section id="optionnel-ajouter-des-documents" class="level3">
+<h3 class="anchored" data-anchor-id="optionnel-ajouter-des-documents">3. (Optionnel) Ajouter des documents</h3>
+<p>Il est possible de joindre des fichiers (PDF, notes, articles, protocoles) pour enrichir la recherche. Voici quelques cas où c’est utile :</p>
+<ul>
+<li>Vous avez lu un article complexe et vous souhaitez obtenir une reformulation ou un approfondissement de certaines sections.</li>
+<li>Vous disposez d’un protocole de recherche ou d’un plan de cours, et souhaitez l’enrichir avec des méthodes comparables utilisées ailleurs.</li>
+<li>Vous rédigez un mémoire et voulez comparer votre plan avec les pratiques actuelles.</li>
+</ul>
+</section>
+<section id="lancer-la-recherche-et-patienter" class="level3">
+<h3 class="anchored" data-anchor-id="lancer-la-recherche-et-patienter">4. Lancer la recherche et patienter</h3>
+<p>Une fois la requête envoyée, Deep Search procède à plusieurs étapes en arrière-plan : recherche de sources, ouverture de pages, sélection d’informations pertinentes, regroupement et synthèse. Cela peut durer de quelques secondes à plusieurs minutes selon la complexité du sujet.</p>
+</section>
+<section id="lire-et-exploiter-le-rapport" class="level3">
+<h3 class="anchored" data-anchor-id="lire-et-exploiter-le-rapport">5. Lire et exploiter le rapport</h3>
+<ul>
+<li>Le rapport est structuré : introduction, sections thématiques, listes ou tableaux, et conclusion.</li>
+<li>Les sources sont indiquées (liens cliquables ou références), permettant de consulter directement les documents originaux.</li>
+<li>Vous pouvez poser des questions de suivi, demander une reformulation ou approfondir une section du rapport.</li>
+</ul>
+</section>
+</section>
+<section id="exemples-dutilisation-en-psychologie" class="level2">
+<h2 class="anchored" data-anchor-id="exemples-dutilisation-en-psychologie">Exemples d’utilisation en psychologie</h2>
+<section id="recenser-des-méthodes-dévaluation-du-stress" class="level3">
+<h3 class="anchored" data-anchor-id="recenser-des-méthodes-dévaluation-du-stress">🔍 Recenser des méthodes d’évaluation du stress</h3>
+<p>En posant une requête bien formulée, Deep Search peut fournir un panorama des outils (ex. : <em>Perceived Stress Scale</em>, <em>Holmes and Rahe Stress Scale</em>, cortisol salivaire), leurs caractéristiques (durée, population cible, validité), leurs limites (auto-évaluation, contexte culturel), et des recommandations d’usage.</p>
+<p><strong>Cas d’usage :</strong> préparation d’un protocole de recherche, justification du choix d’un instrument, revue méthodologique dans un mémoire.</p>
+</section>
+<section id="comparer-des-protocoles-expérimentaux" class="level3">
+<h3 class="anchored" data-anchor-id="comparer-des-protocoles-expérimentaux">🔍 Comparer des protocoles expérimentaux</h3>
+<p>Par exemple, Deep Search peut comparer les dispositifs des expériences de Milgram (obéissance à l’autorité) et de Zimbardo (simulation carcérale), en décrivant leurs objectifs, procédures, variables manipulées et critiques éthiques. Il peut aussi identifier des études récentes qui ont répliqué ou adapté ces protocoles.</p>
+<p><strong>Cas d’usage :</strong> cours universitaire, préparation à une présentation orale ou écrite sur les méthodologies expérimentales classiques.</p>
+</section>
+<section id="explorer-les-designs-qualitatifs-en-psychologie" class="level3">
+<h3 class="anchored" data-anchor-id="explorer-les-designs-qualitatifs-en-psychologie">🔍 Explorer les designs qualitatifs en psychologie</h3>
+<p>Deep Search peut produire une typologie des designs qualitatifs (entretiens semi-directifs, groupes focus, ethnographie, étude de cas, photovoice), détailler les procédures de collecte et d’analyse, et donner des exemples d’études pertinentes.</p>
+<p><strong>Cas d’usage :</strong> préparation à une recherche qualitative, rédaction d’un plan méthodologique pour un projet d’intervention ou une étude exploratoire.</p>
+</section>
+<section id="identifier-des-questionnaires-validés-pour-une-population-spécifique" class="level3">
+<h3 class="anchored" data-anchor-id="identifier-des-questionnaires-validés-pour-une-population-spécifique">🔍 Identifier des questionnaires validés pour une population spécifique</h3>
+<p>Une autre application utile est de demander : <em>« Quels questionnaires valides existent pour mesurer le soutien social chez les parents d’enfants TSA ? »</em> ou <em>« Existe-t-il une échelle adaptée pour mesurer l’anxiété scolaire chez les enfants du primaire ? »</em>. Deep Search peut alors identifier des échelles, indiquer les populations cibles, les propriétés psychométriques, et proposer des sources pour les obtenir.</p>
+<p><strong>Cas d’usage :</strong> sélection d’outils dans un contexte clinique, rédaction d’une demande d’éthique, adaptation culturelle de questionnaires.</p>
+</section>
+</section>
+<section id="bonnes-pratiques-dutilisation" class="level2">
+<h2 class="anchored" data-anchor-id="bonnes-pratiques-dutilisation">Bonnes pratiques d’utilisation</h2>
+<ul>
+<li><strong>Soigner la formulation de la requête :</strong> une formulation vague produit des résultats vagues. Précisez l’objectif, le public visé, le type de données souhaitées.</li>
+<li><strong>Valider les sources :</strong> même si Deep Search fournit des références, prenez le temps de consulter les documents cités, surtout pour un usage académique ou clinique.</li>
+<li><strong>Compléter par d’autres outils :</strong> utilisez PubMed, PsycINFO, Google Scholar pour compléter la recherche, surtout pour accéder à des articles payants ou très récents.</li>
+<li><strong>Documenter vos recherches :</strong> notez les requêtes utilisées, les sources clés identifiées, et les limites rencontrées pour garder une trace méthodologique.</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Deep Search est un atout stratégique pour les chercheurs, les étudiants et les professionnels de la psychologie. Il permet d’accélérer la phase exploratoire, d’améliorer la qualité documentaire des travaux, et d’ouvrir de nouvelles pistes méthodologiques. Ce n’est pas un substitut à la rigueur scientifique, mais un outil puissant pour gagner en efficacité tout en maintenant un haut niveau d’exigence.</p>
+<p>Intégré à une démarche réflexive, Deep Search peut également contribuer à former les étudiants à la recherche, à nourrir les projets de collaboration interdisciplinaire, et à renforcer la validité des approches empiriques.</p>
+<!-- Formulaire d’abonnement Brevo -->
+<iframe width="540" height="405" scrolling="no" src="https://sibforms.com/serve/MUIFAJuXpDvH14nAsFXhXmM7v_z4nHcpDJCxRYobbS4dO7G-ovnmEkzoaPhHHEKEPAWRf3EVMvbOumRBiEsM6A50GTewyamCczEPOkwY9jSzdOIhDlnGvyrZJq7_DnhQswAXMCQ4QhEhVv0wZoQ_S-DisWk4a4YeHj6TW3XrELrEZPr4Nv-e2EJt60iSgcFerHiFJzCrIkdm7njy" frameborder="0" allowfullscreen="" style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;">
+</iframe>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/benoitplante\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<a href="https://github.com/benplante">Ben Plante</a> ©
+<script>document.write(new Date().getFullYear())</script>
+</div>   
+    <div class="nav-footer-center">
+<p>Blogue propulsé par <a href="https://quarto.org">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/benplante" target="_blank">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="../../posts.xml" target="_blank">
+      <i class="bi bi-rss" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

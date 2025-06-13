@@ -1,0 +1,15 @@
+---
+title: "Premier survol de la recherche en psychologie familiale au Québec"
+format: html
+editor: visual
+---
+
+Voici votre billet de blogue structuré selon les sections classiques : **Introduction**, **Méthodes**, **Résultats**, **Discussion** — tout en gardant un ton professionnel, humain et engageant.
+
+...
+
+Ce billet n’est qu’un début. Les prochaines étapes porteront sur :
+
+-   Les **méthodologies employées**
+-   Les **types de données mobilisées**
+-   Et, surtout, sur le contenu : que disent ces recherches des familles qu’elles étudient ?
