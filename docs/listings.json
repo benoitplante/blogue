@@ -16,6 +16,7 @@
     "listing": "/index.html",
     "items": [
       "/posts/2025-06-13-AIGen-etudiant-1/index.html",
+      "/outils/2025-06-13-deep-search-chatgpt/index.html",
       "/projets/2025-06-10-nettoyage-familia/index.html",
       "/projets/2025-06-09-webscrapping-familia/index.html",
       "/posts/2025-06-09-AI-correlation/index.html",
@@ -30,7 +31,9 @@
   },
   {
     "listing": "/outils.html",
-    "items": []
+    "items": [
+      "/outils/2025-06-13-deep-search-chatgpt/index.html"
+    ]
   },
   {
     "listing": "/projects.html",

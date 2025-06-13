@@ -266,18 +266,67 @@
     "text": "Une transformation à suivre de près\nJe vais suivre de près les développements autour de Robin et des autres projets similaires. Ils ouvrent une réflexion profonde sur notre manière de faire de la recherche, sur notre rapport à la connaissance, et sur la façon dont l’IA pourrait enrichir, sans remplacer, notre compréhension du monde. Ces technologies ne nous invitent pas seulement à revoir nos outils, mais à repenser nos méthodologies, nos collaborations et nos modèles de diffusion du savoir. Il se pourrait qu’une partie de la science de demain ne soit pas écrite par des humains, mais validée, partagée et enrichie par eux. C’est une perspective à la fois stimulante et exigeante, qui demande une vigilance éthique et une ouverture intellectuelle constante.\nRéférence :\nGhareeb, A. E., Chang, B., Mitchener, L., Yiu, A., Szostkiewicz, C. J., Laurent, J. M., … & Rodriques, S. G. (2025). Robin: A multi-agent system for automating scientific discovery. arXiv preprint arXiv:2505.13400. https://arxiv.org/abs/2505.13400"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Benoit Plante",
+    "objectID": "outils/2025-06-13-deep-search-chatgpt/index.html",
+    "href": "outils/2025-06-13-deep-search-chatgpt/index.html",
+    "title": "Utiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie",
     "section": "",
-    "text": "Photo générée par l’IA\n\n\n  \n\n\n\nL’intelligence artificielle occupe une place de plus en plus centrale dans ma vie professionnelle. Je l’utilise autant comme outil de recherche que comme sujet d’exploration, et ce blogue en est le reflet. Pour moi, l’IA n’est pas seulement une technologie : c’est une manière de repenser nos façons de comprendre, d’analyser et d’agir — en psychologie comme ailleurs.\nCe site, c’est un peu mon laboratoire ouvert. J’y partage ce que je lis, ce que je teste, ce que je construis. On y trouve une veille PsychIA, où je vulgarise des recherches récentes sur l’intelligence artificielle appliquée à la psychologie. J’y présente aussi des projets perso, où je joue avec des données, des idées ou des outils, parfois pour résoudre un vrai problème, parfois juste pour voir jusqu’où je peux aller. Si vous vous intéressez à la recherche, à la techno, à l’humain, ou à ce qui se passe quand les trois se rencontrent, vous êtes au bon endroit.\n\n\nJe travaille comme coordonnateur scientifique pour le Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés (GRIN), où je supervise le développement des projets, la coordination des partenariats et la mobilisation des connaissances. Je suis aussi doctorant en psychologie à l’Université du Québec à Trois-Rivières (UQTR), où mes travaux portent sur les liens entre l’activité physique et le bien-être psychologique.\nJe suis également tuteur en psychologie à la TÉLUQ, où j’accompagne des étudiant·e·s dans leurs apprentissages à distance. Enfin, j’agis aussi à titre de conseiller au SESAME, un service d’accompagnement destiné aux étudiant·e·s parents et à la réussite étudiante à l’UQTR."
+    "text": "Dans la recherche scientifique en psychologie, l’identification de méthodologies pertinentes est une étape cruciale, mais souvent chronophage. Les chercheurs, professionnels et étudiants doivent fréquemment répondre à des questions comme : Quels instruments valider pour mesurer un construit donné ?, Quelle méthode est la plus adaptée pour mon devis *, ou encore Comment d’autres chercheurs ont-ils structuré leur analyse dans un contexte similaire ?. Or, répondre à ces questions exige de fouiller de nombreuses bases de données, de lire des textes longs et parfois de suivre des pistes infructueuses.\nLa fonction Deep Search (recherche approfondie) de ChatGPT offre une solution innovante : elle permet de déléguer une partie de ce travail à un agent conversationnel intelligent qui explore le web en temps réel pour produire une synthèse structurée et sourcée. Ce guide complet explique comment utiliser Deep Search dans un contexte de recherche psychologique, avec un accent particulier sur les méthodologies, en alliant rigueur, rapidité et flexibilité."
   },
   {
-    "objectID": "index.html#publications-récentes",
-    "href": "index.html#publications-récentes",
-    "title": "Benoit Plante",
-    "section": "Publications récentes",
-    "text": "Publications récentes\n\n\n\n\n\n\n\n\n\n\nIAGen dans l’enseignement supérieur : ce que pensent vraiment les étudiants\n\n\n\n\n\n\n\n\nJun 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNettoyage de la base Famili@ : entre patience, regex et satisfaction scientifique\n\n\n\n\n\n\n\n\nJun 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nExtraire les données de Famili@ en collaboration avec l’IA\n\n\n\n\n\n\n\n\nJun 9, 2025\n\n\n\n\n\nNo matching items"
+    "objectID": "outils/2025-06-13-deep-search-chatgpt/index.html#introduction",
+    "href": "outils/2025-06-13-deep-search-chatgpt/index.html#introduction",
+    "title": "Utiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie",
+    "section": "",
+    "text": "Dans la recherche scientifique en psychologie, l’identification de méthodologies pertinentes est une étape cruciale, mais souvent chronophage. Les chercheurs, professionnels et étudiants doivent fréquemment répondre à des questions comme : Quels instruments valider pour mesurer un construit donné ?, Quelle méthode est la plus adaptée pour mon devis *, ou encore Comment d’autres chercheurs ont-ils structuré leur analyse dans un contexte similaire ?. Or, répondre à ces questions exige de fouiller de nombreuses bases de données, de lire des textes longs et parfois de suivre des pistes infructueuses.\nLa fonction Deep Search (recherche approfondie) de ChatGPT offre une solution innovante : elle permet de déléguer une partie de ce travail à un agent conversationnel intelligent qui explore le web en temps réel pour produire une synthèse structurée et sourcée. Ce guide complet explique comment utiliser Deep Search dans un contexte de recherche psychologique, avec un accent particulier sur les méthodologies, en alliant rigueur, rapidité et flexibilité."
+  },
+  {
+    "objectID": "outils/2025-06-13-deep-search-chatgpt/index.html#quest-ce-que-deep-search",
+    "href": "outils/2025-06-13-deep-search-chatgpt/index.html#quest-ce-que-deep-search",
+    "title": "Utiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie",
+    "section": "Qu’est-ce que Deep Search ?",
+    "text": "Qu’est-ce que Deep Search ?\nDeep Search est une fonctionnalité avancée désormais accessible à tous les utilisateurs de ChatGPT, quel que soit leur abonnement. Contrairement au ChatGPT standard, qui repose uniquement sur une base de connaissances interne (limitée à sa date d’entraînement), Deep Search interroge activement le web en temps réel. Cela permet de fournir des réponses documentées, enrichies de citations précises et vérifiables.\n\nCapacités principales :\n\nRecherche multi-sources : exploration simultanée de dizaines de pages web, articles scientifiques, rapports professionnels, entrées d’encyclopédie spécialisée, et documents accessibles en ligne.\nSynthèse automatique : production d’un rapport structuré et lisible : titres, sous-titres, listes, tableaux, définitions, liens vers les sources.\nExtraction ciblée : capacité à localiser et à rapporter des informations très précises, comme la validité d’un outil, une définition méthodologique, ou une étape d’un protocole expérimental.\nAdaptabilité dynamique : Deep Search peut reformuler ses recherches si une nouvelle notion ou un concept secondaire émerge au cours de sa recherche initiale.\n\nL’objectif est de fournir à l’utilisateur une base de connaissances actualisée, contextualisée et directement exploitable, qu’il s’agisse de préparer une revue de littérature, de comparer plusieurs méthodes d’analyse ou de définir une stratégie de collecte de données."
+  },
+  {
+    "objectID": "outils/2025-06-13-deep-search-chatgpt/index.html#tutoriel-dutilisation-pas-à-pas",
+    "href": "outils/2025-06-13-deep-search-chatgpt/index.html#tutoriel-dutilisation-pas-à-pas",
+    "title": "Utiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie",
+    "section": "Tutoriel d’utilisation pas à pas",
+    "text": "Tutoriel d’utilisation pas à pas\n\n1. Accéder à Deep Search\n\nConnectez-vous à ChatGPT.\nDans la barre de saisie, activez l’option Recherche approfondie. Vous pouvez aussi activer ce mode via un bouton dédié dans la partie supérieure de l’interface.\n\n\n\n2. Formuler une requête efficace\nQuelques principes :\n\nSoyez spécifique : précisez le type de méthodologie, la population, le domaine (ex. : psychologie clinique, éducation, neuropsychologie).\nAjoutez du contexte : votre objectif (par ex. : construire une grille d’observation), le cadre théorique, des exemples si disponibles.\nDécrivez le type de réponse souhaitée : synthèse structurée, tableau comparatif, résumé avec sources, etc.\n\nExemples :\n\n“Quelles méthodes qualitatives sont recommandées pour étudier les relations parent-enfant dans des familles vivant en contexte de pauvreté ?”\n“Compare les outils les plus utilisés pour évaluer la régulation émotionnelle chez les adolescents.”\n“Donne-moi les étapes typiques d’une étude de cas multiple en psychologie communautaire, avec des références.”\n\n\n\n3. (Optionnel) Ajouter des documents\nIl est possible de joindre des fichiers (PDF, notes, articles, protocoles) pour enrichir la recherche. Voici quelques cas où c’est utile :\n\nVous avez lu un article complexe et vous souhaitez obtenir une reformulation ou un approfondissement de certaines sections.\nVous disposez d’un protocole de recherche ou d’un plan de cours, et souhaitez l’enrichir avec des méthodes comparables utilisées ailleurs.\nVous rédigez un mémoire et voulez comparer votre plan avec les pratiques actuelles.\n\n\n\n4. Lancer la recherche et patienter\nUne fois la requête envoyée, Deep Search procède à plusieurs étapes en arrière-plan : recherche de sources, ouverture de pages, sélection d’informations pertinentes, regroupement et synthèse. Cela peut durer de quelques secondes à plusieurs minutes selon la complexité du sujet.\n\n\n5. Lire et exploiter le rapport\n\nLe rapport est structuré : introduction, sections thématiques, listes ou tableaux, et conclusion.\nLes sources sont indiquées (liens cliquables ou références), permettant de consulter directement les documents originaux.\nVous pouvez poser des questions de suivi, demander une reformulation ou approfondir une section du rapport."
+  },
+  {
+    "objectID": "outils/2025-06-13-deep-search-chatgpt/index.html#exemples-dutilisation-en-psychologie",
+    "href": "outils/2025-06-13-deep-search-chatgpt/index.html#exemples-dutilisation-en-psychologie",
+    "title": "Utiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie",
+    "section": "Exemples d’utilisation en psychologie",
+    "text": "Exemples d’utilisation en psychologie\n\n🔍 Recenser des méthodes d’évaluation du stress\nEn posant une requête bien formulée, Deep Search peut fournir un panorama des outils (ex. : Perceived Stress Scale, Holmes and Rahe Stress Scale, cortisol salivaire), leurs caractéristiques (durée, population cible, validité), leurs limites (auto-évaluation, contexte culturel), et des recommandations d’usage.\nCas d’usage : préparation d’un protocole de recherche, justification du choix d’un instrument, revue méthodologique dans un mémoire.\n\n\n🔍 Comparer des protocoles expérimentaux\nPar exemple, Deep Search peut comparer les dispositifs des expériences de Milgram (obéissance à l’autorité) et de Zimbardo (simulation carcérale), en décrivant leurs objectifs, procédures, variables manipulées et critiques éthiques. Il peut aussi identifier des études récentes qui ont répliqué ou adapté ces protocoles.\nCas d’usage : cours universitaire, préparation à une présentation orale ou écrite sur les méthodologies expérimentales classiques.\n\n\n🔍 Explorer les designs qualitatifs en psychologie\nDeep Search peut produire une typologie des designs qualitatifs (entretiens semi-directifs, groupes focus, ethnographie, étude de cas, photovoice), détailler les procédures de collecte et d’analyse, et donner des exemples d’études pertinentes.\nCas d’usage : préparation à une recherche qualitative, rédaction d’un plan méthodologique pour un projet d’intervention ou une étude exploratoire.\n\n\n🔍 Identifier des questionnaires validés pour une population spécifique\nUne autre application utile est de demander : « Quels questionnaires valides existent pour mesurer le soutien social chez les parents d’enfants TSA ? » ou « Existe-t-il une échelle adaptée pour mesurer l’anxiété scolaire chez les enfants du primaire ? ». Deep Search peut alors identifier des échelles, indiquer les populations cibles, les propriétés psychométriques, et proposer des sources pour les obtenir.\nCas d’usage : sélection d’outils dans un contexte clinique, rédaction d’une demande d’éthique, adaptation culturelle de questionnaires."
+  },
+  {
+    "objectID": "outils/2025-06-13-deep-search-chatgpt/index.html#bonnes-pratiques-dutilisation",
+    "href": "outils/2025-06-13-deep-search-chatgpt/index.html#bonnes-pratiques-dutilisation",
+    "title": "Utiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie",
+    "section": "Bonnes pratiques d’utilisation",
+    "text": "Bonnes pratiques d’utilisation\n\nSoigner la formulation de la requête : une formulation vague produit des résultats vagues. Précisez l’objectif, le public visé, le type de données souhaitées.\nValider les sources : même si Deep Search fournit des références, prenez le temps de consulter les documents cités, surtout pour un usage académique ou clinique.\nCompléter par d’autres outils : utilisez PubMed, PsycINFO, Google Scholar pour compléter la recherche, surtout pour accéder à des articles payants ou très récents.\nDocumenter vos recherches : notez les requêtes utilisées, les sources clés identifiées, et les limites rencontrées pour garder une trace méthodologique."
+  },
+  {
+    "objectID": "outils/2025-06-13-deep-search-chatgpt/index.html#conclusion",
+    "href": "outils/2025-06-13-deep-search-chatgpt/index.html#conclusion",
+    "title": "Utiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie",
+    "section": "Conclusion",
+    "text": "Conclusion\nDeep Search est un atout stratégique pour les chercheurs, les étudiants et les professionnels de la psychologie. Il permet d’accélérer la phase exploratoire, d’améliorer la qualité documentaire des travaux, et d’ouvrir de nouvelles pistes méthodologiques. Ce n’est pas un substitut à la rigueur scientifique, mais un outil puissant pour gagner en efficacité tout en maintenant un haut niveau d’exigence.\nIntégré à une démarche réflexive, Deep Search peut également contribuer à former les étudiants à la recherche, à nourrir les projets de collaboration interdisciplinaire, et à renforcer la validité des approches empiriques."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Benoit Plante\nCourriel : benoit.plante@uqtr.ca"
+  },
+  {
+    "objectID": "Articles en révision/2025-06-13-analyse-thematique/index.html",
+    "href": "Articles en révision/2025-06-13-analyse-thematique/index.html",
+    "title": "Premier survol de la recherche en psychologie familiale au Québec",
+    "section": "",
+    "text": "Voici votre billet de blogue structuré selon les sections classiques : Introduction, Méthodes, Résultats, Discussion — tout en gardant un ton professionnel, humain et engageant.\n…\nCe billet n’est qu’un début. Les prochaines étapes porteront sur :\n\nLes méthodologies employées\nLes types de données mobilisées\nEt, surtout, sur le contenu : que disent ces recherches des familles qu’elles étudient ?"
   },
   {
     "objectID": "about.html",
@@ -301,25 +350,25 @@
     "text": "Pourquoi ce blogue ?\nCe blogue est un carnet de veille et d’exploration personnelle.\nJ’y partage : - des résumés d’articles et des actualités scientifiques sur l’usage de l’IA en recherche en psychologie (Méthodes IA) ; - des projets personnels dans lesquels j’expérimente l’IA pour enrichir la pratique de recherche (Projets).\nTous les contenus sont créés en collaboration avec des outils d’IA, principalement via ChatGPT. Cette co-écriture me permet de structurer mes réflexions, d’automatiser certaines tâches, et de tester concrètement l’usage de l’IA en contexte scientifique. J’indique clairement les apports de l’IA dans chaque publication, dans une optique de transparence.\nCe site est un espace d’expérimentation. Je publie à mon rythme, sans prétention à l’exhaustivité, avec l’objectif de nourrir une culture de partage, de réflexion critique et de dialogue autour des liens entre psychologie, IA et science ouverte."
   },
   {
-    "objectID": "Articles en révision/2025-06-13-analyse-thematique/index.html",
-    "href": "Articles en révision/2025-06-13-analyse-thematique/index.html",
-    "title": "Premier survol de la recherche en psychologie familiale au Québec",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Benoit Plante",
     "section": "",
-    "text": "Voici votre billet de blogue structuré selon les sections classiques : Introduction, Méthodes, Résultats, Discussion — tout en gardant un ton professionnel, humain et engageant.\n…\nCe billet n’est qu’un début. Les prochaines étapes porteront sur :\n\nLes méthodologies employées\nLes types de données mobilisées\nEt, surtout, sur le contenu : que disent ces recherches des familles qu’elles étudient ?"
+    "text": "Photo générée par l’IA\n\n\n  \n\n\n\nL’intelligence artificielle occupe une place de plus en plus centrale dans ma vie professionnelle. Je l’utilise autant comme outil de recherche que comme sujet d’exploration, et ce blogue en est le reflet. Pour moi, l’IA n’est pas seulement une technologie : c’est une manière de repenser nos façons de comprendre, d’analyser et d’agir — en psychologie comme ailleurs.\nCe site, c’est un peu mon laboratoire ouvert. J’y partage ce que je lis, ce que je teste, ce que je construis. On y trouve une veille PsychIA, où je vulgarise des recherches récentes sur l’intelligence artificielle appliquée à la psychologie. J’y présente aussi des projets perso, où je joue avec des données, des idées ou des outils, parfois pour résoudre un vrai problème, parfois juste pour voir jusqu’où je peux aller. Si vous vous intéressez à la recherche, à la techno, à l’humain, ou à ce qui se passe quand les trois se rencontrent, vous êtes au bon endroit.\n\n\nJe travaille comme coordonnateur scientifique pour le Groupe de recherche et d’intervention auprès des enfants vulnérables et négligés (GRIN), où je supervise le développement des projets, la coordination des partenariats et la mobilisation des connaissances. Je suis aussi doctorant en psychologie à l’Université du Québec à Trois-Rivières (UQTR), où mes travaux portent sur les liens entre l’activité physique et le bien-être psychologique.\nJe suis également tuteur en psychologie à la TÉLUQ, où j’accompagne des étudiant·e·s dans leurs apprentissages à distance. Enfin, j’agis aussi à titre de conseiller au SESAME, un service d’accompagnement destiné aux étudiant·e·s parents et à la réussite étudiante à l’UQTR."
   },
   {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "Benoit Plante\nCourriel : benoit.plante@uqtr.ca"
+    "objectID": "index.html#publications-récentes",
+    "href": "index.html#publications-récentes",
+    "title": "Benoit Plante",
+    "section": "Publications récentes",
+    "text": "Publications récentes\n\n\n\n\n\n\n\n\n\n\nIAGen dans l’enseignement supérieur : ce que pensent vraiment les étudiants\n\n\n\n\n\n\n\n\nJun 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nUtiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie\n\n\n\n\n\n\n\n\nJun 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNettoyage de la base Famili@ : entre patience, regex et satisfaction scientifique\n\n\n\n\n\n\n\n\nJun 10, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "outils.html",
     "href": "outils.html",
     "title": "Outils",
     "section": "",
-    "text": "No matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nUtiliser Deep Search avec ChatGPT pour explorer la littérature scientifique en psychologie\n\n\n\nChatGPT\n\nOutils IA\n\n\n\n\n\n\n\n\n\nJun 13, 2025\n\n\nBenoit Plante + ChatGPT\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2025-05-29-personnalite-transformer/index.html",
