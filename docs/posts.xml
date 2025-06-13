@@ -10,7 +10,91 @@
 <atom:link href="https://benoitplante.github.io/posts.xml" rel="self" type="application/rss+xml"/>
 <description>Réflexions, cas d’usage et outils à l’interface entre IA et psychologie</description>
 <generator>quarto-1.7.31</generator>
-<lastBuildDate>Mon, 09 Jun 2025 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 13 Jun 2025 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>IAGen dans l’enseignement supérieur : ce que pensent vraiment les étudiants</title>
+  <dc:creator>Benoit Plante + ChatGPT</dc:creator>
+  <link>https://benoitplante.github.io/posts/2025-06-13-AIGen-etudiant-1/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://benoitplante.github.io/posts/2025-06-13-AIGen-etudiant-1/banner.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Générée par ChatGPT</figcaption>
+</figure>
+</div>
+<p><strong>En bref</strong> : Une vaste étude menée auprès de 460 étudiants d’enseignement supérieur révèle que la majorité utilise régulièrement l’intelligence artificielle générative (IAGen), notamment ChatGPT, et se sent relativement à l’aise avec ces outils. Les étudiants y voient des leviers de productivité et d’apprentissage, mais formulent aussi des préoccupations quant à l’intégrité académique, à la fiabilité des contenus et à la confidentialité des données. Les perceptions varient selon le type d’établissement, le statut d’emploi et le niveau d’études, ce qui souligne la nécessité d’un encadrement pédagogique et éthique de l’usage de l’IAGen dans les cursus universitaires.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>L’apparition de ChatGPT et la diffusion massive d’outils d’intelligence artificielle générative (IAGen) marquent un tournant dans l’enseignement supérieur. En peu de temps, ces technologies sont passées d’objets de curiosité à des instruments utilisés quotidiennement par des milliers d’étudiants. Mais qu’en pensent réellement les principaux concernés ? L’étude de Maxwell et coll. (2025) apporte un éclairage rigoureux et nuancé sur les usages, les attentes, les réticences et les besoins exprimés par les étudiants face à IAGen dans leurs parcours académiques.</p>
+</section>
+<section id="les-dimensions-psychologiques-mobilisées" class="level2">
+<h2 class="anchored" data-anchor-id="les-dimensions-psychologiques-mobilisées">Les dimensions psychologiques mobilisées</h2>
+<p>Pour comprendre l’adoption des outils IAGen, les auteurs s’appuient sur des modèles éprouvés en psychologie et en sciences des technologies éducatives. La théorie de la valeur expectative (Wigfield &amp; Eccles, 2000) explique que l’engagement dépend à la fois de l’utilité perçue d’un outil et du coût anticipé de son usage. Le modèle d’acceptation technologique (TAM) met l’accent sur l’utilité perçue et la facilité d’utilisation. Enfin, la théorie unifiée d’acceptation des technologies (UTAUT) souligne le rôle de la pression sociale, de la performance attendue et de la confiance dans l’adoption technologique. Ces cadres permettent de structurer l’analyse des perceptions étudiantes de IAGen selon des dimensions de valeur, de compétence, d’éthique et de contexte.</p>
+</section>
+<section id="démarche-de-létude" class="level2">
+<h2 class="anchored" data-anchor-id="démarche-de-létude">Démarche de l’étude</h2>
+<p>L’enquête a été réalisée au printemps 2024 auprès de 460 étudiants inscrits dans divers établissements d’enseignement supérieur aux États-Unis. Le questionnaire couvrait plusieurs dimensions : fréquence d’utilisation de IAGen, niveaux de confort et de compétence, perception des bénéfices et des risques, et caractéristiques sociodémographiques. Les instruments utilisés ont été adaptés d’échelles validées et ont fait l’objet d’une analyse factorielle confirmatoire. Trois grands axes ont été mesurés :</p>
+<ul>
+<li><strong>Préparation</strong> : compréhension, conscience éthique, compétences d’utilisation ;</li>
+<li><strong>Bénéfices</strong> : efficacité perçue et sentiment d’autonomisation ;</li>
+<li><strong>Défis</strong> : préoccupations éthiques, limitations techniques, impact éducatif négatif.</li>
+</ul>
+<p>Les analyses statistiques ont permis de dégager des tendances générales ainsi que des variations selon le genre, l’âge, le niveau d’études, le statut d’emploi, le nombre de cours en ligne suivis et le type d’institution.</p>
+</section>
+<section id="principaux-résultats" class="level2">
+<h2 class="anchored" data-anchor-id="principaux-résultats">Principaux résultats</h2>
+<p>L’étude met en évidence plusieurs constats clés :</p>
+<ul>
+<li><strong>Une adoption massive</strong> : 84 % des étudiants déclarent utiliser IAGen à des fins éducatives, souvent pour obtenir des réponses à des questions générales ou techniques, ou encore pour rédiger des documents.</li>
+<li><strong>Un rapport globalement positif</strong> : près de 80 % des répondants se disent à l’aise avec ces outils, appréciant leur disponibilité, leur accessibilité, et surtout l’absence de jugement perçu.</li>
+<li><strong>Des bénéfices bien identifiés</strong> : les étudiants soulignent les gains en productivité, la possibilité d’un feedback immédiat, et l’utilité pour structurer leurs idées ou clarifier des concepts.</li>
+<li><strong>Des limites bien reconnues</strong> : les répondants expriment des préoccupations sur la fiabilité des réponses, les enjeux de plagiat, la perte d’esprit critique et les risques d’une dépendance cognitive aux outils.</li>
+</ul>
+</section>
+<section id="différences-démographiques-importantes" class="level2">
+<h2 class="anchored" data-anchor-id="différences-démographiques-importantes">Différences démographiques importantes</h2>
+<p>Certaines différences marquantes sont observées :</p>
+<ul>
+<li>Les <strong>étudiants de collèges techniques ou communautaires</strong> montrent une plus grande aisance et des attitudes plus favorables envers IAGen, possiblement en lien avec des curriculums plus orientés vers les compétences pratiques et technologiques.</li>
+<li>Les <strong>étudiants sans emploi ou à temps partiel</strong> perçoivent davantage de bénéfices que leurs homologues en emploi à temps plein, peut-être en raison d’un temps disponible plus grand pour expérimenter.</li>
+<li>Les <strong>étudiants de premier cycle</strong> (en particulier les deuxièmes années) ont une vision plus enthousiaste de IAGen, alors que les étudiants aux cycles supérieurs (maîtrise, doctorat) sont plus critiques et conscients des limitations.</li>
+</ul>
+</section>
+<section id="enjeux-pour-la-formation-universitaire" class="level2">
+<h2 class="anchored" data-anchor-id="enjeux-pour-la-formation-universitaire">Enjeux pour la formation universitaire</h2>
+<p>Face à l’usage croissant de IAGen, l’étude souligne l’importance d’intégrer une formation structurée à ces outils dans les parcours académiques. Cela inclut :</p>
+<ul>
+<li>Une <strong>littératie de l’IA</strong> qui aborde les usages, les limites, et les dilemmes éthiques ;</li>
+<li>Des <strong>activités pédagogiques</strong> qui incitent à la réflexion critique sur les contenus générés par IA ;</li>
+<li>Des <strong>ressources différenciées</strong> selon le niveau, le contexte et les besoins des étudiants.</li>
+</ul>
+<p>Les établissements sont appelés à jouer un rôle actif dans l’encadrement de ces usages, tout en tenant compte de la diversité des profils étudiants.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>L’étude de Maxwell et coll. (2025) constitue un apport important pour comprendre la place croissante de IAGen dans l’enseignement supérieur. En révélant à la fois l’enthousiasme, la curiosité et les inquiétudes des étudiants, elle invite les acteurs du milieu universitaire à dépasser les discours polarisés pour construire des environnements d’apprentissage où IAGen est utilisé de façon critique, éthique et inclusive. Ce travail rappelle également que la technologie ne remplace pas l’humain : elle redéfinit les conditions de l’apprentissage, et c’est à nous de les accompagner avec lucidité.</p>
+</section>
+<section id="référence" class="level2">
+<h2 class="anchored" data-anchor-id="référence">Référence</h2>
+<p>Maxwell, D., Oyarzun, B., Kim, S., &amp; Bong, J. Y. (2025). Generative AI in Higher Education: Demographic Differences in Student Perceived Readiness, Benefits, and Challenges. TechTrends. https://doi.org/10.1007/s11528-025-01109-6</p>
+<!-- Formulaire d’abonnement Brevo -->
+<iframe width="540" height="405" scrolling="no" src="https://sibforms.com/serve/MUIFAJuXpDvH14nAsFXhXmM7v_z4nHcpDJCxRYobbS4dO7G-ovnmEkzoaPhHHEKEPAWRf3EVMvbOumRBiEsM6A50GTewyamCczEPOkwY9jSzdOIhDlnGvyrZJq7_DnhQswAXMCQ4QhEhVv0wZoQ_S-DisWk4a4YeHj6TW3XrELrEZPr4Nv-e2EJt60iSgcFerHiFJzCrIkdm7njy" frameborder="0" allowfullscreen="" style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;">
+</iframe>
+
+
+</section>
+
+ ]]></description>
+  <category>IA et éducation</category>
+  <guid>https://benoitplante.github.io/posts/2025-06-13-AIGen-etudiant-1/</guid>
+  <pubDate>Fri, 13 Jun 2025 04:00:00 GMT</pubDate>
+  <media:content url="https://benoitplante.github.io/posts/2025-06-13-AIGen-etudiant-1/banner.png" medium="image" type="image/png" height="96" width="144"/>
+</item>
 <item>
   <title>L’IA peut-elle mieux prédire les corrélations en personnalité que les experts ?</title>
   <link>https://benoitplante.github.io/posts/2025-06-09-AI-correlation/</link>
