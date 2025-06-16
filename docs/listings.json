@@ -1,20 +1,23 @@
 [
   {
-    "listing": "/posts.html",
+    "listing": "/projects.html",
     "items": [
-      "/posts/2025-06-13-AIGen-etudiant-1/index.html",
-      "/posts/2025-06-09-AI-correlation/index.html",
-      "/posts/2025-06-06-Journal_psychology_AI/index.html",
-      "/posts/2025-06-06-webster-2025/index.html",
-      "/posts/2025-06-05-UTAUT-AI/index.html",
-      "/posts/2025-06-03-llm-emotional-test/index.html",
-      "/posts/2025-05-29-personnalite-transformer/index.html",
-      "/posts/2025-05-21-ai-robin/index.html"
+      "/projets/2025-06-14-analyse-thematique/index.html",
+      "/projets/2025-06-10-nettoyage-familia/index.html",
+      "/projets/2025-06-09-webscrapping-familia/index.html",
+      "/projets/2025-05-23-intro-familia/index.html"
+    ]
+  },
+  {
+    "listing": "/outils.html",
+    "items": [
+      "/outils/2025-06-13-deep-search-chatgpt/index.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
+      "/projets/2025-06-14-analyse-thematique/index.html",
       "/posts/2025-06-13-AIGen-etudiant-1/index.html",
       "/outils/2025-06-13-deep-search-chatgpt/index.html",
       "/projets/2025-06-10-nettoyage-familia/index.html",
@@ -30,17 +33,16 @@
     ]
   },
   {
-    "listing": "/outils.html",
+    "listing": "/posts.html",
     "items": [
-      "/outils/2025-06-13-deep-search-chatgpt/index.html"
-    ]
-  },
-  {
-    "listing": "/projects.html",
-    "items": [
-      "/projets/2025-06-10-nettoyage-familia/index.html",
-      "/projets/2025-06-09-webscrapping-familia/index.html",
-      "/projets/2025-05-23-intro-familia/index.html"
+      "/posts/2025-06-13-AIGen-etudiant-1/index.html",
+      "/posts/2025-06-09-AI-correlation/index.html",
+      "/posts/2025-06-06-Journal_psychology_AI/index.html",
+      "/posts/2025-06-06-webster-2025/index.html",
+      "/posts/2025-06-05-UTAUT-AI/index.html",
+      "/posts/2025-06-03-llm-emotional-test/index.html",
+      "/posts/2025-05-29-personnalite-transformer/index.html",
+      "/posts/2025-05-21-ai-robin/index.html"
     ]
   }
 ]

@@ -34,7 +34,7 @@ listing:
 ::: {.hero-description style="text-align: left;"}
 L’intelligence artificielle occupe une place de plus en plus centrale dans ma vie professionnelle. Je l’utilise autant comme outil de recherche que comme sujet d’exploration, et ce blogue en est le reflet. Pour moi, l’IA n’est pas seulement une technologie : c’est une manière de repenser nos façons de comprendre, d’analyser et d’agir — en psychologie comme ailleurs.
 
-Ce site, c’est un peu mon laboratoire ouvert. J’y partage ce que je lis, ce que je teste, ce que je construis. On y trouve une [veille PsychIA](/posts), où je vulgarise des recherches récentes sur l’intelligence artificielle appliquée à la psychologie. J’y présente aussi des [projets perso](https://benoitplante.github.io/blogue/projects.html), où je joue avec des données, des idées ou des outils, parfois pour résoudre un vrai problème, parfois juste pour voir jusqu’où je peux aller. Si vous vous intéressez à la recherche, à la techno, à l’humain, ou à ce qui se passe quand les trois se rencontrent, vous êtes au bon endroit.
+Ce site, c’est un peu mon laboratoire ouvert. J’y partage ce que je lis, ce que je teste, ce que je construis. On y trouve une section [IA & Sciences humaines](/posts), où je vulgarise des recherches récentes sur l’intelligence artificielle appliquée à la psychologie. J’y présente aussi des [projets perso](https://benoitplante.github.io/blogue/projects.html), où je joue avec des données, des idées ou des outils, parfois pour résoudre un vrai problème, parfois juste pour voir jusqu’où je peux aller. Si vous vous intéressez à la recherche, à la techno, à l’humain, ou à ce qui se passe quand les trois se rencontrent, vous êtes au bon endroit.
 
 ### À propos
 
