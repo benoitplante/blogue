@@ -25,7 +25,7 @@ website:
         href: index.qmd
       - text: À propos
         href: about.qmd
-      - text: Veille PsychIA
+      - text: IA & Sciences humaines
         href: posts.qmd
       - text: Outils IA
         href: outils.qmd
