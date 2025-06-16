@@ -9,8 +9,12 @@ format:
     code-tools: false
     echo: false
     warning: false
+    message: false
 execute:
-  eval: false
+  eval: true
+  echo: false
+  warning: false
+  message: false
 image: banner.jpg
 ---
 
@@ -74,6 +78,7 @@ articles_per_year %>%
     y = "Nombre d'articles"
   ) +
   theme_minimal()
+
 ```
 
 ### Une diversité de thématiques… inégalement réparties
