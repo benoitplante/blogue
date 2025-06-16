@@ -18,7 +18,7 @@ Je m’intéresse aux méthodes de recherche en psychologie, à l’analyse de d
 
 Ce blogue est un **carnet de veille et d’exploration personnelle**.  
 J’y partage :
-- des **résumés d’articles** et des **actualités scientifiques** sur l’usage de l’IA en recherche en psychologie (*Méthodes IA*) ;
+- des **résumés d’articles** et des **actualités scientifiques** sur l’usage de l’IA en recherche en sciences humaines (*IA & Sciences humaines*) ;
 - des **projets personnels** dans lesquels j’expérimente l’IA pour enrichir la pratique de recherche (*Projets*).
 
 Tous les contenus sont créés **en collaboration avec des outils d’IA**, principalement via ChatGPT. Cette co-écriture me permet de structurer mes réflexions, d’automatiser certaines tâches, et de tester concrètement l’usage de l’IA en contexte scientifique. J’indique clairement les apports de l’IA dans chaque publication, dans une optique de transparence.
