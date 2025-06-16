@@ -1,0 +1,79 @@
+---
+title: "L’intelligence artificielle transforme-t-elle la recherche en sciences sociales ?"
+date: 2025-06-16
+categories: ["Méthodologie augmentée par l’IA"]
+format:
+  html:
+    title-block-banner: true
+    css: styles.css
+author: Benoit Plante + ChatGPT
+image: banner.png
+---
+
+![Générée par ChatGPT](banner.png){fig-align="center" width="100%"}
+---
+
+## L’intelligence artificielle transforme-t-elle la recherche en sciences sociales ?
+
+**En bref**\
+Une revue méthodique publiée dans *IEEE Access* démontre comment les techniques d’intelligence artificielle, notamment l’apprentissage automatique (ML), le traitement du langage naturel (NLP) et les modèles explicables (XAI), redéfinissent en profondeur les façons de faire en sciences sociales. Ces outils permettent non seulement d’explorer des données massives et variées, mais aussi de développer des modèles prédictifs, de tester des hypothèses causales complexes, d’évaluer des politiques publiques et de détecter des dynamiques sociales invisibles autrement. En parallèle, les auteurs insistent sur les risques de biais, d’opacité algorithmique et de dérives éthiques, plaidant pour une gouvernance responsable de l’IA appliquée aux sciences humaines.
+
+## 1. Pourquoi s’intéresser à l’IA dans les sciences sociales ?
+
+Pour Elias Dritsas et Maria Trigka, le recours à l’intelligence artificielle ne constitue pas un simple changement d’outils, mais bien un changement de paradigme. L’IA offre aux chercheurs une puissance analytique sans précédent pour traiter des volumes massifs de données complexes, hétérogènes, souvent non structurées. Elle permet d’explorer des comportements individuels et collectifs en temps réel, de modéliser des phénomènes dynamiques et d’extraire des régularités sans imposer a priori de cadre théorique rigide.
+
+Les auteurs insistent aussi sur la nécessité d’intégrer les apports de l’IA dans des cadres théoriques solides, car la seule puissance computationnelle ne suffit pas. Ce dialogue entre modèles prédictifs inductifs et raisonnements explicatifs déductifs constitue, selon eux, une voie féconde pour renouveler l’épistémologie des sciences sociales. En somme, l’IA ne remplace pas la réflexion critique, mais elle la stimule, en rendant visibles des motifs complexes qui seraient restés inaccessibles autrement.
+
+## 2. Explorer les dynamiques sociales par apprentissage machine
+
+L’apprentissage automatique, ou *machine learning*, regroupe différentes méthodes dont le fonctionnement peut être illustré par des analogies concrètes. Par exemple, l’apprentissage supervisé fonctionne comme un professeur qui enseigne à un élève à reconnaître des formes : on fournit au modèle des exemples déjà étiquetés (par exemple, des individus dont on connaît l’orientation politique ou le niveau d’anxiété), et il apprend à reconnaître des régularités dans les données pour faire des prédictions sur de nouveaux cas.
+
+Dans les sciences sociales, cela permet de prédire des comportements comme l’intention de vote, la probabilité de décrochage scolaire ou encore la détresse psychologique à partir d’une combinaison de variables (textes, réponses à des questionnaires, historique d’activité numérique, etc.). Des modèles comme les forêts aléatoires ou les machines à vecteurs de support sont souvent utilisés pour ce type de tâche. Leur grande force réside dans leur capacité à intégrer de nombreuses variables et à modéliser des relations non linéaires, là où les modèles classiques de régression peuvent s’avérer limités.
+
+L’apprentissage non supervisé, lui, s’apparente davantage à une exploration : on ne donne pas d’étiquette au modèle, mais on le laisse repérer des regroupements spontanés ou des structures cachées dans les données. Par exemple, il peut détecter différents profils de participants dans une enquête d’opinion ou faire ressortir des segments idéologiques sur Twitter sans avoir à prédéfinir ces catégories. Des méthodes comme le *k-means*, la classification hiérarchique ou la réduction de dimension (PCA, UMAP) sont employées ici pour simplifier la complexité et favoriser l’interprétation.
+
+Enfin, l’apprentissage profond (*deep learning*), basé sur des réseaux de neurones inspirés du fonctionnement du cerveau humain, est particulièrement efficace pour traiter des données complexes comme les textes, les images ou les séries temporelles. Un modèle de type LSTM (Long Short-Term Memory), par exemple, est capable de modéliser les évolutions dans le temps — comme l’évolution de l’état émotionnel d’une personne à travers ses messages au fil des jours. Ces modèles sont également adaptés à l’analyse de journaux cliniques, de flux de messages ou de trajectoires éducatives.
+
+## 3. Le langage naturel comme terrain d’analyse central
+
+Le traitement du langage naturel (*natural language processing*, NLP) permet à l’IA d’analyser des textes à grande échelle. Imaginez que vous deviez lire des milliers de discours politiques, de messages sur les réseaux sociaux ou de décisions judiciaires : le NLP rend cette tâche possible, non seulement en lisant les textes, mais en identifiant des sentiments, des thèmes ou des prises de position implicites.
+
+Par exemple, l’analyse de sentiment utilise des modèles (parfois aussi simples que des dictionnaires d’émotions, parfois aussi puissants que des modèles comme BERT ou GPT) pour classer des phrases comme étant positives, négatives ou neutres. Cela permet d’évaluer l’impact émotionnel d’un événement politique, ou encore de détecter les signaux d’anxiété ou de colère dans des messages publiés sur les médias sociaux. Les chercheurs peuvent ainsi surveiller l’évolution du climat émotionnel dans une population donnée.
+
+Le *topic modeling*, quant à lui, utilise des algorithmes comme LDA (Latent Dirichlet Allocation) pour identifier les sujets dominants dans un corpus de textes. Dans une campagne électorale, on peut ainsi voir quels thèmes (ex. : immigration, économie, santé) sont les plus discutés, et comment leur importance varie dans le temps. Combiné à une analyse temporelle ou spatiale, ce type de modèle devient un véritable outil de veille politique ou médiatique.
+
+## 4. L’analyse de réseaux : vers une cartographie structurelle des relations sociales
+
+Les graphes sont des représentations de relations entre entités. En sciences sociales, cela peut servir à représenter des interactions entre personnes, entre groupes, ou entre idées. Un nœud est une entité (par exemple une personne), et une arête est une relation (par exemple une amitié, un échange ou une co-citation).
+
+Analyser ces réseaux permet de détecter des structures comme des communautés (groupes soudés), des individus très influents (nœuds centraux), ou encore des ponts entre groupes séparés. Ces éléments sont cruciaux pour comprendre la circulation de l’information, la formation des coalitions politiques ou l’émergence des controverses.
+
+Les chercheurs utilisent aussi des modèles plus avancés, appelés réseaux neuronaux de graphes (Graph Neural Networks), qui combinent les propriétés des nœuds avec celles de leur environnement pour faire des prédictions. Cela peut servir à prévoir quels individus sont les plus susceptibles de diffuser une information, ou quels groupes risquent de se radicaliser dans des forums en ligne. Ces approches, qui marient modélisation structurelle et apprentissage automatique, offrent une puissance inédite pour anticiper les dynamiques sociales.
+
+## 5. Inférer des causalités dans des systèmes complexes
+
+Prédire un phénomène est utile, mais comprendre *pourquoi* il se produit est fondamental. L’inférence causale cherche à répondre à la question : que se passerait-il si… ? Par exemple, que se passerait-il si l’on augmentait les prestations sociales dans une région donnée ?
+
+Pour répondre à cela, on peut utiliser des outils comme les modèles à forêts causales, qui permettent d’estimer l’effet d’une intervention sur différents sous-groupes (ex. : selon l’âge ou le niveau de scolarité). Ces approches permettent de détecter les hétérogénéités de traitement, c’est-à-dire de savoir pour qui une intervention est plus efficace.
+
+Des modèles contrefactuels vont plus loin en simulant ce qui se serait passé dans un scénario alternatif. Ces outils sont essentiels pour guider les politiques publiques ou évaluer les effets de programmes sociaux. Par exemple, un modèle contrefactuel pourrait estimer les conséquences d’un changement de politique éducative sur la persévérance scolaire, en tenant compte des différences régionales et sociodémographiques.
+
+Mais ces approches nécessitent de poser des hypothèses claires, et de s’assurer que les données sont suffisamment riches pour représenter les mécanismes étudiés. Sinon, le modèle pourrait attribuer un effet causal à une simple coïncidence. Il est donc crucial d’allier rigueur statistique et connaissance fine du terrain.
+
+## 6. Pour une IA éthique et contextualisée en sciences sociales
+
+Un des grands mérites de l’article est de ne pas esquiver les questions éthiques. Les auteurs rappellent qu’un algorithme n’est pas neutre : il reflète les données sur lesquelles il a été entraîné, et celles-ci sont souvent marquées par les inégalités sociales passées. Un modèle de prédiction du risque de récidive, par exemple, pourrait reproduire les biais raciaux contenus dans les bases de données policières.
+
+Pour éviter cela, plusieurs solutions existent : utiliser des modèles explicables (comme les arbres de décision), tester la robustesse des résultats, intégrer des indicateurs d’équité, ou encore impliquer les citoyens et les groupes concernés dans le développement des outils. L’IA, surtout en contexte social, ne peut être conçue sans dialogue.
+
+Les auteurs soulignent également l’importance d’un encadrement institutionnel : chartes éthiques, audits algorithmiques, comités de validation, normes de transparence. L’intégration de ces principes dans la pratique scientifique est une condition essentielle pour que l’IA contribue réellement à une société plus juste.
+
+## 7. Conclusion : pour une science sociale augmentée, critique et engagée
+
+En fin de compte, les auteurs ne proposent pas de remplacer les méthodes traditionnelles, mais de les enrichir. L’IA offre un accès inédit à des données massives, des moyens d’analyse puissants et des possibilités de simulation très prometteuses. Mais ces outils doivent rester au service d’une compréhension humaine des phénomènes sociaux : contextualisée, critique, et orientée vers le bien commun.
+
+Pour cela, il faut encourager les collaborations interdisciplinaires, investir dans la formation des chercheurs aux méthodes computationnelles, et développer une culture de l’explicabilité et de la réflexivité. L’enjeu n’est pas de faire de tous les sociologues des programmeurs, mais de leur permettre de dialoguer avec les ingénieurs, et vice-versa.
+
+## Référence complète
+
+Dritsas, E., & Trigka, M. (2025). *Machine Learning and Data Science in Social Sciences: Methods, Applications, and Future Directions*. IEEE Access. https://doi.org/10.1109/ACCESS.2025.3578906
