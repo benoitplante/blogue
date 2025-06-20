@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Plante">
+<meta name="dcterms.date" content="2025-06-19">
+<meta name="description" content="Blogue sur les liens entre psychologie et intelligence artificielle">
+
+<title>L’intelligence artificielle transforme-t-elle la recherche en sciences sociales ? – Benoit Plante</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6957ec2732917c3acd9217c3064faa9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id="></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '', { 'anonymize_ip': true});
+</script>
+
+
+<!-- 
+
+Load Academicons v1: https://jpswalsh.github.io/academicons/
+
+-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+
+
+
+<!---
+
+The following code are needed to show dimension citation and altmetrics.
+
+https://api.altmetric.com/embeds.html
+
+https://badge.dimensions.ai/
+
+--->
+
+
+
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+
+<script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+
+
+<script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="L’intelligence artificielle transforme-t-elle la recherche en sciences sociales ? – Benoit Plante">
+<meta property="og:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
+<meta property="og:image" content="https://benoitplante.github.io/posts/2025-06-19-AI-sciences-sociales/banner.png">
+<meta property="og:site_name" content="Benoit Plante">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1536">
+<meta name="twitter:title" content="L’intelligence artificielle transforme-t-elle la recherche en sciences sociales ? – Benoit Plante">
+<meta name="twitter:description" content="Réflexions, cas d’usage et outils à l’interface entre IA et psychologie">
+<meta name="twitter:image" content="https://benoitplante.github.io/posts/2025-06-19-AI-sciences-sociales/banner.png">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="1536">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Benoit Plante</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">À propos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">IA &amp; Sciences humaines</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../outils.html"> 
+<span class="menu-text">Outils IA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching.html"> 
+<span class="menu-text">Enseignement</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">L’intelligence artificielle transforme-t-elle la recherche en sciences sociales ?</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">IA et recherche universitaire</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Benoit Plante + ChatGPT </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 19, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#en-bref" id="toc-en-bref" class="nav-link active" data-scroll-target="#en-bref">En bref</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#concepts-clés-ia-ml-et-genai" id="toc-concepts-clés-ia-ml-et-genai" class="nav-link" data-scroll-target="#concepts-clés-ia-ml-et-genai">2. Concepts clés : IA, ML et genAI</a></li>
+  <li><a href="#démarche-de-létude" id="toc-démarche-de-létude" class="nav-link" data-scroll-target="#démarche-de-létude">3. Démarche de l’étude</a></li>
+  <li><a href="#résultats-principaux" id="toc-résultats-principaux" class="nav-link" data-scroll-target="#résultats-principaux">4. Résultats principaux</a></li>
+  <li><a href="#enjeux-éthiques-et-méthodologiques" id="toc-enjeux-éthiques-et-méthodologiques" class="nav-link" data-scroll-target="#enjeux-éthiques-et-méthodologiques">5. Enjeux éthiques et méthodologiques</a></li>
+  <li><a href="#recommandations-pour-une-intégration-responsable" id="toc-recommandations-pour-une-intégration-responsable" class="nav-link" data-scroll-target="#recommandations-pour-une-intégration-responsable">6. Recommandations pour une intégration responsable</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">7. Conclusion</a></li>
+  <li><a href="#référence" id="toc-référence" class="nav-link" data-scroll-target="#référence">8. Référence</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="en-bref" class="level2">
+<h2 class="anchored" data-anchor-id="en-bref">En bref</h2>
+<p>Une étude récente explore comment les chercheurs en sciences sociales perçoivent et utilisent l’intelligence artificielle (IA) et l’apprentissage machine (ML). Basée sur une enquête (N = 284) et des entretiens (N = 15), elle révèle une adoption croissante, mais ambivalente, de ces outils. Les chercheurs utilisent davantage l’IA générative (genAI), mais lui font moins confiance que le ML, qu’ils jugent plus transparent. L’article plaide pour une intégration centrée sur l’humain et propose des recommandations pour les développeurs, chercheurs, enseignants et décideurs. Ce panorama nuancé souligne à la fois l’engouement pour les nouvelles technologies et les tensions qu’elles suscitent dans la pratique scientifique.</p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>L’émergence de l’IA générative bouleverse les pratiques de recherche en sciences sociales. De ChatGPT à Gemini, ces outils promettent des gains de productivité, mais soulèvent aussi des questions profondes sur la qualité, l’intégrité et l’éthique de la recherche. Comment les chercheurs s’adaptent-ils à ces nouveaux outils ? Quelles craintes expriment-ils ? Et que nous disent ces tensions sur l’évolution même des sciences sociales ? L’IA ne se contente pas de changer les instruments à disposition : elle transforme les paradigmes épistémologiques et les rapports à la connaissance. Elle oblige les chercheurs à redéfinir les frontières entre l’humain et la machine, entre méthode rigoureuse et automatisation des tâches, entre créativité humaine et synthèse algorithmique.</p>
+</section>
+<section id="concepts-clés-ia-ml-et-genai" class="level2">
+<h2 class="anchored" data-anchor-id="concepts-clés-ia-ml-et-genai">2. Concepts clés : IA, ML et genAI</h2>
+<p>L’intelligence artificielle (IA) désigne l’ensemble des systèmes capables d’effectuer des tâches traditionnellement réservées aux humains. Dans le contexte de la recherche, ce terme est souvent associé à des outils génératifs comme ChatGPT ou Gemini, capables de produire du texte, de répondre à des questions ou d’automatiser des segments de l’analyse scientifique. L’apprentissage machine (ML), en revanche, est une sous-catégorie de l’IA qui repose sur des algorithmes permettant à une machine d’apprendre à partir de données. Il est généralement utilisé pour la classification, la prédiction et l’analyse statistique, et perçu comme plus rigoureux, transparent et contrôlable. Enfin, l’IA générative (genAI) désigne les modèles comme les grands modèles de langage (LLM), conçus pour générer du contenu original à partir d’instructions simples, mais dont les mécanismes internes restent souvent opaques.</p>
+<p>Les chercheurs interrogés distinguent assez clairement le ML, qu’ils considèrent comme une méthode scientifique parmi d’autres, de l’IA générative, perçue comme une interface technologique accessible mais difficile à maîtriser en profondeur. Cette distinction influence à la fois les usages et le niveau de confiance qu’ils accordent à ces outils.</p>
+</section>
+<section id="démarche-de-létude" class="level2">
+<h2 class="anchored" data-anchor-id="démarche-de-létude">3. Démarche de l’étude</h2>
+<p>L’étude repose sur une approche mixte combinant une enquête par questionnaire (N = 284) et des entretiens semi-dirigés (N = 15). Le questionnaire, distribué aléatoirement en deux versions quasi-identiques, posait les mêmes questions, mais remplaçait systématiquement le mot « intelligence artificielle » par « apprentissage machine » pour la moitié des répondants. Cette variation permet de mesurer les effets de perception liés aux termes utilisés.</p>
+<p>Les participants provenaient de différentes disciplines des sciences sociales :</p>
+<ul>
+<li>Psychologie</li>
+<li>Sociologie</li>
+<li>Économie</li>
+<li>Science politique</li>
+<li>Éducation</li>
+<li>Marketing</li>
+</ul>
+<p>Ils incluaient à la fois des doctorants, des professeurs, des postdoctorants et des chercheurs associés. Les analyses combinent statistiques descriptives, visualisations exploratoires et codage thématique des verbatim. Cette démarche permet d’explorer tant les usages que les représentations de ces technologies dans le champ académique.</p>
+</section>
+<section id="résultats-principaux" class="level2">
+<h2 class="anchored" data-anchor-id="résultats-principaux">4. Résultats principaux</h2>
+<p>La majorité des répondants (73 %) rapportent avoir utilisé un outil d’intelligence artificielle dans leur travail, mais il est crucial de distinguer les types d’IA mobilisés.</p>
+<p><strong>IA générative (genAI)</strong> :</p>
+<ul>
+<li>Rédaction préliminaire d’articles (utilisée par 47 % des répondants au volet IA)</li>
+<li>Résumé de littérature (41 %)</li>
+<li>Reformulation d’idées (39 %)</li>
+<li>Correction grammaticale et stylistique (34 %)</li>
+<li>Exploration de domaines nouveaux (28 %)</li>
+</ul>
+<p><strong>Apprentissage machine (ML)</strong> :</p>
+<ul>
+<li>Annotation de corpus textuels (29 % des répondants au volet ML)</li>
+<li>Classification et prédiction à partir de données (42 %)</li>
+<li>Structuration automatisée de grandes bases (25 %)</li>
+</ul>
+<p><strong>Outils hybrides ou semi-automatisés</strong> :</p>
+<ul>
+<li>Débogage de code (R, Python) (22 % des répondants dans les deux groupes)</li>
+<li>Génération de visualisations (18 %)</li>
+<li>Structuration de revues systématiques (15 %)</li>
+</ul>
+<p>Ces usages montrent une diversité d’approches où les chercheurs adaptent l’outil à la tâche, selon leur niveau de compétence technique et leur besoin de contrôle sur les résultats. L’usage de l’IA, sous toutes ses formes, est particulièrement répandu chez les doctorants, qui manifestent également des niveaux d’acceptation plus élevés que leurs collègues plus avancés dans la carrière.</p>
+<p>En revanche, le ML reste perçu comme plus fiable que l’IA générative, notamment en raison de sa proximité avec les méthodes statistiques traditionnelles. L’IA générative, bien qu’attractive pour sa rapidité et son accessibilité, suscite davantage de méfiance quant à la qualité, la vérifiabilité et l’éthique de ses productions. Cette tension entre accessibilité et fiabilité traverse l’ensemble des résultats de l’étude.</p>
+</section>
+<section id="enjeux-éthiques-et-méthodologiques" class="level2">
+<h2 class="anchored" data-anchor-id="enjeux-éthiques-et-méthodologiques">5. Enjeux éthiques et méthodologiques</h2>
+<p>L’enthousiasme des chercheurs est souvent tempéré par des inquiétudes bien fondées. Voici les principales préoccupations exprimées :</p>
+<ul>
+<li><strong>Biais algorithmiques</strong> : mentionnés dans 62 % des réponses au volet IA, les chercheurs craignent que les modèles d’IA perpétuent ou amplifient les inégalités sociales présentes dans les données d’entraînement.</li>
+<li><strong>Opaqueness des modèles</strong> : soulevée par 55 % des participants, cette inquiétude touche principalement les grands modèles de langage non open-source, perçus comme difficilement auditables.</li>
+<li><strong>Déqualification</strong> : 48 % des répondants expriment la crainte que l’usage intensif de l’IA chez les étudiants diminue leur capacité à raisonner, à apprendre les méthodes ou à interpréter les données.</li>
+<li><strong>Manque de normes</strong> : évoqué dans 45 % des réponses, ce point concerne l’absence de cadres clairs sur la manière de documenter, citer ou valider les usages d’IA dans les publications.</li>
+<li><strong>Impact environnemental</strong> : signalé par 29 % des participants, le coût énergétique élevé de l’entraînement et du déploiement des modèles est vu comme un enjeu éthique encore trop peu discuté dans les milieux académiques.</li>
+</ul>
+<p>Malgré ces défis, les chercheurs affirment la nécessité de maintenir le jugement humain au cœur du processus scientifique. L’interprétation des résultats, le développement de théories, l’évaluation de la pertinence sociale ou éthique d’une analyse ne peuvent, selon eux, être automatisés sans perte de sens.</p>
+</section>
+<section id="recommandations-pour-une-intégration-responsable" class="level2">
+<h2 class="anchored" data-anchor-id="recommandations-pour-une-intégration-responsable">6. Recommandations pour une intégration responsable</h2>
+<p>Alors que l’usage de l’IA se généralise dans la recherche en sciences sociales, cette section propose des pistes concrètes pour accompagner une intégration responsable et durable. Les recommandations qui suivent s’adressent à différents acteurs – concepteurs de technologies, chercheurs, institutions éducatives et décideurs – et reflètent les propositions formulées par les participants à l’étude. Elles visent à favoriser la transparence, la réflexivité, l’équité et l’ancrage éthique des pratiques scientifiques assistées par IA.</p>
+<p><strong>Pour les développeurs :</strong></p>
+<ul>
+<li>Créer des outils interprétables, traçables et documentés, afin de permettre aux utilisateurs de comprendre et d’évaluer les processus automatisés.</li>
+<li>Rendre visibles les jeux de données, les sources et les limites d’usage, pour assurer la traçabilité et prévenir les biais implicites.</li>
+</ul>
+<p><strong>Pour les chercheurs :</strong></p>
+<ul>
+<li>Développer une littératie critique de l’IA, incluant une compréhension de ses forces, limites et implications sociales.</li>
+<li>Documenter et valider les usages dans leurs publications, en expliquant comment et pourquoi un outil a été utilisé dans le cadre de la recherche.</li>
+</ul>
+<p><strong>Pour les établissements d’enseignement :</strong></p>
+<ul>
+<li>Intégrer les enjeux sociotechniques de l’IA dans les cursus, notamment par des modules transversaux accessibles à toutes les disciplines.</li>
+<li>Soutenir les initiatives interdisciplinaires qui favorisent une approche réflexive, collective et expérimentale de l’usage de l’IA.</li>
+</ul>
+<p><strong>Pour les décideurs publics :</strong></p>
+<ul>
+<li>Garantir un accès équitable aux outils, notamment en soutenant des solutions open source ou accessibles pour les institutions moins dotées.</li>
+<li>Exiger des pratiques durables en matière de développement technologique, incluant des critères environnementaux et sociaux.</li>
+<li>Encourager une gouvernance participative impliquant les chercheurs, les communautés et les utilisateurs finaux dans les orientations stratégiques de l’IA en recherche.</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">7. Conclusion</h2>
+<p>Cette étude brosse un portrait lucide et richement documenté des rapports que les sciences sociales entretiennent avec l’intelligence artificielle. Loin d’un rejet ou d’un engouement naïf, les chercheurs interrogés montrent une volonté claire de réfléchir collectivement aux conditions d’une utilisation responsable de ces technologies. Ils rappellent que les outils numériques ne sont pas neutres : ils véhiculent des valeurs, des biais, des modèles de pensée. Leur intégration dans la recherche doit donc faire l’objet d’un débat rigoureux et ouvert. Plus qu’une simple question d’efficacité, l’IA pose un défi fondamental à la manière dont nous produisons, validons et partageons le savoir en société.</p>
+</section>
+<section id="référence" class="level2">
+<h2 class="anchored" data-anchor-id="référence">8. Référence</h2>
+<p>Chakravorti, T., Wang, X., Venkit, P. N., Koneru, S., Munger, K., &amp; Rajtmajer, S. (2025). <em>Social Scientists on the Role of AI in Research</em>. arXiv preprint https://arxiv.org/abs/2506.11255</p>
+<!-- Formulaire d’abonnement Brevo -->
+<iframe width="540" height="405" scrolling="no" src="https://sibforms.com/serve/MUIFAJuXpDvH14nAsFXhXmM7v_z4nHcpDJCxRYobbS4dO7G-ovnmEkzoaPhHHEKEPAWRf3EVMvbOumRBiEsM6A50GTewyamCczEPOkwY9jSzdOIhDlnGvyrZJq7_DnhQswAXMCQ4QhEhVv0wZoQ_S-DisWk4a4YeHj6TW3XrELrEZPr4Nv-e2EJt60iSgcFerHiFJzCrIkdm7njy" frameborder="0" allowfullscreen="" style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;">
+</iframe>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/benoitplante\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<a href="https://github.com/benplante">Ben Plante</a> ©
+<script>document.write(new Date().getFullYear())</script>
+</div>   
+    <div class="nav-footer-center">
+<p>Blogue propulsé par <a href="https://quarto.org">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/benplante" target="_blank">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="../../posts.xml" target="_blank">
+      <i class="bi bi-rss" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
