@@ -1,5 +1,5 @@
 ---
-title: "L’intelligence artificielle transforme-t-elle la recherche en sciences sociales ?"
+title: "L'IA dans les sciences sociales : entre enthousiasme et prudence"
 date: 2025-06-19
 categories: ["IA et recherche universitaire"]
 format:
@@ -10,8 +10,9 @@ author: Benoit Plante + ChatGPT
 image: banner.png
 ---
 
-## En bref
+## ![Générée par ChatGPT](banner.png){fig-align="center" width="100%"}
 
+**En bref**\
 Une étude récente explore comment les chercheurs en sciences sociales perçoivent et utilisent l'intelligence artificielle (IA) et l'apprentissage machine (ML). Basée sur une enquête (N = 284) et des entretiens (N = 15), elle révèle une adoption croissante, mais ambivalente, de ces outils. Les chercheurs utilisent davantage l'IA générative (genAI), mais lui font moins confiance que le ML, qu'ils jugent plus transparent. L'article plaide pour une intégration centrée sur l'humain et propose des recommandations pour les développeurs, chercheurs, enseignants et décideurs. Ce panorama nuancé souligne à la fois l'engouement pour les nouvelles technologies et les tensions qu'elles suscitent dans la pratique scientifique.
 
 ## 1. Introduction
@@ -30,12 +31,12 @@ L'étude repose sur une approche mixte combinant une enquête par questionnaire 
 
 Les participants provenaient de différentes disciplines des sciences sociales :
 
-- Psychologie
-- Sociologie
-- Économie
-- Science politique
-- Éducation
-- Marketing
+-   Psychologie
+-   Sociologie
+-   Économie
+-   Science politique
+-   Éducation
+-   Marketing
 
 Ils incluaient à la fois des doctorants, des professeurs, des postdoctorants et des chercheurs associés. Les analyses combinent statistiques descriptives, visualisations exploratoires et codage thématique des verbatim. Cette démarche permet d'explorer tant les usages que les représentations de ces technologies dans le champ académique.
 
@@ -45,23 +46,23 @@ La majorité des répondants (73 %) rapportent avoir utilisé un outil d’intel
 
 **IA générative (genAI)** :
 
-- Rédaction préliminaire d’articles (utilisée par 47 % des répondants au volet IA)
-- Résumé de littérature (41 %)
-- Reformulation d’idées (39 %)
-- Correction grammaticale et stylistique (34 %)
-- Exploration de domaines nouveaux (28 %)
+-   Rédaction préliminaire d’articles (utilisée par 47 % des répondants au volet IA)
+-   Résumé de littérature (41 %)
+-   Reformulation d’idées (39 %)
+-   Correction grammaticale et stylistique (34 %)
+-   Exploration de domaines nouveaux (28 %)
 
 **Apprentissage machine (ML)** :
 
-- Annotation de corpus textuels (29 % des répondants au volet ML)
-- Classification et prédiction à partir de données (42 %)
-- Structuration automatisée de grandes bases (25 %)
+-   Annotation de corpus textuels (29 % des répondants au volet ML)
+-   Classification et prédiction à partir de données (42 %)
+-   Structuration automatisée de grandes bases (25 %)
 
 **Outils hybrides ou semi-automatisés** :
 
-- Débogage de code (R, Python) (22 % des répondants dans les deux groupes)
-- Génération de visualisations (18 %)
-- Structuration de revues systématiques (15 %)
+-   Débogage de code (R, Python) (22 % des répondants dans les deux groupes)
+-   Génération de visualisations (18 %)
+-   Structuration de revues systématiques (15 %)
 
 Ces usages montrent une diversité d’approches où les chercheurs adaptent l’outil à la tâche, selon leur niveau de compétence technique et leur besoin de contrôle sur les résultats. L’usage de l’IA, sous toutes ses formes, est particulièrement répandu chez les doctorants, qui manifestent également des niveaux d’acceptation plus élevés que leurs collègues plus avancés dans la carrière.
 
@@ -71,11 +72,11 @@ En revanche, le ML reste perçu comme plus fiable que l’IA générative, notam
 
 L’enthousiasme des chercheurs est souvent tempéré par des inquiétudes bien fondées. Voici les principales préoccupations exprimées :
 
-- **Biais algorithmiques** : mentionnés dans 62 % des réponses au volet IA, les chercheurs craignent que les modèles d’IA perpétuent ou amplifient les inégalités sociales présentes dans les données d’entraînement.
-- **Opaqueness des modèles** : soulevée par 55 % des participants, cette inquiétude touche principalement les grands modèles de langage non open-source, perçus comme difficilement auditables.
-- **Déqualification** : 48 % des répondants expriment la crainte que l’usage intensif de l’IA chez les étudiants diminue leur capacité à raisonner, à apprendre les méthodes ou à interpréter les données.
-- **Manque de normes** : évoqué dans 45 % des réponses, ce point concerne l’absence de cadres clairs sur la manière de documenter, citer ou valider les usages d’IA dans les publications.
-- **Impact environnemental** : signalé par 29 % des participants, le coût énergétique élevé de l’entraînement et du déploiement des modèles est vu comme un enjeu éthique encore trop peu discuté dans les milieux académiques.
+-   **Biais algorithmiques** : mentionnés dans 62 % des réponses au volet IA, les chercheurs craignent que les modèles d’IA perpétuent ou amplifient les inégalités sociales présentes dans les données d’entraînement.
+-   **Opaqueness des modèles** : soulevée par 55 % des participants, cette inquiétude touche principalement les grands modèles de langage non open-source, perçus comme difficilement auditables.
+-   **Déqualification** : 48 % des répondants expriment la crainte que l’usage intensif de l’IA chez les étudiants diminue leur capacité à raisonner, à apprendre les méthodes ou à interpréter les données.
+-   **Manque de normes** : évoqué dans 45 % des réponses, ce point concerne l’absence de cadres clairs sur la manière de documenter, citer ou valider les usages d’IA dans les publications.
+-   **Impact environnemental** : signalé par 29 % des participants, le coût énergétique élevé de l’entraînement et du déploiement des modèles est vu comme un enjeu éthique encore trop peu discuté dans les milieux académiques.
 
 Malgré ces défis, les chercheurs affirment la nécessité de maintenir le jugement humain au cœur du processus scientifique. L’interprétation des résultats, le développement de théories, l’évaluation de la pertinence sociale ou éthique d’une analyse ne peuvent, selon eux, être automatisés sans perte de sens.
 
@@ -85,24 +86,24 @@ Alors que l’usage de l’IA se généralise dans la recherche en sciences soci
 
 **Pour les développeurs :**
 
-- Créer des outils interprétables, traçables et documentés, afin de permettre aux utilisateurs de comprendre et d’évaluer les processus automatisés.
-- Rendre visibles les jeux de données, les sources et les limites d’usage, pour assurer la traçabilité et prévenir les biais implicites.
+-   Créer des outils interprétables, traçables et documentés, afin de permettre aux utilisateurs de comprendre et d’évaluer les processus automatisés.
+-   Rendre visibles les jeux de données, les sources et les limites d’usage, pour assurer la traçabilité et prévenir les biais implicites.
 
 **Pour les chercheurs :**
 
-- Développer une littératie critique de l’IA, incluant une compréhension de ses forces, limites et implications sociales.
-- Documenter et valider les usages dans leurs publications, en expliquant comment et pourquoi un outil a été utilisé dans le cadre de la recherche.
+-   Développer une littératie critique de l’IA, incluant une compréhension de ses forces, limites et implications sociales.
+-   Documenter et valider les usages dans leurs publications, en expliquant comment et pourquoi un outil a été utilisé dans le cadre de la recherche.
 
 **Pour les établissements d’enseignement :**
 
-- Intégrer les enjeux sociotechniques de l’IA dans les cursus, notamment par des modules transversaux accessibles à toutes les disciplines.
-- Soutenir les initiatives interdisciplinaires qui favorisent une approche réflexive, collective et expérimentale de l’usage de l’IA.
+-   Intégrer les enjeux sociotechniques de l’IA dans les cursus, notamment par des modules transversaux accessibles à toutes les disciplines.
+-   Soutenir les initiatives interdisciplinaires qui favorisent une approche réflexive, collective et expérimentale de l’usage de l’IA.
 
 **Pour les décideurs publics :**
 
-- Garantir un accès équitable aux outils, notamment en soutenant des solutions open source ou accessibles pour les institutions moins dotées.
-- Exiger des pratiques durables en matière de développement technologique, incluant des critères environnementaux et sociaux.
-- Encourager une gouvernance participative impliquant les chercheurs, les communautés et les utilisateurs finaux dans les orientations stratégiques de l’IA en recherche.
+-   Garantir un accès équitable aux outils, notamment en soutenant des solutions open source ou accessibles pour les institutions moins dotées.
+-   Exiger des pratiques durables en matière de développement technologique, incluant des critères environnementaux et sociaux.
+-   Encourager une gouvernance participative impliquant les chercheurs, les communautés et les utilisateurs finaux dans les orientations stratégiques de l’IA en recherche.
 
 ## 7. Conclusion
 
@@ -113,4 +114,7 @@ Cette étude brosse un portrait lucide et richement documenté des rapports que 
 Chakravorti, T., Wang, X., Venkit, P. N., Koneru, S., Munger, K., & Rajtmajer, S. (2025). *Social Scientists on the Role of AI in Research*. arXiv preprint https://arxiv.org/abs/2506.11255
 
 <!-- Formulaire d’abonnement Brevo -->
-<iframe width="540" height="405" scrolling ="no" src="https://sibforms.com/serve/MUIFAJuXpDvH14nAsFXhXmM7v_z4nHcpDJCxRYobbS4dO7G-ovnmEkzoaPhHHEKEPAWRf3EVMvbOumRBiEsM6A50GTewyamCczEPOkwY9jSzdOIhDlnGvyrZJq7_DnhQswAXMCQ4QhEhVv0wZoQ_S-DisWk4a4YeHj6TW3XrELrEZPr4Nv-e2EJt60iSgcFerHiFJzCrIkdm7njy" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+
+<iframe width="540" height="405" scrolling="no" src="https://sibforms.com/serve/MUIFAJuXpDvH14nAsFXhXmM7v_z4nHcpDJCxRYobbS4dO7G-ovnmEkzoaPhHHEKEPAWRf3EVMvbOumRBiEsM6A50GTewyamCczEPOkwY9jSzdOIhDlnGvyrZJq7_DnhQswAXMCQ4QhEhVv0wZoQ_S-DisWk4a4YeHj6TW3XrELrEZPr4Nv-e2EJt60iSgcFerHiFJzCrIkdm7njy" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;">
+
+</iframe>
