@@ -10,8 +10,7 @@ author: Benoit Plante + ChatGPT
 image: banner.png
 ---
 
-![Générée par ChatGPT](banner.png){fig-align="center" width="100%"}
----
+## ![Générée par ChatGPT](banner.png){fig-align="center" width="100%"}
 
 ## L’intelligence artificielle transforme-t-elle la recherche en sciences sociales ?
 
@@ -77,3 +76,9 @@ Pour cela, il faut encourager les collaborations interdisciplinaires, investir d
 ## Référence complète
 
 Dritsas, E., & Trigka, M. (2025). *Machine Learning and Data Science in Social Sciences: Methods, Applications, and Future Directions*. IEEE Access. https://doi.org/10.1109/ACCESS.2025.3578906
+
+<!-- Formulaire d’abonnement Brevo -->
+
+<iframe width="540" height="405" scrolling="no" src="https://sibforms.com/serve/MUIFAJuXpDvH14nAsFXhXmM7v_z4nHcpDJCxRYobbS4dO7G-ovnmEkzoaPhHHEKEPAWRf3EVMvbOumRBiEsM6A50GTewyamCczEPOkwY9jSzdOIhDlnGvyrZJq7_DnhQswAXMCQ4QhEhVv0wZoQ_S-DisWk4a4YeHj6TW3XrELrEZPr4Nv-e2EJt60iSgcFerHiFJzCrIkdm7njy" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;">
+
+</iframe>

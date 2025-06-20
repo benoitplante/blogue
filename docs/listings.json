@@ -9,8 +9,15 @@
     ]
   },
   {
+    "listing": "/outils.html",
+    "items": [
+      "/outils/2025-06-13-deep-search-chatgpt/index.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
+      "/posts/2025-06-19-AI-sciences-sociales/index.html",
       "/posts/2025-06-16-ML-sciences-sociales/index.html",
       "/projets/2025-06-14-analyse-thematique/index.html",
       "/posts/2025-06-13-AIGen-etudiant-1/index.html",
@@ -28,14 +35,9 @@
     ]
   },
   {
-    "listing": "/outils.html",
-    "items": [
-      "/outils/2025-06-13-deep-search-chatgpt/index.html"
-    ]
-  },
-  {
     "listing": "/posts.html",
     "items": [
+      "/posts/2025-06-19-AI-sciences-sociales/index.html",
       "/posts/2025-06-16-ML-sciences-sociales/index.html",
       "/posts/2025-06-13-AIGen-etudiant-1/index.html",
       "/posts/2025-06-09-AI-correlation/index.html",
